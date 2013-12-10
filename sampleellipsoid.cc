@@ -47,7 +47,7 @@ void unisphere(float * coor, int D){
 
 void SampleEllipsoid(int D, gsl_vector * center, gsl_matrix * C, double f, gsl_vector * coor){
   //returns pseudorandom number coor uniformly distributed in ellipsoid given by the center vector center, covariance matrix C and enlargement factor f, so that x^T(fC)^-1x<=1
-  int i,j;
+  int i;
 
   // create gsl_vector uniformly sampled from sphere
   float spherical[D];
@@ -286,8 +286,6 @@ int oldtestcase(){
 
   int i,j;
   int D=3;
-  float coor[D];
-  float tmp;
   // initialize covariance matrix
   fprintf(fp,"C:\n");
   gsl_matrix * C = gsl_matrix_alloc(D,D);
