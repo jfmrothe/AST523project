@@ -116,16 +116,12 @@ int IsMember(int D, gsl_vector * coor,  gsl_vector * center, gsl_matrix * C, dou
 }
 
 
-int TestSampleEllipsoid(){
-  // randomly creates ellipsoid data, samples 100 times, puts out coordinates and ellipsoid data in format understood by testsampleellipsoid.nb
-  srand(time(NULL));
+void GetRandomCovMat(int D, gsl_matrix * C) {
 
   int i,j;
-  int D=3;
   float coor[D];
   float tmp;
   // generate random covariance matrix
-  gsl_matrix * C = gsl_matrix_alloc(D,D);
   gsl_matrix * X = gsl_matrix_alloc(D,D);
   gsl_matrix * Diag = gsl_matrix_calloc(D,D);
   gsl_matrix * tmpmat = gsl_matrix_calloc(D,D);
@@ -181,14 +177,33 @@ int TestSampleEllipsoid(){
   gsl_blas_dgemm (CblasTrans, CblasNoTrans, 1.0, X, Diag, 0.0, tmpmat);
   gsl_blas_dgemm (CblasNoTrans, CblasNoTrans, 1.0, tmpmat,X, 0.0, C);
   
-  // generate random center  
-  gsl_vector * center = gsl_vector_alloc(D);
+
+}
+
+
+void GetRandomEllipsoid(int D, gsl_vector * center, gsl_matrix * C, double * f) {
+  int i;
+  // set center
   for(i=0;i<D;i++){
     gsl_vector_set(center,i,uniform(-10,10));
   }
-
+  // set covariance matrix
+  GetRandomCovMat(D,C);
   //generate random enlargement factor
-  double f = uniform(0.1,3);
+  *f = uniform(0.1,3);
+};
+
+int TestSampleEllipsoid(){
+  // randomly creates ellipsoid data, samples 100 times, puts out coordinates and ellipsoid data in format understood by testsampleellipsoid.nb
+  srand(time(NULL));
+
+  int D = 3;
+  int i,j;
+  gsl_matrix * C = gsl_matrix_alloc(D,D);
+  gsl_vector * center = gsl_vector_alloc(D);
+  double f;
+
+  GetRandomEllipsoid(D,center,C,&f);
 
   //sample this ellipsoid 100 times
   gsl_vector * coorvec[100];
@@ -218,23 +233,8 @@ int TestSampleEllipsoid(){
     }
     printf("\n"); 
   }
-  for(i=0;i<D;i++){
-    for(j=0;j<D;j++){
-      printf("%f ",gsl_matrix_get(Diag,i,j));
-    }
-    printf("\n"); 
-  }
-
-  for(i=0;i<D;i++){
-    for(j=0;j<D;j++){
-      printf("%f ",gsl_matrix_get(X,i,j));
-    }
-    printf("\n"); 
-  }
   return 0;
 }
-
-
 
 
 
