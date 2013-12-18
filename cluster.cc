@@ -1,14 +1,13 @@
+#include <cluster.hh>
+#include <sampleellipsoid.hh>
+
 #include <math.h>
 #include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
 
-float uniform(float min, float max){
-  //returns pseudorandom number from uniform distribution
-  return (((float) rand())/((float) RAND_MAX))*(max-min) + min;
-}
-
 float dist(int D, float * pos1, float * pos2){
+  // returns 2-norm of difference between two given vectors
   float val=0;
   for (int i=0;i<D;i++){
     val += pow(pos1[i]-pos2[i],2);
@@ -17,6 +16,7 @@ float dist(int D, float * pos1, float * pos2){
 }
 
 int indexofSmallestElement(float * array, int size)
+// returns the index of the smallest element from a given array
 {
   int index = 0;
 
@@ -32,7 +32,7 @@ int indexofSmallestElement(float * array, int size)
 return index;
 }
 
-int k_means(int D, int N, int k, float * points, int * grouping)
+int KMeans(int D, int N, int k, float * points, int * grouping)
 // Implementation of the K-means algorithm
 // following MacKay, D. C. J., 2003, Information Theory, Inference and Learning Algorithms, Cambridge University Press, Cambridge, p. 640
 // points gives the coordinates of N points in the D-dimensional [0,1]-hypercube, to be split into k clusters. Association of each point to a cluster is returned in int-array grouping
@@ -101,8 +101,9 @@ int k_means(int D, int N, int k, float * points, int * grouping)
   return 0;
 }
 
-int main()
+int TestKMeans()
 {
+  // Clusters N points from D-dimensional [0,1]-hypercube into k groups, prints list of groups
   srand(time(NULL));
 
   int D = 3;
@@ -116,7 +117,7 @@ int main()
     points[i] = uniform(0,1);
   }
  
-  k_means(D,N,k,&points[0],&grouping[0]);
+  KMeans(D,N,k,&points[0],&grouping[0]);
 
   for(i=0;i<k;i++){
     printf("Group %i\n",i);
@@ -129,7 +130,5 @@ int main()
       }
     }
   }
-
-
   return 0;
 }
