@@ -1,0 +1,5 @@
+This is the lighthouse test problem. 
+
+Type 'make' to compile, and './run_driver.py' to run. 
+
+If you do not want to plot, the type './drive' to run. 
