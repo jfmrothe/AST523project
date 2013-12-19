@@ -22,6 +22,9 @@ ax.set_xlabel('x')
 ax.set_ylabel('y')
 ax.set_zlabel('posterior')
 
+ax.set_xlim3d(-2, 2)
+ax.set_ylim3d(0, 2)
+
 try: import RaiseWindow
 except: pass
 plt.show()
