@@ -1,3 +1,4 @@
+#include <ellipsoid.hh>
 #include <cluster.hh>
 #include <sampleellipsoid.hh>
 
@@ -103,12 +104,12 @@ int KMeans(int D, int N, int k, float * points, int * grouping)
 
 int TestKMeans()
 {
-  // Clusters N points from D-dimensional [0,1]-hypercube into k groups, prints list of groups
+  // Clusters N points from D-dimensional [0,1]-hypercube into k groups, prints list of groups for testkmeans.nb
   srand(time(NULL));
 
   int D = 3;
-  int N = 20;
-  int k = 3;
+  int N = 1000;
+  int k = 5;
   float points[N*D];
   int grouping[N];
   int i,j,m;
@@ -120,7 +121,7 @@ int TestKMeans()
   KMeans(D,N,k,&points[0],&grouping[0]);
 
   for(i=0;i<k;i++){
-    printf("Group %i\n",i);
+    printf("\n");
     for(j=0;j<N;j++){
       if(grouping[j]==i){
 	for(m=D*j;m<D*j+D;m++){
@@ -129,6 +130,63 @@ int TestKMeans()
 	printf("\n");
       }
     }
+  }
+  return 0;
+}
+
+
+double ClusteringQuality(int D, int N, int Niter, Ellipsoid * clustering, int Nell) {
+  // computes the ratio of remaining prior volume to the sum of all ellipsoid volumes given in clustering (adress of vector of ellipsoid objects, length Nell)
+  // no accounting for overlapping ellipsoids -> overlap means bad quality.
+  int i;
+  float pi = 2*acos(0);
+  double ellvol = 0;
+
+  for (i=0;i<Nell;i++){
+    ellvol += clustering[i].GetVol();
+  }
+
+  return ellvol / exp(-1.0*((double)Niter)/((double)N));
+}
+
+int TestEllipsoidalPartitioning(){ 
+  // Sample 1000 points from torus in z=0-plane
+  double r[3],ra[3],rc[3];
+  double R0 = 0.05;
+  double R1 = 0.3;
+  rc[0] = 0.5;
+  rc[1] = 0.5;
+  rc[2] = 0.5;
+  int N = 1000;
+  int D = 3;
+  int i = 0;
+  int j;
+  gsl_vector * coors[N];
+
+  while(i<N){
+    // sample from cube
+    for (j=0;j<D;j++){
+      r[j] = uniform(0.0,1.0);
+    }
+    // check if in torus
+    ra[0] = rc[0] + (r[0]-rc[0])*R1/sqrt(pow(r[0]-rc[0],2)+pow(r[1]-rc[1],2));
+    ra[1] = rc[1] + (r[1]-rc[1])*R1/sqrt(pow(r[0]-rc[0],2)+pow(r[1]-rc[1],2));
+    ra[2] = rc[2];
+    if ( pow(r[0]-ra[0],2) + pow(r[1]-ra[1],2) + pow(r[2]-ra[2],2)  < pow(R0,2) ) {
+      coors[i] = gsl_vector_alloc(D);
+      for(j=0;j<D;j++){
+	gsl_vector_set(coors[i],j,r[j]);
+	printf("%f ",r[j]);
+      }
+      printf("\n");
+      i++;
+    }
+    // else just go on
+  }
+
+  // free all stuff
+  for(i=0;i<N;i++){
+    gsl_vector_free(coors[i]);
   }
   return 0;
 }

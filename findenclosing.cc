@@ -88,6 +88,12 @@ void FindEnclosingEllipsoid(int D, int N, gsl_vector ** coors,  gsl_vector * cen
   }
   fprintf(fp,"\nf: %f\n",*f);
   fclose(fp);
+
+  gsl_vector_free(tmpvec);
+  gsl_vector_free(tmpvec2);
+  gsl_matrix_free(tmpmat);
+  gsl_matrix_free(Cinv);
+  gsl_permutation_free(p);
 }
 
 int TestFindEnclosingEllipsoid(){
@@ -127,5 +133,11 @@ int TestFindEnclosingEllipsoid(){
   }
   printf("%f\n",f);
 
+  for(i=0;i<myN;++i){
+    gsl_vector_free(samples[i]);
+  }
+
+  gsl_vector_free(mycenter);
+  gsl_matrix_free(C);
   return 0;
 }
