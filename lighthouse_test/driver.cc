@@ -173,7 +173,7 @@ int main()
     outfile.open("posterior_pdfs.dat");
     list<Point>::iterator s;
     for(s=samples.begin(); s!=samples.end(); s++)
-        outfile << s->get_theta(0) << " " << s->get_theta(1) << " " << exp(s->get_logL()-logZ) << endl;
+        outfile << s->get_theta(0) << " " << s->get_theta(1) << " " << exp(s->get_logL() - logZ) << endl;
 
     return 0;
 }
