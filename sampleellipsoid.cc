@@ -84,6 +84,13 @@ gsl_blas_dgemm(CblasNoTrans, CblasNoTrans, sqrt(f), X, Dprime, 0.0, T);
   gsl_vector_memcpy(coor,center);
   gsl_blas_dgemv(CblasNoTrans, 1.0, T, spheresample, 1.0, coor);
   
+  gsl_vector_free(spheresample);
+  gsl_matrix_free(myC);
+  gsl_matrix_free(T);
+  gsl_matrix_free(X);
+  gsl_vector_free(eval);  
+  gsl_matrix_free(Dprime);
+  gsl_eigen_symmv_free(w);
 }
 
 int IsMember(int D, gsl_vector * coor,  gsl_vector * center, gsl_matrix * C, double f){
@@ -111,23 +118,33 @@ int IsMember(int D, gsl_vector * coor,  gsl_vector * center, gsl_matrix * C, dou
   gsl_blas_dsymv (CblasUpper, 1.0, Cinv, diff, 0.0, tmpvec);
   gsl_blas_ddot (diff, tmpvec, &range);
 
+  gsl_permutation_free(p);
+  gsl_matrix_free(tmp);
+  gsl_matrix_free(Cinv);
+  gsl_vector_free(tmpvec);
+  gsl_vector_free(diff);
+
   if (range > f) return 0;
   else return 1;
 }
 
 
-void GetRandomCovMat(int D, gsl_matrix * C) {
+double GetRandomCovMat(int D, gsl_matrix * C) {
 
   int i,j;
   float coor[D];
   float tmp;
+  double specrad = 0;
+
   // generate random covariance matrix
   gsl_matrix * X = gsl_matrix_alloc(D,D);
   gsl_matrix * Diag = gsl_matrix_calloc(D,D);
   gsl_matrix * tmpmat = gsl_matrix_calloc(D,D);
   // make random diagonal matrix  
   for(i=0;i<D;i++){
-    gsl_matrix_set(Diag,i,i,uniform(0.5,3));
+    tmp = uniform(0.5,3);
+    if (tmp>specrad) specrad = tmp;
+    gsl_matrix_set(Diag,i,i,tmp);
   }
 
   //generate random orthogonal matrix by Gram-Schmidt
@@ -177,18 +194,22 @@ void GetRandomCovMat(int D, gsl_matrix * C) {
   gsl_blas_dgemm (CblasTrans, CblasNoTrans, 1.0, X, Diag, 0.0, tmpmat);
   gsl_blas_dgemm (CblasNoTrans, CblasNoTrans, 1.0, tmpmat,X, 0.0, C);
   
+  gsl_matrix_free(X);
+  gsl_matrix_free(Diag);
+  gsl_matrix_free(tmpmat);
 
 }
 
 
-void GetRandomEllipsoid(int D, gsl_vector * center, gsl_matrix * C, double * f) {
+double GetRandomEllipsoid(int D, gsl_vector * center, gsl_matrix * C, double * f) {
   int i;
+  double specrad;
   // set center
   for(i=0;i<D;i++){
     gsl_vector_set(center,i,uniform(-10,10));
   }
   // set covariance matrix
-  GetRandomCovMat(D,C);
+  specrad = GetRandomCovMat(D,C);
   //generate random enlargement factor
   *f = uniform(0.1,3);
 };
@@ -198,6 +219,7 @@ int TestSampleEllipsoid(){
   srand(time(NULL));
 
   int D = 3;
+  int Nsample = 100;
   int i,j;
   gsl_matrix * C = gsl_matrix_alloc(D,D);
   gsl_vector * center = gsl_vector_alloc(D);
@@ -205,13 +227,13 @@ int TestSampleEllipsoid(){
 
   GetRandomEllipsoid(D,center,C,&f);
 
-  //sample this ellipsoid 100 times
-  gsl_vector * coorvec[100];
-  for(i=0;i<100;i++){
+  //sample this ellipsoid Nsample times
+  gsl_vector * coorvec[Nsample];
+  for(i=0;i<Nsample;i++){
     coorvec[i] = gsl_vector_alloc(D);
   }
 
-  for(i=0;i<100;i++){
+  for(i=0;i<Nsample;i++){
     SampleEllipsoid(D, center, C, f, coorvec[i]);
     for (j=0;j<D;j++){
       printf("%f ",gsl_vector_get(coorvec[i],j));    
@@ -233,6 +255,13 @@ int TestSampleEllipsoid(){
     }
     printf("\n"); 
   }
+
+  gsl_matrix_free(C);
+  gsl_vector_free(center);
+  for(i=0;i<Nsample;i++){
+    gsl_vector_free(coorvec[i]);
+  }
+
   return 0;
 }
 
@@ -248,76 +277,12 @@ int TestIsMember(){
   float coor[D];
   float tmp;
   float specrad = 0;
-  // generate random covariance matrix
+
   gsl_matrix * C = gsl_matrix_alloc(D,D);
-  gsl_matrix * X = gsl_matrix_alloc(D,D);
-  gsl_matrix * Diag = gsl_matrix_calloc(D,D);
-  gsl_matrix * tmpmat = gsl_matrix_calloc(D,D);
-  // make random diagonal matrix  
-  for(i=0;i<D;i++){
-    tmp = uniform(0.5,3);
-    gsl_matrix_set(Diag,i,i,tmp);
-    if (tmp > specrad){
-      specrad = tmp;
-    }   
-  }
-
-  //generate random orthogonal matrix by Gram-Schmidt
-  float myX[3][3];
-  //set random matrix
-  for(i=0;i<D;i++){
-    for(j=0;j<D;j++){
-      myX[i][j] = uniform(-1,1);
-    } 
-  }
-  //normalize first column
-  tmp = sqrt(pow(myX[0][0],2)+pow(myX[1][0],2)+pow(myX[2][0],2));
-  myX[0][0] /= tmp;
-  myX[1][0] /= tmp;
-  myX[2][0] /= tmp;
-  // project second column
-  tmp = myX[0][0]*myX[0][1]+ myX[1][0]*myX[1][1]+ myX[2][0]*myX[2][1];
-  myX[0][1] -= tmp*myX[0][0];
-  myX[1][1] -= tmp*myX[1][0];
-  myX[2][1] -= tmp*myX[2][0];
-  //normalize second column
-  tmp = sqrt(pow(myX[0][1],2)+pow(myX[1][1],2)+pow(myX[2][1],2));
-  myX[0][1] /= tmp;
-  myX[1][1] /= tmp;
-  myX[2][1] /= tmp;
-  // project third column
-  tmp = myX[0][0]*myX[0][2]+ myX[1][0]*myX[1][2]+ myX[2][0]*myX[2][2];
-  myX[0][2] -= tmp*myX[0][0];
-  myX[1][2] -= tmp*myX[1][0];
-  myX[2][2] -= tmp*myX[2][0];
-  tmp = myX[0][1]*myX[0][2]+ myX[1][1]*myX[1][2]+ myX[2][1]*myX[2][2];
-  myX[0][2] -= tmp*myX[0][1];
-  myX[1][2] -= tmp*myX[1][1];
-  myX[2][2] -= tmp*myX[2][1];
-  //normalize third column
-  tmp = sqrt(pow(myX[0][2],2)+pow(myX[1][2],2)+pow(myX[2][2],2));
-  myX[0][2] /= tmp;
-  myX[1][2] /= tmp;
-  myX[2][2] /= tmp;
-  // copy to X
-  for(i=0;i<D;i++){
-    for(j=0;j<D;j++){
-      gsl_matrix_set(X,i,j,myX[i][j]);
-    } 
-  }
-  // C = X^T.D.X
-  gsl_blas_dgemm (CblasTrans, CblasNoTrans, 1.0, X, Diag, 0.0, tmpmat);
-  gsl_blas_dgemm (CblasNoTrans, CblasNoTrans, 1.0, tmpmat,X, 0.0, C);
-  
-  // generate random center  
   gsl_vector * center = gsl_vector_alloc(D);
-  for(i=0;i<D;i++){
-    gsl_vector_set(center,i,uniform(-10,10));
-  }
+  double f;
 
-  //generate random enlargement factor
-  double f = uniform(0.1,3);
-
+  specrad = GetRandomEllipsoid(D, center, C, &f);
 
   //sample ellipsoid-surrounding box Nsamples times
   gsl_vector * coorvec[Nsamples];
@@ -345,73 +310,7 @@ int TestIsMember(){
     }
     printf("\n"); 
   }
-  for(i=0;i<D;i++){
-    for(j=0;j<D;j++){
-      printf("%f ",gsl_matrix_get(Diag,i,j));
-    }
-    printf("\n"); 
-  }
-
-  for(i=0;i<D;i++){
-    for(j=0;j<D;j++){
-      printf("%f ",gsl_matrix_get(X,i,j));
-    }
-    printf("\n"); 
-  }
 
   return 0;
 
-}
-
-
-
-
-int oldtestcase(){
- srand(time(NULL));
-
-  FILE * fp = fopen("debugout.txt","w");
-
-  int i,j;
-  int D=3;
-  // initialize covariance matrix
-  fprintf(fp,"C:\n");
-  gsl_matrix * C = gsl_matrix_alloc(D,D);
-  //  float myC[3][3] = {{1.5,0.5,0},{0.5,1.5,0},{0,0,3}};
-  //  float myC[3][3] = {{1.5,0,0.5},{0,3,0},{0.5,0,1.5}};
-  //  float myC[3][3] = {{3,0,0},{0,1.5,0.5},{0,0.5,1.5}};
-  float myC[3][3] = {{9,1,4},{1,9,1},{4,1,9}};
-  for(i=0;i<D;i++){
-    for(j=0;j<D;j++){
-      gsl_matrix_set(C,i,j,myC[i][j]);
-      fprintf(fp,"%i,%i: %f\n",i,j,gsl_matrix_get(C,i,j));
-    } 
-  }
-
-  
-  fprintf(fp,"center:\n");
-  gsl_vector * center = gsl_vector_alloc(D);
-  for(i=0;i<D;i++){
-    gsl_vector_set(center,i,0.0*i);
-    fprintf(fp,"%i: %f\n",i,gsl_vector_get(center,i));
-  }
-  fclose(fp);
-
-  double f = 1.0;
-
-  gsl_vector * coorvec = gsl_vector_alloc(D);
-
-  for(i=0;i<10000;i++){
-    for (j=0;j<D;j++){
-      gsl_vector_set(coorvec,j,uniform(-3,3));    
-    } 
-    //SampleEllipsoid(D, center, C, f, coorvec);
-    // output
-    for (j=0;j<D;j++){
-      printf("%f ",gsl_vector_get(coorvec,j));    
-    } 
-    printf("%i\n",IsMember(D, coorvec, center, C, f));
-  }
-
-
-  return 0;
 }
