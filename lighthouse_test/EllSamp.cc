@@ -1,0 +1,190 @@
+#include "EllSamp.h"
+#include "Point.h"
+
+float uniform(float min, float max)
+{
+  //returns pseudorandom number from uniform distribution
+  return (((float) rand())/((float) RAND_MAX))*(max-min) + min;
+}
+
+float boxmuller()
+{
+  //returns univariate, zero-mean gaussian sample
+  float u1 = uniform(0,1);
+  float u2 = uniform(0,1);
+  float pi = 2*acos(0);
+  while( u1 == 0.0 ){
+    u1 = uniform(0,1);
+  }
+  return sqrt(-2.0*log(u1))*cos(2*pi*u2);
+}
+
+float quadr()
+{
+  //returns sample from quadratic distribution between 0 and 1
+  return pow(uniform(0,1),1.0/3.0);
+}
+
+void unisphere(float * coor, int D)
+{
+  //returns pseudorandom number uniformly distributed in D-sphere (r=1)
+  int i;
+  float sample[D];
+  float r=0;
+  for(i=0;i<D;i++){
+    sample[i] = boxmuller();
+    r+=pow(sample[i],2);
+  }
+  r=sqrt(r);
+  r/=quadr();
+  for(i=0;i<D;i++){
+    coor[i] = sample[i]/r;
+  }
+}
+
+void FindEnclosingEllipsoid(int D, int N, Point *pts[],  gsl_vector * center, gsl_matrix * C, double * f)
+{
+  /* returns enclosing ellipsoid data for a given point cloud (N D-dimensional coordinates), 
+     enlargement factor f is chosen so that all points are below the ellipsoid surface */
+  int i,j;
+  double tmp;
+  gsl_vector * tmpvec = gsl_vector_alloc(D);
+  gsl_vector * tmpvec2 = gsl_vector_alloc(D);
+   
+  FILE * fp = fopen("debugout.txt","w");
+  
+  //print input coordinates -> works
+  for(i=0;i<N;i++){
+    for(j=0;j<D;j++){
+      fprintf(fp,"%f ", pts[i]->get_theta(j));
+    }
+  fprintf(fp,"\n");
+  }
+
+  fprintf(fp,"center:\n");
+  //find center -> works
+  for(i=0;i<D;i++){
+    tmp = 0.0;
+    for(j=0;j<N;j++){
+      tmp += pts[j]->get_theta(i);
+    }
+    gsl_vector_set(center,i,tmp/N);
+    fprintf(fp,"%f \n",gsl_vector_get(center,i));
+  }
+
+  //find covariance matrix
+  // set C to zero
+  gsl_blas_dgemm(CblasNoTrans, CblasNoTrans, 0.0, C, C, 0.0, C);
+  //add covariance
+  for(j=0;j<N;j++){
+    for(i=0;i<D;i++){
+      // subtract center from each coor to tmpvec
+      gsl_vector_set(tmpvec,i,pts[j]->get_theta(i)-gsl_vector_get(center,i));
+    }
+    // symmetric rank-1 update
+    gsl_blas_dsyr(CblasUpper, 1.0/N , tmpvec, C);
+  }
+  // copy upper half into lower half
+  for(i=0;i<D;i++){
+    for(j=i+1;j<D;j++){
+      gsl_matrix_set(C,j,i,gsl_matrix_get(C,i,j));
+    }
+  }
+
+  // output of C -> works
+  fprintf(fp,"\nC:\n");
+  for(i=0;i<D;i++){
+    for(j=0;j<D;j++){
+      fprintf(fp,"%i,%i: %f\n",i,j,gsl_matrix_get(C,i,j));
+    } 
+  }
+
+  //invert covariance matrix
+  int signum = +1;
+  gsl_matrix * tmpmat = gsl_matrix_alloc(D,D);
+  gsl_matrix * Cinv = gsl_matrix_alloc(D,D);
+  gsl_permutation *p = gsl_permutation_calloc(D);
+  //  gsl_vector * tmpvec = gsl_vector_alloc(D);
+
+  gsl_matrix_memcpy(tmpmat,C);
+  gsl_linalg_LU_decomp (tmpmat, p, &signum);
+  gsl_linalg_LU_invert (tmpmat, p, Cinv);
+
+  // output of Cinv -> works
+  fprintf(fp,"\nCinv:\n");
+  for(i=0;i<D;i++){
+    for(j=0;j<D;j++){
+      fprintf(fp,"%i,%i: %f\n",i,j,gsl_matrix_get(Cinv,i,j));
+    } 
+  }
+  //find enlargement factor
+  *f = 0;
+  for(j=0;j<N;j++){
+    for(i=0;i<D;i++){
+      // subtract center from each coor to tmpvec
+      gsl_vector_set(tmpvec2,i,pts[j]->get_theta(i)-gsl_vector_get(center,i));
+    }
+  gsl_blas_dsymv (CblasUpper, 1.0, Cinv, tmpvec2, 0.0, tmpvec);
+  gsl_blas_ddot (tmpvec2, tmpvec, &tmp);
+  if (tmp > *f) *f = tmp;
+  }
+  fprintf(fp,"\nf: %f\n",*f);
+  fclose(fp);
+
+  gsl_vector_free(tmpvec);
+  gsl_vector_free(tmpvec2);
+  gsl_matrix_free(tmpmat);
+  gsl_matrix_free(Cinv);
+  gsl_permutation_free(p);
+}
+
+void SampleEllipsoid(int D, gsl_vector * center, gsl_matrix * C, double f, gsl_vector * coor)
+{
+  /*returns pseudorandom number coor uniformly distributed in ellipsoid given by the center vector center,
+    covariance matrix C and enlargement factor f, so that x^T(fC)^-1x<=1 */
+  int i;
+
+  // create gsl_vector uniformly sampled from sphere
+  float spherical[D];
+  unisphere(&spherical[0],D);
+  gsl_vector * spheresample = gsl_vector_alloc(D);
+  for(i=0;i<D;i++){
+    gsl_vector_set(spheresample,i,spherical[i]);
+  }
+
+  gsl_matrix * myC = gsl_matrix_calloc(D,D);
+  gsl_matrix * T = gsl_matrix_calloc(D,D);
+  gsl_matrix * X = gsl_matrix_calloc(D,D);
+  gsl_vector * eval = gsl_vector_alloc(D);
+  gsl_matrix * Dprime = gsl_matrix_calloc(D,D);
+
+  // allocate workspace for eigensystem calculation 
+  gsl_eigen_symmv_workspace * w = gsl_eigen_symmv_alloc(D);
+  // perform eigensystem calculation
+  gsl_matrix_memcpy(myC,C);
+  gsl_eigen_symmv(myC, eval, X, w);
+  // free workspace
+  gsl_eigen_symmv_free(w);
+
+  // fill matrix Dprime
+  for(i=0;i<D;i++){
+    gsl_matrix_set(Dprime,i,i,sqrt(gsl_vector_get(eval,i)));
+  }
+
+  // calculate transfer matrix
+  // this is where the dog lies buried
+  //gsl_blas_dgemm(CblasTrans, CblasNoTrans, f, X, Dprime, 0.0, T);
+  //gsl_blas_dgemm(CblasTrans, CblasNoTrans, sqrt(f), X, Dprime, 0.0, T);
+  gsl_blas_dgemm(CblasNoTrans, CblasNoTrans, sqrt(f), X, Dprime, 0.0, T);
+
+  // final coordinates
+  gsl_vector_memcpy(coor,center);
+  gsl_blas_dgemv(CblasNoTrans, 1.0, T, spheresample, 1.0, coor);
+
+  gsl_vector_free(spheresample);
+  gsl_matrix_free(myC);
+  gsl_matrix_free(T);
+  gsl_matrix_free(X);
+  gsl_vector_free(eval);
+  gsl_matrix_free(Dprime);
+}

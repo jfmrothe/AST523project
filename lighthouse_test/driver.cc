@@ -1,42 +1,15 @@
 #include <iostream>
 #include <list>
 #include <fstream>
-#include <vector>
-#include <cmath>
 #include <float.h>
 #include <time.h> 
-using namespace std;
+#include "EllSamp.h"
 
-#define N 100
-#define MAXITER 1000
+#define MAXITER 10000
 #define UNIFORM ((rand() + 0.5)/(RAND_MAX+1.0))
 #define PLUS(x,y) (x>y ? x+log(1+exp(y-x)) : y+log(1+exp(x-y)))
 
-// This is a class for the active points
-class Point 
-{   
-    private:
-        vector<double> theta; // the dimension is set in main
-        vector<double> u;
-        double logL;
-        double logWt;
-
-    public:
-        Point(int D) : theta(D), u(D){}
-        void set_u(int i, double x){u[i] = x;}
-        void set_theta(int i, double x){theta[i] = x;}
-        double get_theta(int i){return theta[i];}
-        vector<double> get_theta(){return theta;}
-        double get_u(int i){return u[i];}
-        void set_logL(double L){logL = L;} 
-        double get_logL(){return logL;} 
-        void set_logWt(double W){logWt = W;} 
-        double get_logWt(){return logWt;} 
-};   
-
 // global variables
-const int D = 2;
-const double PI = 3.1415927;
 ifstream infile("lighthouse.dat");
 list<double> data;
 list<double>::iterator datum;
@@ -50,7 +23,7 @@ void logLhood(Point* pt)
     x = pt->get_theta(0);
     y = pt->get_theta(1);
     for(datum=data.begin(); datum!=data.end(); datum++)
-        logL += log((y/PI) / ((*datum-x)*(*datum-x) + y*y));
+        logL += log((y/M_PI) / ((*datum-x)*(*datum-x) + y*y));
     pt->set_logL(logL);
 }
 
@@ -64,7 +37,7 @@ void prior(Point* pt)
 }
 
 // mcmc algorithm to find knew point 
-void mcmc(Point* pt, double logLmin)
+void mcmc(Point* pt, double logLmin, int D)
 {
     double step = 0.1, new_u, new_v;
     double u = pt->get_u(0);
@@ -119,6 +92,8 @@ void results(list<Point> samples, double logZ)
 // main code starts here
 int main()
 {
+    const int D = 2;
+    int N = 1000;
     srand(time(NULL)); // seed random number generator
     double logZ = -DBL_MAX;
     double logwidth, logZnew, logZ_err; 
@@ -126,14 +101,21 @@ int main()
     int j, nest, worst, copy;
     double dat;
     while (infile >> dat) {data.push_back(dat);}
-    Point *pt[N]; // create N active points
+    Point *pts[N]; // create N active points
     list<Point> samples;
+
+    // JRothe vars
+    gsl_vector * mycenter = gsl_vector_alloc(D);
+    gsl_vector * newcoor = gsl_vector_alloc(D);
+    gsl_matrix * C = gsl_matrix_calloc(D,D);
+    double f;
+
 
     for(j=0; j<N; j++)
     {
-        pt[j] = new Point(D); 
-        prior(pt[j]);
-        logLhood(pt[j]);
+        pts[j] = new Point(D); 
+        prior(pts[j]);
+        logLhood(pts[j]);
     }
 
     logwidth = log(1.0 - exp(-1.0/N));
@@ -142,27 +124,45 @@ int main()
     {
         worst = 0; 
         for(j=1; j<N; j++)
-            if(pt[j]->get_logL() < pt[worst]->get_logL()) worst = j; 
+            if(pts[j]->get_logL() < pts[worst]->get_logL()) worst = j; 
 
-        pt[worst]->set_logWt(logwidth + pt[worst]->get_logL());
+        pts[worst]->set_logWt(logwidth + pts[worst]->get_logL());
 
-        logZnew = PLUS(logZ, pt[worst]->get_logWt()); 
-        H = exp(pt[worst]->get_logWt() - logZnew)*(pt[worst]->get_logL()) + exp(logZ - logZnew)*(H + logZ) - logZnew;
+        logZnew = PLUS(logZ, pts[worst]->get_logWt()); 
+        H = exp(pts[worst]->get_logWt() - logZnew)*(pts[worst]->get_logL()) + exp(logZ - logZnew)*(H + logZ) - logZnew;
         logZ = logZnew; 
 
         do copy = (int)(N*UNIFORM) % N; 
         while (copy == worst);
        
-        samples.push_back(*pt[worst]);
-        logLmin = pt[worst]->get_logL();
-        *pt[worst] = *pt[copy];
+        samples.push_back(*pts[worst]);
+        logLmin = pts[worst]->get_logL();
+        *pts[worst] = *pts[copy];
         
-        mcmc(pt[worst], logLmin);
+        gsl_vector_set_zero(mycenter);
+        gsl_vector_set_zero(newcoor);
+        
+        FindEnclosingEllipsoid(D, N, pts, mycenter, C, &f);
+
+        do 
+        {
+            f = 1.5;
+            SampleEllipsoid(D, mycenter, C, f, newcoor);
+            pts[worst]->set_theta(newcoor, D);
+            logLhood(pts[worst]);
+        }
+        while(logLmin > pts[worst]->get_logL());  
+
+//        mcmc(pts[worst], logLmin, D);
     
         logwidth -= 1.0/N;
     }
 
-    for(j=0; j<N; j++){delete pt[j];}
+    gsl_vector_free(mycenter);
+    gsl_vector_free(newcoor);
+    gsl_matrix_free(C);
+
+    for(j=0; j<N; j++){delete pts[j];}
 
     logZ_err = sqrt(H/N);
     results(samples, logZ);
@@ -173,7 +173,7 @@ int main()
     outfile.open("posterior_pdfs.dat");
     list<Point>::iterator s;
     for(s=samples.begin(); s!=samples.end(); s++)
-        outfile << s->get_theta(0) << " " << s->get_theta(1) << " " << exp(s->get_logL()-logZ) << endl;
+        outfile << s->get_theta(0) << " " << s->get_theta(1) << " " << exp(s->get_logL() - logZ) << endl;
 
     return 0;
 }

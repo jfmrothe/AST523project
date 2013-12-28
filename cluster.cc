@@ -1,6 +1,11 @@
+<<<<<<< HEAD
+#include "cluster.hh"
+#include "sampleellipsoid.hh"
+=======
 #include <ellipsoid.hh>
 #include <cluster.hh>
 #include <sampleellipsoid.hh>
+>>>>>>> 51485a1352dbd1bcd890ed4bc324c8451cc36d01
 
 #include <math.h>
 #include <time.h>

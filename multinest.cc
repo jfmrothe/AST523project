@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+#include "sampleellipsoid.hh"
+#include "findenclosing.hh"
+=======
 #include <ellipsoid.hh>
 #include <sampleellipsoid.hh>
 #include <findenclosing.hh>
@@ -7,6 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+>>>>>>> 51485a1352dbd1bcd890ed4bc324c8451cc36d01
 
 int main(){
   srand(time(NULL));

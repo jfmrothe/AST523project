@@ -1,5 +1,5 @@
-# include <findenclosing.hh>
-# include <sampleellipsoid.hh>
+# include "findenclosing.hh"
+# include "sampleellipsoid.hh"
 
 void FindEnclosingEllipsoid(int D, int N, gsl_vector ** coors,  gsl_vector * center, gsl_matrix * C, double * f){
   // returns enclosing ellipsoid data for a given point cloud (N D-dimensional coordinates), enlargement factor f is chosen so that all points are below the ellipsoid surface
