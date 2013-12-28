@@ -13,7 +13,7 @@ float uniform(float min, float max);
 float boxmuller();
 float quadr();
 void unisphere(float * coor, int D);
-void SampleEllipsoid(int D, gsl_vector * center, gsl_matrix * C, double f, gsl_vector * coor);
+void SampleEllipsoid((int D, gsl_vector * center, gsl_matrix * C, double f, gsl_vector * coor);
 int IsMember(int D, gsl_vector * coor,  gsl_vector * center, gsl_matrix * C, double f);
 int TestSampleEllipsoid();
 int TestIsMember();
