@@ -1,5 +1,5 @@
-#ifndef ELLIPSOIDAL_SAMP_H
-#define ELLIPSOIDAL_SAMP_H
+#ifndef ELLSAMP_H
+#define ELLSAMP_H
 #include <gsl/gsl_eigen.h>
 #include <gsl/gsl_blas.h>
 #include <gsl/gsl_permutation.h>
