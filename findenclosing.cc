@@ -289,7 +289,7 @@ int Test2FindSelectedEnclosingEllipsoid() {
   k = 2;
   int grouping[N];
   int groupsize[k];
-  gslKMeans(&coors[0],D,N,k,&grouping[0],&groupsize[0]);
+  KMeans(&coors[0],D,N,k,&grouping[0],&groupsize[0]);
 
   Ellipsoid first = FindSelectedEnclosingEllipsoid(&coors[0], D, N, &grouping[0], 0);
   Ellipsoid second = FindSelectedEnclosingEllipsoid(&coors[0], D, N, &grouping[0], 1);

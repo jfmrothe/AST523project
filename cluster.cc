@@ -12,16 +12,8 @@
 #include <stdlib.h>
 
 
-double dist(int D, double * pos1, double * pos2){
-  // returns 2-norm of difference between two given vectors
-  double val=0;
-  for (int i=0;i<D;i++){
-    val += pow(pos1[i]-pos2[i],2);
-  }
-  return sqrt(val);
-}
 
-double gsldist(int D, gsl_vector * pos1, gsl_vector * pos2){
+double dist(int D, gsl_vector * pos1, gsl_vector * pos2){
   // returns 2-norm of difference between two given vectors
   double val=0;
   for (int i=0;i<D;i++){
@@ -30,126 +22,7 @@ double gsldist(int D, gsl_vector * pos1, gsl_vector * pos2){
   return sqrt(val);
 }
 
-
-int indexofSmallestElement(double * array, int size)
-// returns the index of the smallest element from a given array
-{
-  int index = 0;
-
-  if (size != 1){
-    int n = array[0];
-    for (int i = 1; i < size; i++){
-      if (array[i] < n){
-	n = array[i];
-        index = i;
-      }
-    }
-  }
-return index;
-}
-
-int KMeans(int D, int N, int k, double * points, int * grouping)
-// Implementation of the K-means algorithm
-// following MacKay, D. C. J., 2003, Information Theory, Inference and Learning Algorithms, Cambridge University Press, Cambridge, p. 640
-// points gives the coordinates of N points in the D-dimensional [0,1]-hypercube, to be split into k clusters. Association of each point to a cluster is returned in int-array grouping
-{
-  int i,j;
-
-  double centers[k][D];
-  //  double ** centers = new double * [k];
-  //  for(i=0;i<k;i++){
-  //    centers[i] = new double [D];
-  //  }
-
-
-
-  int nomemb[k];
-  bool changed = true;
-  int current = 0; 
-  // assign points randomly to groups
-  for(i=0;i<N;i++){
-    grouping[i] = rand()%k;
-  }
-
-  while(changed){
-  // calculate group centers
-    for(i=0;i<k;i++){
-      nomemb[i] = 0;
-      for(j=0;j<D;j++){
-	centers[i][j] = 0;
-      }
-    }
-    for(i=0;i<N;i++){
-      nomemb[grouping[i]]++;
-      for(j=0;j<D;j++){
-	centers[grouping[i]][j] += points[D*i+j];
-      }
-    }
-        for(i=0;i<k;i++){
-          for(j=0;j<D;j++){
-	    centers[i][j] = centers[i][j] / nomemb[i];
-          }
-        }
-  // assign points to closest group center
-    changed = false;
-    for(i=0;i<N;i++){
-      current = grouping[i];
-      double mindist = dist(D,&points[D*i],&centers[current][0]);
-      int mink = current;
-      for(j=0;j<k;j++){
-	if( dist(D,&points[D*i],&centers[j][0])<mindist ){
-	  mindist = dist(D,&points[D*i],&centers[j][0]);
-	  mink = j;
-	}
-      }
-      if( mink != current ){
-	changed = true;
-	grouping[i] = mink;
-      }
-    }
-  }
-  // de-allocation
-  //  for(i=0;i<k;i++){
-  //  delete [] centers[i];
-  //}
-  //delete [] centers;
-
-  return 0;
-}
-
-int TestKMeans()
-{
-  // Clusters N points from D-dimensional [0,1]-hypercube into k groups, prints list of groups for testkmeans.nb
-  srand(time(NULL));
-
-  int D = 3;
-  int N = 1000;
-  int k = 5;
-  double points[N*D];
-  int grouping[N];
-  int i,j,m;
-
-  for(i=0;i<N*D;i++){
-    points[i] = uniform(0,1);
-  }
- 
-  KMeans(D,N,k,&points[0],&grouping[0]);
-
-  for(i=0;i<k;i++){
-    printf("\n");
-    for(j=0;j<N;j++){
-      if(grouping[j]==i){
-	for(m=D*j;m<D*j+D;m++){
-  	  printf("%f\t",points[m]);
-	}
-	printf("\n");
-      }
-    }
-  }
-  return 0;
-}
-
-int gslKMeans(gsl_vector ** points, int D, int N, int k, int * grouping, int * groupsize)
+int KMeans(gsl_vector ** points, int D, int N, int k, int * grouping, int * groupsize)
 // Implementation of the K-means algorithm
 // following MacKay, D. C. J., 2003, Information Theory, Inference and Learning Algorithms, Cambridge University Press, Cambridge, p. 640
 // points gives the coordinates of N points in the D-dimensional [0,1]-hypercube, to be split into k clusters. Association of each point to a cluster is returned in int-array grouping
@@ -194,11 +67,11 @@ int gslKMeans(gsl_vector ** points, int D, int N, int k, int * grouping, int * g
     changed = false;
     for(i=0;i<N;i++){
       current = grouping[i];
-      double mindist = gsldist(D, points[i], centers[current]);
+      double mindist = dist(D, points[i], centers[current]);
       int mink = current;
       for(j=0;j<k;j++){
-	if( gsldist(D, points[i], centers[j])<mindist ){
-	  mindist = gsldist(D, points[i], centers[j]);
+	if( dist(D, points[i], centers[j])<mindist ){
+	  mindist = dist(D, points[i], centers[j]);
 	  mink = j;
 	}
       }
@@ -218,7 +91,7 @@ int gslKMeans(gsl_vector ** points, int D, int N, int k, int * grouping, int * g
   return 0;
 }
 
-int TestgslKMeans()
+int TestKMeans()
 {
   // Clusters N points from D-dimensional [0,1]-hypercube into k groups, prints list of groups for testkmeans.nb
   srand(time(NULL));
@@ -237,7 +110,7 @@ int TestgslKMeans()
     }
   }
   int groupsize[k];
-  gslKMeans(&points[0],D,N,k,&grouping[0],&groupsize[k]);
+  KMeans(&points[0],D,N,k,&grouping[0],&groupsize[k]);
 
   for(i=0;i<k;i++){
     printf("\n");
@@ -254,18 +127,17 @@ int TestgslKMeans()
 }
 
 
-double ClusteringQuality(int D, int N, int Niter, Ellipsoid * clustering, int Nell) {
-  // computes the ratio of remaining prior volume to the sum of all ellipsoid volumes given in clustering (adress of vector of ellipsoid objects, length Nell)
+double ClusteringQuality(std::vector<Ellipsoid*>& clustering, double Xtot) {
+  // computes the ratio of remaining prior volume Xtot to the sum of all ellipsoid volumes given in clustering (vector of pointers to ellipsoid objects)
   // no accounting for overlapping ellipsoids -> overlap means bad quality.
   int i;
-  double pi = 2*acos(0);
   double ellvol = 0;
 
-  for (i=0;i<Nell;i++){
-    ellvol += clustering[i].getVol();
+  for (i=0;i<clustering.size();i++){
+    ellvol += clustering[i]->getVol();
   }
 
-  return ellvol / exp(-1.0*((double)Niter)/((double)N));
+  return ellvol / Xtot;
 }
 
 int TestClusteringQuality() {
@@ -280,262 +152,34 @@ int TestClusteringQuality() {
     rad[i] = i;
   }
 
-  gsl_vector * center = gsl_vector_alloc(D);
-  for(i=0;i<D;i++){
-    gsl_vector_set(center,i,0.0);
-  }
+  gsl_vector * center = gsl_vector_calloc(D);
   gsl_matrix * C = gsl_matrix_calloc(D,D);
   for(i=0;i<D;i++){
     gsl_matrix_set(C,i,i,1.0);
   }
 
-  //  Ellipsoid * clustering = malloc(Nell * sizeof(Ellipsoid));
-  Ellipsoid clustering[4]= {
-    Ellipsoid(D,center,C,pow(rad[0],2)),
-    Ellipsoid(D,center,C,pow(rad[1],2)),
-    Ellipsoid(D,center,C,pow(rad[2],2)),
-    Ellipsoid(D,center,C,pow(rad[3],2))
-  };
-    //  for (i=0;i<Nell;i++) {
-    //   Ellipsoid clustering[i](D, center, C, rad[i]);
-    //  }
+  std::vector<Ellipsoid*> clustering;
+  clustering.push_back(new Ellipsoid(D,center,C,pow(rad[0],2)));
+  clustering.push_back(new Ellipsoid(D,center,C,pow(rad[1],2)));
+  clustering.push_back(new Ellipsoid(D,center,C,pow(rad[2],2)));
+  clustering.push_back(new Ellipsoid(D,center,C,pow(rad[3],2)));
+  
+  printf("%f\n",ClusteringQuality(clustering, 1));
 
-  printf("%f\n",ClusteringQuality(D, N, Niter, &clustering[0], Nell));
-
+  for(i=0;i++;i<clustering.size()){
+    delete clustering[i];
+  }
   gsl_vector_free(center);
   gsl_matrix_free(C);
   return 0;
 }
 
-Ellipsoid ** EllipsoidalPartitioning(gsl_vector ** coors, int D, int N, int * Nell) {
-  // performs Algorithm I from Feroz, Hobson and Bridges (2009) on N points in D-dimensional [0,1]-hypercube given in coors. Returns resulting number of ellipsoids in Nell, uses new to create array of ellipsoids, first address is returned in clustering
 
-  // testing the data structure ideas
-  // create and return four random ellipsoids, which are printed in TestEllipsoidalPartitioning
-  int i;
-
-  *Nell = 2;
-  
-  gsl_vector * center = gsl_vector_alloc(D);
-  gsl_matrix * C = gsl_matrix_alloc(D,D);
-  double f;
-  Ellipsoid * clustering[*Nell];
-
-  for(i=0;i<*Nell;i++) {
-    GetRandomEllipsoid(D,center,C,&f);
-    clustering[i] = new Ellipsoid(D, center, C, f);
-  }
-
-  gsl_vector_free(center);
-  gsl_matrix_free(C);
-  // some sort of retain for clustering array?
-  return &clustering[0];
-}
-
-int TestEllipsoidalPartitioning(){ 
-  // Sample N points from torus in z=0-plane
-  double r[3],ra[3],rc[3];
-  double R0 = 0.05;
-  double R1 = 0.3;
-  rc[0] = 0.5;
-  rc[1] = 0.5;
-  rc[2] = 0.5;
-  int N = 5;
-  int D = 3;
-  int i = 0;
-  int j,k;
-  gsl_vector * coors[N];
-
-  while(i<N){
-    // sample from cube
-    for (j=0;j<D;j++){
-      r[j] = uniform(0.0,1.0);
-    }
-    // check if in torus
-    ra[0] = rc[0] + (r[0]-rc[0])*R1/sqrt(pow(r[0]-rc[0],2)+pow(r[1]-rc[1],2));
-    ra[1] = rc[1] + (r[1]-rc[1])*R1/sqrt(pow(r[0]-rc[0],2)+pow(r[1]-rc[1],2));
-    ra[2] = rc[2];
-    if ( pow(r[0]-ra[0],2) + pow(r[1]-ra[1],2) + pow(r[2]-ra[2],2)  < pow(R0,2) ) {
-      coors[i] = gsl_vector_alloc(D);
-      for(j=0;j<D;j++){
-	gsl_vector_set(coors[i],j,r[j]);
-	printf("%f ",r[j]);
-      }
-      printf("\n");
-      i++;
-    }
-    // else just go on
-  }
-  int Nell = 0;
-
-  Ellipsoid ** clustering = EllipsoidalPartitioning(&coors[0], D, N, &Nell);
-  // output
-  gsl_vector * mycenter;
-  gsl_matrix * C;
-  double f;
-  for(i=0;i<Nell;i++){
-    // retrieve data from ellipsoid object
-    mycenter = (*(clustering[i])).getCenter();
-    C = (*(clustering[i])).getCovMat();
-    double f = (*(clustering[i])).getEnlFac();
-    // data print out
-    printf("\n"); 
-    for(j=0;j<D;j++){
-      printf("%f ",gsl_vector_get(mycenter,j));
-    }
-    printf("\n"); 
-    for(k=0;k<D;k++){
-      for(j=0;j<D;j++){
-	printf("%f ",gsl_matrix_get(C,k,j));
-      }
-      printf("\n"); 
-    }
-    printf("%f\n\n",f);
-  }
-
-  //delete[] clustering;
-  // free all stuff
-  for(i=0;i<N;i++){
-    gsl_vector_free(coors[i]);
-  }
-  return 0;
-}
-
-
-void EllipsoidalPartitioningNoEll(gsl_vector ** coors, int D, int N, int * Nell, gsl_vector ** centers, gsl_matrix ** covMats, double * enlFacs){
-  // testing the data structure ideas, this time without the Ellipsoid object
-  // create and return four random ellipsoids, which are printed in TestEllipsoidalPartitioning
-  *Nell = 2;
-  
-  int i,j;
-  gsl_vector * center = gsl_vector_alloc(D);
-  gsl_matrix * C = gsl_matrix_alloc(D,D);
-  double f;
-  //  Ellipsoid * clustering[*Nell];
-
-  // make room for *Nell addresses for vectors, pass head pointer back out
-  centers = new gsl_vector * [*Nell];
-  covMats = new gsl_matrix * [*Nell];
-  enlFacs = new double [*Nell];
-
-  for(i=0;i<*Nell;i++) {
-    GetRandomEllipsoid(D,center,C,&f);
-
-    // allocate space for vectors and fill in data
-    centers[i] = gsl_vector_alloc(D);
-    gsl_vector_memcpy(centers[i],center);
-    covMats[i] = gsl_matrix_alloc(D,D);
-    gsl_matrix_memcpy(covMats[i],C);
-    enlFacs[i] = f;
-
-    //    clustering[i] = new Ellipsoid(D, center, C, f);
-    
-  }
-
-  gsl_vector_free(center);
-  gsl_matrix_free(C);
-  // When to delete centers entries etc?? out of scope anyway?? 
-  return;
-};
-
-
-int TestEllipsoidalPartitioningNoEll() {
-
-  // Sample N points from torus in z=0-plane
-  double r[3],ra[3],rc[3];
-  double R0 = 0.05;
-  double R1 = 0.3;
-  rc[0] = 0.5;
-  rc[1] = 0.5;
-  rc[2] = 0.5;
-  int N = 50;
-  int D = 3;
-  int i = 0;
-  int j,k;
-  gsl_vector * coors[N];
-
-  while(i<N){
-    // sample from cube
-    for (j=0;j<D;j++){
-      r[j] = uniform(0.0,1.0);
-    }
-    // check if in torus
-    ra[0] = rc[0] + (r[0]-rc[0])*R1/sqrt(pow(r[0]-rc[0],2)+pow(r[1]-rc[1],2));
-    ra[1] = rc[1] + (r[1]-rc[1])*R1/sqrt(pow(r[0]-rc[0],2)+pow(r[1]-rc[1],2));
-    ra[2] = rc[2];
-    if ( pow(r[0]-ra[0],2) + pow(r[1]-ra[1],2) + pow(r[2]-ra[2],2)  < pow(R0,2) ) {
-      coors[i] = gsl_vector_alloc(D);
-      for(j=0;j<D;j++){
-	gsl_vector_set(coors[i],j,r[j]);
-	printf("%f ",r[j]);
-      }
-      printf("\n");
-      i++;
-    }
-    // else just go on
-  }
-
-   
-  int Nell = 0;
-  gsl_vector ** centers;
-  gsl_matrix ** covMats;
-  double * enlFacs;
-
-  EllipsoidalPartitioningNoEll(&coors[0], D, N, &Nell, centers, covMats, enlFacs);
-  // output
-  gsl_vector * mycenter;
-  gsl_matrix * C;
-  double f;
-  for(i=0;i<Nell;i++){
-    // retrieve data from ellipsoid object
-    gsl_vector_memcpy(mycenter,centers[i]);
-    gsl_matrix_memcpy(C,covMats[i]);
-    f = enlFacs[i];
-    // data print out
-    printf("\n"); 
-    for(j=0;j<D;j++){
-      printf("%f ",gsl_vector_get(mycenter,j));
-    }
-    printf("\n"); 
-    for(k=0;k<D;k++){
-      for(j=0;j<D;j++){
-	printf("%f ",gsl_matrix_get(C,k,j));
-      }
-      printf("\n"); 
-    }
-    printf("%f\n\n",f);
-  }
-  
-  return 0;
-};
-
-
-void EllipsoidalPartitioningVec(gsl_vector ** coors, int D, int N, double Xtot, std::vector<Ellipsoid*>& clustering) {
+void EllipsoidalPartitioning(gsl_vector ** coors, int D, int N, double Xtot, std::vector<Ellipsoid*>& clustering) {
   // this is the variant currently in development, because segfaults could be avoided. will check if this implementation is "good" in some sense...
   // vector of ellipsoid pointers is returned, these are deleted after use in the function calling EllipsoidalPartitioningVec
 
   // performs Algorithm I from Feroz, Hobson and Bridges (2009) on N points in D-dimensional [0,1]-hypercube given in coors. Returns resulting number of ellipsoids in Nell, uses new to create array of ellipsoids, first address is returned in clustering
-
-  //////////////////////////////////////////////////////////////
-  // testing the data structure ideas -> works (jfr 01/04/14) //
-  //////////////////////////////////////////////////////////////
-
-  // create and return Nell random ellipsoids, which are printed in TestEllipsoidalPartitioningVec
-  //  int i;
-  //  int Nell = 4;
-  //  
-  //  gsl_vector * center = gsl_vector_alloc(D);
-  //  gsl_matrix * C = gsl_matrix_alloc(D,D);
-  //  double f;
-  //  
-  //  for(i=0;i<Nell;i++) {
-  //    GetRandomEllipsoid(D,center,C,&f);
-  //    clustering.push_back (new Ellipsoid(D, center, C, f));
-  //  }
-  //  
-  //  gsl_vector_free(center);
-  //  gsl_matrix_free(C);
-  //// some sort of retain for clustering array?
 
   /////////////////
   // ALGORITHM I //
@@ -544,7 +188,7 @@ void EllipsoidalPartitioningVec(gsl_vector ** coors, int D, int N, double Xtot, 
   // create mainEllipsoid which may be split further
   // ?? in recursion depth, this first ellipsoid can be passed by parent??
   Ellipsoid mainEll = FindEnclosingEllipsoid(coors,D,N);
-  // mainEll.printout();
+
   //enlarge if neccessary
   if(Xtot>mainEll.getVol()) {
     mainEll.setEnlFac(mainEll.getEnlFac()*pow(Xtot/mainEll.getVol(),1.0/D));
@@ -554,19 +198,7 @@ void EllipsoidalPartitioningVec(gsl_vector ** coors, int D, int N, double Xtot, 
   int grouping[N];
   int k=2;
   int groupsize[k];
-  gslKMeans(&coors[0],D,N,k,&grouping[0],&groupsize[0]);
-  //int j,m;
-  //for(i=0;i<k;i++){
-  //  printf("\n");
-  // for(j=0;j<N;j++){
-  //  if(grouping[j]==i){
-  //	for(m=0;m<D;m++){
-  //	  printf("%f\t",gsl_vector_get(coors[j],m));
-  //	}
-  //	printf("\n");
-  //  }
-  //}
-  //}
+  KMeans(&coors[0],D,N,k,&grouping[0],&groupsize[0]);
 
   // return main ellipsoid immediately if partitioning would create singular (flat) ellipsoid
   if(groupsize[0]<D+1 or groupsize[1]<D+1) {
@@ -575,9 +207,6 @@ void EllipsoidalPartitioningVec(gsl_vector ** coors, int D, int N, double Xtot, 
   }
 
   bool changed = true;
-  // useless initialization to mainEll - avoided
-  //  Ellipsoid subEll1 = FindEnclosingEllipsoid(coors,D,N);
-  //  Ellipsoid subEll2 = FindEnclosingEllipsoid(coors,D,N);
   double X1;
   double X2;
   double h1;
@@ -639,14 +268,14 @@ void EllipsoidalPartitioningVec(gsl_vector ** coors, int D, int N, double Xtot, 
       subcoors1[i] = gsl_vector_alloc(D);
     }
     SelectFromGrouping(coors, D, N, grouping, 0, &subcoors1[0]);
-    EllipsoidalPartitioningVec( &subcoors1[0], D, groupsize[0], X1, clustering);
+    EllipsoidalPartitioning( &subcoors1[0], D, groupsize[0], X1, clustering);
     // second one
     gsl_vector * subcoors2[groupsize[1]];
     for(i=0;i<groupsize[1];i++){
       subcoors2[i] = gsl_vector_alloc(D);
     }
     SelectFromGrouping(coors, D, N, grouping, 1, &subcoors2[0]);
-    EllipsoidalPartitioningVec( &subcoors2[0], D, groupsize[1], X2, clustering);
+    EllipsoidalPartitioning( &subcoors2[0], D, groupsize[1], X2, clustering);
 
   }
   else{
@@ -657,7 +286,7 @@ void EllipsoidalPartitioningVec(gsl_vector ** coors, int D, int N, double Xtot, 
 }
 
 
-int TestEllipsoidalPartitioningVec(){ 
+int TestEllipsoidalPartitioning(){ 
   // Sample N points from torus in z=0-plane
   double pi = 2*acos(0);
 
@@ -696,9 +325,9 @@ int TestEllipsoidalPartitioningVec(){
   printf("\n");
   
   std::vector<Ellipsoid*> clustering;
-  // inherent volume of data cloud is small (-> no extra ballooning)
+  // inherent volume of data cloud: torus
   double Xtot = pow(R0,2)*pi*2*pi*R1;
-  EllipsoidalPartitioningVec(&coors[0], D, N, Xtot, clustering);
+  EllipsoidalPartitioning(&coors[0], D, N, Xtot, clustering);
   int Nell = clustering.size();
   // output
   gsl_vector * mycenter;
@@ -707,103 +336,12 @@ int TestEllipsoidalPartitioningVec(){
   for(i=0;i<Nell;i++){
     (*clustering[i]).printout();
   }
+  printf("%f\n",ClusteringQuality(clustering,Xtot));
 
   // free all stuff
   for(i=0;i<Nell;i++){
     delete clustering[i];
   }
-  //?? also delete clustering itself somehow??
-  for(i=0;i<N;i++){
-    gsl_vector_free(coors[i]);
-  }
-  return 0;
-}
-
-
-
-int JustEllipsoidalPartitioning(){ 
-  // implement the algorithm using a test case, without the data-passing interface
-  // care about that later
-  // -> found working method of ow to pass data, implementation happens in EllipsoidalPartitioningVec
-
-  // Sample N points from torus in z=0-plane
-  double r[3],ra[3],rc[3];
-  double R0 = 0.05;
-  double R1 = 0.3;
-  rc[0] = 0.5;
-  rc[1] = 0.5;
-  rc[2] = 0.5;
-  int N = 5;
-  int D = 3;
-  int i = 0;
-  int j,k;
-  gsl_vector * coors[N];
-
-  while(i<N){
-    // sample from cube
-    for (j=0;j<D;j++){
-      r[j] = uniform(0.0,1.0);
-    }
-    // check if in torus
-    ra[0] = rc[0] + (r[0]-rc[0])*R1/sqrt(pow(r[0]-rc[0],2)+pow(r[1]-rc[1],2));
-    ra[1] = rc[1] + (r[1]-rc[1])*R1/sqrt(pow(r[0]-rc[0],2)+pow(r[1]-rc[1],2));
-    ra[2] = rc[2];
-    if ( pow(r[0]-ra[0],2) + pow(r[1]-ra[1],2) + pow(r[2]-ra[2],2)  < pow(R0,2) ) {
-      coors[i] = gsl_vector_alloc(D);
-      for(j=0;j<D;j++){
-	gsl_vector_set(coors[i],j,r[j]);
-	printf("%f ",r[j]);
-      }
-      printf("\n");
-      i++;
-    }
-    // else just go on
-  }
-
-  std::vector<Ellipsoid*> clustering;
-  int Nell = 4;
-  
-  gsl_vector * center = gsl_vector_alloc(D);
-  gsl_matrix * C = gsl_matrix_alloc(D,D);
-  double f;
-
-  for(i=0;i<Nell;i++) {
-    GetRandomEllipsoid(D,center,C,&f);
-    clustering.push_back (new Ellipsoid(D, center, C, f));
-  }
-
-  gsl_vector_free(center);
-  gsl_matrix_free(C);
-
-
-  
-
-  // output
-  gsl_vector * mycenter;
-  //  gsl_matrix * C;
-  //  double f;
-  for(i=0;i<Nell;i++){
-    // retrieve data from ellipsoid object
-    mycenter =(*(clustering[i])).getCenter();
-    C = (*(clustering[i])).getCovMat();
-    f = (*(clustering[i])).getEnlFac();
-    // data print out
-    printf("\n"); 
-    for(j=0;j<D;j++){
-      printf("%f ",gsl_vector_get(mycenter,j));
-    }
-    printf("\n"); 
-    for(k=0;k<D;k++){
-      for(j=0;j<D;j++){
-	printf("%f ",gsl_matrix_get(C,k,j));
-      }
-      printf("\n"); 
-    }
-    printf("%f\n\n",f);
-  }
-
-  //delete[] clustering;
-  // free all stuff
   for(i=0;i<N;i++){
     gsl_vector_free(coors[i]);
   }
