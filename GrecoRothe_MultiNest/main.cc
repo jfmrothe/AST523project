@@ -41,6 +41,9 @@ int main(int argc, char *argv[])
     // create sampler object
     Samplers sampler(D);
 
+    // seed random number generator
+    srand(time(NULL)); 
+   
     // **** create N active points and set params
     Point *pts[N]; 
     for(int j=0; j<N; j++)
@@ -54,7 +57,6 @@ int main(int argc, char *argv[])
     // ******************************************
 
     // ****************************************** start nested sampling algorithm 
-    srand(time(NULL)); // seed random number generator
     double logZ = -DBL_MAX;
     double logwidth, logZnew, logZ_err, X_i; 
     double logLmin, H=0.0;
