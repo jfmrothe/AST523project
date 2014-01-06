@@ -59,6 +59,18 @@ void Samplers::set_vectors_zero()
     gsl_vector_set_zero(coor);
 }
 
+bool Samplers::u_in_hypercube()
+{
+    double x_i;
+
+    for(int i = 0; i<D; i++)
+    {
+        x_i = gsl_vector_get(coor, i);
+        if(x_i < 0 || x_i > 1) {return false;}
+    }
+    return true;
+}
+
 void Samplers::FindEnclosingEllipsoid(int N, Point *pts[])
 {
   /* returns enclosing ellipsoid data for a given point cloud (N D-dimensional coordinates), 

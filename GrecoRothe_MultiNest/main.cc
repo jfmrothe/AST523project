@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
     }
     // ******************************************
 
-    // ****************************************** nested sampling algorithm 
+    // ****************************************** start nested sampling algorithm 
     srand(time(NULL)); // seed random number generator
     double logZ = -DBL_MAX;
     double logwidth, logZnew, logZ_err, X_i; 
@@ -85,37 +85,36 @@ int main(int argc, char *argv[])
             + exp(logZ - logZnew)*(H + logZ) - logZnew;
         logZ = logZnew; 
 
-        do copy = (int)(N*UNIFORM) % N; 
-        while (copy == worst);
-       
         sample_pts.push_back(*pts[worst]);
         logLmin = pts[worst]->get_logL();
-        *pts[worst] = *pts[copy];
         
-// ellipsoidal sampling not working yet, but basic idea commented below
-/* 
+        // **************** ellipsoidal sampling 
         sampler.set_vectors_zero();
         sampler.FindEnclosingEllipsoid(N, pts);
+        sampler.set_f_factor(1.06);
         do
         {
-            sampler.set_f_factor(1.06);
-            sampler.SampleEllipsoid();
+            do sampler.SampleEllipsoid();
+            while (!sampler.u_in_hypercube());
             pts[worst]->set_u(sampler.get_coor());
             pts[worst]->transform_prior();
             data_obj.lighthouse_logL(pts[worst]);
         }
         while(logLmin > pts[worst]->get_logL());
-*/
+        // **************** 
 
-        // to use MCMC search method, use line below
-        sampler.mcmc(pts[worst], data_obj, logLmin);
+        // to use MCMC search method, use the 4 lines below (and comment of the ellipsoidal sampling)
+        //do copy = (int)(N*UNIFORM) % N; 
+        //while (copy == worst);
+        //*pts[worst] = *pts[copy];
+        //sampler.mcmc(pts[worst], data_obj, logLmin);
     
         X_i = exp(-nest/N);
         logwidth -= 1.0/N;
         nest++;
     }
     while(THRESH < abs(X_i*logLmax));
-    // ************************************
+    // ****************************************** end nested sampling algorithm 
 
     cout << nest << " iterations used" << endl;
 

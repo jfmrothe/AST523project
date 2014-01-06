@@ -21,6 +21,7 @@ class Samplers
         ~Samplers();
 
         void set_vectors_zero();
+        bool u_in_hypercube();
         double get_f() {return f;}
         void set_f_factor(double x) {f = f*x;}
         gsl_vector * get_coor() {return coor;}
