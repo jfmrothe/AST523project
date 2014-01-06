@@ -1,5 +1,6 @@
-#include "sampleellipsoid.hh"
-#include "findenclosing.hh"
+#include <ellipsoid.hh>
+#include <sampleellipsoid.hh>
+#include <findenclosing.hh>
 #include <math.h>
 #include <time.h>
 #include <stdio.h>
@@ -43,9 +44,21 @@ void unisphere(float * coor, int D){
   
 }
 
-void SampleEllipsoid(int D, gsl_vector * center, gsl_matrix * C, double f, gsl_vector * coor){
+void SampleEllipsoid(Ellipsoid &ell, gsl_vector * coor, int D){
   //returns pseudorandom number coor uniformly distributed in ellipsoid given by the center vector center, covariance matrix C and enlargement factor f, so that x^T(fC)^-1x<=1
   int i;
+
+  // check that dimensionality of Ellipsoid and coordinate match
+  if (D != ell.getD()){
+    printf("Dimension mismatch in SampleEllipsoid: %i ell, %i coor\n",ell.getD(),D);
+    for(i=0;i<D;i++) gsl_vector_set(coor,i,0.0);
+    return;
+  }
+  
+  // retrieve data from ellipsoid object
+  gsl_vector * center = ell.getCenter();
+  gsl_matrix * C = ell.getCovMat();
+  double f = ell.getEnlFac();
 
   // create gsl_vector uniformly sampled from sphere
   float spherical[D];
@@ -78,7 +91,7 @@ void SampleEllipsoid(int D, gsl_vector * center, gsl_matrix * C, double f, gsl_v
   // this is where the dog lies buried
   //gsl_blas_dgemm(CblasTrans, CblasNoTrans, f, X, Dprime, 0.0, T);
   //gsl_blas_dgemm(CblasTrans, CblasNoTrans, sqrt(f), X, Dprime, 0.0, T);
-gsl_blas_dgemm(CblasNoTrans, CblasNoTrans, sqrt(f), X, Dprime, 0.0, T);
+  gsl_blas_dgemm(CblasNoTrans, CblasNoTrans, sqrt(f), X, Dprime, 0.0, T);
 
   // final coordinates
   gsl_vector_memcpy(coor,center);
@@ -90,11 +103,16 @@ gsl_blas_dgemm(CblasNoTrans, CblasNoTrans, sqrt(f), X, Dprime, 0.0, T);
   gsl_matrix_free(X);
   gsl_vector_free(eval);  
   gsl_matrix_free(Dprime);
-  gsl_eigen_symmv_free(w);
 }
 
-int IsMember(int D, gsl_vector * coor,  gsl_vector * center, gsl_matrix * C, double f){
+int IsMember(Ellipsoid &ell, gsl_vector * coor, int D){
   // returns 1 if point specified by coor lies within ellipsoid specified by center, C, f. returns 0 if not
+
+  // retrieve data from ellipsoid object
+  gsl_vector * center = ell.getCenter();
+  gsl_matrix * C = ell.getCovMat();
+  double f = ell.getEnlFac();
+
   gsl_permutation *p = gsl_permutation_calloc(D);
   //  int sign = +1;
   //  int * signum = &sign;
@@ -142,7 +160,7 @@ double GetRandomCovMat(int D, gsl_matrix * C) {
   gsl_matrix * tmpmat = gsl_matrix_calloc(D,D);
   // make random diagonal matrix  
   for(i=0;i<D;i++){
-    tmp = uniform(0.5,3);
+    tmp = uniform(0.2,1.0);
     if (tmp>specrad) specrad = tmp;
     gsl_matrix_set(Diag,i,i,tmp);
   }
@@ -206,12 +224,12 @@ double GetRandomEllipsoid(int D, gsl_vector * center, gsl_matrix * C, double * f
   double specrad;
   // set center
   for(i=0;i<D;i++){
-    gsl_vector_set(center,i,uniform(-10,10));
+    gsl_vector_set(center,i,uniform(0.2,0.8));
   }
   // set covariance matrix
   specrad = GetRandomCovMat(D,C);
   //generate random enlargement factor
-  *f = uniform(0.1,3);
+  *f = uniform(0.1,1);
 };
 
 int TestSampleEllipsoid(){
@@ -226,6 +244,7 @@ int TestSampleEllipsoid(){
   double f;
 
   GetRandomEllipsoid(D,center,C,&f);
+  Ellipsoid myell(D, center, C, f);
 
   //sample this ellipsoid Nsample times
   gsl_vector * coorvec[Nsample];
@@ -234,7 +253,7 @@ int TestSampleEllipsoid(){
   }
 
   for(i=0;i<Nsample;i++){
-    SampleEllipsoid(D, center, C, f, coorvec[i]);
+    SampleEllipsoid(myell, coorvec[i], D);
     for (j=0;j<D;j++){
       printf("%f ",gsl_vector_get(coorvec[i],j));    
     } 
@@ -261,7 +280,6 @@ int TestSampleEllipsoid(){
   for(i=0;i<Nsample;i++){
     gsl_vector_free(coorvec[i]);
   }
-
   return 0;
 }
 
@@ -283,6 +301,7 @@ int TestIsMember(){
   double f;
 
   specrad = GetRandomEllipsoid(D, center, C, &f);
+  Ellipsoid myell(D,center,C,f);
 
   //sample ellipsoid-surrounding box Nsamples times
   gsl_vector * coorvec[Nsamples];
@@ -294,7 +313,7 @@ int TestIsMember(){
       printf("%f ",tmp);    
       gsl_vector_set(coorvec[i],j,tmp);
     } 
-    printf("%i\n",IsMember(D,coorvec[i],center,C,f));
+    printf("%i\n",IsMember(myell,coorvec[i],D));
   }
   // print ellipsoid data
 

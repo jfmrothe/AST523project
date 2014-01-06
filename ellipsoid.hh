@@ -13,16 +13,22 @@ class Ellipsoid {
 public:
   Ellipsoid(int D, gsl_vector * center, gsl_matrix * C, double f);
   ~Ellipsoid();
-  int GetD();
-  gsl_vector * GetCenter();
-  gsl_matrix * GetCovMat();
-  double GetEnlFac();
-  void SetEnlFac(double f);
+  int getD();
+  gsl_vector * getCenter();
+  gsl_matrix * getCovMat();
+  double getEnlFac();
+  void setEnlFac(double f);
+  double getVol();
+  double mdist(gsl_vector * coor);
+  void printout();
 private:
   int D_;
   gsl_vector * center_;
   gsl_matrix * covMat_;
   double f_;
+  double vol_;
 };
+
+int TestMdist();
 
 #endif

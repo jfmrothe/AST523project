@@ -142,11 +142,12 @@ int main()
         gsl_vector_set_zero(mycenter);
         gsl_vector_set_zero(newcoor);
         
+
         FindEnclosingEllipsoid(D, N, pts, mycenter, C, &f);
 
         do 
         {
-            f = 1.5;
+            f = 3.0;
             SampleEllipsoid(D, mycenter, C, f, newcoor);
             pts[worst]->set_theta(newcoor, D);
             logLhood(pts[worst]);

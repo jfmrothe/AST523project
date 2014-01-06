@@ -25,4 +25,3 @@ class Point
         double get_logWt(){return logWt;}
 };
 #endif
-

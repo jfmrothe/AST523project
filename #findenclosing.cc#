@@ -223,7 +223,7 @@ Ellipsoid FindSelectedEnclosingEllipsoid(gsl_vector ** coors, int D, int N, int 
 }
 
 int TestFindSelectedEnclosingEllipsoid() {
-  // sample a few points from hypercube, group upper/lower half and return two enclosing ellipsoids
+    // sample a few points from hypercube, group upper/lower half and return two enclosing ellipsoids
   int D = 3;
   int N = 25;
 
