@@ -116,6 +116,7 @@ int main(int argc, char *argv[])
     while(THRESH < abs(X_i*logLmax));
     // ****************************************** end nested sampling algorithm 
 
+    cout << logLmax << endl;
     cout << nest << " iterations used" << endl;
 
     // ************* output results
