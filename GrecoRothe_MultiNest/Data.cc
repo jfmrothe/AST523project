@@ -3,7 +3,7 @@
 void Data::get_data(string filename)
 {
     double dat;
-    ifstream datafile(filename);
+    ifstream datafile(filename.c_str());
 
     while(!datafile.eof())
     {
