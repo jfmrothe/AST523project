@@ -1,0 +1,20 @@
+2013/12/17 jfr
+- replace all floats by doubles?
+x make sure that everybody invoking a random function calls srand(time) before -> resolved by starting all execution in a central main that calls srand(time)
+- ask Johnny & Chelsea whether partitioning into files makes sense if cross-linking is needed, and whether the defines in the headers are sensible
+x where to define ellipsoid-class? -> extra .hh, .cc file pair! 
+
+2013/12/18 jfr
+- whats the difference between #include <...> and "..." ?
+- add gsl_vector/matrix_free for each ...alloc ? -> did so on 13/12/20
+- where to #include time, math, stdio, stdlib ?
+
+2013/12/20
+- central definition of pi?
+- why did sampleellipsoid sigsegv when passed by value?
+
+2014/01/04
+- multiple define of cluster.hh, vector from multinest.cc and cluster.cc
+- FMI: running kmeans with high k (19) is liable to create empty groups
+- make sure I understand why/not condition F(S)>1 is satisfied by EllipsoidalPartitioning -> it is satisfied, by enlarging E so that V(E)>=V(S). This is a good thing to do, in order to not lose parts of the iso-likelihood-enclosed volume.
+- understand why/how to enforce lower limit of D+1 points per Ellipsoid (this could avoid total splintering)

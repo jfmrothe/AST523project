@@ -8,6 +8,11 @@
 
 # ifndef _AST523_FIND_ENCLOSING_
 # define _AST523_FIND_ENCLOSING_
-void FindEnclosingEllipsoid(int D, int N, gsl_vector ** coors,  gsl_vector * center, gsl_matrix * C, double * f);
+Ellipsoid FindEnclosingEllipsoid(gsl_vector ** coors, int D, int N);
 int TestFindEnclosingEllipsoid();
+void SelectFromGrouping(gsl_vector ** coor, int D, int N, int * grouping, int index, gsl_vector ** group);
+int TestSelectFromGrouping();
+Ellipsoid FindSelectedEnclosingEllipsoid(gsl_vector ** coors, int D, int N, int * grouping, int index);
+int TestFindSelectedEnclosingEllipsoid();
+int Test2FindSelectedEnclosingEllipsoid();
 # endif
