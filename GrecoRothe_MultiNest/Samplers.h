@@ -26,7 +26,7 @@ class Samplers
         void set_f_factor(double x) {f = f*x;}
         gsl_vector * get_coor() {return coor;}
         void SampleEllipsoid();
-        void FindEnclosingEllipsoid(int N, Point *pts[]);
+        void FindEnclosingEllipsoid(int N, vector<Point *> pts);
         void mcmc(Point*, Data, double);
 };
 #endif

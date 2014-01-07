@@ -71,7 +71,7 @@ bool Samplers::u_in_hypercube()
     return true;
 }
 
-void Samplers::FindEnclosingEllipsoid(int N, Point *pts[])
+void Samplers::FindEnclosingEllipsoid(int N, vector<Point *> pts)
 {
   /* returns enclosing ellipsoid data for a given point cloud (N D-dimensional coordinates), 
      enlargement factor f is chosen so that all points are below the ellipsoid surface */

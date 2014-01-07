@@ -25,31 +25,33 @@ class Point
         int D; 
         double logL;
         double logWt;
+        gsl_vector * theta;
+        gsl_vector * u;
         struct Parameter
         {
             std::string name;
             std::string prior;
-            double theta;
-            double u;
             double min;
             double max;
         };
-        std::vector<Parameter> myparams;
+        vector<Parameter> myparams;
 
     public:
 
-        Point(int Dim) : myparams(Dim) {D = Dim;}
+        Point(int);
+        ~Point();
         void set_params(vector<string>, vector<string>,double [],double []);
-        void set_u(int i, double x){myparams[i].u = x;}
-        void set_u(gsl_vector * coor){for(int i = 0; i < D; i++){myparams[i].u = gsl_vector_get(coor,i);}}
-        void set_theta(int i, double x){myparams[i].theta = x;}
-        double get_theta(int i){return myparams[i].theta;}
-        double get_u(int i){return myparams[i].u;}
+        void set_u(int i, double x){gsl_vector_set(u, i, x);}
+        void set_u(gsl_vector * coor){*u = *coor;}
+        void set_theta(int i, double x){gsl_vector_set(theta, i, x);}
+        double get_theta(int i) {return gsl_vector_get(theta, i);}
+        double get_u(int i){return gsl_vector_get(u,i);}
         void set_logL(double L){logL = L;}
         double get_logL(){return logL;}
         void set_logWt(double W){logWt = W;}
         double get_logWt(){return logWt;}
         int get_D(){return D;}
+        gsl_vector * get_u() {return u;}
         void hypercube_prior();
         void transform_prior();
 };

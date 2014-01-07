@@ -56,7 +56,6 @@ int main(int argc, char *argv[])
     }
     // ******************************************
 
-    cout << pts.size() << endl;
     // ****************************************** start nested sampling algorithm 
     double logZ = -DBL_MAX;
     double logwidth, logZnew, logZ_err, X_i; 
@@ -73,6 +72,7 @@ int main(int argc, char *argv[])
  
     do
     {
+        X_i = exp(-nest/N);
         worst = 0; 
         for(j=1; j<N; j++)
         {
@@ -92,14 +92,12 @@ int main(int argc, char *argv[])
         logLmin = pts[worst]->get_logL();
         
         // **************** ellipsoidal sampling 
-        sampler.set_vectors_zero();
-        sampler.FindEnclosingEllipsoid(N, pts);
-        sampler.set_f_factor(1.06);
+        sampler.ClearCluster();
+        sampler.EllipsoidalPartitioning(pts, X_i); 
+        sampler.CalcVtot();
         do
         {
-            do sampler.SampleEllipsoid();
-            while (!sampler.u_in_hypercube());
-            pts[worst]->set_u(sampler.get_coor());
+            pts[worst]->set_u(sampler.get_newcoor());
             pts[worst]->transform_prior();
             data_obj.lighthouse_logL(pts[worst]);
         }
@@ -109,10 +107,9 @@ int main(int argc, char *argv[])
         // to use MCMC search method, use the 4 lines below (and comment out the ellipsoidal sampling)
         //do copy = (int)(N*UNIFORM) % N; 
         //while (copy == worst);
-        //*pts[worst] = *pts[copy];
+        // *pts[worst] = *pts[copy];
         //sampler.mcmc(pts[worst], data_obj, logLmin);
     
-        X_i = exp(-nest/N);
         logwidth -= 1.0/N;
         nest++;
     }
@@ -137,5 +134,6 @@ int main(int argc, char *argv[])
     outfile.close();
 
     for(int j=0; j<N; j++){delete pts[j];} 
+
     return 0;
 }
