@@ -7,25 +7,29 @@ int main(int argc, char *argv[])
 
     if (argc != 2)   // check for command-line arguments
     {
-        cout << "usage: " << argv[0] << " numpoints"<< endl;
+        cout << "usage: " << argv[0] << " runtime_filename"<< endl;
         exit (1);   
     }
 
     // **** get runtime parameters
-    int N = atoi(argv[1]);
-    int D, num_cols;
-    ifstream runtime_file("runtime.txt");
+    string runtime_filename = argv[1];
+    int N, D, num_cols;
+    ifstream runtime_file(runtime_filename.c_str());
     string datafile_name; 
+    runtime_file.ignore(256, ':');
     runtime_file >> datafile_name;
+    runtime_file.ignore(256, ':');
     runtime_file >> num_cols;
+    runtime_file.ignore(256, ':');
     runtime_file >> D;
+    runtime_file.ignore(256, ':');
+    runtime_file >> N;
 
-    vector<string> param_names(D);
     vector<string> prior_types(D);
-    double min_vals[D], max_vals[D];
+    vector<double> min_vals(D), max_vals(D);
     for(int i = 0; i<D; i++)
     {
-        runtime_file >> param_names[i];  
+        runtime_file.ignore(256, ':');
         runtime_file >> prior_types[i];  
         runtime_file >> min_vals[i];  
         runtime_file >> max_vals[i];  
@@ -33,10 +37,11 @@ int main(int argc, char *argv[])
     runtime_file.close();
     // **************************
     
-    // **** get data
+    // create data object
     Data data_obj(D, num_cols);
-    data_obj.get_data(datafile_name);
-    // ****
+
+    // **** get data if necessary
+    if(datafile_name != "None") {data_obj.get_data(datafile_name);}
 
     // create sampler object
     Samplers sampler(D);
@@ -49,10 +54,10 @@ int main(int argc, char *argv[])
     for(int j=0; j<N; j++)
     {
         pts[j] = new Point(D); 
-        pts[j]->set_params(param_names, prior_types, min_vals, max_vals);
+        pts[j]->set_params(prior_types, min_vals, max_vals);
         pts[j]->hypercube_prior();
         pts[j]->transform_prior();
-        data_obj.lighthouse_logL(pts[j]);
+        data_obj.eggbox_logL(pts[j]);
     }
     // ******************************************
 
@@ -90,7 +95,7 @@ int main(int argc, char *argv[])
          
         discard_pts.push_back(*pts[worst]);
         logLmin = pts[worst]->get_logL();
-        
+
         // **************** ellipsoidal sampling 
         sampler.ClearCluster();
         sampler.EllipsoidalPartitioning(pts, X_i); 
@@ -99,7 +104,7 @@ int main(int argc, char *argv[])
         {
             pts[worst]->set_u(sampler.get_newcoor());
             pts[worst]->transform_prior();
-            data_obj.lighthouse_logL(pts[worst]);
+            data_obj.eggbox_logL(pts[worst]);
         }
         while(logLmin > pts[worst]->get_logL());
         // **************** 
@@ -129,7 +134,7 @@ int main(int argc, char *argv[])
     outfile.open("posterior_pdfs.dat");
     list<Point>::iterator s;
     for(s=discard_pts.begin(); s!=discard_pts.end(); s++)
-        outfile << s->get_theta(0) << " " << s->get_theta(1) << " " << exp(s->get_logL() - logZ) << endl;
+        outfile << s->get_theta(0) << " " << s->get_theta(1) << " " << s->get_logL() << " " << exp(s->get_logL() - logZ) << endl;
     // ************* 
     outfile.close();
 

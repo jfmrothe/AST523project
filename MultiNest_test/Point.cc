@@ -2,11 +2,10 @@
 
 Point::Point(int Dim) : myparams(Dim) {D=Dim;}
 
-void Point::set_params(vector<string> param_names, vector<string> prior_types, double min_vals[], double max_vals[])
+void Point::set_params(vector<string> prior_types, vector<double> min_vals, vector<double> max_vals)
 {
     for(int i = 0; i<D; i++)
     {
-        myparams[i].name = param_names[i];
         myparams[i].prior = prior_types[i];
         myparams[i].min = min_vals[i];
         myparams[i].max = max_vals[i];

@@ -27,7 +27,6 @@ class Point
         double logWt;
         struct Parameter
         {
-            std::string name;
             std::string prior;
             double u;
             double theta;
@@ -39,7 +38,7 @@ class Point
     public:
 
         Point(int);
-        void set_params(vector<string>, vector<string>,double [],double []);
+        void set_params(vector<string>,vector<double>,vector<double>);
         void set_u(int i, double x){myparams[i].u = x;}
         void set_u(gsl_vector * coor){for(int i = 0; i < D; i++){myparams[i].u = gsl_vector_get(coor,i);}}
         void set_theta(int i, double x){myparams[i].theta = x;}

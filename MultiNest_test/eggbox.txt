@@ -1,0 +1,6 @@
+data_file = None
+n_column  = 0        
+Dimension = 2 
+Npoints   = 100
+param_1   : x    uniform     0    31.41592654     
+param_2   : y    uniform     0    31.41592654     
