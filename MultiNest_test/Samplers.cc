@@ -77,11 +77,6 @@ void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot)
 
   SelectFromGrouping(pts, D, grouping, 0, pts_group_0);
   SelectFromGrouping(pts, D, grouping, 1, pts_group_1);
-  // return main ellipsoid immediately if partitioning would create singular (flat) ellipsoid
-  if(pts_group_0.size()<D+1 or pts_group_1.size()<D+1) {
-    clustering.push_back (new Ellipsoid(D, mainEll.getCenter(), mainEll.getCovMat(), mainEll.getEnlFac(), pts) );
-    return;
-  }
 
   bool changed = true;
   double X1;
@@ -92,7 +87,11 @@ void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot)
   double vol1,vol2;
 
   while(changed) {
-
+    // return main ellipsoid immediately if partitioning would create singular (flat) ellipsoid
+    if(pts_group_0.size()<D+1 or pts_group_1.size()<D+1) {
+      clustering.push_back (new Ellipsoid(D, mainEll.getCenter(), mainEll.getCovMat(), mainEll.getEnlFac(), pts) );
+      return;
+    }
     // find new sub-Ellipsoids
     //"locality" of these variables removes object overwriting trouble
     Ellipsoid subEll1 = FindEnclosingEllipsoid(pts_group_0,D);
