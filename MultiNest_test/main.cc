@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
     double logL_tmp = 0.0;
     
     int j, nest, worst, copy;
-    list<Point> sample_pts; // list of Point objects to sample posterior 
+    list<Point> discard_pts; // list of Point objects to sample posterior 
 
     logwidth = log(1.0 - exp(-1.0/N));
 
@@ -87,8 +87,8 @@ int main(int argc, char *argv[])
         H = exp(pts[worst]->get_logWt() - logZnew)*(pts[worst]->get_logL()) 
             + exp(logZ - logZnew)*(H + logZ) - logZnew;
         logZ = logZnew; 
-
-        sample_pts.push_back(*pts[worst]);
+         
+        discard_pts.push_back(*pts[worst]);
         logLmin = pts[worst]->get_logL();
         
         // **************** ellipsoidal sampling 
@@ -120,7 +120,7 @@ int main(int argc, char *argv[])
 
     // ************* output results
     logZ_err = sqrt(H/N);
-    data_obj.get_results(sample_pts, logZ);
+    data_obj.get_results(discard_pts, logZ);
     cout << "information: H =  " << H/log(2.0) << " bits " << endl;
     cout << "evidence: logZ = " << logZ << " +/- " << logZ_err << endl;
 
@@ -128,7 +128,7 @@ int main(int argc, char *argv[])
 
     outfile.open("posterior_pdfs.dat");
     list<Point>::iterator s;
-    for(s=sample_pts.begin(); s!=sample_pts.end(); s++)
+    for(s=discard_pts.begin(); s!=discard_pts.end(); s++)
         outfile << s->get_theta(0) << " " << s->get_theta(1) << " " << exp(s->get_logL() - logZ) << endl;
     // ************* 
     outfile.close();

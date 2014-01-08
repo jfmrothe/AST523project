@@ -19,10 +19,10 @@ CFLAGS= -g -O3
 WARNFLAGS= -Werror -Wall -W -Wshadow -fno-common
 LDFLAGS= -lgsl -lgslcblas -lm
 
-all: drive
+all: multinest 
 
-drive : $(OBJS)
-	$(CC) $(CFLAGS) $(LDFLAGS) $(OBJS) -o drive
+multinest : $(OBJS)
+	$(CC) $(CFLAGS) $(LDFLAGS) $(OBJS) -o multinest
 
 main.o : main.cc $(HDRS) 
 	$(CC) $(CFLAGS) -c main.cc
@@ -43,4 +43,4 @@ Elipsoid.o : Ellipsoid.cc $(HDRS)
 	$(CC) $(CFLAGS) -c Ellipsoid.cc
 
 clean:
-	rm *.o drive
+	rm *.o multinest 

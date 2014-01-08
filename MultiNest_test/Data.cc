@@ -16,7 +16,7 @@ void Data::get_data(string filename)
     datafile.close();
 }
 
-void Data::get_results(list<Point> samples, double logZ)
+void Data::get_results(list<Point>& samples, double logZ)
 {
     vector<double> x(D, 0.0);
     vector<double> xx(D, 0.0);
