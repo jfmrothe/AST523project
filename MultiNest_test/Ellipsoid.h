@@ -1,5 +1,5 @@
-#ifndef ELLIPSOID_H_
-#define ELLIPSOID_H_
+#ifndef ELLIPSOID_H
+#define ELLIPSOID_H
 
 #include "Point.h"
 
