@@ -14,8 +14,12 @@ public:
   int getD();
   gsl_vector * getCenter();
   gsl_matrix * getCovMat();
+  gsl_matrix * getCinv();
+  gsl_matrix * getA();
+  gsl_matrix * getAinv();
   void SampleEllipsoid();
   bool IsMember(gsl_vector *);
+  bool intersect(Ellipsoid& other);
   double getEnlFac();
   void setEnlFac(double f);
   double getVol();
@@ -25,6 +29,9 @@ public:
 private:
   int D_;
   gsl_vector * center_;
+  gsl_matrix * Cinv_;
+  gsl_matrix * A_;
+  gsl_matrix * Ainv_;
   gsl_matrix * covMat_;
   gsl_vector * newcoor_;
   double f_;
