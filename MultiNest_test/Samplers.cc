@@ -64,8 +64,8 @@ void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot)
   Ellipsoid mainEll = FindEnclosingEllipsoid(pts,D);
 
   //enlarge if neccessary
-  if(Xtot>mainEll.getVol()) {
-    mainEll.setEnlFac(mainEll.getEnlFac()*pow(Xtot/mainEll.getVol(),1.0/D));
+  if(Xtot/e>mainEll.getVol()) {
+    mainEll.setEnlFac(mainEll.getEnlFac()*pow(Xtot/mainEll.getVol()/e,1.0/D));
   }
   // initialize splitting using kmeans
   int i;
@@ -102,12 +102,12 @@ void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot)
     X2 = ((double)pts_group_1.size()/N)*Xtot;
 
     //enlarge if neccessary
-    if(X1>vol1) {
-      subEll1.setEnlFac(subEll1.getEnlFac()*pow(X1/vol1,(double)(1.0/D)));
+    if(X1/e>vol1) {
+      subEll1.setEnlFac(subEll1.getEnlFac()*pow(X1/vol1/e,(double)(1.0/D)));
       vol1 = subEll1.getVol();
     }
-    if(X2>vol2) {
-    subEll2.setEnlFac(subEll2.getEnlFac()*pow(X2/vol2,(double)(1.0/D)));
+    if(X2/e>vol2) {
+    subEll2.setEnlFac(subEll2.getEnlFac()*pow(X2/vol2/e,(double)(1.0/D)));
     vol2 = subEll2.getVol();
     }
 

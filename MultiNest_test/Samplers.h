@@ -17,10 +17,11 @@ class Samplers
     private:
         int D;
         double Vtot;
+        double e;
         vector<Ellipsoid *> clustering;
 
     public:
-        Samplers(int Dim) {D=Dim;} 
+        Samplers(int Dim, double eff) {D=Dim; e=eff;} 
 
         gsl_vector * get_newcoor();
         void EllipsoidalPartitioning(vector<Point *>&, double);

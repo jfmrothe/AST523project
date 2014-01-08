@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
     // **** get runtime parameters
     string runtime_filename = argv[1];
     int N, D, num_cols;
+    double e;
     ifstream runtime_file(runtime_filename.c_str());
     string datafile_name; 
     runtime_file.ignore(256, ':');
@@ -24,6 +25,8 @@ int main(int argc, char *argv[])
     runtime_file >> D;
     runtime_file.ignore(256, ':');
     runtime_file >> N;
+    runtime_file.ignore(256, ':');
+    runtime_file >> e;
 
     vector<string> prior_types(D);
     vector<double> min_vals(D), max_vals(D);
@@ -44,7 +47,7 @@ int main(int argc, char *argv[])
     if(datafile_name != "None") {data_obj.get_data(datafile_name);}
 
     // create sampler object
-    Samplers sampler(D);
+    Samplers sampler(D, e);
    
     // seed random number generator
     srand(time(NULL)); 
