@@ -16,19 +16,26 @@ public:
   int getD();
   gsl_vector * getCenter();
   gsl_matrix * getCovMat();
+  gsl_matrix * getCinv();
+  gsl_matrix * getA();
+  gsl_matrix * getAinv();
   double getEnlFac();
   void setEnlFac(double f);
   double getVol();
   double mdist(gsl_vector * coor);
   void printout();
+  bool intersect(Ellipsoid& other);
 private:
   int D_;
   gsl_vector * center_;
   gsl_matrix * covMat_;
   double f_;
   double vol_;
+  gsl_matrix * Cinv_;
+  gsl_matrix * A_;
+  gsl_matrix * Ainv_;
 };
 
 int TestMdist();
-
+int TestIntersect();
 #endif
