@@ -5,11 +5,10 @@ float boxmuller()
   //returns univariate, zero-mean gaussian sample
   float u1 = UNIFORM;
   float u2 = UNIFORM;
-  float pi = 2*acos(0);
   while( u1 == 0.0 ){
     u1 = UNIFORM;
   }
-  return sqrt(-2.0*log(u1))*cos(2*pi*u2);
+  return sqrt(-2.0*log(u1))*cos(2*M_PI*u2);
 }
 
 float quadr()
@@ -93,7 +92,6 @@ Ellipsoid::Ellipsoid(int D, gsl_vector * center, gsl_matrix * C, double f, vecto
 
   // find own volume
   gsl_matrix * voltmpmat = gsl_matrix_alloc(D,D);
-  float pi = 2*acos(0);
   double det;
   signum = +1;
   gsl_permutation * volp = gsl_permutation_calloc(D);
@@ -102,7 +100,7 @@ Ellipsoid::Ellipsoid(int D, gsl_vector * center, gsl_matrix * C, double f, vecto
   gsl_linalg_LU_decomp(voltmpmat, volp, &signum);
   det =  gsl_linalg_LU_det (voltmpmat, signum);
 
-  vol_ = 4.0/3.0*pi*sqrt(pow(f_,D)*det);
+  vol_ = 4.0/3.0*M_PI*sqrt(pow(f_,D)*det);
 
   gsl_matrix_free(voltmpmat); 
   gsl_permutation_free(volp);
