@@ -97,7 +97,8 @@ int main(int argc, char *argv[])
         discard_pts.push_back( new Point(*pts[worst]) ); // save discarded point for posterior sampling
         logLmin = pts[worst]->get_logL();
 
-        // **************** ellipsoidal partitioning and sampling 
+        
+        // **************** ellipsoidal partitioning 
         if(nest==0 || sampler.ClusteringQuality(X_i) > RepartitionFactor)  // recluster? 
         {
             sampler.ClearCluster();
@@ -105,14 +106,15 @@ int main(int argc, char *argv[])
             sampler.CalcVtot();
             NumRecluster++;
         }
-        do
+	// **************** ellipsoidal sampling 
+	do
         {
             pts[worst]->set_u(sampler.get_newcoor());
             pts[worst]->transform_prior();
             data_obj.logL(pts[worst]);
         }
         while(logLmin > pts[worst]->get_logL());
-        // *********************************************
+	// *********************************************
         logwidth -= 1.0/N;
         nest++;
     }
