@@ -16,20 +16,20 @@ void Data::get_data(string filename)
     datafile.close();
 }
 
-void Data::get_results(list<Point>& samples, double logZ)
+void Data::get_results(list<Point *>& samples, double logZ)
 {
     vector<double> x(D, 0.0);
     vector<double> xx(D, 0.0);
 
     double w;
-    list<Point>::iterator s;
+    list<Point *>::iterator s;
     for(s=samples.begin(); s!=samples.end(); s++)
     {
-        w = exp(s->get_logWt() - logZ);
+      w = exp((*s)->get_logWt() - logZ);
         for(int i = 0; i<D; i++)
         {
-            x[i] += w*(s->get_theta(i));
-            xx[i] += w*(s->get_theta(i))*(s->get_theta(i));
+            x[i] += w*((*s)->get_theta(i));
+            xx[i] += w*((*s)->get_theta(i))*((*s)->get_theta(i));
         }
     }
 
