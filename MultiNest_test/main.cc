@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
     cout << "creating " << N << " active points" << endl;
 
     // **** create N active points and set params
-    vector<Point *> pts(N); 
+    vector <Point *> pts(N); 
     for(int j=0; j<N; j++)
     {
         pts[j] = new Point(D); 
@@ -73,8 +73,7 @@ int main(int argc, char *argv[])
     int NumRecluster = 0;
     int j, nest, worst, copy;
     nest = 0;
-
-    list<Point> discard_pts; // list of Point objects to sample posterior 
+    list<Point *> discard_pts; // list of Point objects to sample posterior 
 
     logwidth = log(1.0 - exp(-1.0/N)); 
     do
@@ -95,7 +94,8 @@ int main(int argc, char *argv[])
             + exp(logZ - logZnew)*(H + logZ) - logZnew;
         logZ = logZnew; // update global evidence
          
-        discard_pts.push_back(*pts[worst]); // save discarded point for posterior sampling
+        discard_pts.push_back( new Point(*pts[worst]) ); // save discarded point for posterior sampling
+        logLmin = pts[worst]->get_logL();
 
         // **************** ellipsoidal partitioning and sampling 
         if(nest==0 || sampler.ClusteringQuality(X_i) > RepartitionFactor)  // recluster? 
@@ -130,14 +130,14 @@ int main(int argc, char *argv[])
     cout << "****************" << endl;
     ofstream outfile;
     outfile.open("posterior_pdfs.dat");
-    list<Point>::iterator s;
+    list<Point *>::iterator s;
     for(s=discard_pts.begin(); s!=discard_pts.end(); s++)
-        outfile << s->get_theta(0) << " " << s->get_theta(1) << " " << 
-                   s->get_logL() << " " << exp(s->get_logL() - logZ) << endl;
+      outfile << (*s)->get_theta(0) << " " << (*s)->get_theta(1) << " " << (*s)->get_logL() << " " << exp((*s)->get_logL() - logZ) << endl;
     // ************* 
     outfile.close();
 
     for(int j=0; j<N; j++){delete pts[j];} 
+    for(list<Point *>::iterator s=discard_pts.begin();s!=discard_pts.end();s++){delete *s;} 
 
     return 0;
 }
