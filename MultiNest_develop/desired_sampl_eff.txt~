@@ -1,0 +1,59 @@
+running the lighthouse problem with different extra enlargement factors
+
+should be fast but approximate when >1, converge somewhere just below 1
+
+
+DESIRED_SAMPL_EFF		2.0
+./multinest 100
+1701 iterations used
+<x1> = 1.22455 +/- 0.186341
+<x2> = 0.984478 +/- 0.206069
+information: H =  4.56817 bits 
+evidence: logZ = -162.399 +/- 0.177944
+
+DESIRED_SAMPL_EFF		1.5
+./multinest 100
+1701 iterations used
+<x1> = 1.21853 +/- 0.188845
+<x2> = 0.989581 +/- 0.201522
+information: H =  4.60587 bits 
+evidence: logZ = -162.425 +/- 0.178677
+
+DESIRED_SAMPL_EFF		1.25
+./multinest 100
+1701 iterations used
+<x1> = 1.23011 +/- 0.199574
+<x2> = 1.00059 +/- 0.200955
+information: H =  4.14179 bits 
+evidence: logZ = -162.172 +/- 0.169436
+
+DESIRED_SAMPL_EFF		1.0
+./multinest 100
+1701 iterations used
+<x1> = 1.22769 +/- 0.206714
+<x2> = 1.00704 +/- 0.209916
+information: H =  4.0502 bits 
+evidence: logZ = -162.215 +/- 0.167552
+
+DESIRED_SAMPL_EFF		0.75
+./multinest 100
+1701 iterations used
+<x1> = 1.22433 +/- 0.19567
+<x2> = 1.00074 +/- 0.204661
+information: H =  4.4716 bits 
+evidence: logZ = -162.396 +/- 0.176053
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22803 +/- 0.200201
+<x2> = 1.00197 +/- 0.208032
+information: H =  4.35603 bits 
+evidence: logZ = -162.346 +/- 0.173763
+./multinest 100 2.0 
+./multinest 100 2.0 
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.21984 +/- 0.190281
+<x2> = 0.999155 +/- 0.213684
+information: H =  4.53038 bits 
+evidence: logZ = -162.452 +/- 0.177207
+./multinest 100 2.0 

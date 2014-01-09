@@ -1,0 +1,8000 @@
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.21476 +/- 0.218554
+<x2> = 1.06264 +/- 0.215031
+information: H =  4.59837 bits 
+evidence: logZ = -162.831 +/- 0.178531
+
+real	0m2.646s
+user	0m1.583s
+sys	0m0.017s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22639 +/- 0.194113
+<x2> = 0.973993 +/- 0.203548
+information: H =  4.18224 bits 
+evidence: logZ = -162.161 +/- 0.170262
+
+real	0m1.817s
+user	0m1.201s
+sys	0m0.011s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.24164 +/- 0.195528
+<x2> = 0.999391 +/- 0.200973
+information: H =  4.21125 bits 
+evidence: logZ = -162.193 +/- 0.170851
+
+real	0m2.437s
+user	0m1.179s
+sys	0m0.016s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.21445 +/- 0.206796
+<x2> = 1.00591 +/- 0.214223
+information: H =  4.50751 bits 
+evidence: logZ = -162.565 +/- 0.176759
+
+real	0m2.217s
+user	0m1.565s
+sys	0m0.019s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22723 +/- 0.203457
+<x2> = 0.999793 +/- 0.206497
+information: H =  4.19734 bits 
+evidence: logZ = -162.279 +/- 0.170569
+
+real	0m1.773s
+user	0m1.281s
+sys	0m0.019s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.2472 +/- 0.185985
+<x2> = 1.00378 +/- 0.208304
+information: H =  4.63982 bits 
+evidence: logZ = -162.478 +/- 0.179334
+
+real	0m2.134s
+user	0m1.260s
+sys	0m0.017s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.23006 +/- 0.190968
+<x2> = 0.985339 +/- 0.211393
+information: H =  4.04993 bits 
+evidence: logZ = -162.111 +/- 0.167547
+
+real	0m1.645s
+user	0m1.078s
+sys	0m0.013s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.2173 +/- 0.185411
+<x2> = 0.947935 +/- 0.185661
+information: H =  5.13584 bits 
+evidence: logZ = -162.646 +/- 0.188677
+
+real	0m1.768s
+user	0m1.372s
+sys	0m0.019s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.24606 +/- 0.190787
+<x2> = 0.971079 +/- 0.206401
+information: H =  4.82737 bits 
+evidence: logZ = -162.599 +/- 0.182923
+
+real	0m2.102s
+user	0m1.286s
+sys	0m0.015s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.23595 +/- 0.186057
+<x2> = 0.982274 +/- 0.202876
+information: H =  4.40553 bits 
+evidence: logZ = -162.287 +/- 0.174748
+
+real	0m1.900s
+user	0m1.337s
+sys	0m0.020s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.21493 +/- 0.19869
+<x2> = 0.993939 +/- 0.211058
+information: H =  4.49397 bits 
+evidence: logZ = -162.446 +/- 0.176493
+
+real	0m1.875s
+user	0m1.155s
+sys	0m0.011s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22837 +/- 0.194879
+<x2> = 0.963204 +/- 0.196231
+information: H =  4.00724 bits 
+evidence: logZ = -162.031 +/- 0.166662
+
+real	0m1.768s
+user	0m1.272s
+sys	0m0.019s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.23529 +/- 0.196392
+<x2> = 0.98728 +/- 0.200863
+information: H =  4.89158 bits 
+evidence: logZ = -162.621 +/- 0.184135
+
+real	0m1.979s
+user	0m1.323s
+sys	0m0.008s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22441 +/- 0.184324
+<x2> = 0.975845 +/- 0.196055
+information: H =  4.57786 bits 
+evidence: logZ = -162.325 +/- 0.178133
+
+real	0m2.255s
+user	0m1.378s
+sys	0m0.012s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.20555 +/- 0.201616
+<x2> = 0.991962 +/- 0.226093
+information: H =  4.66164 bits 
+evidence: logZ = -162.694 +/- 0.179756
+
+real	0m2.132s
+user	0m1.378s
+sys	0m0.015s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.23966 +/- 0.204456
+<x2> = 0.990347 +/- 0.211202
+information: H =  4.54571 bits 
+evidence: logZ = -162.542 +/- 0.177506
+
+real	0m1.673s
+user	0m1.310s
+sys	0m0.026s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22384 +/- 0.208307
+<x2> = 0.992568 +/- 0.204574
+information: H =  4.06779 bits 
+evidence: logZ = -162.169 +/- 0.167916
+
+real	0m1.976s
+user	0m1.271s
+sys	0m0.009s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.25 +/- 0.197149
+<x2> = 0.969123 +/- 0.214905
+information: H =  4.78321 bits 
+evidence: logZ = -162.642 +/- 0.182084
+
+real	0m1.525s
+user	0m1.194s
+sys	0m0.015s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22589 +/- 0.203797
+<x2> = 0.998872 +/- 0.209454
+information: H =  4.63175 bits 
+evidence: logZ = -162.586 +/- 0.179178
+
+real	0m1.901s
+user	0m1.377s
+sys	0m0.020s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22615 +/- 0.193712
+<x2> = 0.992422 +/- 0.202833
+information: H =  4.58502 bits 
+evidence: logZ = -162.434 +/- 0.178272
+
+real	0m1.837s
+user	0m1.344s
+sys	0m0.014s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.23521 +/- 0.188987
+<x2> = 0.981362 +/- 0.194082
+information: H =  4.93714 bits 
+evidence: logZ = -162.571 +/- 0.184991
+
+real	0m1.755s
+user	0m1.353s
+sys	0m0.014s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22748 +/- 0.203122
+<x2> = 0.985765 +/- 0.216391
+information: H =  4.85104 bits 
+evidence: logZ = -162.779 +/- 0.183371
+
+real	0m1.704s
+user	0m1.323s
+sys	0m0.023s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.23106 +/- 0.214315
+<x2> = 0.994433 +/- 0.214928
+information: H =  4.17277 bits 
+evidence: logZ = -162.374 +/- 0.170069
+
+real	0m1.789s
+user	0m1.260s
+sys	0m0.020s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22555 +/- 0.192908
+<x2> = 1.00341 +/- 0.194963
+information: H =  4.55424 bits 
+evidence: logZ = -162.355 +/- 0.177673
+
+real	0m1.841s
+user	0m1.353s
+sys	0m0.015s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22884 +/- 0.205333
+<x2> = 0.988975 +/- 0.212638
+information: H =  4.25907 bits 
+evidence: logZ = -162.37 +/- 0.171818
+
+real	0m1.653s
+user	0m1.327s
+sys	0m0.019s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.23456 +/- 0.188997
+<x2> = 0.977661 +/- 0.193047
+information: H =  4.58621 bits 
+evidence: logZ = -162.327 +/- 0.178295
+
+real	0m2.105s
+user	0m1.377s
+sys	0m0.023s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.21816 +/- 0.18591
+<x2> = 0.969805 +/- 0.193871
+information: H =  4.5125 bits 
+evidence: logZ = -162.262 +/- 0.176857
+
+real	0m1.591s
+user	0m1.260s
+sys	0m0.014s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.23496 +/- 0.187812
+<x2> = 0.974884 +/- 0.204034
+information: H =  4.48064 bits 
+evidence: logZ = -162.304 +/- 0.176231
+
+real	0m1.359s
+user	0m1.079s
+sys	0m0.014s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.23571 +/- 0.195303
+<x2> = 0.984873 +/- 0.20953
+information: H =  4.11626 bits 
+evidence: logZ = -162.164 +/- 0.168913
+
+real	0m1.755s
+user	0m1.385s
+sys	0m0.024s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22473 +/- 0.206693
+<x2> = 1.0045 +/- 0.211383
+information: H =  4.04987 bits 
+evidence: logZ = -162.215 +/- 0.167546
+
+real	0m1.374s
+user	0m1.317s
+sys	0m0.016s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22802 +/- 0.177922
+<x2> = 0.966367 +/- 0.196255
+information: H =  4.63898 bits 
+evidence: logZ = -162.314 +/- 0.179318
+
+real	0m2.209s
+user	0m1.410s
+sys	0m0.017s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.21729 +/- 0.197576
+<x2> = 0.991444 +/- 0.210733
+information: H =  4.51677 bits 
+evidence: logZ = -162.449 +/- 0.17694
+
+real	0m1.662s
+user	0m1.350s
+sys	0m0.018s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.21919 +/- 0.185453
+<x2> = 0.978799 +/- 0.194484
+information: H =  4.30396 bits 
+evidence: logZ = -162.136 +/- 0.172722
+
+real	0m1.250s
+user	0m1.138s
+sys	0m0.006s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22509 +/- 0.197458
+<x2> = 1.0012 +/- 0.208843
+information: H =  4.51042 bits 
+evidence: logZ = -162.445 +/- 0.176816
+
+real	0m1.942s
+user	0m1.141s
+sys	0m0.019s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.23212 +/- 0.194795
+<x2> = 1.00544 +/- 0.216976
+information: H =  4.67033 bits 
+evidence: logZ = -162.58 +/- 0.179923
+
+real	0m1.747s
+user	0m1.406s
+sys	0m0.018s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22667 +/- 0.195592
+<x2> = 0.999474 +/- 0.201276
+information: H =  4.11742 bits 
+evidence: logZ = -162.122 +/- 0.168937
+
+real	0m2.431s
+user	0m1.344s
+sys	0m0.019s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.21239 +/- 0.197839
+<x2> = 0.992178 +/- 0.208975
+information: H =  4.50819 bits 
+evidence: logZ = -162.459 +/- 0.176772
+
+real	0m1.957s
+user	0m1.548s
+sys	0m0.017s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.23345 +/- 0.192244
+<x2> = 0.998211 +/- 0.207893
+information: H =  4.6719 bits 
+evidence: logZ = -162.521 +/- 0.179953
+
+real	0m1.704s
+user	0m1.397s
+sys	0m0.013s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.214 +/- 0.201123
+<x2> = 0.989425 +/- 0.203334
+information: H =  3.95448 bits 
+evidence: logZ = -162.068 +/- 0.165561
+
+real	0m1.874s
+user	0m1.290s
+sys	0m0.017s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22627 +/- 0.193899
+<x2> = 1.00506 +/- 0.200127
+information: H =  4.30237 bits 
+evidence: logZ = -162.246 +/- 0.17269
+
+real	0m1.916s
+user	0m1.214s
+sys	0m0.014s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.24611 +/- 0.189558
+<x2> = 0.957791 +/- 0.19759
+information: H =  4.67403 bits 
+evidence: logZ = -162.433 +/- 0.179994
+
+real	0m1.772s
+user	0m1.227s
+sys	0m0.019s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.20183 +/- 0.198861
+<x2> = 0.978063 +/- 0.203289
+information: H =  4.64151 bits 
+evidence: logZ = -162.49 +/- 0.179367
+
+real	0m1.719s
+user	0m1.357s
+sys	0m0.017s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22108 +/- 0.194971
+<x2> = 0.992134 +/- 0.209741
+information: H =  4.30323 bits 
+evidence: logZ = -162.306 +/- 0.172707
+
+real	0m1.894s
+user	0m1.219s
+sys	0m0.015s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.21493 +/- 0.200293
+<x2> = 0.988575 +/- 0.210105
+information: H =  4.52725 bits 
+evidence: logZ = -162.475 +/- 0.177145
+
+real	0m1.856s
+user	0m1.084s
+sys	0m0.011s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22071 +/- 0.196025
+<x2> = 1.00391 +/- 0.202201
+information: H =  4.26052 bits 
+evidence: logZ = -162.223 +/- 0.171848
+
+real	0m1.509s
+user	0m1.158s
+sys	0m0.015s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22677 +/- 0.183641
+<x2> = 0.985687 +/- 0.199032
+information: H =  4.47147 bits 
+evidence: logZ = -162.255 +/- 0.176051
+
+real	0m1.877s
+user	0m1.288s
+sys	0m0.009s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.23172 +/- 0.191582
+<x2> = 0.97833 +/- 0.191526
+information: H =  4.55421 bits 
+evidence: logZ = -162.33 +/- 0.177672
+
+real	0m1.934s
+user	0m1.378s
+sys	0m0.021s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.23272 +/- 0.187955
+<x2> = 0.989425 +/- 0.201782
+information: H =  4.28924 bits 
+evidence: logZ = -162.17 +/- 0.172426
+
+real	0m1.794s
+user	0m1.318s
+sys	0m0.013s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.24002 +/- 0.188692
+<x2> = 0.987831 +/- 0.208427
+information: H =  4.62183 bits 
+evidence: logZ = -162.442 +/- 0.178986
+
+real	0m1.642s
+user	0m1.310s
+sys	0m0.017s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.21449 +/- 0.195256
+<x2> = 0.989722 +/- 0.214115
+information: H =  4.11346 bits 
+evidence: logZ = -162.204 +/- 0.168856
+
+real	0m1.671s
+user	0m1.186s
+sys	0m0.013s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.21009 +/- 0.198268
+<x2> = 0.992858 +/- 0.209594
+information: H =  4.41748 bits 
+evidence: logZ = -162.379 +/- 0.174985
+
+real	0m1.589s
+user	0m1.275s
+sys	0m0.013s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22281 +/- 0.18646
+<x2> = 0.974358 +/- 0.195049
+information: H =  4.39446 bits 
+evidence: logZ = -162.195 +/- 0.174528
+
+real	0m1.802s
+user	0m1.180s
+sys	0m0.013s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22182 +/- 0.196283
+<x2> = 0.991401 +/- 0.198215
+information: H =  4.02772 bits 
+evidence: logZ = -162.036 +/- 0.167087
+
+real	0m1.925s
+user	0m1.300s
+sys	0m0.018s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.21176 +/- 0.211604
+<x2> = 0.972106 +/- 0.226917
+information: H =  4.74042 bits 
+evidence: logZ = -162.819 +/- 0.181268
+
+real	0m1.849s
+user	0m1.275s
+sys	0m0.023s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22975 +/- 0.200245
+<x2> = 1.00465 +/- 0.202505
+information: H =  4.08895 bits 
+evidence: logZ = -162.139 +/- 0.168352
+
+real	0m1.705s
+user	0m1.348s
+sys	0m0.018s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22774 +/- 0.196785
+<x2> = 0.985899 +/- 0.193989
+information: H =  4.1439 bits 
+evidence: logZ = -162.099 +/- 0.16948
+
+real	0m1.531s
+user	0m1.201s
+sys	0m0.012s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.21428 +/- 0.190405
+<x2> = 1.00189 +/- 0.210629
+information: H =  4.46044 bits 
+evidence: logZ = -162.37 +/- 0.175834
+
+real	0m1.684s
+user	0m1.290s
+sys	0m0.016s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.23103 +/- 0.193018
+<x2> = 0.974713 +/- 0.206725
+information: H =  4.63257 bits 
+evidence: logZ = -162.469 +/- 0.179194
+
+real	0m1.944s
+user	0m1.544s
+sys	0m0.019s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22286 +/- 0.19131
+<x2> = 0.9983 +/- 0.201019
+information: H =  4.34082 bits 
+evidence: logZ = -162.235 +/- 0.17346
+
+real	0m1.859s
+user	0m1.478s
+sys	0m0.026s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22412 +/- 0.197913
+<x2> = 0.979804 +/- 0.19269
+information: H =  4.37843 bits 
+evidence: logZ = -162.244 +/- 0.17421
+
+real	0m2.167s
+user	0m1.343s
+sys	0m0.017s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.237 +/- 0.185382
+<x2> = 0.970712 +/- 0.215651
+information: H =  4.5219 bits 
+evidence: logZ = -162.424 +/- 0.177041
+
+real	0m2.265s
+user	0m1.316s
+sys	0m0.018s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22252 +/- 0.190595
+<x2> = 1.01026 +/- 0.213616
+information: H =  4.20104 bits 
+evidence: logZ = -162.233 +/- 0.170644
+
+real	0m1.716s
+user	0m1.274s
+sys	0m0.018s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.2127 +/- 0.192612
+<x2> = 0.995331 +/- 0.210884
+information: H =  4.21321 bits 
+evidence: logZ = -162.246 +/- 0.170891
+
+real	0m1.791s
+user	0m1.137s
+sys	0m0.014s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22384 +/- 0.195053
+<x2> = 0.991521 +/- 0.20764
+information: H =  4.31834 bits 
+evidence: logZ = -162.277 +/- 0.17301
+
+real	0m1.467s
+user	0m1.275s
+sys	0m0.016s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.23124 +/- 0.189963
+<x2> = 0.972908 +/- 0.18837
+information: H =  4.49475 bits 
+evidence: logZ = -162.267 +/- 0.176508
+
+real	0m1.966s
+user	0m1.302s
+sys	0m0.010s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22841 +/- 0.191584
+<x2> = 0.986101 +/- 0.2013
+information: H =  4.07718 bits 
+evidence: logZ = -162.06 +/- 0.16811
+
+real	0m1.967s
+user	0m1.046s
+sys	0m0.010s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22013 +/- 0.194412
+<x2> = 0.992988 +/- 0.207669
+information: H =  4.39447 bits 
+evidence: logZ = -162.342 +/- 0.174528
+
+real	0m1.828s
+user	0m1.197s
+sys	0m0.019s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22937 +/- 0.202722
+<x2> = 0.984613 +/- 0.202928
+information: H =  4.23674 bits 
+evidence: logZ = -162.245 +/- 0.171368
+
+real	0m1.671s
+user	0m1.100s
+sys	0m0.011s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.2302 +/- 0.19357
+<x2> = 0.980584 +/- 0.213784
+information: H =  4.23504 bits 
+evidence: logZ = -162.252 +/- 0.171333
+
+real	0m1.289s
+user	0m1.176s
+sys	0m0.009s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.24165 +/- 0.186747
+<x2> = 0.975109 +/- 0.203079
+information: H =  4.65897 bits 
+evidence: logZ = -162.434 +/- 0.179704
+
+real	0m1.263s
+user	0m1.195s
+sys	0m0.010s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.23044 +/- 0.186287
+<x2> = 0.998284 +/- 0.199548
+information: H =  4.08822 bits 
+evidence: logZ = -162.038 +/- 0.168337
+
+real	0m1.716s
+user	0m1.230s
+sys	0m0.013s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22291 +/- 0.206108
+<x2> = 0.987299 +/- 0.206361
+information: H =  4.20798 bits 
+evidence: logZ = -162.289 +/- 0.170785
+
+real	0m1.642s
+user	0m1.315s
+sys	0m0.012s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.23065 +/- 0.196448
+<x2> = 0.993012 +/- 0.206837
+information: H =  4.52671 bits 
+evidence: logZ = -162.456 +/- 0.177135
+
+real	0m1.779s
+user	0m1.387s
+sys	0m0.017s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22525 +/- 0.194792
+<x2> = 0.988611 +/- 0.205288
+information: H =  4.29172 bits 
+evidence: logZ = -162.251 +/- 0.172476
+
+real	0m1.828s
+user	0m1.394s
+sys	0m0.016s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22343 +/- 0.190782
+<x2> = 0.99247 +/- 0.218414
+information: H =  3.93795 bits 
+evidence: logZ = -162.083 +/- 0.165214
+
+real	0m1.724s
+user	0m1.364s
+sys	0m0.016s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.21846 +/- 0.202433
+<x2> = 1.00585 +/- 0.205844
+information: H =  4.34814 bits 
+evidence: logZ = -162.36 +/- 0.173606
+
+real	0m1.615s
+user	0m1.105s
+sys	0m0.008s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.2317 +/- 0.204989
+<x2> = 0.982215 +/- 0.212384
+information: H =  3.84335 bits 
+evidence: logZ = -162.052 +/- 0.163218
+
+real	0m1.727s
+user	0m1.240s
+sys	0m0.011s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.24572 +/- 0.178999
+<x2> = 0.993202 +/- 0.197033
+information: H =  4.64563 bits 
+evidence: logZ = -162.371 +/- 0.179447
+
+real	0m1.736s
+user	0m1.375s
+sys	0m0.017s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.23644 +/- 0.177164
+<x2> = 0.975484 +/- 0.202113
+information: H =  4.2756 bits 
+evidence: logZ = -162.106 +/- 0.172152
+
+real	0m2.239s
+user	0m1.096s
+sys	0m0.015s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.21987 +/- 0.193414
+<x2> = 0.977356 +/- 0.200701
+information: H =  4.35798 bits 
+evidence: logZ = -162.263 +/- 0.173802
+
+real	0m1.696s
+user	0m1.350s
+sys	0m0.021s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.21344 +/- 0.198047
+<x2> = 0.990791 +/- 0.207698
+information: H =  3.90889 bits 
+evidence: logZ = -162.013 +/- 0.164604
+
+real	0m2.618s
+user	0m1.479s
+sys	0m0.017s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.23292 +/- 0.207552
+<x2> = 0.993626 +/- 0.205603
+information: H =  4.27056 bits 
+evidence: logZ = -162.358 +/- 0.17205
+
+real	0m2.109s
+user	0m1.539s
+sys	0m0.022s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22447 +/- 0.187067
+<x2> = 1.00594 +/- 0.188091
+information: H =  4.31996 bits 
+evidence: logZ = -162.141 +/- 0.173042
+
+real	0m1.670s
+user	0m1.321s
+sys	0m0.017s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.21385 +/- 0.203031
+<x2> = 1.00134 +/- 0.212076
+information: H =  4.05298 bits 
+evidence: logZ = -162.211 +/- 0.16761
+
+real	0m1.979s
+user	0m1.585s
+sys	0m0.016s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.23173 +/- 0.189885
+<x2> = 0.995219 +/- 0.19978
+information: H =  4.19497 bits 
+evidence: logZ = -162.106 +/- 0.170521
+
+real	0m1.548s
+user	0m1.213s
+sys	0m0.018s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22589 +/- 0.184276
+<x2> = 0.989954 +/- 0.202076
+information: H =  4.07707 bits 
+evidence: logZ = -162.026 +/- 0.168107
+
+real	0m1.768s
+user	0m1.237s
+sys	0m0.018s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.23256 +/- 0.190254
+<x2> = 1.00089 +/- 0.198385
+information: H =  4.39449 bits 
+evidence: logZ = -162.254 +/- 0.174529
+
+real	0m1.844s
+user	0m1.352s
+sys	0m0.022s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.2331 +/- 0.19597
+<x2> = 0.990904 +/- 0.201055
+information: H =  4.14358 bits 
+evidence: logZ = -162.153 +/- 0.169473
+
+real	0m1.222s
+user	0m1.149s
+sys	0m0.015s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.23721 +/- 0.20065
+<x2> = 1.00038 +/- 0.213559
+information: H =  4.00493 bits 
+evidence: logZ = -162.164 +/- 0.166613
+
+real	0m2.036s
+user	0m1.187s
+sys	0m0.012s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.21489 +/- 0.190769
+<x2> = 1.00239 +/- 0.203367
+information: H =  3.96077 bits 
+evidence: logZ = -162.009 +/- 0.165692
+
+real	0m1.856s
+user	0m1.171s
+sys	0m0.009s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22618 +/- 0.193465
+<x2> = 1.00632 +/- 0.197007
+information: H =  4.18113 bits 
+evidence: logZ = -162.148 +/- 0.170239
+
+real	0m1.729s
+user	0m1.132s
+sys	0m0.018s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.24107 +/- 0.182744
+<x2> = 0.980964 +/- 0.202887
+information: H =  4.76301 bits 
+evidence: logZ = -162.477 +/- 0.181699
+
+real	0m1.533s
+user	0m1.149s
+sys	0m0.011s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.21277 +/- 0.205513
+<x2> = 0.998118 +/- 0.213473
+information: H =  4.31714 bits 
+evidence: logZ = -162.401 +/- 0.172986
+
+real	0m1.788s
+user	0m1.236s
+sys	0m0.019s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22721 +/- 0.187025
+<x2> = 0.99554 +/- 0.196949
+information: H =  4.32935 bits 
+evidence: logZ = -162.199 +/- 0.17323
+
+real	0m1.738s
+user	0m1.309s
+sys	0m0.011s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.2263 +/- 0.189102
+<x2> = 0.987644 +/- 0.191793
+information: H =  4.41448 bits 
+evidence: logZ = -162.222 +/- 0.174925
+
+real	0m2.064s
+user	0m1.341s
+sys	0m0.012s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.2325 +/- 0.190087
+<x2> = 0.988415 +/- 0.198982
+information: H =  4.07021 bits 
+evidence: logZ = -162.038 +/- 0.167966
+
+real	0m1.730s
+user	0m1.161s
+sys	0m0.012s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.23183 +/- 0.190814
+<x2> = 1.00351 +/- 0.201301
+information: H =  4.70943 bits 
+evidence: logZ = -162.51 +/- 0.180675
+
+real	0m1.474s
+user	0m1.089s
+sys	0m0.017s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22467 +/- 0.189707
+<x2> = 1.00181 +/- 0.191782
+information: H =  4.27213 bits 
+evidence: logZ = -162.136 +/- 0.172082
+
+real	0m1.807s
+user	0m1.263s
+sys	0m0.018s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.21348 +/- 0.190417
+<x2> = 1.00397 +/- 0.218366
+information: H =  4.4329 bits 
+evidence: logZ = -162.431 +/- 0.17529
+
+real	0m1.694s
+user	0m1.322s
+sys	0m0.015s
+./multinest 100 2.0 
+1701 iterations used
+<x1> = 1.22284 +/- 0.1955
+<x2> = 0.982381 +/- 0.197299
+information: H =  4.01699 bits 
+evidence: logZ = -162.016 +/- 0.166864
+
+real	0m1.517s
+user	0m1.095s
+sys	0m0.013s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.21481 +/- 0.194924
+<x2> = 0.99308 +/- 0.207899
+information: H =  4.04499 bits 
+evidence: logZ = -162.108 +/- 0.167445
+
+real	0m1.709s
+user	0m1.351s
+sys	0m0.017s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.2323 +/- 0.199557
+<x2> = 0.972555 +/- 0.197845
+information: H =  4.66695 bits 
+evidence: logZ = -162.441 +/- 0.179858
+
+real	0m1.820s
+user	0m1.307s
+sys	0m0.013s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.23336 +/- 0.183881
+<x2> = 0.989238 +/- 0.205566
+information: H =  4.48824 bits 
+evidence: logZ = -162.323 +/- 0.176381
+
+real	0m2.061s
+user	0m1.298s
+sys	0m0.011s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.23268 +/- 0.189082
+<x2> = 0.984378 +/- 0.207275
+information: H =  4.30794 bits 
+evidence: logZ = -162.246 +/- 0.172801
+
+real	0m1.587s
+user	0m1.131s
+sys	0m0.016s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.23267 +/- 0.198119
+<x2> = 0.972014 +/- 0.208741
+information: H =  4.49734 bits 
+evidence: logZ = -162.421 +/- 0.176559
+
+real	0m1.923s
+user	0m1.359s
+sys	0m0.018s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.22769 +/- 0.185675
+<x2> = 0.991326 +/- 0.19487
+information: H =  4.73143 bits 
+evidence: logZ = -162.411 +/- 0.181096
+
+real	0m2.062s
+user	0m1.371s
+sys	0m0.016s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.23535 +/- 0.197492
+<x2> = 0.982952 +/- 0.20378
+information: H =  4.6671 bits 
+evidence: logZ = -162.523 +/- 0.179861
+
+real	0m1.979s
+user	0m1.378s
+sys	0m0.013s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.21815 +/- 0.189173
+<x2> = 0.969281 +/- 0.190121
+information: H =  4.70547 bits 
+evidence: logZ = -162.409 +/- 0.180598
+
+real	0m1.248s
+user	0m1.136s
+sys	0m0.020s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.22846 +/- 0.192585
+<x2> = 0.985924 +/- 0.214737
+information: H =  4.47868 bits 
+evidence: logZ = -162.426 +/- 0.176193
+
+real	0m1.684s
+user	0m1.168s
+sys	0m0.013s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.21431 +/- 0.182712
+<x2> = 0.989515 +/- 0.195152
+information: H =  4.46047 bits 
+evidence: logZ = -162.234 +/- 0.175834
+
+real	0m1.531s
+user	0m1.028s
+sys	0m0.010s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.21135 +/- 0.193791
+<x2> = 0.978416 +/- 0.209824
+information: H =  4.19504 bits 
+evidence: logZ = -162.214 +/- 0.170522
+
+real	0m1.881s
+user	0m1.344s
+sys	0m0.011s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.22215 +/- 0.194558
+<x2> = 0.978061 +/- 0.211445
+information: H =  4.2599 bits 
+evidence: logZ = -162.257 +/- 0.171835
+
+real	0m2.186s
+user	0m1.472s
+sys	0m0.011s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.22078 +/- 0.200969
+<x2> = 0.988514 +/- 0.208837
+information: H =  4.45018 bits 
+evidence: logZ = -162.408 +/- 0.175631
+
+real	0m2.537s
+user	0m1.372s
+sys	0m0.019s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.22742 +/- 0.191654
+<x2> = 1.00848 +/- 0.196967
+information: H =  4.72293 bits 
+evidence: logZ = -162.488 +/- 0.180933
+
+real	0m2.294s
+user	0m1.176s
+sys	0m0.024s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.23207 +/- 0.177881
+<x2> = 0.995991 +/- 0.203906
+information: H =  4.55852 bits 
+evidence: logZ = -162.343 +/- 0.177756
+
+real	0m1.591s
+user	0m1.232s
+sys	0m0.019s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.24312 +/- 0.191202
+<x2> = 0.989524 +/- 0.202374
+information: H =  4.06382 bits 
+evidence: logZ = -162.064 +/- 0.167834
+
+real	0m1.486s
+user	0m1.105s
+sys	0m0.018s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.22298 +/- 0.178748
+<x2> = 0.986649 +/- 0.19978
+information: H =  4.66097 bits 
+evidence: logZ = -162.383 +/- 0.179743
+
+real	0m1.500s
+user	0m1.190s
+sys	0m0.025s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.22903 +/- 0.196714
+<x2> = 0.992893 +/- 0.212422
+information: H =  4.06798 bits 
+evidence: logZ = -162.181 +/- 0.16792
+
+real	0m1.761s
+user	0m1.191s
+sys	0m0.016s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.24507 +/- 0.194235
+<x2> = 0.985672 +/- 0.198801
+information: H =  4.53685 bits 
+evidence: logZ = -162.381 +/- 0.177333
+
+real	0m2.115s
+user	0m1.220s
+sys	0m0.014s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.23558 +/- 0.199071
+<x2> = 0.979234 +/- 0.195875
+information: H =  4.55975 bits 
+evidence: logZ = -162.396 +/- 0.17778
+
+real	0m1.652s
+user	0m1.329s
+sys	0m0.017s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.22757 +/- 0.202925
+<x2> = 1.00068 +/- 0.212126
+information: H =  4.38798 bits 
+evidence: logZ = -162.412 +/- 0.174399
+
+real	0m1.593s
+user	0m1.279s
+sys	0m0.014s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.22933 +/- 0.195577
+<x2> = 1.01637 +/- 0.211135
+information: H =  4.57077 bits 
+evidence: logZ = -162.503 +/- 0.177995
+
+real	0m2.844s
+user	0m1.389s
+sys	0m0.015s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.22726 +/- 0.195607
+<x2> = 0.989995 +/- 0.209408
+information: H =  4.30005 bits 
+evidence: logZ = -162.287 +/- 0.172643
+
+real	0m1.622s
+user	0m1.305s
+sys	0m0.014s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.23314 +/- 0.189319
+<x2> = 0.982631 +/- 0.198905
+information: H =  4.19993 bits 
+evidence: logZ = -162.121 +/- 0.170622
+
+real	0m1.715s
+user	0m1.290s
+sys	0m0.023s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.22726 +/- 0.190689
+<x2> = 0.978227 +/- 0.191312
+information: H =  4.59313 bits 
+evidence: logZ = -162.345 +/- 0.17843
+
+real	0m1.598s
+user	0m1.260s
+sys	0m0.017s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.2177 +/- 0.194187
+<x2> = 0.987988 +/- 0.205542
+information: H =  4.67941 bits 
+evidence: logZ = -162.518 +/- 0.180098
+
+real	0m1.983s
+user	0m1.500s
+sys	0m0.020s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.22908 +/- 0.190358
+<x2> = 0.981638 +/- 0.209358
+information: H =  4.13034 bits 
+evidence: logZ = -162.14 +/- 0.169202
+
+real	0m1.519s
+user	0m1.169s
+sys	0m0.023s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.23544 +/- 0.197912
+<x2> = 0.995603 +/- 0.212769
+information: H =  4.34619 bits 
+evidence: logZ = -162.351 +/- 0.173567
+
+real	0m1.832s
+user	0m1.409s
+sys	0m0.020s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.21512 +/- 0.208212
+<x2> = 1.007 +/- 0.217267
+information: H =  4.85554 bits 
+evidence: logZ = -162.823 +/- 0.183456
+
+real	0m1.991s
+user	0m1.538s
+sys	0m0.025s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.21653 +/- 0.196176
+<x2> = 0.992239 +/- 0.211458
+information: H =  3.9771 bits 
+evidence: logZ = -162.084 +/- 0.166034
+
+real	0m1.547s
+user	0m1.211s
+sys	0m0.010s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.22407 +/- 0.201339
+<x2> = 0.965193 +/- 0.203095
+information: H =  4.68097 bits 
+evidence: logZ = -162.511 +/- 0.180128
+
+real	0m1.859s
+user	0m1.373s
+sys	0m0.016s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.21377 +/- 0.196477
+<x2> = 0.996036 +/- 0.208793
+information: H =  4.38172 bits 
+evidence: logZ = -162.351 +/- 0.174275
+
+real	0m1.924s
+user	0m1.170s
+sys	0m0.014s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.23488 +/- 0.203048
+<x2> = 0.983397 +/- 0.203226
+information: H =  4.13981 bits 
+evidence: logZ = -162.197 +/- 0.169396
+
+real	0m1.910s
+user	0m1.293s
+sys	0m0.015s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.23249 +/- 0.195919
+<x2> = 0.990155 +/- 0.224167
+information: H =  4.29258 bits 
+evidence: logZ = -162.381 +/- 0.172493
+
+real	0m2.507s
+user	0m1.463s
+sys	0m0.026s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.21925 +/- 0.190748
+<x2> = 1.00083 +/- 0.207061
+information: H =  4.49695 bits 
+evidence: logZ = -162.371 +/- 0.176552
+
+real	0m1.800s
+user	0m1.251s
+sys	0m0.021s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.21794 +/- 0.201643
+<x2> = 0.999961 +/- 0.196799
+information: H =  4.26851 bits 
+evidence: logZ = -162.264 +/- 0.172009
+
+real	0m1.967s
+user	0m1.315s
+sys	0m0.018s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.17472 +/- 0.201853
+<x2> = 1.0297 +/- 0.21444
+information: H =  4.79849 bits 
+evidence: logZ = -162.792 +/- 0.182375
+
+real	0m1.985s
+user	0m1.526s
+sys	0m0.025s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.2235 +/- 0.204558
+<x2> = 0.99735 +/- 0.208771
+information: H =  4.24784 bits 
+evidence: logZ = -162.312 +/- 0.171592
+
+real	0m1.469s
+user	0m1.127s
+sys	0m0.009s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.22313 +/- 0.198919
+<x2> = 0.992466 +/- 0.199004
+information: H =  4.2243 bits 
+evidence: logZ = -162.201 +/- 0.171116
+
+real	0m1.391s
+user	0m1.125s
+sys	0m0.014s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.2254 +/- 0.198567
+<x2> = 0.990757 +/- 0.206186
+information: H =  4.38941 bits 
+evidence: logZ = -162.356 +/- 0.174428
+
+real	0m1.853s
+user	0m1.336s
+sys	0m0.022s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.23484 +/- 0.198254
+<x2> = 0.993413 +/- 0.214159
+information: H =  4.34038 bits 
+evidence: logZ = -162.36 +/- 0.173451
+
+real	0m1.807s
+user	0m1.259s
+sys	0m0.020s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.21196 +/- 0.186426
+<x2> = 0.978907 +/- 0.200934
+information: H =  4.43664 bits 
+evidence: logZ = -162.282 +/- 0.175364
+
+real	0m1.862s
+user	0m1.474s
+sys	0m0.016s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.22793 +/- 0.199167
+<x2> = 0.999175 +/- 0.206372
+information: H =  4.35075 bits 
+evidence: logZ = -162.367 +/- 0.173658
+
+real	0m2.267s
+user	0m1.397s
+sys	0m0.012s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.237 +/- 0.190925
+<x2> = 0.993225 +/- 0.204819
+information: H =  4.2345 bits 
+evidence: logZ = -162.177 +/- 0.171322
+
+real	0m2.013s
+user	0m1.251s
+sys	0m0.018s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.21283 +/- 0.177161
+<x2> = 0.962862 +/- 0.194289
+information: H =  4.7439 bits 
+evidence: logZ = -162.395 +/- 0.181335
+
+real	0m1.636s
+user	0m1.296s
+sys	0m0.013s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.22874 +/- 0.198893
+<x2> = 0.992355 +/- 0.205813
+information: H =  4.31545 bits 
+evidence: logZ = -162.294 +/- 0.172952
+
+real	0m2.016s
+user	0m1.334s
+sys	0m0.026s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.21828 +/- 0.193976
+<x2> = 0.996543 +/- 0.199088
+information: H =  4.06484 bits 
+evidence: logZ = -162.061 +/- 0.167855
+
+real	0m1.507s
+user	0m1.246s
+sys	0m0.013s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.23642 +/- 0.19089
+<x2> = 0.970004 +/- 0.19971
+information: H =  4.67788 bits 
+evidence: logZ = -162.41 +/- 0.180068
+
+real	0m1.607s
+user	0m1.109s
+sys	0m0.010s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.22192 +/- 0.192714
+<x2> = 0.982241 +/- 0.210698
+information: H =  4.43378 bits 
+evidence: logZ = -162.377 +/- 0.175307
+
+real	0m1.675s
+user	0m1.239s
+sys	0m0.017s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.21678 +/- 0.184249
+<x2> = 0.966226 +/- 0.200268
+information: H =  4.76194 bits 
+evidence: logZ = -162.433 +/- 0.181679
+
+real	0m1.971s
+user	0m1.333s
+sys	0m0.010s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.22703 +/- 0.185065
+<x2> = 0.983556 +/- 0.206359
+information: H =  4.70541 bits 
+evidence: logZ = -162.486 +/- 0.180597
+
+real	0m1.575s
+user	0m1.248s
+sys	0m0.015s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.21417 +/- 0.208296
+<x2> = 0.999155 +/- 0.219439
+information: H =  4.39169 bits 
+evidence: logZ = -162.519 +/- 0.174473
+
+real	0m1.574s
+user	0m1.253s
+sys	0m0.011s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.21995 +/- 0.196492
+<x2> = 0.988382 +/- 0.208423
+information: H =  4.69763 bits 
+evidence: logZ = -162.563 +/- 0.180448
+
+real	0m1.952s
+user	0m1.433s
+sys	0m0.015s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.21358 +/- 0.187779
+<x2> = 0.974923 +/- 0.194993
+information: H =  4.5322 bits 
+evidence: logZ = -162.302 +/- 0.177242
+
+real	0m1.332s
+user	0m1.101s
+sys	0m0.020s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.23199 +/- 0.19422
+<x2> = 0.980336 +/- 0.208815
+information: H =  4.57554 bits 
+evidence: logZ = -162.421 +/- 0.178088
+
+real	0m1.823s
+user	0m1.230s
+sys	0m0.017s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.22521 +/- 0.194797
+<x2> = 0.991793 +/- 0.202215
+information: H =  4.57053 bits 
+evidence: logZ = -162.426 +/- 0.17799
+
+real	0m1.741s
+user	0m1.316s
+sys	0m0.016s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.23229 +/- 0.199347
+<x2> = 0.982569 +/- 0.206814
+information: H =  4.28411 bits 
+evidence: logZ = -162.282 +/- 0.172323
+
+real	0m2.230s
+user	0m1.415s
+sys	0m0.015s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.22274 +/- 0.194393
+<x2> = 0.967559 +/- 0.19684
+information: H =  4.46764 bits 
+evidence: logZ = -162.321 +/- 0.175975
+
+real	0m2.015s
+user	0m1.260s
+sys	0m0.013s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.21648 +/- 0.191256
+<x2> = 1.00249 +/- 0.209666
+information: H =  3.78598 bits 
+evidence: logZ = -161.918 +/- 0.161995
+
+real	0m1.576s
+user	0m1.209s
+sys	0m0.012s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.22479 +/- 0.189044
+<x2> = 1.00066 +/- 0.199455
+information: H =  4.00466 bits 
+evidence: logZ = -161.988 +/- 0.166608
+
+real	0m1.635s
+user	0m1.145s
+sys	0m0.010s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.21416 +/- 0.18939
+<x2> = 0.962245 +/- 0.195217
+information: H =  4.62926 bits 
+evidence: logZ = -162.375 +/- 0.17913
+
+real	0m2.022s
+user	0m1.305s
+sys	0m0.011s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.21886 +/- 0.183469
+<x2> = 0.978421 +/- 0.187306
+information: H =  4.40804 bits 
+evidence: logZ = -162.147 +/- 0.174798
+
+real	0m1.856s
+user	0m1.240s
+sys	0m0.018s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.22426 +/- 0.184312
+<x2> = 0.983078 +/- 0.203145
+information: H =  4.52323 bits 
+evidence: logZ = -162.315 +/- 0.177067
+
+real	0m1.709s
+user	0m1.193s
+sys	0m0.018s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.21579 +/- 0.192979
+<x2> = 0.998618 +/- 0.210814
+information: H =  4.30362 bits 
+evidence: logZ = -162.273 +/- 0.172715
+
+real	0m2.149s
+user	0m1.372s
+sys	0m0.012s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.23719 +/- 0.189141
+<x2> = 0.983198 +/- 0.198227
+information: H =  4.14307 bits 
+evidence: logZ = -162.08 +/- 0.169463
+
+real	0m1.197s
+user	0m1.058s
+sys	0m0.012s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.23616 +/- 0.200462
+<x2> = 0.995913 +/- 0.198884
+information: H =  4.54146 bits 
+evidence: logZ = -162.412 +/- 0.177423
+
+real	0m1.602s
+user	0m1.316s
+sys	0m0.015s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.2376 +/- 0.20238
+<x2> = 0.976749 +/- 0.21713
+information: H =  4.47622 bits 
+evidence: logZ = -162.48 +/- 0.176144
+
+real	0m1.808s
+user	0m1.287s
+sys	0m0.009s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.23671 +/- 0.175211
+<x2> = 0.982985 +/- 0.180912
+information: H =  4.6425 bits 
+evidence: logZ = -162.215 +/- 0.179386
+
+real	0m1.605s
+user	0m1.260s
+sys	0m0.016s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.22182 +/- 0.198546
+<x2> = 0.984716 +/- 0.197387
+information: H =  4.64129 bits 
+evidence: logZ = -162.461 +/- 0.179363
+
+real	0m1.664s
+user	0m1.163s
+sys	0m0.009s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.21986 +/- 0.207294
+<x2> = 0.984089 +/- 0.211277
+information: H =  4.57946 bits 
+evidence: logZ = -162.54 +/- 0.178164
+
+real	0m1.844s
+user	0m1.438s
+sys	0m0.023s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.22785 +/- 0.183054
+<x2> = 0.967578 +/- 0.20882
+information: H =  4.58389 bits 
+evidence: logZ = -162.396 +/- 0.17825
+
+real	0m1.853s
+user	0m1.460s
+sys	0m0.022s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.23192 +/- 0.193026
+<x2> = 0.971857 +/- 0.200387
+information: H =  4.55719 bits 
+evidence: logZ = -162.379 +/- 0.17773
+
+real	0m2.155s
+user	0m1.385s
+sys	0m0.021s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.23578 +/- 0.195317
+<x2> = 0.984423 +/- 0.199988
+information: H =  4.64905 bits 
+evidence: logZ = -162.476 +/- 0.179513
+
+real	0m1.745s
+user	0m1.142s
+sys	0m0.010s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.23863 +/- 0.192991
+<x2> = 0.989482 +/- 0.214713
+information: H =  4.29171 bits 
+evidence: logZ = -162.311 +/- 0.172476
+
+real	0m1.904s
+user	0m1.296s
+sys	0m0.012s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.23908 +/- 0.189815
+<x2> = 0.991573 +/- 0.215064
+information: H =  4.39841 bits 
+evidence: logZ = -162.361 +/- 0.174607
+
+real	0m1.736s
+user	0m1.218s
+sys	0m0.013s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.21626 +/- 0.195079
+<x2> = 0.994732 +/- 0.203575
+information: H =  4.37022 bits 
+evidence: logZ = -162.308 +/- 0.174046
+
+real	0m2.023s
+user	0m1.347s
+sys	0m0.016s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.22941 +/- 0.202744
+<x2> = 1.00202 +/- 0.209873
+information: H =  4.16884 bits 
+evidence: logZ = -162.271 +/- 0.169989
+
+real	0m1.333s
+user	0m1.281s
+sys	0m0.023s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.21958 +/- 0.189759
+<x2> = 0.995789 +/- 0.201879
+information: H =  4.3881 bits 
+evidence: logZ = -162.26 +/- 0.174402
+
+real	0m2.149s
+user	0m1.176s
+sys	0m0.016s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.22945 +/- 0.196716
+<x2> = 0.992558 +/- 0.212772
+information: H =  4.69355 bits 
+evidence: logZ = -162.565 +/- 0.18037
+
+real	0m1.985s
+user	0m1.318s
+sys	0m0.017s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.23497 +/- 0.201867
+<x2> = 0.992739 +/- 0.214359
+information: H =  4.28995 bits 
+evidence: logZ = -162.347 +/- 0.17244
+
+real	0m1.680s
+user	0m1.174s
+sys	0m0.015s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.22759 +/- 0.215374
+<x2> = 1.00157 +/- 0.209836
+information: H =  4.24764 bits 
+evidence: logZ = -162.412 +/- 0.171588
+
+real	0m1.222s
+user	0m1.177s
+sys	0m0.010s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.23178 +/- 0.201237
+<x2> = 0.980788 +/- 0.200996
+information: H =  4.70208 bits 
+evidence: logZ = -162.542 +/- 0.180533
+
+real	0m2.164s
+user	0m1.432s
+sys	0m0.019s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.17981 +/- 0.183243
+<x2> = 0.964459 +/- 0.201911
+information: H =  4.99729 bits 
+evidence: logZ = -162.644 +/- 0.186114
+
+real	0m1.829s
+user	0m1.171s
+sys	0m0.011s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.22223 +/- 0.193584
+<x2> = 0.987436 +/- 0.193448
+information: H =  4.66877 bits 
+evidence: logZ = -162.43 +/- 0.179893
+
+real	0m2.040s
+user	0m1.424s
+sys	0m0.018s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.23487 +/- 0.181922
+<x2> = 0.989976 +/- 0.201882
+information: H =  4.85833 bits 
+evidence: logZ = -162.515 +/- 0.183509
+
+real	0m2.097s
+user	0m1.360s
+sys	0m0.007s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.23307 +/- 0.193426
+<x2> = 0.984074 +/- 0.213697
+information: H =  4.55014 bits 
+evidence: logZ = -162.469 +/- 0.177593
+
+real	0m1.722s
+user	0m1.209s
+sys	0m0.016s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.23409 +/- 0.20179
+<x2> = 0.988767 +/- 0.198231
+information: H =  4.62679 bits 
+evidence: logZ = -162.505 +/- 0.179082
+
+real	0m1.986s
+user	0m1.396s
+sys	0m0.015s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.22223 +/- 0.185998
+<x2> = 0.979389 +/- 0.19856
+information: H =  4.3146 bits 
+evidence: logZ = -162.17 +/- 0.172935
+
+real	0m1.759s
+user	0m1.172s
+sys	0m0.021s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.22831 +/- 0.192078
+<x2> = 0.995563 +/- 0.208332
+information: H =  4.36047 bits 
+evidence: logZ = -162.301 +/- 0.173852
+
+real	0m2.054s
+user	0m1.450s
+sys	0m0.015s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.23612 +/- 0.183403
+<x2> = 0.992767 +/- 0.208816
+information: H =  4.62352 bits 
+evidence: logZ = -162.419 +/- 0.179019
+
+real	0m1.661s
+user	0m1.244s
+sys	0m0.014s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.2146 +/- 0.199665
+<x2> = 0.973954 +/- 0.179435
+information: H =  5.19978 bits 
+evidence: logZ = -162.744 +/- 0.189848
+
+real	0m2.505s
+user	0m1.375s
+sys	0m0.018s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.22472 +/- 0.201256
+<x2> = 0.981663 +/- 0.198856
+information: H =  4.68705 bits 
+evidence: logZ = -162.536 +/- 0.180245
+
+real	0m1.807s
+user	0m1.272s
+sys	0m0.008s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.23845 +/- 0.19665
+<x2> = 0.972343 +/- 0.207006
+information: H =  4.65063 bits 
+evidence: logZ = -162.527 +/- 0.179543
+
+real	0m2.120s
+user	0m1.366s
+sys	0m0.011s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.23058 +/- 0.194641
+<x2> = 0.984529 +/- 0.204742
+information: H =  4.06761 bits 
+evidence: logZ = -162.112 +/- 0.167912
+
+real	0m2.091s
+user	0m1.374s
+sys	0m0.017s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.22726 +/- 0.202897
+<x2> = 1.01336 +/- 0.225768
+information: H =  3.94792 bits 
+evidence: logZ = -162.237 +/- 0.165423
+
+real	0m1.359s
+user	0m1.018s
+sys	0m0.013s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.2283 +/- 0.181587
+<x2> = 0.972294 +/- 0.199134
+information: H =  4.75049 bits 
+evidence: logZ = -162.436 +/- 0.18146
+
+real	0m2.025s
+user	0m1.313s
+sys	0m0.018s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.21489 +/- 0.192932
+<x2> = 0.979958 +/- 0.208319
+information: H =  4.41522 bits 
+evidence: logZ = -162.347 +/- 0.17494
+
+real	0m1.343s
+user	0m1.047s
+sys	0m0.012s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.21035 +/- 0.204087
+<x2> = 0.992843 +/- 0.208397
+information: H =  4.19002 bits 
+evidence: logZ = -162.281 +/- 0.17042
+
+real	0m1.836s
+user	0m1.482s
+sys	0m0.010s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.23604 +/- 0.196227
+<x2> = 0.996449 +/- 0.20349
+information: H =  4.63534 bits 
+evidence: logZ = -162.505 +/- 0.179248
+
+real	0m1.548s
+user	0m1.214s
+sys	0m0.017s
+./multinest 100 1.5 
+1701 iterations used
+<x1> = 1.22844 +/- 0.195997
+<x2> = 0.978767 +/- 0.208293
+information: H =  4.195 bits 
+evidence: logZ = -162.197 +/- 0.170521
+
+real	0m1.519s
+user	0m1.291s
+sys	0m0.016s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22514 +/- 0.196294
+<x2> = 0.982107 +/- 0.20342
+information: H =  4.30711 bits 
+evidence: logZ = -162.254 +/- 0.172785
+
+real	0m1.843s
+user	0m1.269s
+sys	0m0.013s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22752 +/- 0.184116
+<x2> = 0.989763 +/- 0.191336
+information: H =  4.03821 bits 
+evidence: logZ = -161.932 +/- 0.167304
+
+real	0m1.829s
+user	0m0.931s
+sys	0m0.013s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22351 +/- 0.192552
+<x2> = 0.999594 +/- 0.209459
+information: H =  4.09445 bits 
+evidence: logZ = -162.145 +/- 0.168465
+
+real	0m1.922s
+user	0m1.378s
+sys	0m0.012s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22348 +/- 0.183855
+<x2> = 1.00126 +/- 0.206329
+information: H =  4.38563 bits 
+evidence: logZ = -162.276 +/- 0.174353
+
+real	0m1.786s
+user	0m1.364s
+sys	0m0.018s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.23328 +/- 0.196357
+<x2> = 0.947844 +/- 0.182947
+information: H =  4.86631 bits 
+evidence: logZ = -162.51 +/- 0.183659
+
+real	0m1.880s
+user	0m1.453s
+sys	0m0.018s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22267 +/- 0.197801
+<x2> = 0.97715 +/- 0.200548
+information: H =  4.13476 bits 
+evidence: logZ = -162.151 +/- 0.169293
+
+real	0m1.988s
+user	0m1.403s
+sys	0m0.015s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.24387 +/- 0.184928
+<x2> = 0.943643 +/- 0.188652
+information: H =  4.80967 bits 
+evidence: logZ = -162.428 +/- 0.182587
+
+real	0m2.032s
+user	0m1.595s
+sys	0m0.016s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.23475 +/- 0.190389
+<x2> = 0.989704 +/- 0.197969
+information: H =  4.17536 bits 
+evidence: logZ = -162.098 +/- 0.170122
+
+real	0m1.680s
+user	0m1.171s
+sys	0m0.013s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22337 +/- 0.19012
+<x2> = 0.994904 +/- 0.206606
+information: H =  4.51511 bits 
+evidence: logZ = -162.397 +/- 0.176908
+
+real	0m2.005s
+user	0m1.196s
+sys	0m0.012s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.23616 +/- 0.181118
+<x2> = 0.983774 +/- 0.205464
+information: H =  4.7125 bits 
+evidence: logZ = -162.455 +/- 0.180733
+
+real	0m1.532s
+user	0m1.221s
+sys	0m0.009s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.21904 +/- 0.200229
+<x2> = 1.00286 +/- 0.210427
+information: H =  4.27713 bits 
+evidence: logZ = -162.33 +/- 0.172182
+
+real	0m1.792s
+user	0m1.286s
+sys	0m0.015s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22936 +/- 0.202145
+<x2> = 0.986162 +/- 0.215193
+information: H =  3.86256 bits 
+evidence: logZ = -162.094 +/- 0.163625
+
+real	0m1.855s
+user	0m1.301s
+sys	0m0.017s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22165 +/- 0.179443
+<x2> = 0.969467 +/- 0.202762
+information: H =  4.53897 bits 
+evidence: logZ = -162.292 +/- 0.177375
+
+real	0m1.846s
+user	0m1.277s
+sys	0m0.011s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.23119 +/- 0.192915
+<x2> = 0.979951 +/- 0.204761
+information: H =  4.35325 bits 
+evidence: logZ = -162.266 +/- 0.173708
+
+real	0m1.507s
+user	0m1.124s
+sys	0m0.010s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.24927 +/- 0.187164
+<x2> = 0.970884 +/- 0.195278
+information: H =  4.76771 bits 
+evidence: logZ = -162.464 +/- 0.181789
+
+real	0m1.966s
+user	0m1.420s
+sys	0m0.017s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.21645 +/- 0.203281
+<x2> = 0.995002 +/- 0.207033
+information: H =  4.54326 bits 
+evidence: logZ = -162.492 +/- 0.177458
+
+real	0m1.904s
+user	0m1.255s
+sys	0m0.019s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.21155 +/- 0.187672
+<x2> = 0.974344 +/- 0.191468
+information: H =  4.83497 bits 
+evidence: logZ = -162.48 +/- 0.183067
+
+real	0m2.344s
+user	0m1.412s
+sys	0m0.017s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22491 +/- 0.19874
+<x2> = 1.00113 +/- 0.214717
+information: H =  4.28154 bits 
+evidence: logZ = -162.323 +/- 0.172271
+
+real	0m1.811s
+user	0m1.335s
+sys	0m0.011s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.23135 +/- 0.190975
+<x2> = 0.991511 +/- 0.212946
+information: H =  4.50628 bits 
+evidence: logZ = -162.412 +/- 0.176735
+
+real	0m1.657s
+user	0m1.264s
+sys	0m0.025s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.23291 +/- 0.190223
+<x2> = 0.98326 +/- 0.21291
+information: H =  4.52114 bits 
+evidence: logZ = -162.393 +/- 0.177026
+
+real	0m1.453s
+user	0m1.112s
+sys	0m0.009s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22443 +/- 0.196318
+<x2> = 0.99953 +/- 0.205332
+information: H =  3.72927 bits 
+evidence: logZ = -161.894 +/- 0.160777
+
+real	0m1.924s
+user	0m1.297s
+sys	0m0.022s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.21316 +/- 0.19245
+<x2> = 0.986243 +/- 0.22091
+information: H =  4.44743 bits 
+evidence: logZ = -162.447 +/- 0.175577
+
+real	0m1.824s
+user	0m1.410s
+sys	0m0.016s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.21855 +/- 0.191492
+<x2> = 0.980988 +/- 0.204792
+information: H =  4.28722 bits 
+evidence: logZ = -162.227 +/- 0.172386
+
+real	0m1.523s
+user	0m1.213s
+sys	0m0.017s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.23251 +/- 0.188621
+<x2> = 0.991401 +/- 0.203087
+information: H =  4.66074 bits 
+evidence: logZ = -162.437 +/- 0.179738
+
+real	0m1.861s
+user	0m1.270s
+sys	0m0.021s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22397 +/- 0.199321
+<x2> = 0.988777 +/- 0.209637
+information: H =  4.37547 bits 
+evidence: logZ = -162.364 +/- 0.174151
+
+real	0m1.881s
+user	0m1.515s
+sys	0m0.023s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.23294 +/- 0.18878
+<x2> = 0.988247 +/- 0.206289
+information: H =  4.22156 bits 
+evidence: logZ = -162.168 +/- 0.17106
+
+real	0m1.827s
+user	0m1.347s
+sys	0m0.015s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.23669 +/- 0.194544
+<x2> = 0.969141 +/- 0.220299
+information: H =  4.7992 bits 
+evidence: logZ = -162.707 +/- 0.182388
+
+real	0m1.606s
+user	0m1.176s
+sys	0m0.018s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22425 +/- 0.205859
+<x2> = 0.996027 +/- 0.208119
+information: H =  4.36248 bits 
+evidence: logZ = -162.396 +/- 0.173892
+
+real	0m2.158s
+user	0m1.484s
+sys	0m0.016s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22556 +/- 0.188565
+<x2> = 0.99348 +/- 0.189293
+information: H =  4.62285 bits 
+evidence: logZ = -162.347 +/- 0.179006
+
+real	0m1.649s
+user	0m1.178s
+sys	0m0.014s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22955 +/- 0.193057
+<x2> = 0.997787 +/- 0.201422
+information: H =  4.04664 bits 
+evidence: logZ = -162.065 +/- 0.167479
+
+real	0m1.611s
+user	0m1.268s
+sys	0m0.014s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.21761 +/- 0.197388
+<x2> = 0.996611 +/- 0.193147
+information: H =  3.72164 bits 
+evidence: logZ = -161.818 +/- 0.160613
+
+real	0m1.428s
+user	0m1.118s
+sys	0m0.015s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.21491 +/- 0.196808
+<x2> = 0.996816 +/- 0.198113
+information: H =  4.46471 bits 
+evidence: logZ = -162.347 +/- 0.175918
+
+real	0m1.555s
+user	0m1.298s
+sys	0m0.016s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.20517 +/- 0.200986
+<x2> = 0.989159 +/- 0.197785
+information: H =  4.03955 bits 
+evidence: logZ = -162.096 +/- 0.167332
+
+real	0m1.663s
+user	0m1.173s
+sys	0m0.017s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.21618 +/- 0.194446
+<x2> = 0.971007 +/- 0.198864
+information: H =  4.4067 bits 
+evidence: logZ = -162.291 +/- 0.174771
+
+real	0m2.161s
+user	0m1.577s
+sys	0m0.023s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.23663 +/- 0.182717
+<x2> = 0.982682 +/- 0.19838
+information: H =  5.03669 bits 
+evidence: logZ = -162.665 +/- 0.186847
+
+real	0m2.152s
+user	0m1.171s
+sys	0m0.012s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22984 +/- 0.201035
+<x2> = 0.977022 +/- 0.193346
+information: H =  4.81383 bits 
+evidence: logZ = -162.566 +/- 0.182666
+
+real	0m1.618s
+user	0m1.013s
+sys	0m0.012s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.23565 +/- 0.189737
+<x2> = 0.993476 +/- 0.193113
+information: H =  4.38533 bits 
+evidence: logZ = -162.242 +/- 0.174347
+
+real	0m2.008s
+user	0m1.339s
+sys	0m0.019s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22636 +/- 0.199968
+<x2> = 1.00528 +/- 0.220242
+information: H =  4.90869 bits 
+evidence: logZ = -162.814 +/- 0.184457
+
+real	0m2.120s
+user	0m1.699s
+sys	0m0.023s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.20902 +/- 0.189086
+<x2> = 0.984816 +/- 0.19807
+information: H =  4.30643 bits 
+evidence: logZ = -162.194 +/- 0.172771
+
+real	0m1.561s
+user	0m1.202s
+sys	0m0.014s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.23457 +/- 0.183881
+<x2> = 0.992101 +/- 0.199338
+information: H =  4.45204 bits 
+evidence: logZ = -162.259 +/- 0.175668
+
+real	0m1.448s
+user	0m1.161s
+sys	0m0.017s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.23009 +/- 0.177005
+<x2> = 0.976287 +/- 0.194323
+information: H =  4.46967 bits 
+evidence: logZ = -162.205 +/- 0.176015
+
+real	0m2.021s
+user	0m1.256s
+sys	0m0.012s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.21256 +/- 0.187368
+<x2> = 1.00295 +/- 0.196128
+information: H =  4.10536 bits 
+evidence: logZ = -162.035 +/- 0.16869
+
+real	0m1.397s
+user	0m1.302s
+sys	0m0.008s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.23408 +/- 0.188581
+<x2> = 0.986734 +/- 0.198547
+information: H =  3.99219 bits 
+evidence: logZ = -161.97 +/- 0.166348
+
+real	0m1.588s
+user	0m1.269s
+sys	0m0.017s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22002 +/- 0.187248
+<x2> = 0.987042 +/- 0.206636
+information: H =  4.55807 bits 
+evidence: logZ = -162.36 +/- 0.177747
+
+real	0m1.639s
+user	0m1.279s
+sys	0m0.016s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.23176 +/- 0.202505
+<x2> = 1.00823 +/- 0.204712
+information: H =  4.46282 bits 
+evidence: logZ = -162.412 +/- 0.17588
+
+real	0m1.622s
+user	0m1.271s
+sys	0m0.017s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.23803 +/- 0.205918
+<x2> = 0.994115 +/- 0.214655
+information: H =  4.26166 bits 
+evidence: logZ = -162.367 +/- 0.171871
+
+real	0m1.820s
+user	0m1.353s
+sys	0m0.020s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.21877 +/- 0.194131
+<x2> = 0.996235 +/- 0.207044
+information: H =  4.25665 bits 
+evidence: logZ = -162.239 +/- 0.17177
+
+real	0m1.872s
+user	0m1.476s
+sys	0m0.018s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.23067 +/- 0.189338
+<x2> = 1.01079 +/- 0.202581
+information: H =  4.17936 bits 
+evidence: logZ = -162.162 +/- 0.170203
+
+real	0m1.743s
+user	0m1.343s
+sys	0m0.015s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.2236 +/- 0.189721
+<x2> = 0.999494 +/- 0.213912
+information: H =  4.46217 bits 
+evidence: logZ = -162.411 +/- 0.175867
+
+real	0m1.827s
+user	0m1.435s
+sys	0m0.019s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22586 +/- 0.199594
+<x2> = 1.00469 +/- 0.221455
+information: H =  4.52088 bits 
+evidence: logZ = -162.552 +/- 0.177021
+
+real	0m1.762s
+user	0m1.362s
+sys	0m0.017s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22781 +/- 0.185649
+<x2> = 0.978012 +/- 0.201762
+information: H =  4.17951 bits 
+evidence: logZ = -162.09 +/- 0.170206
+
+real	0m1.517s
+user	0m1.189s
+sys	0m0.017s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.18962 +/- 0.205344
+<x2> = 0.991916 +/- 0.232394
+information: H =  4.81704 bits 
+evidence: logZ = -162.885 +/- 0.182727
+
+real	0m2.032s
+user	0m1.598s
+sys	0m0.020s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22039 +/- 0.183477
+<x2> = 0.994307 +/- 0.202725
+information: H =  4.27084 bits 
+evidence: logZ = -162.171 +/- 0.172056
+
+real	0m2.130s
+user	0m1.379s
+sys	0m0.019s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22125 +/- 0.187922
+<x2> = 0.991211 +/- 0.214819
+information: H =  4.51616 bits 
+evidence: logZ = -162.434 +/- 0.176928
+
+real	0m2.042s
+user	0m1.262s
+sys	0m0.017s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22008 +/- 0.180965
+<x2> = 0.987727 +/- 0.208508
+information: H =  4.77891 bits 
+evidence: logZ = -162.518 +/- 0.182002
+
+real	0m1.664s
+user	0m1.259s
+sys	0m0.015s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.21836 +/- 0.203149
+<x2> = 0.975625 +/- 0.204404
+information: H =  4.47448 bits 
+evidence: logZ = -162.403 +/- 0.17611
+
+real	0m1.808s
+user	0m1.425s
+sys	0m0.023s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.21452 +/- 0.176112
+<x2> = 0.927162 +/- 0.214367
+information: H =  5.19423 bits 
+evidence: logZ = -162.802 +/- 0.189746
+
+real	0m2.321s
+user	0m1.271s
+sys	0m0.016s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22459 +/- 0.200795
+<x2> = 0.987047 +/- 0.197568
+information: H =  4.28817 bits 
+evidence: logZ = -162.232 +/- 0.172404
+
+real	0m1.853s
+user	0m1.460s
+sys	0m0.021s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.21882 +/- 0.186152
+<x2> = 0.987438 +/- 0.202417
+information: H =  4.39435 bits 
+evidence: logZ = -162.252 +/- 0.174526
+
+real	0m1.158s
+user	0m0.957s
+sys	0m0.009s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.23423 +/- 0.185215
+<x2> = 0.983876 +/- 0.206714
+information: H =  4.22966 bits 
+evidence: logZ = -162.148 +/- 0.171224
+
+real	0m1.454s
+user	0m1.083s
+sys	0m0.009s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.20409 +/- 0.187718
+<x2> = 0.998009 +/- 0.20973
+information: H =  4.3383 bits 
+evidence: logZ = -162.266 +/- 0.173409
+
+real	0m2.049s
+user	0m1.234s
+sys	0m0.011s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22931 +/- 0.188321
+<x2> = 0.970393 +/- 0.194573
+information: H =  4.79494 bits 
+evidence: logZ = -162.45 +/- 0.182307
+
+real	0m2.236s
+user	0m1.262s
+sys	0m0.011s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.23468 +/- 0.167786
+<x2> = 0.952177 +/- 0.165803
+information: H =  5.21323 bits 
+evidence: logZ = -162.472 +/- 0.190093
+
+real	0m1.928s
+user	0m1.247s
+sys	0m0.018s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.2271 +/- 0.197849
+<x2> = 0.978135 +/- 0.205823
+information: H =  4.53617 bits 
+evidence: logZ = -162.436 +/- 0.17732
+
+real	0m1.999s
+user	0m1.147s
+sys	0m0.011s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.21579 +/- 0.197388
+<x2> = 0.983958 +/- 0.203596
+information: H =  4.3376 bits 
+evidence: logZ = -162.291 +/- 0.173395
+
+real	0m1.935s
+user	0m1.270s
+sys	0m0.014s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22045 +/- 0.192821
+<x2> = 0.957817 +/- 0.210457
+information: H =  4.62704 bits 
+evidence: logZ = -162.473 +/- 0.179087
+
+real	0m2.111s
+user	0m1.443s
+sys	0m0.017s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.21318 +/- 0.203464
+<x2> = 1.00411 +/- 0.213679
+information: H =  4.24192 bits 
+evidence: logZ = -162.347 +/- 0.171472
+
+real	0m1.587s
+user	0m1.248s
+sys	0m0.023s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.23034 +/- 0.202913
+<x2> = 0.995035 +/- 0.203077
+information: H =  4.34204 bits 
+evidence: logZ = -162.34 +/- 0.173484
+
+real	0m1.689s
+user	0m1.159s
+sys	0m0.013s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.2145 +/- 0.195937
+<x2> = 1.00423 +/- 0.214486
+information: H =  4.31863 bits 
+evidence: logZ = -162.354 +/- 0.173016
+
+real	0m1.936s
+user	0m1.342s
+sys	0m0.014s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22534 +/- 0.205017
+<x2> = 1.00712 +/- 0.200845
+information: H =  4.53198 bits 
+evidence: logZ = -162.485 +/- 0.177238
+
+real	0m2.019s
+user	0m1.359s
+sys	0m0.021s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.20687 +/- 0.201717
+<x2> = 0.988615 +/- 0.204544
+information: H =  4.2306 bits 
+evidence: logZ = -162.249 +/- 0.171243
+
+real	0m2.110s
+user	0m1.464s
+sys	0m0.019s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.23147 +/- 0.189729
+<x2> = 0.986297 +/- 0.202743
+information: H =  4.39795 bits 
+evidence: logZ = -162.266 +/- 0.174597
+
+real	0m1.998s
+user	0m1.232s
+sys	0m0.012s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.21985 +/- 0.182753
+<x2> = 0.982141 +/- 0.203257
+information: H =  4.36341 bits 
+evidence: logZ = -162.203 +/- 0.17391
+
+real	0m1.672s
+user	0m1.264s
+sys	0m0.010s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.23561 +/- 0.20504
+<x2> = 0.9842 +/- 0.21279
+information: H =  4.10816 bits 
+evidence: logZ = -162.231 +/- 0.168747
+
+real	0m1.658s
+user	0m1.327s
+sys	0m0.023s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.23748 +/- 0.193051
+<x2> = 0.959568 +/- 0.198455
+information: H =  4.6956 bits 
+evidence: logZ = -162.441 +/- 0.180409
+
+real	0m1.820s
+user	0m1.432s
+sys	0m0.016s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.23011 +/- 0.187954
+<x2> = 0.972848 +/- 0.199449
+information: H =  4.06593 bits 
+evidence: logZ = -162.021 +/- 0.167878
+
+real	0m1.635s
+user	0m1.311s
+sys	0m0.019s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.23604 +/- 0.191467
+<x2> = 0.980117 +/- 0.199662
+information: H =  4.17229 bits 
+evidence: logZ = -162.121 +/- 0.170059
+
+real	0m1.733s
+user	0m1.401s
+sys	0m0.011s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22603 +/- 0.195285
+<x2> = 0.992843 +/- 0.212439
+information: H =  4.77096 bits 
+evidence: logZ = -162.627 +/- 0.181851
+
+real	0m1.704s
+user	0m1.279s
+sys	0m0.019s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22352 +/- 0.177102
+<x2> = 0.98272 +/- 0.192731
+information: H =  4.51434 bits 
+evidence: logZ = -162.224 +/- 0.176893
+
+real	0m1.741s
+user	0m1.255s
+sys	0m0.011s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.23076 +/- 0.180683
+<x2> = 0.99296 +/- 0.198339
+information: H =  4.51558 bits 
+evidence: logZ = -162.278 +/- 0.176917
+
+real	0m1.501s
+user	0m1.211s
+sys	0m0.011s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.23308 +/- 0.192255
+<x2> = 0.990743 +/- 0.199341
+information: H =  3.92767 bits 
+evidence: logZ = -161.952 +/- 0.164999
+
+real	0m1.539s
+user	0m1.119s
+sys	0m0.014s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22005 +/- 0.184632
+<x2> = 0.98885 +/- 0.191604
+information: H =  4.71672 bits 
+evidence: logZ = -162.402 +/- 0.180814
+
+real	0m1.857s
+user	0m1.128s
+sys	0m0.010s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22092 +/- 0.186695
+<x2> = 0.985653 +/- 0.195784
+information: H =  4.5095 bits 
+evidence: logZ = -162.289 +/- 0.176798
+
+real	0m2.049s
+user	0m1.626s
+sys	0m0.018s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22418 +/- 0.188084
+<x2> = 0.959202 +/- 0.201211
+information: H =  4.84133 bits 
+evidence: logZ = -162.517 +/- 0.183187
+
+real	0m2.117s
+user	0m1.601s
+sys	0m0.021s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22103 +/- 0.188849
+<x2> = 0.983917 +/- 0.198546
+information: H =  4.69575 bits 
+evidence: logZ = -162.45 +/- 0.180412
+
+real	0m1.771s
+user	0m1.390s
+sys	0m0.024s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.23297 +/- 0.198475
+<x2> = 0.99211 +/- 0.213609
+information: H =  4.47947 bits 
+evidence: logZ = -162.445 +/- 0.176208
+
+real	0m1.877s
+user	0m1.340s
+sys	0m0.017s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22654 +/- 0.191569
+<x2> = 0.971313 +/- 0.202833
+information: H =  4.64009 bits 
+evidence: logZ = -162.44 +/- 0.17934
+
+real	0m1.737s
+user	0m1.144s
+sys	0m0.004s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.23359 +/- 0.203725
+<x2> = 0.993433 +/- 0.215159
+information: H =  4.40425 bits 
+evidence: logZ = -162.441 +/- 0.174722
+
+real	0m2.570s
+user	0m1.436s
+sys	0m0.025s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22383 +/- 0.194082
+<x2> = 0.96415 +/- 0.201835
+information: H =  4.4244 bits 
+evidence: logZ = -162.298 +/- 0.175122
+
+real	0m1.926s
+user	0m1.470s
+sys	0m0.022s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.24041 +/- 0.194633
+<x2> = 0.962282 +/- 0.203148
+information: H =  4.39971 bits 
+evidence: logZ = -162.293 +/- 0.174632
+
+real	0m1.703s
+user	0m1.311s
+sys	0m0.021s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.2336 +/- 0.191525
+<x2> = 0.980858 +/- 0.20754
+information: H =  4.304 bits 
+evidence: logZ = -162.259 +/- 0.172722
+
+real	0m2.072s
+user	0m1.340s
+sys	0m0.021s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22888 +/- 0.19558
+<x2> = 0.987564 +/- 0.205444
+information: H =  4.08891 bits 
+evidence: logZ = -162.088 +/- 0.168351
+
+real	0m1.589s
+user	0m1.150s
+sys	0m0.012s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.23513 +/- 0.193374
+<x2> = 0.984516 +/- 0.205524
+information: H =  4.69251 bits 
+evidence: logZ = -162.526 +/- 0.18035
+
+real	0m2.135s
+user	0m1.494s
+sys	0m0.011s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.21372 +/- 0.208925
+<x2> = 1.01266 +/- 0.203301
+information: H =  4.44661 bits 
+evidence: logZ = -162.484 +/- 0.175561
+
+real	0m1.607s
+user	0m1.336s
+sys	0m0.017s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.23052 +/- 0.187056
+<x2> = 0.971005 +/- 0.195804
+information: H =  4.55687 bits 
+evidence: logZ = -162.324 +/- 0.177724
+
+real	0m2.235s
+user	0m1.349s
+sys	0m0.019s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22772 +/- 0.185996
+<x2> = 0.99923 +/- 0.199674
+information: H =  4.37391 bits 
+evidence: logZ = -162.226 +/- 0.17412
+
+real	0m1.594s
+user	0m1.249s
+sys	0m0.017s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.23477 +/- 0.183563
+<x2> = 0.971381 +/- 0.19433
+information: H =  4.63283 bits 
+evidence: logZ = -162.365 +/- 0.179199
+
+real	0m1.597s
+user	0m1.290s
+sys	0m0.019s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.22344 +/- 0.195709
+<x2> = 0.989065 +/- 0.186391
+information: H =  4.22861 bits 
+evidence: logZ = -162.121 +/- 0.171203
+
+real	0m1.235s
+user	0m1.111s
+sys	0m0.014s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.21044 +/- 0.200449
+<x2> = 0.983247 +/- 0.20535
+information: H =  4.56133 bits 
+evidence: logZ = -162.457 +/- 0.177811
+
+real	0m1.500s
+user	0m1.360s
+sys	0m0.008s
+./multinest 100 1.25 
+1701 iterations used
+<x1> = 1.23647 +/- 0.191663
+<x2> = 0.991608 +/- 0.192649
+information: H =  4.37055 bits 
+evidence: logZ = -162.211 +/- 0.174053
+
+real	0m1.738s
+user	0m1.220s
+sys	0m0.012s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.21753 +/- 0.193261
+<x2> = 0.985038 +/- 0.21189
+information: H =  4.55993 bits 
+evidence: logZ = -162.468 +/- 0.177784
+
+real	0m2.117s
+user	0m1.236s
+sys	0m0.013s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.21441 +/- 0.210304
+<x2> = 0.997919 +/- 0.20635
+information: H =  4.74555 bits 
+evidence: logZ = -162.687 +/- 0.181366
+
+real	0m2.116s
+user	0m1.615s
+sys	0m0.021s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22107 +/- 0.198126
+<x2> = 0.984388 +/- 0.211726
+information: H =  4.20044 bits 
+evidence: logZ = -162.243 +/- 0.170632
+
+real	0m1.619s
+user	0m1.112s
+sys	0m0.012s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.23378 +/- 0.192116
+<x2> = 0.985749 +/- 0.196087
+information: H =  4.52947 bits 
+evidence: logZ = -162.332 +/- 0.177189
+
+real	0m1.558s
+user	0m1.345s
+sys	0m0.016s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.20947 +/- 0.193391
+<x2> = 0.99115 +/- 0.194854
+information: H =  4.75224 bits 
+evidence: logZ = -162.488 +/- 0.181494
+
+real	0m2.123s
+user	0m1.265s
+sys	0m0.013s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22994 +/- 0.186187
+<x2> = 0.981441 +/- 0.216404
+information: H =  4.35417 bits 
+evidence: logZ = -162.299 +/- 0.173726
+
+real	0m1.708s
+user	0m1.261s
+sys	0m0.012s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.2273 +/- 0.199807
+<x2> = 0.987508 +/- 0.207068
+information: H =  4.31392 bits 
+evidence: logZ = -162.321 +/- 0.172921
+
+real	0m1.489s
+user	0m1.213s
+sys	0m0.013s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.21899 +/- 0.209982
+<x2> = 1.00245 +/- 0.217044
+information: H =  4.24445 bits 
+evidence: logZ = -162.396 +/- 0.171523
+
+real	0m1.818s
+user	0m1.415s
+sys	0m0.019s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22188 +/- 0.196386
+<x2> = 0.996998 +/- 0.202328
+information: H =  4.24006 bits 
+evidence: logZ = -162.241 +/- 0.171435
+
+real	0m1.804s
+user	0m1.399s
+sys	0m0.022s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.24 +/- 0.183304
+<x2> = 0.982011 +/- 0.191815
+information: H =  4.99902 bits 
+evidence: logZ = -162.584 +/- 0.186147
+
+real	0m1.782s
+user	0m1.398s
+sys	0m0.015s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22882 +/- 0.200011
+<x2> = 0.972726 +/- 0.211737
+information: H =  4.06347 bits 
+evidence: logZ = -162.164 +/- 0.167827
+
+real	0m1.588s
+user	0m1.245s
+sys	0m0.017s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.21218 +/- 0.217282
+<x2> = 0.989752 +/- 0.212276
+information: H =  4.29402 bits 
+evidence: logZ = -162.464 +/- 0.172522
+
+real	0m2.072s
+user	0m1.636s
+sys	0m0.018s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22584 +/- 0.20648
+<x2> = 0.995195 +/- 0.218301
+information: H =  4.36745 bits 
+evidence: logZ = -162.462 +/- 0.173991
+
+real	0m1.784s
+user	0m1.362s
+sys	0m0.036s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.21397 +/- 0.190756
+<x2> = 1.01659 +/- 0.19728
+information: H =  4.48614 bits 
+evidence: logZ = -162.348 +/- 0.176339
+
+real	0m1.894s
+user	0m1.144s
+sys	0m0.011s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.21749 +/- 0.198404
+<x2> = 1.02103 +/- 0.212503
+information: H =  4.27776 bits 
+evidence: logZ = -162.359 +/- 0.172195
+
+real	0m2.471s
+user	0m1.430s
+sys	0m0.026s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22401 +/- 0.18932
+<x2> = 0.981224 +/- 0.187758
+information: H =  4.67342 bits 
+evidence: logZ = -162.372 +/- 0.179982
+
+real	0m1.591s
+user	0m1.243s
+sys	0m0.019s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.20791 +/- 0.192966
+<x2> = 0.981355 +/- 0.197231
+information: H =  4.61328 bits 
+evidence: logZ = -162.373 +/- 0.178821
+
+real	0m1.724s
+user	0m1.195s
+sys	0m0.009s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.24163 +/- 0.188646
+<x2> = 0.970369 +/- 0.214937
+information: H =  4.80749 bits 
+evidence: logZ = -162.635 +/- 0.182546
+
+real	0m2.219s
+user	0m1.371s
+sys	0m0.019s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.21695 +/- 0.189423
+<x2> = 0.977425 +/- 0.20642
+information: H =  4.64174 bits 
+evidence: logZ = -162.426 +/- 0.179371
+
+real	0m2.040s
+user	0m1.284s
+sys	0m0.013s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22337 +/- 0.205383
+<x2> = 0.999786 +/- 0.202317
+information: H =  4.60039 bits 
+evidence: logZ = -162.536 +/- 0.178571
+
+real	0m1.513s
+user	0m1.223s
+sys	0m0.012s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22116 +/- 0.198762
+<x2> = 0.986864 +/- 0.202261
+information: H =  4.44872 bits 
+evidence: logZ = -162.371 +/- 0.175602
+
+real	0m1.995s
+user	0m1.227s
+sys	0m0.015s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.23318 +/- 0.190669
+<x2> = 0.999644 +/- 0.18967
+information: H =  4.80355 bits 
+evidence: logZ = -162.465 +/- 0.182471
+
+real	0m1.827s
+user	0m1.415s
+sys	0m0.022s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22614 +/- 0.192347
+<x2> = 0.974906 +/- 0.202362
+information: H =  4.34238 bits 
+evidence: logZ = -162.25 +/- 0.173491
+
+real	0m1.699s
+user	0m1.325s
+sys	0m0.019s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.20951 +/- 0.177814
+<x2> = 0.939726 +/- 0.183939
+information: H =  4.87483 bits 
+evidence: logZ = -162.419 +/- 0.18382
+
+real	0m1.655s
+user	0m1.206s
+sys	0m0.014s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22013 +/- 0.199873
+<x2> = 0.983572 +/- 0.191142
+information: H =  4.68985 bits 
+evidence: logZ = -162.467 +/- 0.180299
+
+real	0m1.431s
+user	0m1.159s
+sys	0m0.020s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22336 +/- 0.193516
+<x2> = 1.00055 +/- 0.215151
+information: H =  4.08408 bits 
+evidence: logZ = -162.162 +/- 0.168252
+
+real	0m1.454s
+user	0m1.214s
+sys	0m0.012s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22531 +/- 0.205098
+<x2> = 0.998756 +/- 0.214189
+information: H =  4.29431 bits 
+evidence: logZ = -162.369 +/- 0.172528
+
+real	0m1.564s
+user	0m1.199s
+sys	0m0.013s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.24098 +/- 0.185535
+<x2> = 0.99243 +/- 0.200406
+information: H =  4.71814 bits 
+evidence: logZ = -162.471 +/- 0.180841
+
+real	0m1.766s
+user	0m1.220s
+sys	0m0.013s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.21804 +/- 0.199711
+<x2> = 1.00323 +/- 0.214205
+information: H =  4.36103 bits 
+evidence: logZ = -162.393 +/- 0.173863
+
+real	0m1.660s
+user	0m1.318s
+sys	0m0.015s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.231 +/- 0.198412
+<x2> = 0.973843 +/- 0.211572
+information: H =  4.17102 bits 
+evidence: logZ = -162.212 +/- 0.170033
+
+real	0m1.465s
+user	0m1.059s
+sys	0m0.018s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22437 +/- 0.184199
+<x2> = 1.00923 +/- 0.202032
+information: H =  4.05465 bits 
+evidence: logZ = -162.019 +/- 0.167645
+
+real	0m1.434s
+user	0m1.087s
+sys	0m0.015s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22602 +/- 0.198382
+<x2> = 0.994249 +/- 0.21755
+information: H =  4.2283 bits 
+evidence: logZ = -162.307 +/- 0.171197
+
+real	0m2.003s
+user	0m1.225s
+sys	0m0.017s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22229 +/- 0.184427
+<x2> = 0.987134 +/- 0.191421
+information: H =  4.55491 bits 
+evidence: logZ = -162.277 +/- 0.177686
+
+real	0m1.758s
+user	0m1.233s
+sys	0m0.013s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22967 +/- 0.196524
+<x2> = 0.976346 +/- 0.210225
+information: H =  4.22604 bits 
+evidence: logZ = -162.255 +/- 0.171151
+
+real	0m1.716s
+user	0m1.186s
+sys	0m0.012s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.21383 +/- 0.196474
+<x2> = 0.98825 +/- 0.222813
+information: H =  4.55173 bits 
+evidence: logZ = -162.531 +/- 0.177624
+
+real	0m1.588s
+user	0m1.271s
+sys	0m0.016s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22597 +/- 0.187929
+<x2> = 0.990376 +/- 0.205604
+information: H =  4.36399 bits 
+evidence: logZ = -162.248 +/- 0.173922
+
+real	0m1.686s
+user	0m1.085s
+sys	0m0.012s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22754 +/- 0.196917
+<x2> = 0.987733 +/- 0.207123
+information: H =  4.63702 bits 
+evidence: logZ = -162.504 +/- 0.17928
+
+real	0m2.190s
+user	0m1.606s
+sys	0m0.018s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.23669 +/- 0.197075
+<x2> = 0.993198 +/- 0.211701
+information: H =  4.33192 bits 
+evidence: logZ = -162.365 +/- 0.173282
+
+real	0m1.732s
+user	0m1.234s
+sys	0m0.016s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.23178 +/- 0.203588
+<x2> = 1.00293 +/- 0.213726
+information: H =  4.02287 bits 
+evidence: logZ = -162.182 +/- 0.166986
+
+real	0m1.408s
+user	0m1.306s
+sys	0m0.017s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22146 +/- 0.185412
+<x2> = 0.962527 +/- 0.202954
+information: H =  4.85338 bits 
+evidence: logZ = -162.532 +/- 0.183415
+
+real	0m1.634s
+user	0m1.305s
+sys	0m0.019s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22855 +/- 0.189148
+<x2> = 0.979071 +/- 0.195343
+information: H =  4.51392 bits 
+evidence: logZ = -162.307 +/- 0.176884
+
+real	0m1.773s
+user	0m1.415s
+sys	0m0.025s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.23582 +/- 0.197145
+<x2> = 0.995922 +/- 0.223045
+information: H =  4.44247 bits 
+evidence: logZ = -162.467 +/- 0.175479
+
+real	0m1.876s
+user	0m1.469s
+sys	0m0.020s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22495 +/- 0.188605
+<x2> = 0.994446 +/- 0.200756
+information: H =  4.13783 bits 
+evidence: logZ = -162.1 +/- 0.169355
+
+real	0m1.581s
+user	0m1.244s
+sys	0m0.017s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.2288 +/- 0.199014
+<x2> = 1.00599 +/- 0.207213
+information: H =  4.32489 bits 
+evidence: logZ = -162.319 +/- 0.173141
+
+real	0m1.635s
+user	0m1.271s
+sys	0m0.018s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22997 +/- 0.189578
+<x2> = 0.977504 +/- 0.19858
+information: H =  4.19553 bits 
+evidence: logZ = -162.096 +/- 0.170532
+
+real	0m1.797s
+user	0m1.409s
+sys	0m0.024s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22041 +/- 0.185651
+<x2> = 0.985547 +/- 0.188402
+information: H =  3.95268 bits 
+evidence: logZ = -161.892 +/- 0.165523
+
+real	0m1.689s
+user	0m1.309s
+sys	0m0.021s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.21423 +/- 0.189015
+<x2> = 0.987648 +/- 0.201083
+information: H =  4.71219 bits 
+evidence: logZ = -162.478 +/- 0.180727
+
+real	0m1.491s
+user	0m1.159s
+sys	0m0.022s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22831 +/- 0.194466
+<x2> = 0.979809 +/- 0.208709
+information: H =  4.30989 bits 
+evidence: logZ = -162.251 +/- 0.172841
+
+real	0m1.654s
+user	0m1.299s
+sys	0m0.016s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22583 +/- 0.183378
+<x2> = 0.999596 +/- 0.192839
+information: H =  4.23715 bits 
+evidence: logZ = -162.067 +/- 0.171376
+
+real	0m1.700s
+user	0m1.328s
+sys	0m0.026s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.23467 +/- 0.181199
+<x2> = 0.983816 +/- 0.198648
+information: H =  3.89773 bits 
+evidence: logZ = -161.853 +/- 0.164369
+
+real	0m1.320s
+user	0m1.023s
+sys	0m0.013s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.23957 +/- 0.18634
+<x2> = 0.975666 +/- 0.210795
+information: H =  4.74611 bits 
+evidence: logZ = -162.539 +/- 0.181377
+
+real	0m1.899s
+user	0m1.503s
+sys	0m0.020s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.21748 +/- 0.197873
+<x2> = 0.987764 +/- 0.213152
+information: H =  4.28844 bits 
+evidence: logZ = -162.32 +/- 0.17241
+
+real	0m1.627s
+user	0m1.265s
+sys	0m0.024s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.2304 +/- 0.191953
+<x2> = 0.99717 +/- 0.196815
+information: H =  4.52204 bits 
+evidence: logZ = -162.344 +/- 0.177044
+
+real	0m2.045s
+user	0m1.414s
+sys	0m0.015s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.21502 +/- 0.200092
+<x2> = 0.990699 +/- 0.201919
+information: H =  4.51462 bits 
+evidence: logZ = -162.413 +/- 0.176898
+
+real	0m1.753s
+user	0m1.378s
+sys	0m0.016s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.23206 +/- 0.205885
+<x2> = 0.987572 +/- 0.198124
+information: H =  4.56121 bits 
+evidence: logZ = -162.47 +/- 0.177809
+
+real	0m1.478s
+user	0m1.128s
+sys	0m0.021s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22866 +/- 0.204177
+<x2> = 0.97866 +/- 0.209935
+information: H =  4.39799 bits 
+evidence: logZ = -162.412 +/- 0.174598
+
+real	0m2.226s
+user	0m1.285s
+sys	0m0.018s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.21948 +/- 0.192825
+<x2> = 0.997741 +/- 0.210264
+information: H =  4.42336 bits 
+evidence: logZ = -162.358 +/- 0.175101
+
+real	0m1.532s
+user	0m1.245s
+sys	0m0.012s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22846 +/- 0.192291
+<x2> = 0.99223 +/- 0.198961
+information: H =  4.27819 bits 
+evidence: logZ = -162.179 +/- 0.172204
+
+real	0m2.024s
+user	0m1.460s
+sys	0m0.021s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.21933 +/- 0.19549
+<x2> = 0.985497 +/- 0.207958
+information: H =  4.12012 bits 
+evidence: logZ = -162.149 +/- 0.168993
+
+real	0m2.120s
+user	0m1.212s
+sys	0m0.017s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.23566 +/- 0.193459
+<x2> = 0.979097 +/- 0.203705
+information: H =  4.63219 bits 
+evidence: logZ = -162.438 +/- 0.179187
+
+real	0m1.826s
+user	0m1.248s
+sys	0m0.021s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.23714 +/- 0.182072
+<x2> = 0.972573 +/- 0.189519
+information: H =  4.2772 bits 
+evidence: logZ = -162.074 +/- 0.172184
+
+real	0m1.855s
+user	0m1.235s
+sys	0m0.009s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22813 +/- 0.196152
+<x2> = 0.997655 +/- 0.208449
+information: H =  4.08401 bits 
+evidence: logZ = -162.143 +/- 0.16825
+
+real	0m1.956s
+user	0m1.289s
+sys	0m0.010s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.24051 +/- 0.185978
+<x2> = 0.979324 +/- 0.205489
+information: H =  4.1838 bits 
+evidence: logZ = -162.137 +/- 0.170294
+
+real	0m2.071s
+user	0m1.318s
+sys	0m0.017s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.24496 +/- 0.189035
+<x2> = 0.979328 +/- 0.214059
+information: H =  4.14177 bits 
+evidence: logZ = -162.178 +/- 0.169436
+
+real	0m1.887s
+user	0m1.211s
+sys	0m0.021s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22472 +/- 0.187898
+<x2> = 0.991644 +/- 0.198494
+information: H =  4.12622 bits 
+evidence: logZ = -162.074 +/- 0.169118
+
+real	0m1.847s
+user	0m1.328s
+sys	0m0.015s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.2238 +/- 0.201893
+<x2> = 0.997516 +/- 0.21021
+information: H =  4.2984 bits 
+evidence: logZ = -162.345 +/- 0.17261
+
+real	0m2.165s
+user	0m1.199s
+sys	0m0.013s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.25329 +/- 0.175981
+<x2> = 0.966351 +/- 0.194679
+information: H =  4.6599 bits 
+evidence: logZ = -162.311 +/- 0.179722
+
+real	0m1.773s
+user	0m1.099s
+sys	0m0.013s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22174 +/- 0.190843
+<x2> = 0.996732 +/- 0.20572
+information: H =  4.13938 bits 
+evidence: logZ = -162.139 +/- 0.169387
+
+real	0m1.921s
+user	0m1.137s
+sys	0m0.013s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22231 +/- 0.199285
+<x2> = 0.974016 +/- 0.208844
+information: H =  4.28828 bits 
+evidence: logZ = -162.279 +/- 0.172407
+
+real	0m1.646s
+user	0m1.308s
+sys	0m0.012s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22628 +/- 0.192975
+<x2> = 0.986116 +/- 0.202904
+information: H =  4.14892 bits 
+evidence: logZ = -162.123 +/- 0.169582
+
+real	0m1.783s
+user	0m1.313s
+sys	0m0.011s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22832 +/- 0.20177
+<x2> = 0.991232 +/- 0.207444
+information: H =  4.7931 bits 
+evidence: logZ = -162.663 +/- 0.182273
+
+real	0m2.478s
+user	0m1.564s
+sys	0m0.008s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22237 +/- 0.190052
+<x2> = 0.962084 +/- 0.194856
+information: H =  4.62039 bits 
+evidence: logZ = -162.379 +/- 0.178958
+
+real	0m1.755s
+user	0m1.309s
+sys	0m0.013s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.21969 +/- 0.175581
+<x2> = 0.967651 +/- 0.182307
+information: H =  4.58151 bits 
+evidence: logZ = -162.187 +/- 0.178204
+
+real	0m1.937s
+user	0m1.210s
+sys	0m0.021s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.21813 +/- 0.183529
+<x2> = 0.983863 +/- 0.190786
+information: H =  4.21901 bits 
+evidence: logZ = -162.05 +/- 0.171009
+
+real	0m1.468s
+user	0m1.018s
+sys	0m0.013s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.23094 +/- 0.194517
+<x2> = 0.984554 +/- 0.209474
+information: H =  4.1366 bits 
+evidence: logZ = -162.193 +/- 0.16933
+
+real	0m1.498s
+user	0m1.208s
+sys	0m0.012s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22762 +/- 0.192831
+<x2> = 0.982504 +/- 0.197596
+information: H =  4.52692 bits 
+evidence: logZ = -162.356 +/- 0.177139
+
+real	0m1.786s
+user	0m1.351s
+sys	0m0.011s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.2228 +/- 0.196134
+<x2> = 0.995664 +/- 0.211728
+information: H =  4.07717 bits 
+evidence: logZ = -162.154 +/- 0.168109
+
+real	0m1.811s
+user	0m1.263s
+sys	0m0.013s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.24123 +/- 0.185323
+<x2> = 0.95691 +/- 0.196246
+information: H =  4.92942 bits 
+evidence: logZ = -162.581 +/- 0.184846
+
+real	0m1.625s
+user	0m1.296s
+sys	0m0.021s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.23347 +/- 0.182435
+<x2> = 0.985112 +/- 0.200894
+information: H =  4.26224 bits 
+evidence: logZ = -162.136 +/- 0.171883
+
+real	0m1.571s
+user	0m1.060s
+sys	0m0.014s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.2145 +/- 0.183672
+<x2> = 0.994663 +/- 0.198583
+information: H =  4.37947 bits 
+evidence: logZ = -162.199 +/- 0.17423
+
+real	0m1.081s
+user	0m1.024s
+sys	0m0.013s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22535 +/- 0.192502
+<x2> = 0.980653 +/- 0.207094
+information: H =  5.06472 bits 
+evidence: logZ = -162.753 +/- 0.187366
+
+real	0m1.650s
+user	0m1.166s
+sys	0m0.013s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.21191 +/- 0.189204
+<x2> = 0.971317 +/- 0.196861
+information: H =  4.55194 bits 
+evidence: logZ = -162.323 +/- 0.177628
+
+real	0m1.904s
+user	0m1.312s
+sys	0m0.023s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.2318 +/- 0.191238
+<x2> = 0.983865 +/- 0.188556
+information: H =  4.64409 bits 
+evidence: logZ = -162.368 +/- 0.179417
+
+real	0m2.262s
+user	0m1.401s
+sys	0m0.015s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.24558 +/- 0.196122
+<x2> = 0.99403 +/- 0.201463
+information: H =  4.40827 bits 
+evidence: logZ = -162.303 +/- 0.174802
+
+real	0m1.503s
+user	0m1.079s
+sys	0m0.014s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22451 +/- 0.190282
+<x2> = 0.98098 +/- 0.20101
+information: H =  4.14307 bits 
+evidence: logZ = -162.084 +/- 0.169463
+
+real	0m1.996s
+user	0m1.284s
+sys	0m0.015s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22777 +/- 0.184086
+<x2> = 0.974222 +/- 0.193306
+information: H =  4.39198 bits 
+evidence: logZ = -162.163 +/- 0.174479
+
+real	0m1.743s
+user	0m1.409s
+sys	0m0.011s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.23051 +/- 0.194291
+<x2> = 0.993978 +/- 0.203397
+information: H =  4.11959 bits 
+evidence: logZ = -162.12 +/- 0.168982
+
+real	0m1.346s
+user	0m1.070s
+sys	0m0.011s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.23412 +/- 0.19118
+<x2> = 0.983532 +/- 0.204392
+information: H =  4.24821 bits 
+evidence: logZ = -162.189 +/- 0.171599
+
+real	0m1.702s
+user	0m1.199s
+sys	0m0.009s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.23203 +/- 0.176108
+<x2> = 0.973636 +/- 0.197897
+information: H =  4.0918 bits 
+evidence: logZ = -161.934 +/- 0.168411
+
+real	0m1.632s
+user	0m1.276s
+sys	0m0.016s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.23585 +/- 0.196463
+<x2> = 0.977884 +/- 0.197571
+information: H =  4.60223 bits 
+evidence: logZ = -162.417 +/- 0.178606
+
+real	0m1.628s
+user	0m1.268s
+sys	0m0.020s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.21924 +/- 0.197479
+<x2> = 0.995618 +/- 0.195186
+information: H =  4.66437 bits 
+evidence: logZ = -162.468 +/- 0.179808
+
+real	0m1.739s
+user	0m1.376s
+sys	0m0.018s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22825 +/- 0.185036
+<x2> = 0.978732 +/- 0.192523
+information: H =  4.11794 bits 
+evidence: logZ = -161.997 +/- 0.168948
+
+real	0m1.723s
+user	0m1.358s
+sys	0m0.018s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.24059 +/- 0.184942
+<x2> = 0.974326 +/- 0.19264
+information: H =  4.62962 bits 
+evidence: logZ = -162.335 +/- 0.179137
+
+real	0m2.165s
+user	0m1.650s
+sys	0m0.027s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.23415 +/- 0.190102
+<x2> = 0.989793 +/- 0.194138
+information: H =  4.74147 bits 
+evidence: logZ = -162.473 +/- 0.181288
+
+real	0m1.844s
+user	0m1.439s
+sys	0m0.019s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22795 +/- 0.184909
+<x2> = 0.986637 +/- 0.20002
+information: H =  4.70971 bits 
+evidence: logZ = -162.445 +/- 0.18068
+
+real	0m1.774s
+user	0m1.405s
+sys	0m0.015s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.23507 +/- 0.202492
+<x2> = 0.986275 +/- 0.210689
+information: H =  4.27292 bits 
+evidence: logZ = -162.327 +/- 0.172098
+
+real	0m1.895s
+user	0m1.349s
+sys	0m0.015s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.2137 +/- 0.198992
+<x2> = 0.986027 +/- 0.200184
+information: H =  4.68508 bits 
+evidence: logZ = -162.502 +/- 0.180207
+
+real	0m1.689s
+user	0m1.218s
+sys	0m0.014s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22324 +/- 0.189244
+<x2> = 0.980393 +/- 0.20053
+information: H =  4.61307 bits 
+evidence: logZ = -162.361 +/- 0.178817
+
+real	0m2.130s
+user	0m1.250s
+sys	0m0.011s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.22526 +/- 0.194777
+<x2> = 1.00712 +/- 0.211889
+information: H =  4.67747 bits 
+evidence: logZ = -162.575 +/- 0.18006
+
+real	0m1.799s
+user	0m1.314s
+sys	0m0.017s
+./multinest 100 1.1 
+1701 iterations used
+<x1> = 1.23155 +/- 0.194134
+<x2> = 1.00751 +/- 0.212918
+information: H =  4.40378 bits 
+evidence: logZ = -162.387 +/- 0.174713
+
+real	0m1.772s
+user	0m1.246s
+sys	0m0.017s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22598 +/- 0.189356
+<x2> = 1.0001 +/- 0.210843
+information: H =  4.22098 bits 
+evidence: logZ = -162.202 +/- 0.171048
+
+real	0m1.896s
+user	0m1.309s
+sys	0m0.015s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22555 +/- 0.182821
+<x2> = 0.987051 +/- 0.201487
+information: H =  4.06635 bits 
+evidence: logZ = -161.997 +/- 0.167886
+
+real	0m1.541s
+user	0m1.217s
+sys	0m0.018s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.23801 +/- 0.193467
+<x2> = 0.973362 +/- 0.196226
+information: H =  4.56806 bits 
+evidence: logZ = -162.381 +/- 0.177942
+
+real	0m2.191s
+user	0m1.329s
+sys	0m0.012s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.2294 +/- 0.199403
+<x2> = 1.00774 +/- 0.207409
+information: H =  4.58441 bits 
+evidence: logZ = -162.527 +/- 0.17826
+
+real	0m2.112s
+user	0m1.500s
+sys	0m0.019s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.23699 +/- 0.198704
+<x2> = 0.96725 +/- 0.205358
+information: H =  4.61824 bits 
+evidence: logZ = -162.481 +/- 0.178917
+
+real	0m1.986s
+user	0m1.335s
+sys	0m0.012s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.23526 +/- 0.186415
+<x2> = 0.986919 +/- 0.207371
+information: H =  4.60709 bits 
+evidence: logZ = -162.41 +/- 0.178701
+
+real	0m1.614s
+user	0m1.153s
+sys	0m0.018s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.21908 +/- 0.189136
+<x2> = 0.983654 +/- 0.19201
+information: H =  4.7248 bits 
+evidence: logZ = -162.44 +/- 0.180969
+
+real	0m1.587s
+user	0m1.263s
+sys	0m0.012s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22124 +/- 0.186472
+<x2> = 0.971235 +/- 0.201918
+information: H =  4.7226 bits 
+evidence: logZ = -162.437 +/- 0.180927
+
+real	0m2.173s
+user	0m1.393s
+sys	0m0.017s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.23465 +/- 0.184155
+<x2> = 0.99172 +/- 0.200008
+information: H =  3.9708 bits 
+evidence: logZ = -161.953 +/- 0.165902
+
+real	0m1.555s
+user	0m1.090s
+sys	0m0.011s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.23109 +/- 0.199093
+<x2> = 0.97905 +/- 0.208079
+information: H =  4.40394 bits 
+evidence: logZ = -162.35 +/- 0.174716
+
+real	0m1.701s
+user	0m1.205s
+sys	0m0.017s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22074 +/- 0.188035
+<x2> = 0.981873 +/- 0.2042
+information: H =  4.32928 bits 
+evidence: logZ = -162.234 +/- 0.173229
+
+real	0m2.164s
+user	0m1.328s
+sys	0m0.012s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22965 +/- 0.194067
+<x2> = 0.974005 +/- 0.201318
+information: H =  4.38083 bits 
+evidence: logZ = -162.271 +/- 0.174257
+
+real	0m2.250s
+user	0m1.360s
+sys	0m0.019s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.23749 +/- 0.196475
+<x2> = 0.984278 +/- 0.205963
+information: H =  4.28568 bits 
+evidence: logZ = -162.261 +/- 0.172355
+
+real	0m1.719s
+user	0m1.198s
+sys	0m0.008s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22156 +/- 0.198175
+<x2> = 0.997202 +/- 0.191427
+information: H =  3.75716 bits 
+evidence: logZ = -161.834 +/- 0.161377
+
+real	0m1.956s
+user	0m1.310s
+sys	0m0.015s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.23293 +/- 0.167342
+<x2> = 0.960055 +/- 0.193544
+information: H =  5.08915 bits 
+evidence: logZ = -162.553 +/- 0.187817
+
+real	0m2.007s
+user	0m1.350s
+sys	0m0.017s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22566 +/- 0.20276
+<x2> = 0.998312 +/- 0.203224
+information: H =  4.3456 bits 
+evidence: logZ = -162.318 +/- 0.173555
+
+real	0m1.911s
+user	0m1.442s
+sys	0m0.013s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22569 +/- 0.181957
+<x2> = 0.960828 +/- 0.17952
+information: H =  4.83052 bits 
+evidence: logZ = -162.379 +/- 0.182983
+
+real	0m1.442s
+user	0m1.129s
+sys	0m0.013s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.2245 +/- 0.186203
+<x2> = 0.994148 +/- 0.191428
+information: H =  4.67968 bits 
+evidence: logZ = -162.377 +/- 0.180103
+
+real	0m1.864s
+user	0m1.232s
+sys	0m0.010s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22719 +/- 0.194638
+<x2> = 0.985944 +/- 0.195506
+information: H =  4.22394 bits 
+evidence: logZ = -162.126 +/- 0.171108
+
+real	0m1.369s
+user	0m1.157s
+sys	0m0.018s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22298 +/- 0.199598
+<x2> = 0.991487 +/- 0.207558
+information: H =  4.10747 bits 
+evidence: logZ = -162.16 +/- 0.168733
+
+real	0m1.452s
+user	0m1.297s
+sys	0m0.023s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.2323 +/- 0.190705
+<x2> = 0.952923 +/- 0.194582
+information: H =  4.52761 bits 
+evidence: logZ = -162.301 +/- 0.177152
+
+real	0m1.746s
+user	0m1.380s
+sys	0m0.013s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.23702 +/- 0.186722
+<x2> = 1.00457 +/- 0.206143
+information: H =  4.44368 bits 
+evidence: logZ = -162.325 +/- 0.175503
+
+real	0m1.710s
+user	0m1.338s
+sys	0m0.017s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.23274 +/- 0.196879
+<x2> = 0.967601 +/- 0.211792
+information: H =  4.27829 bits 
+evidence: logZ = -162.312 +/- 0.172206
+
+real	0m2.049s
+user	0m1.627s
+sys	0m0.018s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22561 +/- 0.19606
+<x2> = 0.981862 +/- 0.200322
+information: H =  4.55446 bits 
+evidence: logZ = -162.431 +/- 0.177677
+
+real	0m1.895s
+user	0m1.486s
+sys	0m0.021s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22874 +/- 0.200259
+<x2> = 0.980082 +/- 0.21263
+information: H =  4.55308 bits 
+evidence: logZ = -162.495 +/- 0.17765
+
+real	0m1.865s
+user	0m1.441s
+sys	0m0.019s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.24544 +/- 0.200637
+<x2> = 0.993022 +/- 0.200371
+information: H =  4.46882 bits 
+evidence: logZ = -162.403 +/- 0.175999
+
+real	0m1.905s
+user	0m1.343s
+sys	0m0.020s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22855 +/- 0.188952
+<x2> = 0.985643 +/- 0.206216
+information: H =  4.37845 bits 
+evidence: logZ = -162.27 +/- 0.17421
+
+real	0m1.952s
+user	0m1.179s
+sys	0m0.013s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.23609 +/- 0.183834
+<x2> = 0.988463 +/- 0.192755
+information: H =  4.2922 bits 
+evidence: logZ = -162.086 +/- 0.172486
+
+real	0m1.784s
+user	0m1.149s
+sys	0m0.018s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.23498 +/- 0.194867
+<x2> = 0.985329 +/- 0.191596
+information: H =  4.51963 bits 
+evidence: logZ = -162.325 +/- 0.176996
+
+real	0m1.784s
+user	0m1.238s
+sys	0m0.015s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.2185 +/- 0.19704
+<x2> = 0.993796 +/- 0.207198
+information: H =  4.34394 bits 
+evidence: logZ = -162.328 +/- 0.173522
+
+real	0m1.472s
+user	0m1.157s
+sys	0m0.013s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22816 +/- 0.186839
+<x2> = 0.95775 +/- 0.19744
+information: H =  4.4358 bits 
+evidence: logZ = -162.237 +/- 0.175347
+
+real	0m1.929s
+user	0m1.287s
+sys	0m0.021s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.24278 +/- 0.204084
+<x2> = 0.977006 +/- 0.204037
+information: H =  4.62849 bits 
+evidence: logZ = -162.514 +/- 0.179115
+
+real	0m1.637s
+user	0m1.227s
+sys	0m0.012s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22941 +/- 0.210484
+<x2> = 1.01223 +/- 0.207982
+information: H =  4.08982 bits 
+evidence: logZ = -162.253 +/- 0.16837
+
+real	0m1.950s
+user	0m1.329s
+sys	0m0.016s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22986 +/- 0.195057
+<x2> = 0.981891 +/- 0.205433
+information: H =  4.53188 bits 
+evidence: logZ = -162.401 +/- 0.177236
+
+real	0m2.141s
+user	0m1.505s
+sys	0m0.028s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22779 +/- 0.1875
+<x2> = 0.994095 +/- 0.204155
+information: H =  4.39499 bits 
+evidence: logZ = -162.252 +/- 0.174539
+
+real	0m1.798s
+user	0m1.414s
+sys	0m0.022s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.23488 +/- 0.197853
+<x2> = 0.99297 +/- 0.215527
+information: H =  4.42942 bits 
+evidence: logZ = -162.455 +/- 0.175221
+
+real	0m1.561s
+user	0m1.192s
+sys	0m0.017s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.23584 +/- 0.204645
+<x2> = 1.0107 +/- 0.200219
+information: H =  4.70901 bits 
+evidence: logZ = -162.586 +/- 0.180666
+
+real	0m1.901s
+user	0m1.231s
+sys	0m0.018s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.21065 +/- 0.200504
+<x2> = 0.982374 +/- 0.19114
+information: H =  4.83153 bits 
+evidence: logZ = -162.563 +/- 0.183002
+
+real	0m1.924s
+user	0m1.324s
+sys	0m0.012s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22911 +/- 0.195966
+<x2> = 0.979311 +/- 0.212398
+information: H =  4.48257 bits 
+evidence: logZ = -162.417 +/- 0.176269
+
+real	0m2.067s
+user	0m1.282s
+sys	0m0.021s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.23706 +/- 0.204829
+<x2> = 0.983449 +/- 0.207502
+information: H =  4.64566 bits 
+evidence: logZ = -162.573 +/- 0.179447
+
+real	0m1.807s
+user	0m1.274s
+sys	0m0.017s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.2268 +/- 0.200793
+<x2> = 0.999316 +/- 0.200213
+information: H =  3.90859 bits 
+evidence: logZ = -161.999 +/- 0.164597
+
+real	0m1.673s
+user	0m1.121s
+sys	0m0.009s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22218 +/- 0.198265
+<x2> = 0.994728 +/- 0.19904
+information: H =  4.3444 bits 
+evidence: logZ = -162.314 +/- 0.173531
+
+real	0m2.032s
+user	0m1.272s
+sys	0m0.016s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.2267 +/- 0.204175
+<x2> = 0.981459 +/- 0.215549
+information: H =  4.40955 bits 
+evidence: logZ = -162.465 +/- 0.174828
+
+real	0m2.085s
+user	0m1.366s
+sys	0m0.021s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.23323 +/- 0.185271
+<x2> = 0.969905 +/- 0.19665
+information: H =  4.72964 bits 
+evidence: logZ = -162.442 +/- 0.181062
+
+real	0m2.184s
+user	0m1.320s
+sys	0m0.019s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22409 +/- 0.194413
+<x2> = 0.988192 +/- 0.208699
+information: H =  4.43831 bits 
+evidence: logZ = -162.367 +/- 0.175397
+
+real	0m1.792s
+user	0m1.079s
+sys	0m0.012s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.23722 +/- 0.208755
+<x2> = 0.992895 +/- 0.196652
+information: H =  4.22711 bits 
+evidence: logZ = -162.24 +/- 0.171173
+
+real	0m1.932s
+user	0m1.074s
+sys	0m0.010s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22961 +/- 0.195203
+<x2> = 0.987945 +/- 0.197656
+information: H =  4.05922 bits 
+evidence: logZ = -162.055 +/- 0.167739
+
+real	0m2.137s
+user	0m1.271s
+sys	0m0.021s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.24079 +/- 0.191538
+<x2> = 0.996058 +/- 0.209576
+information: H =  4.15815 bits 
+evidence: logZ = -162.182 +/- 0.169771
+
+real	0m1.709s
+user	0m1.066s
+sys	0m0.010s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.23437 +/- 0.196817
+<x2> = 0.975931 +/- 0.201985
+information: H =  4.51097 bits 
+evidence: logZ = -162.39 +/- 0.176827
+
+real	0m1.879s
+user	0m1.289s
+sys	0m0.019s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22655 +/- 0.199279
+<x2> = 0.999068 +/- 0.200888
+information: H =  4.40114 bits 
+evidence: logZ = -162.342 +/- 0.174661
+
+real	0m1.706s
+user	0m1.150s
+sys	0m0.010s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22695 +/- 0.186119
+<x2> = 0.985211 +/- 0.206264
+information: H =  4.26754 bits 
+evidence: logZ = -162.178 +/- 0.171989
+
+real	0m1.258s
+user	0m1.072s
+sys	0m0.008s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.23498 +/- 0.191555
+<x2> = 0.97844 +/- 0.192765
+information: H =  4.66932 bits 
+evidence: logZ = -162.395 +/- 0.179903
+
+real	0m1.821s
+user	0m1.263s
+sys	0m0.020s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.23078 +/- 0.18912
+<x2> = 0.974478 +/- 0.193886
+information: H =  4.34246 bits 
+evidence: logZ = -162.163 +/- 0.173492
+
+real	0m1.458s
+user	0m1.164s
+sys	0m0.012s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.24112 +/- 0.192565
+<x2> = 0.97748 +/- 0.211647
+information: H =  4.5261 bits 
+evidence: logZ = -162.437 +/- 0.177123
+
+real	0m1.738s
+user	0m1.452s
+sys	0m0.026s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.21602 +/- 0.206569
+<x2> = 1.00308 +/- 0.212468
+information: H =  4.11196 bits 
+evidence: logZ = -162.272 +/- 0.168825
+
+real	0m1.756s
+user	0m1.382s
+sys	0m0.019s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.21213 +/- 0.200702
+<x2> = 0.996782 +/- 0.21046
+information: H =  4.34124 bits 
+evidence: logZ = -162.363 +/- 0.173468
+
+real	0m2.277s
+user	0m1.218s
+sys	0m0.019s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22635 +/- 0.188332
+<x2> = 0.986853 +/- 0.197033
+information: H =  4.19318 bits 
+evidence: logZ = -162.108 +/- 0.170484
+
+real	0m1.933s
+user	0m1.370s
+sys	0m0.021s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.21188 +/- 0.192196
+<x2> = 0.996103 +/- 0.221908
+information: H =  4.1485 bits 
+evidence: logZ = -162.244 +/- 0.169574
+
+real	0m1.850s
+user	0m1.369s
+sys	0m0.014s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.21933 +/- 0.200167
+<x2> = 0.979885 +/- 0.197765
+information: H =  4.66416 bits 
+evidence: logZ = -162.491 +/- 0.179804
+
+real	0m1.742s
+user	0m1.264s
+sys	0m0.015s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.2308 +/- 0.202541
+<x2> = 0.997105 +/- 0.20558
+information: H =  4.12893 bits 
+evidence: logZ = -162.187 +/- 0.169173
+
+real	0m3.025s
+user	0m1.413s
+sys	0m0.014s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.2183 +/- 0.212497
+<x2> = 0.988894 +/- 0.21942
+information: H =  4.3101 bits 
+evidence: logZ = -162.473 +/- 0.172845
+
+real	0m1.724s
+user	0m1.427s
+sys	0m0.014s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.21993 +/- 0.186175
+<x2> = 0.977269 +/- 0.187699
+information: H =  4.02468 bits 
+evidence: logZ = -161.897 +/- 0.167024
+
+real	0m1.713s
+user	0m1.147s
+sys	0m0.013s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.21433 +/- 0.194621
+<x2> = 0.987965 +/- 0.190834
+information: H =  4.75772 bits 
+evidence: logZ = -162.491 +/- 0.181598
+
+real	0m1.733s
+user	0m1.325s
+sys	0m0.015s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22645 +/- 0.19043
+<x2> = 1.01078 +/- 0.197477
+information: H =  4.40642 bits 
+evidence: logZ = -162.25 +/- 0.174766
+
+real	0m1.802s
+user	0m1.066s
+sys	0m0.011s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22288 +/- 0.191869
+<x2> = 0.995862 +/- 0.203857
+information: H =  4.53766 bits 
+evidence: logZ = -162.412 +/- 0.177349
+
+real	0m1.934s
+user	0m1.268s
+sys	0m0.015s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.23224 +/- 0.19514
+<x2> = 0.976722 +/- 0.223301
+information: H =  4.61029 bits 
+evidence: logZ = -162.585 +/- 0.178763
+
+real	0m1.934s
+user	0m1.337s
+sys	0m0.016s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.23316 +/- 0.194207
+<x2> = 1.00542 +/- 0.194031
+information: H =  4.74802 bits 
+evidence: logZ = -162.515 +/- 0.181413
+
+real	0m2.240s
+user	0m1.302s
+sys	0m0.017s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22446 +/- 0.193658
+<x2> = 0.990062 +/- 0.203802
+information: H =  4.4044 bits 
+evidence: logZ = -162.301 +/- 0.174725
+
+real	0m1.458s
+user	0m1.272s
+sys	0m0.016s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22807 +/- 0.198495
+<x2> = 0.988575 +/- 0.207314
+information: H =  4.42989 bits 
+evidence: logZ = -162.383 +/- 0.17523
+
+real	0m1.875s
+user	0m1.326s
+sys	0m0.019s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.21273 +/- 0.201967
+<x2> = 0.995631 +/- 0.207185
+information: H =  4.43944 bits 
+evidence: logZ = -162.425 +/- 0.175419
+
+real	0m1.782s
+user	0m1.263s
+sys	0m0.016s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.25264 +/- 0.18981
+<x2> = 0.982519 +/- 0.205932
+information: H =  4.8718 bits 
+evidence: logZ = -162.608 +/- 0.183763
+
+real	0m1.823s
+user	0m1.317s
+sys	0m0.012s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.20898 +/- 0.178396
+<x2> = 0.988147 +/- 0.207652
+information: H =  4.50184 bits 
+evidence: logZ = -162.292 +/- 0.176648
+
+real	0m1.638s
+user	0m1.279s
+sys	0m0.020s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.2257 +/- 0.195294
+<x2> = 0.977306 +/- 0.202715
+information: H =  4.36806 bits 
+evidence: logZ = -162.298 +/- 0.174003
+
+real	0m2.051s
+user	0m1.380s
+sys	0m0.011s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22616 +/- 0.173438
+<x2> = 0.95847 +/- 0.193237
+information: H =  4.55409 bits 
+evidence: logZ = -162.219 +/- 0.17767
+
+real	0m1.920s
+user	0m1.099s
+sys	0m0.011s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.21025 +/- 0.192594
+<x2> = 0.989889 +/- 0.207642
+information: H =  3.98925 bits 
+evidence: logZ = -162.057 +/- 0.166287
+
+real	0m1.607s
+user	0m1.273s
+sys	0m0.018s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.23219 +/- 0.197217
+<x2> = 0.992453 +/- 0.197036
+information: H =  4.3193 bits 
+evidence: logZ = -162.245 +/- 0.173029
+
+real	0m2.411s
+user	0m1.129s
+sys	0m0.013s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.2274 +/- 0.201121
+<x2> = 0.995091 +/- 0.206966
+information: H =  4.2567 bits 
+evidence: logZ = -162.265 +/- 0.171771
+
+real	0m2.711s
+user	0m1.255s
+sys	0m0.015s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22582 +/- 0.195283
+<x2> = 0.991653 +/- 0.20182
+information: H =  4.50491 bits 
+evidence: logZ = -162.379 +/- 0.176708
+
+real	0m1.887s
+user	0m1.395s
+sys	0m0.019s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.23339 +/- 0.193639
+<x2> = 0.986368 +/- 0.199424
+information: H =  4.37331 bits 
+evidence: logZ = -162.255 +/- 0.174108
+
+real	0m1.551s
+user	0m1.143s
+sys	0m0.016s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22509 +/- 0.197416
+<x2> = 1.00698 +/- 0.208305
+information: H =  4.38797 bits 
+evidence: logZ = -162.367 +/- 0.174399
+
+real	0m1.776s
+user	0m1.303s
+sys	0m0.020s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22263 +/- 0.187925
+<x2> = 0.984984 +/- 0.203379
+information: H =  4.66409 bits 
+evidence: logZ = -162.432 +/- 0.179803
+
+real	0m1.653s
+user	0m1.306s
+sys	0m0.016s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22155 +/- 0.179303
+<x2> = 0.999505 +/- 0.200227
+information: H =  4.69059 bits 
+evidence: logZ = -162.408 +/- 0.180313
+
+real	0m1.641s
+user	0m1.182s
+sys	0m0.026s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.23873 +/- 0.186754
+<x2> = 0.982443 +/- 0.192111
+information: H =  4.40183 bits 
+evidence: logZ = -162.194 +/- 0.174674
+
+real	0m1.722s
+user	0m1.313s
+sys	0m0.022s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.21457 +/- 0.20098
+<x2> = 1.01591 +/- 0.199519
+information: H =  4.72669 bits 
+evidence: logZ = -162.597 +/- 0.181005
+
+real	0m2.442s
+user	0m1.125s
+sys	0m0.011s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22385 +/- 0.205473
+<x2> = 0.98755 +/- 0.222017
+information: H =  4.01199 bits 
+evidence: logZ = -162.224 +/- 0.16676
+
+real	0m2.693s
+user	0m1.272s
+sys	0m0.012s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22756 +/- 0.195533
+<x2> = 0.986426 +/- 0.204183
+information: H =  4.7466 bits 
+evidence: logZ = -162.57 +/- 0.181386
+
+real	0m2.252s
+user	0m1.377s
+sys	0m0.022s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.24305 +/- 0.200219
+<x2> = 0.982511 +/- 0.204723
+information: H =  4.76735 bits 
+evidence: logZ = -162.598 +/- 0.181782
+
+real	0m1.724s
+user	0m1.341s
+sys	0m0.031s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.23423 +/- 0.194127
+<x2> = 0.990575 +/- 0.202898
+information: H =  4.24123 bits 
+evidence: logZ = -162.193 +/- 0.171458
+
+real	0m1.520s
+user	0m1.215s
+sys	0m0.020s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.23115 +/- 0.181563
+<x2> = 0.987268 +/- 0.19149
+information: H =  4.55374 bits 
+evidence: logZ = -162.282 +/- 0.177663
+
+real	0m1.734s
+user	0m1.346s
+sys	0m0.026s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22704 +/- 0.202057
+<x2> = 1.01912 +/- 0.20461
+information: H =  4.14787 bits 
+evidence: logZ = -162.207 +/- 0.169561
+
+real	0m1.776s
+user	0m1.401s
+sys	0m0.015s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.21296 +/- 0.194163
+<x2> = 1.00975 +/- 0.215078
+information: H =  4.46132 bits 
+evidence: logZ = -162.459 +/- 0.175851
+
+real	0m2.084s
+user	0m1.520s
+sys	0m0.018s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22986 +/- 0.197028
+<x2> = 0.991271 +/- 0.206919
+information: H =  4.15915 bits 
+evidence: logZ = -162.18 +/- 0.169791
+
+real	0m1.578s
+user	0m1.191s
+sys	0m0.017s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22622 +/- 0.190723
+<x2> = 0.97597 +/- 0.197546
+information: H =  4.18743 bits 
+evidence: logZ = -162.102 +/- 0.170367
+
+real	0m1.619s
+user	0m1.122s
+sys	0m0.017s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.23508 +/- 0.189948
+<x2> = 0.988148 +/- 0.209372
+information: H =  4.38192 bits 
+evidence: logZ = -162.296 +/- 0.174279
+
+real	0m2.244s
+user	0m1.459s
+sys	0m0.019s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.23878 +/- 0.178892
+<x2> = 0.982313 +/- 0.189849
+information: H =  4.67446 bits 
+evidence: logZ = -162.305 +/- 0.180003
+
+real	0m1.393s
+user	0m1.104s
+sys	0m0.007s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.23004 +/- 0.192085
+<x2> = 0.972421 +/- 0.214411
+information: H =  4.6261 bits 
+evidence: logZ = -162.509 +/- 0.179069
+
+real	0m1.921s
+user	0m1.268s
+sys	0m0.020s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.21909 +/- 0.203161
+<x2> = 0.985952 +/- 0.216993
+information: H =  4.53281 bits 
+evidence: logZ = -162.538 +/- 0.177254
+
+real	0m1.973s
+user	0m1.270s
+sys	0m0.010s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22453 +/- 0.190463
+<x2> = 0.975863 +/- 0.20415
+information: H =  4.43117 bits 
+evidence: logZ = -162.309 +/- 0.175256
+
+real	0m2.165s
+user	0m1.242s
+sys	0m0.015s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22161 +/- 0.191121
+<x2> = 0.991469 +/- 0.205463
+information: H =  4.51091 bits 
+evidence: logZ = -162.391 +/- 0.176825
+
+real	0m1.619s
+user	0m1.267s
+sys	0m0.020s
+./multinest 100 1.0 
+1701 iterations used
+<x1> = 1.22152 +/- 0.187818
+<x2> = 0.962233 +/- 0.184413
+information: H =  4.595 bits 
+evidence: logZ = -162.296 +/- 0.178466
+
+real	0m1.595s
+user	0m1.281s
+sys	0m0.015s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22831 +/- 0.197644
+<x2> = 0.978371 +/- 0.203434
+information: H =  4.42185 bits 
+evidence: logZ = -162.326 +/- 0.175071
+
+real	0m1.452s
+user	0m1.152s
+sys	0m0.010s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.2226 +/- 0.193439
+<x2> = 0.99241 +/- 0.198606
+information: H =  4.46277 bits 
+evidence: logZ = -162.333 +/- 0.175879
+
+real	0m1.657s
+user	0m1.357s
+sys	0m0.022s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22393 +/- 0.204808
+<x2> = 0.990727 +/- 0.204343
+information: H =  4.29535 bits 
+evidence: logZ = -162.339 +/- 0.172549
+
+real	0m1.968s
+user	0m1.451s
+sys	0m0.019s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.2165 +/- 0.187775
+<x2> = 0.997463 +/- 0.201197
+information: H =  4.99202 bits 
+evidence: logZ = -162.656 +/- 0.186016
+
+real	0m1.908s
+user	0m1.252s
+sys	0m0.012s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22551 +/- 0.195887
+<x2> = 0.98865 +/- 0.207809
+information: H =  4.28003 bits 
+evidence: logZ = -162.269 +/- 0.172241
+
+real	0m1.652s
+user	0m1.225s
+sys	0m0.018s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.23465 +/- 0.17875
+<x2> = 0.978881 +/- 0.176415
+information: H =  4.76146 bits 
+evidence: logZ = -162.298 +/- 0.18167
+
+real	0m2.086s
+user	0m1.116s
+sys	0m0.009s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.23651 +/- 0.187196
+<x2> = 0.963877 +/- 0.189253
+information: H =  4.62444 bits 
+evidence: logZ = -162.32 +/- 0.179037
+
+real	0m1.887s
+user	0m1.366s
+sys	0m0.018s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22432 +/- 0.198171
+<x2> = 0.988688 +/- 0.202316
+information: H =  4.26363 bits 
+evidence: logZ = -162.245 +/- 0.171911
+
+real	0m1.463s
+user	0m1.134s
+sys	0m0.021s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.21974 +/- 0.19251
+<x2> = 0.979215 +/- 0.211435
+information: H =  4.3825 bits 
+evidence: logZ = -162.345 +/- 0.17429
+
+real	0m1.884s
+user	0m1.252s
+sys	0m0.018s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22131 +/- 0.209603
+<x2> = 0.993054 +/- 0.216346
+information: H =  4.17715 bits 
+evidence: logZ = -162.324 +/- 0.170158
+
+real	0m1.618s
+user	0m1.283s
+sys	0m0.019s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.2169 +/- 0.187048
+<x2> = 0.99937 +/- 0.204813
+information: H =  4.71015 bits 
+evidence: logZ = -162.49 +/- 0.180688
+
+real	0m2.095s
+user	0m1.282s
+sys	0m0.015s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22446 +/- 0.197212
+<x2> = 0.991195 +/- 0.209705
+information: H =  4.43551 bits 
+evidence: logZ = -162.402 +/- 0.175341
+
+real	0m1.235s
+user	0m1.147s
+sys	0m0.015s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.2253 +/- 0.198281
+<x2> = 0.98209 +/- 0.208973
+information: H =  4.4962 bits 
+evidence: logZ = -162.407 +/- 0.176537
+
+real	0m2.020s
+user	0m1.392s
+sys	0m0.011s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.23453 +/- 0.186534
+<x2> = 0.992494 +/- 0.19658
+information: H =  4.78356 bits 
+evidence: logZ = -162.497 +/- 0.182091
+
+real	0m2.196s
+user	0m1.389s
+sys	0m0.012s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.23194 +/- 0.180577
+<x2> = 0.978301 +/- 0.20085
+information: H =  5.01733 bits 
+evidence: logZ = -162.606 +/- 0.186487
+
+real	0m1.506s
+user	0m1.241s
+sys	0m0.016s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.23703 +/- 0.192771
+<x2> = 0.981418 +/- 0.20695
+information: H =  4.48743 bits 
+evidence: logZ = -162.379 +/- 0.176365
+
+real	0m1.803s
+user	0m1.213s
+sys	0m0.020s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22104 +/- 0.19754
+<x2> = 0.991924 +/- 0.198786
+information: H =  4.46659 bits 
+evidence: logZ = -162.342 +/- 0.175955
+
+real	0m1.795s
+user	0m1.272s
+sys	0m0.020s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.20356 +/- 0.192362
+<x2> = 0.993707 +/- 0.203032
+information: H =  4.4469 bits 
+evidence: logZ = -162.333 +/- 0.175566
+
+real	0m1.718s
+user	0m1.344s
+sys	0m0.021s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.23363 +/- 0.200128
+<x2> = 0.980066 +/- 0.203846
+information: H =  4.59576 bits 
+evidence: logZ = -162.461 +/- 0.178481
+
+real	0m1.665s
+user	0m1.305s
+sys	0m0.018s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22928 +/- 0.190132
+<x2> = 0.995582 +/- 0.208205
+information: H =  4.52882 bits 
+evidence: logZ = -162.425 +/- 0.177176
+
+real	0m1.670s
+user	0m1.227s
+sys	0m0.014s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22458 +/- 0.206628
+<x2> = 0.996333 +/- 0.219372
+information: H =  4.22121 bits 
+evidence: logZ = -162.366 +/- 0.171053
+
+real	0m1.917s
+user	0m1.267s
+sys	0m0.012s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.23446 +/- 0.183439
+<x2> = 0.989026 +/- 0.196488
+information: H =  4.28076 bits 
+evidence: logZ = -162.124 +/- 0.172256
+
+real	0m1.946s
+user	0m1.157s
+sys	0m0.009s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22766 +/- 0.192505
+<x2> = 0.974367 +/- 0.210926
+information: H =  4.64041 bits 
+evidence: logZ = -162.484 +/- 0.179346
+
+real	0m1.904s
+user	0m1.234s
+sys	0m0.012s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.23461 +/- 0.184239
+<x2> = 0.98259 +/- 0.189642
+information: H =  4.73411 bits 
+evidence: logZ = -162.382 +/- 0.181147
+
+real	0m1.523s
+user	0m1.009s
+sys	0m0.013s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22612 +/- 0.199034
+<x2> = 0.98301 +/- 0.200484
+information: H =  4.07389 bits 
+evidence: logZ = -162.104 +/- 0.168042
+
+real	0m2.024s
+user	0m1.438s
+sys	0m0.017s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22366 +/- 0.192368
+<x2> = 0.974459 +/- 0.205227
+information: H =  4.37374 bits 
+evidence: logZ = -162.268 +/- 0.174116
+
+real	0m1.773s
+user	0m1.111s
+sys	0m0.014s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.21494 +/- 0.184936
+<x2> = 0.993039 +/- 0.201894
+information: H =  4.65354 bits 
+evidence: logZ = -162.415 +/- 0.179599
+
+real	0m1.354s
+user	0m1.129s
+sys	0m0.015s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.23005 +/- 0.196892
+<x2> = 0.980779 +/- 0.203023
+information: H =  4.01592 bits 
+evidence: logZ = -162.074 +/- 0.166842
+
+real	0m1.578s
+user	0m1.257s
+sys	0m0.014s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22424 +/- 0.194504
+<x2> = 0.984821 +/- 0.202174
+information: H =  4.3161 bits 
+evidence: logZ = -162.262 +/- 0.172965
+
+real	0m1.929s
+user	0m1.267s
+sys	0m0.012s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.21642 +/- 0.18453
+<x2> = 0.985607 +/- 0.208225
+information: H =  4.37783 bits 
+evidence: logZ = -162.252 +/- 0.174198
+
+real	0m1.477s
+user	0m1.224s
+sys	0m0.016s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.23285 +/- 0.192925
+<x2> = 0.989013 +/- 0.202869
+information: H =  4.54887 bits 
+evidence: logZ = -162.38 +/- 0.177568
+
+real	0m1.784s
+user	0m1.268s
+sys	0m0.023s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.23305 +/- 0.18953
+<x2> = 1.00173 +/- 0.198138
+information: H =  4.40477 bits 
+evidence: logZ = -162.275 +/- 0.174733
+
+real	0m1.611s
+user	0m1.259s
+sys	0m0.021s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22488 +/- 0.193826
+<x2> = 1.0073 +/- 0.197718
+information: H =  4.25981 bits 
+evidence: logZ = -162.191 +/- 0.171833
+
+real	0m1.564s
+user	0m1.096s
+sys	0m0.016s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.2258 +/- 0.199607
+<x2> = 0.996884 +/- 0.200796
+information: H =  4.48528 bits 
+evidence: logZ = -162.39 +/- 0.176322
+
+real	0m1.723s
+user	0m1.287s
+sys	0m0.011s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22748 +/- 0.181297
+<x2> = 0.999102 +/- 0.199382
+information: H =  4.56406 bits 
+evidence: logZ = -162.31 +/- 0.177864
+
+real	0m2.057s
+user	0m1.114s
+sys	0m0.012s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22451 +/- 0.2065
+<x2> = 0.989649 +/- 0.193238
+information: H =  4.3658 bits 
+evidence: logZ = -162.314 +/- 0.173958
+
+real	0m1.769s
+user	0m1.394s
+sys	0m0.015s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22379 +/- 0.185122
+<x2> = 0.971747 +/- 0.189404
+information: H =  4.86194 bits 
+evidence: logZ = -162.468 +/- 0.183577
+
+real	0m1.968s
+user	0m1.429s
+sys	0m0.024s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22512 +/- 0.194352
+<x2> = 0.992091 +/- 0.198673
+information: H =  4.1378 bits 
+evidence: logZ = -162.116 +/- 0.169355
+
+real	0m2.001s
+user	0m1.303s
+sys	0m0.018s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22144 +/- 0.181637
+<x2> = 0.96766 +/- 0.196704
+information: H =  4.71141 bits 
+evidence: logZ = -162.388 +/- 0.180713
+
+real	0m2.037s
+user	0m1.418s
+sys	0m0.023s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.23088 +/- 0.187417
+<x2> = 1.00314 +/- 0.21343
+information: H =  4.56331 bits 
+evidence: logZ = -162.46 +/- 0.17785
+
+real	0m1.934s
+user	0m1.407s
+sys	0m0.014s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.21557 +/- 0.196841
+<x2> = 0.96807 +/- 0.204565
+information: H =  4.4272 bits 
+evidence: logZ = -162.331 +/- 0.175177
+
+real	0m1.872s
+user	0m1.397s
+sys	0m0.011s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22252 +/- 0.19433
+<x2> = 0.986789 +/- 0.201388
+information: H =  4.03792 bits 
+evidence: logZ = -162.047 +/- 0.167298
+
+real	0m1.703s
+user	0m1.125s
+sys	0m0.017s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.23801 +/- 0.182849
+<x2> = 0.987764 +/- 0.190892
+information: H =  4.20003 bits 
+evidence: logZ = -162.034 +/- 0.170624
+
+real	0m1.590s
+user	0m1.245s
+sys	0m0.016s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.21705 +/- 0.19336
+<x2> = 0.989389 +/- 0.19658
+information: H =  4.34414 bits 
+evidence: logZ = -162.218 +/- 0.173526
+
+real	0m1.821s
+user	0m1.151s
+sys	0m0.017s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22826 +/- 0.18846
+<x2> = 0.984524 +/- 0.193511
+information: H =  4.40437 bits 
+evidence: logZ = -162.216 +/- 0.174725
+
+real	0m1.885s
+user	0m1.274s
+sys	0m0.013s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22005 +/- 0.188894
+<x2> = 0.969648 +/- 0.203135
+information: H =  4.59194 bits 
+evidence: logZ = -162.401 +/- 0.178406
+
+real	0m2.014s
+user	0m1.372s
+sys	0m0.020s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.21712 +/- 0.189203
+<x2> = 0.978679 +/- 0.189165
+information: H =  4.40861 bits 
+evidence: logZ = -162.192 +/- 0.174809
+
+real	0m1.663s
+user	0m1.329s
+sys	0m0.018s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.2288 +/- 0.185695
+<x2> = 0.983891 +/- 0.205968
+information: H =  4.1244 bits 
+evidence: logZ = -162.082 +/- 0.16908
+
+real	0m1.586s
+user	0m1.251s
+sys	0m0.025s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.23164 +/- 0.207266
+<x2> = 0.989709 +/- 0.198394
+information: H =  4.69299 bits 
+evidence: logZ = -162.567 +/- 0.180359
+
+real	0m1.562s
+user	0m1.198s
+sys	0m0.019s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22416 +/- 0.197146
+<x2> = 0.993498 +/- 0.220242
+information: H =  4.73532 bits 
+evidence: logZ = -162.698 +/- 0.18117
+
+real	0m1.735s
+user	0m1.360s
+sys	0m0.024s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22147 +/- 0.19084
+<x2> = 0.986177 +/- 0.203085
+information: H =  4.43834 bits 
+evidence: logZ = -162.31 +/- 0.175397
+
+real	0m1.596s
+user	0m1.238s
+sys	0m0.025s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22993 +/- 0.190143
+<x2> = 0.973338 +/- 0.198
+information: H =  4.42756 bits 
+evidence: logZ = -162.256 +/- 0.175184
+
+real	0m1.623s
+user	0m1.130s
+sys	0m0.012s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.24464 +/- 0.207645
+<x2> = 0.988572 +/- 0.224661
+information: H =  4.44553 bits 
+evidence: logZ = -162.566 +/- 0.175539
+
+real	0m2.068s
+user	0m1.446s
+sys	0m0.013s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.23061 +/- 0.186008
+<x2> = 0.993901 +/- 0.201563
+information: H =  4.57722 bits 
+evidence: logZ = -162.373 +/- 0.17812
+
+real	0m1.810s
+user	0m1.321s
+sys	0m0.016s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.23899 +/- 0.198513
+<x2> = 0.976488 +/- 0.217589
+information: H =  4.25993 bits 
+evidence: logZ = -162.309 +/- 0.171836
+
+real	0m2.080s
+user	0m1.473s
+sys	0m0.020s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.2137 +/- 0.179284
+<x2> = 0.966624 +/- 0.200016
+information: H =  4.68489 bits 
+evidence: logZ = -162.371 +/- 0.180203
+
+real	0m1.765s
+user	0m1.381s
+sys	0m0.008s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.23042 +/- 0.183772
+<x2> = 0.99222 +/- 0.195466
+information: H =  4.4393 bits 
+evidence: logZ = -162.225 +/- 0.175416
+
+real	0m2.114s
+user	0m1.285s
+sys	0m0.012s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.23942 +/- 0.203569
+<x2> = 1.00926 +/- 0.204718
+information: H =  4.26161 bits 
+evidence: logZ = -162.346 +/- 0.17187
+
+real	0m2.049s
+user	0m1.523s
+sys	0m0.017s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22519 +/- 0.191612
+<x2> = 0.971166 +/- 0.18715
+information: H =  4.68464 bits 
+evidence: logZ = -162.412 +/- 0.180198
+
+real	0m1.720s
+user	0m1.276s
+sys	0m0.012s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22868 +/- 0.193777
+<x2> = 0.972395 +/- 0.199329
+information: H =  4.09497 bits 
+evidence: logZ = -162.073 +/- 0.168476
+
+real	0m1.932s
+user	0m1.323s
+sys	0m0.019s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.21886 +/- 0.200177
+<x2> = 0.997548 +/- 0.195539
+information: H =  4.46029 bits 
+evidence: logZ = -162.356 +/- 0.175831
+
+real	0m1.921s
+user	0m1.397s
+sys	0m0.018s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.23884 +/- 0.185297
+<x2> = 0.979616 +/- 0.190933
+information: H =  4.95283 bits 
+evidence: logZ = -162.533 +/- 0.185285
+
+real	0m1.533s
+user	0m1.165s
+sys	0m0.017s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.23249 +/- 0.192257
+<x2> = 1.00133 +/- 0.209726
+information: H =  3.97725 bits 
+evidence: logZ = -162.06 +/- 0.166037
+
+real	0m1.559s
+user	0m1.190s
+sys	0m0.016s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.21951 +/- 0.19652
+<x2> = 0.991318 +/- 0.204166
+information: H =  4.53686 bits 
+evidence: logZ = -162.413 +/- 0.177333
+
+real	0m1.600s
+user	0m1.232s
+sys	0m0.014s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.24309 +/- 0.186631
+<x2> = 0.985411 +/- 0.188334
+information: H =  4.49952 bits 
+evidence: logZ = -162.24 +/- 0.176602
+
+real	0m1.581s
+user	0m1.067s
+sys	0m0.018s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.23676 +/- 0.189359
+<x2> = 0.985901 +/- 0.203526
+information: H =  4.35619 bits 
+evidence: logZ = -162.247 +/- 0.173767
+
+real	0m2.008s
+user	0m1.287s
+sys	0m0.018s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.20817 +/- 0.200742
+<x2> = 1.00981 +/- 0.217931
+information: H =  4.33492 bits 
+evidence: logZ = -162.428 +/- 0.173342
+
+real	0m1.625s
+user	0m1.268s
+sys	0m0.013s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.23044 +/- 0.197922
+<x2> = 0.992599 +/- 0.210147
+information: H =  4.21696 bits 
+evidence: logZ = -162.236 +/- 0.170967
+
+real	0m1.573s
+user	0m1.150s
+sys	0m0.016s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.23959 +/- 0.197027
+<x2> = 0.98733 +/- 0.202414
+information: H =  4.74363 bits 
+evidence: logZ = -162.556 +/- 0.181329
+
+real	0m1.881s
+user	0m1.291s
+sys	0m0.013s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.21697 +/- 0.186195
+<x2> = 0.991351 +/- 0.196937
+information: H =  4.96408 bits 
+evidence: logZ = -162.599 +/- 0.185495
+
+real	0m1.611s
+user	0m1.277s
+sys	0m0.009s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.21645 +/- 0.198267
+<x2> = 0.988872 +/- 0.207169
+information: H =  4.64039 bits 
+evidence: logZ = -162.534 +/- 0.179345
+
+real	0m2.004s
+user	0m1.512s
+sys	0m0.017s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.23198 +/- 0.185695
+<x2> = 0.979677 +/- 0.195956
+information: H =  4.64833 bits 
+evidence: logZ = -162.376 +/- 0.179499
+
+real	0m1.817s
+user	0m1.284s
+sys	0m0.010s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.23825 +/- 0.186089
+<x2> = 0.971604 +/- 0.19984
+information: H =  4.52646 bits 
+evidence: logZ = -162.302 +/- 0.17713
+
+real	0m1.893s
+user	0m1.162s
+sys	0m0.004s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.21707 +/- 0.202784
+<x2> = 0.996458 +/- 0.210051
+information: H =  4.29243 bits 
+evidence: logZ = -162.351 +/- 0.17249
+
+real	0m1.860s
+user	0m1.412s
+sys	0m0.023s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22124 +/- 0.179577
+<x2> = 0.989532 +/- 0.205237
+information: H =  4.80753 bits 
+evidence: logZ = -162.489 +/- 0.182547
+
+real	0m1.896s
+user	0m1.279s
+sys	0m0.016s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.2107 +/- 0.203485
+<x2> = 0.989273 +/- 0.200628
+information: H =  4.49326 bits 
+evidence: logZ = -162.432 +/- 0.176479
+
+real	0m1.902s
+user	0m1.209s
+sys	0m0.017s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22901 +/- 0.195434
+<x2> = 1.0018 +/- 0.222706
+information: H =  4.67957 bits 
+evidence: logZ = -162.649 +/- 0.180101
+
+real	0m1.406s
+user	0m1.313s
+sys	0m0.008s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.23922 +/- 0.193903
+<x2> = 0.98618 +/- 0.207444
+information: H =  4.17418 bits 
+evidence: logZ = -162.184 +/- 0.170098
+
+real	0m2.530s
+user	0m1.347s
+sys	0m0.020s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.23041 +/- 0.18867
+<x2> = 0.99226 +/- 0.202329
+information: H =  4.34112 bits 
+evidence: logZ = -162.222 +/- 0.173466
+
+real	0m1.781s
+user	0m1.263s
+sys	0m0.007s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.2435 +/- 0.189609
+<x2> = 0.975606 +/- 0.193839
+information: H =  4.35577 bits 
+evidence: logZ = -162.162 +/- 0.173758
+
+real	0m1.559s
+user	0m1.217s
+sys	0m0.019s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.21507 +/- 0.200209
+<x2> = 0.993547 +/- 0.195711
+information: H =  4.17598 bits 
+evidence: logZ = -162.175 +/- 0.170134
+
+real	0m1.689s
+user	0m1.358s
+sys	0m0.019s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22563 +/- 0.211188
+<x2> = 1.00664 +/- 0.204949
+information: H =  4.50327 bits 
+evidence: logZ = -162.555 +/- 0.176676
+
+real	0m2.097s
+user	0m1.385s
+sys	0m0.019s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.2287 +/- 0.185385
+<x2> = 0.98389 +/- 0.203136
+information: H =  4.70302 bits 
+evidence: logZ = -162.451 +/- 0.180551
+
+real	0m1.837s
+user	0m1.197s
+sys	0m0.017s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.23333 +/- 0.197614
+<x2> = 0.98365 +/- 0.194121
+information: H =  4.77846 bits 
+evidence: logZ = -162.526 +/- 0.181994
+
+real	0m1.812s
+user	0m1.267s
+sys	0m0.015s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22264 +/- 0.203479
+<x2> = 0.987411 +/- 0.223027
+information: H =  4.44005 bits 
+evidence: logZ = -162.52 +/- 0.175431
+
+real	0m1.934s
+user	0m1.363s
+sys	0m0.015s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22011 +/- 0.191062
+<x2> = 0.982347 +/- 0.203669
+information: H =  4.6544 bits 
+evidence: logZ = -162.459 +/- 0.179616
+
+real	0m1.841s
+user	0m1.183s
+sys	0m0.021s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.21611 +/- 0.186352
+<x2> = 0.970913 +/- 0.20659
+information: H =  4.9316 bits 
+evidence: logZ = -162.628 +/- 0.184887
+
+real	0m1.772s
+user	0m1.398s
+sys	0m0.011s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.21818 +/- 0.193801
+<x2> = 0.981926 +/- 0.198257
+information: H =  4.29655 bits 
+evidence: logZ = -162.197 +/- 0.172573
+
+real	0m1.494s
+user	0m1.054s
+sys	0m0.016s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.23674 +/- 0.193201
+<x2> = 0.952092 +/- 0.199828
+information: H =  4.67693 bits 
+evidence: logZ = -162.476 +/- 0.18005
+
+real	0m2.277s
+user	0m1.479s
+sys	0m0.014s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.2228 +/- 0.188412
+<x2> = 0.981612 +/- 0.200263
+information: H =  3.95041 bits 
+evidence: logZ = -161.936 +/- 0.165476
+
+real	0m1.594s
+user	0m1.035s
+sys	0m0.013s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.21826 +/- 0.196486
+<x2> = 1.00417 +/- 0.196095
+information: H =  3.74917 bits 
+evidence: logZ = -161.867 +/- 0.161206
+
+real	0m1.711s
+user	0m1.059s
+sys	0m0.017s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22716 +/- 0.191086
+<x2> = 0.979779 +/- 0.195124
+information: H =  4.3488 bits 
+evidence: logZ = -162.193 +/- 0.173619
+
+real	0m1.374s
+user	0m1.161s
+sys	0m0.012s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.23841 +/- 0.184632
+<x2> = 0.967686 +/- 0.201044
+information: H =  4.99879 bits 
+evidence: logZ = -162.627 +/- 0.186142
+
+real	0m1.883s
+user	0m1.145s
+sys	0m0.013s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.21434 +/- 0.184163
+<x2> = 0.994839 +/- 0.205187
+information: H =  5.16737 bits 
+evidence: logZ = -162.766 +/- 0.189255
+
+real	0m1.925s
+user	0m1.330s
+sys	0m0.015s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22555 +/- 0.199809
+<x2> = 0.982727 +/- 0.208326
+information: H =  4.38508 bits 
+evidence: logZ = -162.366 +/- 0.174342
+
+real	0m2.296s
+user	0m1.403s
+sys	0m0.014s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.2273 +/- 0.196198
+<x2> = 1.00695 +/- 0.214788
+information: H =  4.5227 bits 
+evidence: logZ = -162.506 +/- 0.177056
+
+real	0m1.991s
+user	0m1.396s
+sys	0m0.011s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22355 +/- 0.194535
+<x2> = 0.983297 +/- 0.20513
+information: H =  4.17297 bits 
+evidence: logZ = -162.176 +/- 0.170073
+
+real	0m1.417s
+user	0m1.106s
+sys	0m0.015s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.21294 +/- 0.201524
+<x2> = 0.982245 +/- 0.212059
+information: H =  4.312 bits 
+evidence: logZ = -162.353 +/- 0.172883
+
+real	0m1.767s
+user	0m1.154s
+sys	0m0.019s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.22335 +/- 0.189535
+<x2> = 0.998605 +/- 0.194194
+information: H =  4.44547 bits 
+evidence: logZ = -162.257 +/- 0.175538
+
+real	0m1.325s
+user	0m1.010s
+sys	0m0.009s
+./multinest 100 0.9 
+1701 iterations used
+<x1> = 1.21705 +/- 0.188791
+<x2> = 0.97739 +/- 0.201443
+information: H =  4.1848 bits 
+evidence: logZ = -162.119 +/- 0.170314
+
+real	0m1.984s
+user	0m1.301s
+sys	0m0.011s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22522 +/- 0.19615
+<x2> = 1.00294 +/- 0.202942
+information: H =  4.08313 bits 
+evidence: logZ = -162.121 +/- 0.168232
+
+real	0m1.538s
+user	0m1.206s
+sys	0m0.014s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.21815 +/- 0.192721
+<x2> = 0.995435 +/- 0.198466
+information: H =  4.5226 bits 
+evidence: logZ = -162.366 +/- 0.177054
+
+real	0m1.441s
+user	0m1.258s
+sys	0m0.014s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.23108 +/- 0.190374
+<x2> = 0.998582 +/- 0.217297
+information: H =  4.14265 bits 
+evidence: logZ = -162.205 +/- 0.169454
+
+real	0m1.905s
+user	0m1.348s
+sys	0m0.014s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.23754 +/- 0.171291
+<x2> = 0.956065 +/- 0.177073
+information: H =  5.01343 bits 
+evidence: logZ = -162.456 +/- 0.186415
+
+real	0m2.311s
+user	0m1.335s
+sys	0m0.017s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22726 +/- 0.191455
+<x2> = 0.99635 +/- 0.204852
+information: H =  4.27357 bits 
+evidence: logZ = -162.219 +/- 0.172111
+
+real	0m2.013s
+user	0m1.472s
+sys	0m0.019s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.23223 +/- 0.197308
+<x2> = 0.988504 +/- 0.187134
+information: H =  4.91422 bits 
+evidence: logZ = -162.608 +/- 0.184561
+
+real	0m1.654s
+user	0m1.181s
+sys	0m0.012s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.23063 +/- 0.194598
+<x2> = 0.99911 +/- 0.197668
+information: H =  4.10744 bits 
+evidence: logZ = -162.088 +/- 0.168732
+
+real	0m2.372s
+user	0m1.181s
+sys	0m0.017s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22628 +/- 0.187432
+<x2> = 0.976476 +/- 0.201269
+information: H =  4.43686 bits 
+evidence: logZ = -162.289 +/- 0.175368
+
+real	0m1.507s
+user	0m1.219s
+sys	0m0.012s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22542 +/- 0.187238
+<x2> = 0.986667 +/- 0.204075
+information: H =  4.40583 bits 
+evidence: logZ = -162.266 +/- 0.174754
+
+real	0m1.470s
+user	0m1.157s
+sys	0m0.012s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22686 +/- 0.195015
+<x2> = 0.988509 +/- 0.204494
+information: H =  4.71299 bits 
+evidence: logZ = -162.534 +/- 0.180743
+
+real	0m1.554s
+user	0m1.235s
+sys	0m0.014s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.23317 +/- 0.185582
+<x2> = 0.971376 +/- 0.20822
+information: H =  4.8906 bits 
+evidence: logZ = -162.578 +/- 0.184117
+
+real	0m1.700s
+user	0m1.356s
+sys	0m0.019s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.21765 +/- 0.183196
+<x2> = 0.983298 +/- 0.211649
+information: H =  4.29725 bits 
+evidence: logZ = -162.22 +/- 0.172587
+
+real	0m1.766s
+user	0m1.396s
+sys	0m0.022s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22802 +/- 0.201501
+<x2> = 0.994406 +/- 0.209549
+information: H =  4.23097 bits 
+evidence: logZ = -162.291 +/- 0.171251
+
+real	0m1.661s
+user	0m1.330s
+sys	0m0.017s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22567 +/- 0.182282
+<x2> = 0.986829 +/- 0.192621
+information: H =  4.57197 bits 
+evidence: logZ = -162.273 +/- 0.178018
+
+real	0m1.489s
+user	0m1.161s
+sys	0m0.012s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.23149 +/- 0.199806
+<x2> = 1.00217 +/- 0.20916
+information: H =  4.21587 bits 
+evidence: logZ = -162.303 +/- 0.170945
+
+real	0m1.718s
+user	0m1.270s
+sys	0m0.024s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22376 +/- 0.211597
+<x2> = 1.00325 +/- 0.213022
+information: H =  4.20895 bits 
+evidence: logZ = -162.387 +/- 0.170805
+
+real	0m1.733s
+user	0m1.363s
+sys	0m0.018s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.21891 +/- 0.18628
+<x2> = 0.977211 +/- 0.185531
+information: H =  4.50264 bits 
+evidence: logZ = -162.227 +/- 0.176663
+
+real	0m1.770s
+user	0m1.295s
+sys	0m0.014s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.2251 +/- 0.195631
+<x2> = 1.00111 +/- 0.208545
+information: H =  4.20298 bits 
+evidence: logZ = -162.228 +/- 0.170683
+
+real	0m2.098s
+user	0m1.407s
+sys	0m0.014s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.2186 +/- 0.193214
+<x2> = 0.989147 +/- 0.199404
+information: H =  4.21503 bits 
+evidence: logZ = -162.163 +/- 0.170928
+
+real	0m1.460s
+user	0m1.087s
+sys	0m0.011s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.23371 +/- 0.178945
+<x2> = 0.966672 +/- 0.198133
+information: H =  4.78924 bits 
+evidence: logZ = -162.421 +/- 0.182199
+
+real	0m2.440s
+user	0m1.474s
+sys	0m0.014s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22406 +/- 0.198276
+<x2> = 0.989848 +/- 0.197112
+information: H =  4.82665 bits 
+evidence: logZ = -162.574 +/- 0.182909
+
+real	0m1.506s
+user	0m1.186s
+sys	0m0.008s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22938 +/- 0.209426
+<x2> = 1.00675 +/- 0.21747
+information: H =  4.24425 bits 
+evidence: logZ = -162.425 +/- 0.171519
+
+real	0m1.962s
+user	0m1.395s
+sys	0m0.017s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.27282 +/- 0.178923
+<x2> = 0.954746 +/- 0.210418
+information: H =  4.54935 bits 
+evidence: logZ = -162.366 +/- 0.177577
+
+real	0m1.901s
+user	0m1.209s
+sys	0m0.017s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.23386 +/- 0.209768
+<x2> = 0.991246 +/- 0.195003
+information: H =  4.3371 bits 
+evidence: logZ = -162.336 +/- 0.173385
+
+real	0m2.144s
+user	0m1.470s
+sys	0m0.021s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.23606 +/- 0.187737
+<x2> = 1.00302 +/- 0.212591
+information: H =  4.48852 bits 
+evidence: logZ = -162.393 +/- 0.176386
+
+real	0m1.510s
+user	0m1.116s
+sys	0m0.017s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22785 +/- 0.196779
+<x2> = 1.00566 +/- 0.200182
+information: H =  4.65566 bits 
+evidence: logZ = -162.482 +/- 0.17964
+
+real	0m1.781s
+user	0m1.109s
+sys	0m0.016s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22679 +/- 0.19085
+<x2> = 1.00422 +/- 0.206787
+information: H =  3.92755 bits 
+evidence: logZ = -161.979 +/- 0.164996
+
+real	0m2.078s
+user	0m1.369s
+sys	0m0.012s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.21889 +/- 0.198921
+<x2> = 0.992872 +/- 0.213186
+information: H =  4.31513 bits 
+evidence: logZ = -162.378 +/- 0.172946
+
+real	0m1.828s
+user	0m1.260s
+sys	0m0.019s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22725 +/- 0.207529
+<x2> = 0.990757 +/- 0.22074
+information: H =  4.2774 bits 
+evidence: logZ = -162.436 +/- 0.172188
+
+real	0m1.630s
+user	0m1.247s
+sys	0m0.010s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.21996 +/- 0.189566
+<x2> = 0.987311 +/- 0.206414
+information: H =  4.3249 bits 
+evidence: logZ = -162.255 +/- 0.173141
+
+real	0m1.903s
+user	0m1.126s
+sys	0m0.013s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22283 +/- 0.197413
+<x2> = 0.999281 +/- 0.198869
+information: H =  4.57209 bits 
+evidence: logZ = -162.45 +/- 0.178021
+
+real	0m1.548s
+user	0m1.105s
+sys	0m0.016s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.20976 +/- 0.193738
+<x2> = 0.997041 +/- 0.204483
+information: H =  4.15994 bits 
+evidence: logZ = -162.157 +/- 0.169807
+
+real	0m1.795s
+user	0m1.186s
+sys	0m0.010s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.23836 +/- 0.19142
+<x2> = 0.975797 +/- 0.179836
+information: H =  4.53066 bits 
+evidence: logZ = -162.289 +/- 0.177212
+
+real	0m1.543s
+user	0m1.225s
+sys	0m0.010s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22754 +/- 0.187597
+<x2> = 0.981833 +/- 0.20782
+information: H =  4.01345 bits 
+evidence: logZ = -162.045 +/- 0.166791
+
+real	0m1.937s
+user	0m1.366s
+sys	0m0.022s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.23401 +/- 0.198221
+<x2> = 0.99146 +/- 0.220291
+information: H =  4.56226 bits 
+evidence: logZ = -162.573 +/- 0.177829
+
+real	0m1.805s
+user	0m1.300s
+sys	0m0.017s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.2376 +/- 0.185338
+<x2> = 0.970238 +/- 0.201672
+information: H =  4.26522 bits 
+evidence: logZ = -162.145 +/- 0.171943
+
+real	0m1.650s
+user	0m1.226s
+sys	0m0.017s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22138 +/- 0.19894
+<x2> = 0.99128 +/- 0.206924
+information: H =  4.54793 bits 
+evidence: logZ = -162.45 +/- 0.17755
+
+real	0m1.350s
+user	0m1.080s
+sys	0m0.016s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.21665 +/- 0.200665
+<x2> = 0.99539 +/- 0.213866
+information: H =  4.26703 bits 
+evidence: logZ = -162.337 +/- 0.171979
+
+real	0m2.009s
+user	0m1.359s
+sys	0m0.019s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22033 +/- 0.183752
+<x2> = 1.01914 +/- 0.212998
+information: H =  4.34915 bits 
+evidence: logZ = -162.315 +/- 0.173626
+
+real	0m1.997s
+user	0m1.328s
+sys	0m0.014s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.23578 +/- 0.195208
+<x2> = 0.985118 +/- 0.201012
+information: H =  4.30918 bits 
+evidence: logZ = -162.237 +/- 0.172826
+
+real	0m2.484s
+user	0m1.285s
+sys	0m0.017s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.23479 +/- 0.190484
+<x2> = 0.977446 +/- 0.194406
+information: H =  4.65534 bits 
+evidence: logZ = -162.393 +/- 0.179634
+
+real	0m2.062s
+user	0m1.253s
+sys	0m0.009s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.23689 +/- 0.19407
+<x2> = 1.00151 +/- 0.194439
+information: H =  3.97546 bits 
+evidence: logZ = -161.96 +/- 0.165999
+
+real	0m1.791s
+user	0m1.063s
+sys	0m0.015s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.23341 +/- 0.19301
+<x2> = 0.995072 +/- 0.199034
+information: H =  4.04443 bits 
+evidence: logZ = -162.014 +/- 0.167433
+
+real	0m2.153s
+user	0m1.131s
+sys	0m0.013s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.21116 +/- 0.171833
+<x2> = 0.95553 +/- 0.200372
+information: H =  4.71973 bits 
+evidence: logZ = -162.33 +/- 0.180872
+
+real	0m2.037s
+user	0m1.189s
+sys	0m0.017s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22451 +/- 0.194063
+<x2> = 0.982259 +/- 0.204102
+information: H =  4.74948 bits 
+evidence: logZ = -162.527 +/- 0.181441
+
+real	0m1.703s
+user	0m1.404s
+sys	0m0.014s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.25469 +/- 0.189114
+<x2> = 0.994058 +/- 0.197987
+information: H =  4.43358 bits 
+evidence: logZ = -162.276 +/- 0.175303
+
+real	0m1.745s
+user	0m1.305s
+sys	0m0.010s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22608 +/- 0.189408
+<x2> = 1.00091 +/- 0.206327
+information: H =  4.42583 bits 
+evidence: logZ = -162.314 +/- 0.17515
+
+real	0m2.412s
+user	0m1.194s
+sys	0m0.019s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.21291 +/- 0.18675
+<x2> = 0.98425 +/- 0.200098
+information: H =  4.46418 bits 
+evidence: logZ = -162.295 +/- 0.175907
+
+real	0m2.169s
+user	0m1.272s
+sys	0m0.019s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22991 +/- 0.191693
+<x2> = 0.972789 +/- 0.201871
+information: H =  4.30243 bits 
+evidence: logZ = -162.203 +/- 0.172691
+
+real	0m1.830s
+user	0m1.342s
+sys	0m0.015s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.23746 +/- 0.196918
+<x2> = 0.99673 +/- 0.20337
+information: H =  4.65152 bits 
+evidence: logZ = -162.512 +/- 0.17956
+
+real	0m2.637s
+user	0m1.361s
+sys	0m0.027s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22966 +/- 0.187134
+<x2> = 0.97605 +/- 0.193854
+information: H =  4.87409 bits 
+evidence: logZ = -162.518 +/- 0.183806
+
+real	0m1.738s
+user	0m1.315s
+sys	0m0.020s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.24069 +/- 0.189827
+<x2> = 1.00758 +/- 0.215527
+information: H =  4.50043 bits 
+evidence: logZ = -162.448 +/- 0.17662
+
+real	0m2.305s
+user	0m1.240s
+sys	0m0.025s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.24364 +/- 0.178245
+<x2> = 0.981139 +/- 0.199881
+information: H =  4.47576 bits 
+evidence: logZ = -162.229 +/- 0.176135
+
+real	0m1.697s
+user	0m1.303s
+sys	0m0.016s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.21942 +/- 0.189713
+<x2> = 0.994662 +/- 0.205133
+information: H =  4.43255 bits 
+evidence: logZ = -162.328 +/- 0.175283
+
+real	0m1.761s
+user	0m1.303s
+sys	0m0.015s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22017 +/- 0.195817
+<x2> = 0.998231 +/- 0.207007
+information: H =  4.13974 bits 
+evidence: logZ = -162.176 +/- 0.169395
+
+real	0m1.950s
+user	0m1.412s
+sys	0m0.021s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22267 +/- 0.190537
+<x2> = 0.979241 +/- 0.208895
+information: H =  4.68083 bits 
+evidence: logZ = -162.494 +/- 0.180125
+
+real	0m1.944s
+user	0m1.380s
+sys	0m0.013s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.2275 +/- 0.199881
+<x2> = 0.980558 +/- 0.204502
+information: H =  4.08379 bits 
+evidence: logZ = -162.146 +/- 0.168246
+
+real	0m2.062s
+user	0m1.414s
+sys	0m0.013s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.19539 +/- 0.204473
+<x2> = 0.988423 +/- 0.225063
+information: H =  4.73942 bits 
+evidence: logZ = -162.742 +/- 0.181249
+
+real	0m1.891s
+user	0m1.461s
+sys	0m0.019s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22422 +/- 0.185094
+<x2> = 0.989139 +/- 0.193656
+information: H =  4.53283 bits 
+evidence: logZ = -162.278 +/- 0.177255
+
+real	0m1.825s
+user	0m1.233s
+sys	0m0.016s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.21986 +/- 0.203578
+<x2> = 0.96709 +/- 0.212074
+information: H =  4.74122 bits 
+evidence: logZ = -162.644 +/- 0.181283
+
+real	0m2.406s
+user	0m1.330s
+sys	0m0.012s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.222 +/- 0.182606
+<x2> = 0.958105 +/- 0.183194
+information: H =  4.4739 bits 
+evidence: logZ = -162.151 +/- 0.176099
+
+real	0m1.954s
+user	0m1.201s
+sys	0m0.016s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.21742 +/- 0.188196
+<x2> = 0.985453 +/- 0.204888
+information: H =  4.48055 bits 
+evidence: logZ = -162.317 +/- 0.176229
+
+real	0m1.847s
+user	0m1.282s
+sys	0m0.017s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22879 +/- 0.19929
+<x2> = 1.00662 +/- 0.201776
+information: H =  4.6434 bits 
+evidence: logZ = -162.529 +/- 0.179403
+
+real	0m1.430s
+user	0m1.111s
+sys	0m0.015s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.2142 +/- 0.184106
+<x2> = 0.975958 +/- 0.190416
+information: H =  4.28516 bits 
+evidence: logZ = -162.084 +/- 0.172344
+
+real	0m1.502s
+user	0m1.183s
+sys	0m0.014s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.2238 +/- 0.196349
+<x2> = 1.01325 +/- 0.213826
+information: H =  4.42386 bits 
+evidence: logZ = -162.398 +/- 0.175111
+
+real	0m1.742s
+user	0m1.135s
+sys	0m0.019s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.23021 +/- 0.195786
+<x2> = 0.978869 +/- 0.200033
+information: H =  4.52831 bits 
+evidence: logZ = -162.4 +/- 0.177166
+
+real	0m1.786s
+user	0m1.399s
+sys	0m0.025s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22797 +/- 0.192166
+<x2> = 0.991551 +/- 0.206822
+information: H =  4.3405 bits 
+evidence: logZ = -162.271 +/- 0.173453
+
+real	0m1.503s
+user	0m1.087s
+sys	0m0.009s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.24528 +/- 0.186828
+<x2> = 1.00178 +/- 0.203529
+information: H =  3.95014 bits 
+evidence: logZ = -161.958 +/- 0.16547
+
+real	0m2.151s
+user	0m1.153s
+sys	0m0.019s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.2459 +/- 0.179156
+<x2> = 0.965024 +/- 0.178213
+information: H =  4.61622 bits 
+evidence: logZ = -162.217 +/- 0.178878
+
+real	0m1.718s
+user	0m1.135s
+sys	0m0.019s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22857 +/- 0.202741
+<x2> = 0.999655 +/- 0.213187
+information: H =  4.67338 bits 
+evidence: logZ = -162.624 +/- 0.179982
+
+real	0m2.009s
+user	0m1.297s
+sys	0m0.015s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.20919 +/- 0.208772
+<x2> = 0.98563 +/- 0.211309
+information: H =  4.48188 bits 
+evidence: logZ = -162.527 +/- 0.176256
+
+real	0m1.978s
+user	0m1.526s
+sys	0m0.013s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.2273 +/- 0.191597
+<x2> = 0.989709 +/- 0.209608
+information: H =  4.57282 bits 
+evidence: logZ = -162.461 +/- 0.178035
+
+real	0m1.736s
+user	0m1.353s
+sys	0m0.020s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22869 +/- 0.185844
+<x2> = 0.977916 +/- 0.194488
+information: H =  4.7479 bits 
+evidence: logZ = -162.428 +/- 0.181411
+
+real	0m1.880s
+user	0m1.448s
+sys	0m0.016s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22188 +/- 0.191605
+<x2> = 0.992588 +/- 0.202829
+information: H =  4.30267 bits 
+evidence: logZ = -162.209 +/- 0.172696
+
+real	0m1.755s
+user	0m1.163s
+sys	0m0.020s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22066 +/- 0.188864
+<x2> = 1.0039 +/- 0.194684
+information: H =  4.19476 bits 
+evidence: logZ = -162.108 +/- 0.170516
+
+real	0m1.920s
+user	0m1.490s
+sys	0m0.016s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22207 +/- 0.195706
+<x2> = 0.97563 +/- 0.198452
+information: H =  4.40933 bits 
+evidence: logZ = -162.297 +/- 0.174823
+
+real	0m1.612s
+user	0m1.184s
+sys	0m0.015s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.24101 +/- 0.193552
+<x2> = 0.977442 +/- 0.190294
+information: H =  4.55239 bits 
+evidence: logZ = -162.326 +/- 0.177637
+
+real	0m2.091s
+user	0m1.586s
+sys	0m0.015s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22495 +/- 0.192241
+<x2> = 0.990154 +/- 0.20399
+information: H =  4.2759 bits 
+evidence: logZ = -162.203 +/- 0.172158
+
+real	0m1.741s
+user	0m1.317s
+sys	0m0.017s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.2216 +/- 0.192828
+<x2> = 1.01014 +/- 0.204657
+information: H =  4.21147 bits 
+evidence: logZ = -162.196 +/- 0.170856
+
+real	0m1.641s
+user	0m1.318s
+sys	0m0.018s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22812 +/- 0.189678
+<x2> = 0.969112 +/- 0.197412
+information: H =  4.55335 bits 
+evidence: logZ = -162.341 +/- 0.177655
+
+real	0m1.978s
+user	0m1.504s
+sys	0m0.017s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22546 +/- 0.19556
+<x2> = 0.977567 +/- 0.197747
+information: H =  4.3619 bits 
+evidence: logZ = -162.244 +/- 0.17388
+
+real	0m1.678s
+user	0m1.282s
+sys	0m0.015s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.23765 +/- 0.192465
+<x2> = 0.996056 +/- 0.208641
+information: H =  4.07086 bits 
+evidence: logZ = -162.112 +/- 0.167979
+
+real	0m1.609s
+user	0m1.225s
+sys	0m0.015s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.2301 +/- 0.184938
+<x2> = 0.974746 +/- 0.197761
+information: H =  4.3787 bits 
+evidence: logZ = -162.19 +/- 0.174215
+
+real	0m1.649s
+user	0m1.254s
+sys	0m0.014s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.21575 +/- 0.201147
+<x2> = 0.983772 +/- 0.20945
+information: H =  4.0051 bits 
+evidence: logZ = -162.138 +/- 0.166617
+
+real	0m1.798s
+user	0m1.363s
+sys	0m0.024s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22173 +/- 0.192768
+<x2> = 0.977496 +/- 0.210274
+information: H =  4.35011 bits 
+evidence: logZ = -162.288 +/- 0.173645
+
+real	0m1.639s
+user	0m1.248s
+sys	0m0.012s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22906 +/- 0.186636
+<x2> = 0.986013 +/- 0.201038
+information: H =  4.05928 bits 
+evidence: logZ = -162.013 +/- 0.16774
+
+real	0m1.883s
+user	0m1.298s
+sys	0m0.015s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.23142 +/- 0.201465
+<x2> = 0.986885 +/- 0.192128
+information: H =  4.34205 bits 
+evidence: logZ = -162.254 +/- 0.173484
+
+real	0m1.610s
+user	0m1.356s
+sys	0m0.017s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22328 +/- 0.189726
+<x2> = 0.984623 +/- 0.203753
+information: H =  3.99015 bits 
+evidence: logZ = -161.993 +/- 0.166306
+
+real	0m1.836s
+user	0m1.128s
+sys	0m0.014s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22202 +/- 0.199298
+<x2> = 1.00745 +/- 0.197379
+information: H =  4.56953 bits 
+evidence: logZ = -162.457 +/- 0.177971
+
+real	0m1.806s
+user	0m1.383s
+sys	0m0.014s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22213 +/- 0.193049
+<x2> = 0.987565 +/- 0.21878
+information: H =  4.56861 bits 
+evidence: logZ = -162.49 +/- 0.177953
+
+real	0m1.915s
+user	0m1.440s
+sys	0m0.020s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.23655 +/- 0.177331
+<x2> = 0.982662 +/- 0.195197
+information: H =  4.88344 bits 
+evidence: logZ = -162.482 +/- 0.183982
+
+real	0m1.490s
+user	0m1.186s
+sys	0m0.019s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.23905 +/- 0.204181
+<x2> = 0.981064 +/- 0.209399
+information: H =  4.19951 bits 
+evidence: logZ = -162.281 +/- 0.170613
+
+real	0m1.885s
+user	0m1.468s
+sys	0m0.019s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.2185 +/- 0.199896
+<x2> = 0.986974 +/- 0.210109
+information: H =  4.53005 bits 
+evidence: logZ = -162.478 +/- 0.1772
+
+real	0m1.603s
+user	0m1.287s
+sys	0m0.015s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.2264 +/- 0.192435
+<x2> = 0.996976 +/- 0.20088
+information: H =  4.45419 bits 
+evidence: logZ = -162.326 +/- 0.17571
+
+real	0m2.142s
+user	0m1.277s
+sys	0m0.017s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.23187 +/- 0.193794
+<x2> = 0.972505 +/- 0.205412
+information: H =  4.38239 bits 
+evidence: logZ = -162.28 +/- 0.174288
+
+real	0m2.153s
+user	0m1.496s
+sys	0m0.014s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.23631 +/- 0.197668
+<x2> = 0.994133 +/- 0.197013
+information: H =  4.44441 bits 
+evidence: logZ = -162.336 +/- 0.175517
+
+real	0m1.825s
+user	0m1.314s
+sys	0m0.016s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.23264 +/- 0.187552
+<x2> = 0.99476 +/- 0.201361
+information: H =  4.54199 bits 
+evidence: logZ = -162.371 +/- 0.177434
+
+real	0m1.541s
+user	0m1.190s
+sys	0m0.008s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.22256 +/- 0.20322
+<x2> = 0.976481 +/- 0.207608
+information: H =  4.43341 bits 
+evidence: logZ = -162.395 +/- 0.1753
+
+real	0m1.990s
+user	0m1.403s
+sys	0m0.019s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.21666 +/- 0.202579
+<x2> = 0.990951 +/- 0.201033
+information: H =  4.43827 bits 
+evidence: logZ = -162.377 +/- 0.175396
+
+real	0m1.932s
+user	0m1.491s
+sys	0m0.019s
+./multinest 100 0.75 
+1701 iterations used
+<x1> = 1.2282 +/- 0.192251
+<x2> = 0.983605 +/- 0.203047
+information: H =  4.72859 bits 
+evidence: logZ = -162.481 +/- 0.181042
+
+real	0m1.867s
+user	0m1.200s
+sys	0m0.012s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.23082 +/- 0.201947
+<x2> = 0.990675 +/- 0.206045
+information: H =  4.11723 bits 
+evidence: logZ = -162.205 +/- 0.168933
+
+real	0m1.430s
+user	0m1.243s
+sys	0m0.012s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22849 +/- 0.20097
+<x2> = 1.00137 +/- 0.213717
+information: H =  4.05016 bits 
+evidence: logZ = -162.194 +/- 0.167552
+
+real	0m1.350s
+user	0m1.148s
+sys	0m0.014s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.21346 +/- 0.200948
+<x2> = 0.995669 +/- 0.199814
+information: H =  4.56085 bits 
+evidence: logZ = -162.468 +/- 0.177802
+
+real	0m2.058s
+user	0m1.133s
+sys	0m0.009s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22789 +/- 0.198575
+<x2> = 0.994935 +/- 0.20446
+information: H =  4.819 bits 
+evidence: logZ = -162.635 +/- 0.182764
+
+real	0m2.099s
+user	0m1.383s
+sys	0m0.012s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.21403 +/- 0.185076
+<x2> = 0.978903 +/- 0.195431
+information: H =  4.53181 bits 
+evidence: logZ = -162.281 +/- 0.177235
+
+real	0m2.026s
+user	0m1.290s
+sys	0m0.021s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.24728 +/- 0.185175
+<x2> = 0.996702 +/- 0.194298
+information: H =  4.55673 bits 
+evidence: logZ = -162.332 +/- 0.177721
+
+real	0m1.808s
+user	0m1.422s
+sys	0m0.019s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.21792 +/- 0.188485
+<x2> = 1.01595 +/- 0.200215
+information: H =  4.7593 bits 
+evidence: logZ = -162.523 +/- 0.181629
+
+real	0m2.648s
+user	0m1.380s
+sys	0m0.018s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.23907 +/- 0.191758
+<x2> = 0.988374 +/- 0.204478
+information: H =  4.26534 bits 
+evidence: logZ = -162.203 +/- 0.171945
+
+real	0m1.504s
+user	0m1.079s
+sys	0m0.010s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.21593 +/- 0.192678
+<x2> = 0.981105 +/- 0.212993
+information: H =  4.15974 bits 
+evidence: logZ = -162.182 +/- 0.169803
+
+real	0m1.766s
+user	0m1.096s
+sys	0m0.016s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.23709 +/- 0.200726
+<x2> = 0.997458 +/- 0.216824
+information: H =  4.60326 bits 
+evidence: logZ = -162.602 +/- 0.178626
+
+real	0m1.636s
+user	0m1.231s
+sys	0m0.008s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.21528 +/- 0.192048
+<x2> = 0.989452 +/- 0.215041
+information: H =  4.65204 bits 
+evidence: logZ = -162.536 +/- 0.17957
+
+real	0m2.121s
+user	0m1.322s
+sys	0m0.013s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22638 +/- 0.198007
+<x2> = 0.983251 +/- 0.203837
+information: H =  4.39099 bits 
+evidence: logZ = -162.342 +/- 0.174459
+
+real	0m1.889s
+user	0m1.267s
+sys	0m0.018s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.2333 +/- 0.19071
+<x2> = 0.995382 +/- 0.207544
+information: H =  4.7965 bits 
+evidence: logZ = -162.611 +/- 0.182337
+
+real	0m2.366s
+user	0m1.425s
+sys	0m0.013s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22052 +/- 0.192298
+<x2> = 0.992287 +/- 0.199208
+information: H =  4.25035 bits 
+evidence: logZ = -162.172 +/- 0.171643
+
+real	0m1.965s
+user	0m1.347s
+sys	0m0.014s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.21557 +/- 0.204804
+<x2> = 0.996181 +/- 0.212539
+information: H =  4.52446 bits 
+evidence: logZ = -162.532 +/- 0.177091
+
+real	0m2.084s
+user	0m1.392s
+sys	0m0.021s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.24318 +/- 0.1811
+<x2> = 0.964228 +/- 0.19501
+information: H =  4.56972 bits 
+evidence: logZ = -162.283 +/- 0.177974
+
+real	0m2.314s
+user	0m1.419s
+sys	0m0.006s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22054 +/- 0.188959
+<x2> = 0.984534 +/- 0.213709
+information: H =  4.69138 bits 
+evidence: logZ = -162.507 +/- 0.180328
+
+real	0m1.861s
+user	0m1.349s
+sys	0m0.018s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.23011 +/- 0.187575
+<x2> = 0.985855 +/- 0.195974
+information: H =  4.76277 bits 
+evidence: logZ = -162.451 +/- 0.181695
+
+real	0m1.917s
+user	0m1.360s
+sys	0m0.015s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.23175 +/- 0.187527
+<x2> = 0.983556 +/- 0.203473
+information: H =  3.86253 bits 
+evidence: logZ = -161.901 +/- 0.163625
+
+real	0m1.355s
+user	0m1.194s
+sys	0m0.009s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22509 +/- 0.189633
+<x2> = 0.990385 +/- 0.200089
+information: H =  4.33148 bits 
+evidence: logZ = -162.213 +/- 0.173273
+
+real	0m2.017s
+user	0m1.206s
+sys	0m0.010s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.21858 +/- 0.194662
+<x2> = 0.987531 +/- 0.208228
+information: H =  4.33997 bits 
+evidence: logZ = -162.284 +/- 0.173443
+
+real	0m1.695s
+user	0m1.186s
+sys	0m0.018s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22626 +/- 0.195243
+<x2> = 0.981667 +/- 0.206467
+information: H =  4.46944 bits 
+evidence: logZ = -162.376 +/- 0.176011
+
+real	0m1.956s
+user	0m1.409s
+sys	0m0.012s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.23131 +/- 0.182877
+<x2> = 0.969522 +/- 0.204276
+information: H =  4.32021 bits 
+evidence: logZ = -162.176 +/- 0.173047
+
+real	0m1.737s
+user	0m1.390s
+sys	0m0.014s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22419 +/- 0.18809
+<x2> = 0.982144 +/- 0.210462
+information: H =  4.63325 bits 
+evidence: logZ = -162.462 +/- 0.179207
+
+real	0m1.832s
+user	0m1.329s
+sys	0m0.023s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22112 +/- 0.189465
+<x2> = 0.977125 +/- 0.206357
+information: H =  4.86544 bits 
+evidence: logZ = -162.595 +/- 0.183643
+
+real	0m1.997s
+user	0m1.335s
+sys	0m0.015s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22428 +/- 0.199609
+<x2> = 0.998426 +/- 0.208112
+information: H =  4.58118 bits 
+evidence: logZ = -162.488 +/- 0.178197
+
+real	0m1.659s
+user	0m1.160s
+sys	0m0.007s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.21626 +/- 0.205992
+<x2> = 0.984703 +/- 0.204455
+information: H =  4.57262 bits 
+evidence: logZ = -162.522 +/- 0.178031
+
+real	0m1.462s
+user	0m1.191s
+sys	0m0.015s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22454 +/- 0.199631
+<x2> = 0.993997 +/- 0.216956
+information: H =  4.40062 bits 
+evidence: logZ = -162.453 +/- 0.174651
+
+real	0m1.843s
+user	0m1.395s
+sys	0m0.019s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22706 +/- 0.193891
+<x2> = 0.977956 +/- 0.201624
+information: H =  4.72172 bits 
+evidence: logZ = -162.51 +/- 0.18091
+
+real	0m1.701s
+user	0m1.274s
+sys	0m0.013s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.23751 +/- 0.197363
+<x2> = 0.993075 +/- 0.21059
+information: H =  4.29502 bits 
+evidence: logZ = -162.311 +/- 0.172542
+
+real	0m1.648s
+user	0m1.130s
+sys	0m0.013s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.24391 +/- 0.192317
+<x2> = 0.98701 +/- 0.197828
+information: H =  3.85527 bits 
+evidence: logZ = -161.91 +/- 0.163471
+
+real	0m1.791s
+user	0m1.097s
+sys	0m0.016s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22344 +/- 0.19752
+<x2> = 0.992359 +/- 0.218368
+information: H =  4.46253 bits 
+evidence: logZ = -162.489 +/- 0.175875
+
+real	0m2.204s
+user	0m1.432s
+sys	0m0.015s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22781 +/- 0.176125
+<x2> = 0.98089 +/- 0.193783
+information: H =  4.69982 bits 
+evidence: logZ = -162.341 +/- 0.18049
+
+real	0m1.601s
+user	0m1.197s
+sys	0m0.015s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.24918 +/- 0.189736
+<x2> = 0.966152 +/- 0.198288
+information: H =  4.61868 bits 
+evidence: logZ = -162.394 +/- 0.178925
+
+real	0m1.721s
+user	0m1.171s
+sys	0m0.008s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.23306 +/- 0.200228
+<x2> = 0.987316 +/- 0.2123
+information: H =  4.53239 bits 
+evidence: logZ = -162.48 +/- 0.177246
+
+real	0m1.823s
+user	0m1.196s
+sys	0m0.018s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.21545 +/- 0.188038
+<x2> = 0.973335 +/- 0.199629
+information: H =  4.62019 bits 
+evidence: logZ = -162.397 +/- 0.178955
+
+real	0m1.525s
+user	0m1.224s
+sys	0m0.018s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.24142 +/- 0.198921
+<x2> = 0.969606 +/- 0.190055
+information: H =  4.50438 bits 
+evidence: logZ = -162.329 +/- 0.176697
+
+real	0m1.594s
+user	0m1.264s
+sys	0m0.022s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22732 +/- 0.198306
+<x2> = 0.984206 +/- 0.215584
+information: H =  4.09588 bits 
+evidence: logZ = -162.178 +/- 0.168495
+
+real	0m1.400s
+user	0m1.095s
+sys	0m0.011s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.23026 +/- 0.194947
+<x2> = 0.99088 +/- 0.20397
+information: H =  4.37964 bits 
+evidence: logZ = -162.325 +/- 0.174234
+
+real	0m1.738s
+user	0m1.288s
+sys	0m0.012s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22634 +/- 0.195027
+<x2> = 0.964086 +/- 0.203697
+information: H =  4.42832 bits 
+evidence: logZ = -162.318 +/- 0.175199
+
+real	0m1.871s
+user	0m1.391s
+sys	0m0.016s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.23344 +/- 0.209728
+<x2> = 0.999158 +/- 0.203134
+information: H =  4.51609 bits 
+evidence: logZ = -162.521 +/- 0.176927
+
+real	0m1.870s
+user	0m1.283s
+sys	0m0.014s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.2271 +/- 0.18942
+<x2> = 0.979032 +/- 0.206473
+information: H =  4.50264 bits 
+evidence: logZ = -162.379 +/- 0.176663
+
+real	0m2.137s
+user	0m1.495s
+sys	0m0.029s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22816 +/- 0.20194
+<x2> = 1.01263 +/- 0.207469
+information: H =  4.27132 bits 
+evidence: logZ = -162.345 +/- 0.172066
+
+real	0m2.097s
+user	0m1.427s
+sys	0m0.022s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22149 +/- 0.187778
+<x2> = 0.985967 +/- 0.211854
+information: H =  4.37392 bits 
+evidence: logZ = -162.297 +/- 0.17412
+
+real	0m1.806s
+user	0m1.348s
+sys	0m0.019s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22044 +/- 0.186313
+<x2> = 0.987024 +/- 0.200268
+information: H =  4.55428 bits 
+evidence: logZ = -162.345 +/- 0.177673
+
+real	0m1.959s
+user	0m1.225s
+sys	0m0.010s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.23358 +/- 0.18755
+<x2> = 0.977528 +/- 0.200981
+information: H =  3.98533 bits 
+evidence: logZ = -161.967 +/- 0.166205
+
+real	0m2.042s
+user	0m1.254s
+sys	0m0.012s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22393 +/- 0.18294
+<x2> = 0.98882 +/- 0.197442
+information: H =  4.5146 bits 
+evidence: logZ = -162.28 +/- 0.176898
+
+real	0m1.993s
+user	0m1.278s
+sys	0m0.016s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.23139 +/- 0.191219
+<x2> = 0.984138 +/- 0.198848
+information: H =  4.60894 bits 
+evidence: logZ = -162.412 +/- 0.178736
+
+real	0m2.234s
+user	0m1.334s
+sys	0m0.014s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22513 +/- 0.20119
+<x2> = 1.00759 +/- 0.207287
+information: H =  4.13174 bits 
+evidence: logZ = -162.217 +/- 0.169231
+
+real	0m1.596s
+user	0m1.182s
+sys	0m0.011s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.21701 +/- 0.190609
+<x2> = 0.987613 +/- 0.204116
+information: H =  4.44214 bits 
+evidence: logZ = -162.32 +/- 0.175472
+
+real	0m1.875s
+user	0m1.064s
+sys	0m0.015s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.21893 +/- 0.189201
+<x2> = 0.950133 +/- 0.178922
+information: H =  5.09115 bits 
+evidence: logZ = -162.584 +/- 0.187854
+
+real	0m2.230s
+user	0m1.523s
+sys	0m0.012s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.23296 +/- 0.191725
+<x2> = 0.982868 +/- 0.196745
+information: H =  4.4133 bits 
+evidence: logZ = -162.259 +/- 0.174902
+
+real	0m2.015s
+user	0m1.221s
+sys	0m0.012s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22508 +/- 0.209146
+<x2> = 0.976231 +/- 0.219823
+information: H =  4.15823 bits 
+evidence: logZ = -162.365 +/- 0.169772
+
+real	0m2.245s
+user	0m1.537s
+sys	0m0.020s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.21721 +/- 0.198514
+<x2> = 0.995396 +/- 0.205216
+information: H =  4.74694 bits 
+evidence: logZ = -162.575 +/- 0.181393
+
+real	0m2.525s
+user	0m1.531s
+sys	0m0.011s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22739 +/- 0.194634
+<x2> = 0.991806 +/- 0.192938
+information: H =  4.24608 bits 
+evidence: logZ = -162.138 +/- 0.171556
+
+real	0m1.775s
+user	0m1.169s
+sys	0m0.013s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22659 +/- 0.191318
+<x2> = 0.981578 +/- 0.200473
+information: H =  4.55958 bits 
+evidence: logZ = -162.369 +/- 0.177777
+
+real	0m2.116s
+user	0m1.260s
+sys	0m0.016s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.23125 +/- 0.189254
+<x2> = 0.998301 +/- 0.201258
+information: H =  3.94115 bits 
+evidence: logZ = -161.976 +/- 0.165281
+
+real	0m1.781s
+user	0m1.218s
+sys	0m0.018s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.21031 +/- 0.197625
+<x2> = 0.964188 +/- 0.212236
+information: H =  4.18148 bits 
+evidence: logZ = -162.244 +/- 0.170246
+
+real	0m1.853s
+user	0m1.490s
+sys	0m0.017s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.2407 +/- 0.195645
+<x2> = 1.00956 +/- 0.200301
+information: H =  4.19272 bits 
+evidence: logZ = -162.2 +/- 0.170475
+
+real	0m1.698s
+user	0m1.330s
+sys	0m0.018s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.23922 +/- 0.182587
+<x2> = 0.973598 +/- 0.184919
+information: H =  4.81378 bits 
+evidence: logZ = -162.417 +/- 0.182665
+
+real	0m1.856s
+user	0m1.326s
+sys	0m0.019s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.23086 +/- 0.182384
+<x2> = 0.975472 +/- 0.195322
+information: H =  4.92565 bits 
+evidence: logZ = -162.528 +/- 0.184775
+
+real	0m1.993s
+user	0m1.454s
+sys	0m0.021s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.21311 +/- 0.198964
+<x2> = 1.00348 +/- 0.202608
+information: H =  3.97456 bits 
+evidence: logZ = -162.072 +/- 0.165981
+
+real	0m1.637s
+user	0m1.112s
+sys	0m0.013s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22182 +/- 0.197539
+<x2> = 0.992451 +/- 0.204871
+information: H =  4.45314 bits 
+evidence: logZ = -162.353 +/- 0.17569
+
+real	0m1.782s
+user	0m1.369s
+sys	0m0.012s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22207 +/- 0.198299
+<x2> = 0.977916 +/- 0.195384
+information: H =  4.58492 bits 
+evidence: logZ = -162.415 +/- 0.17827
+
+real	0m1.868s
+user	0m1.313s
+sys	0m0.012s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.2269 +/- 0.19172
+<x2> = 0.977158 +/- 0.208135
+information: H =  4.48639 bits 
+evidence: logZ = -162.377 +/- 0.176344
+
+real	0m1.692s
+user	0m1.132s
+sys	0m0.014s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22284 +/- 0.184177
+<x2> = 0.960596 +/- 0.19453
+information: H =  4.96274 bits 
+evidence: logZ = -162.573 +/- 0.18547
+
+real	0m2.030s
+user	0m1.483s
+sys	0m0.026s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.21569 +/- 0.195716
+<x2> = 1.00439 +/- 0.214237
+information: H =  4.2439 bits 
+evidence: logZ = -162.305 +/- 0.171512
+
+real	0m1.608s
+user	0m1.259s
+sys	0m0.019s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.20837 +/- 0.193774
+<x2> = 1.00774 +/- 0.192099
+information: H =  4.32646 bits 
+evidence: logZ = -162.194 +/- 0.173173
+
+real	0m2.085s
+user	0m1.327s
+sys	0m0.009s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22353 +/- 0.18957
+<x2> = 0.978088 +/- 0.207012
+information: H =  4.35069 bits 
+evidence: logZ = -162.246 +/- 0.173657
+
+real	0m1.647s
+user	0m1.150s
+sys	0m0.017s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22153 +/- 0.185985
+<x2> = 0.984526 +/- 0.19656
+information: H =  4.35058 bits 
+evidence: logZ = -162.156 +/- 0.173655
+
+real	0m1.913s
+user	0m1.289s
+sys	0m0.015s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.21969 +/- 0.191997
+<x2> = 0.967377 +/- 0.202347
+information: H =  4.34499 bits 
+evidence: logZ = -162.263 +/- 0.173543
+
+real	0m1.558s
+user	0m1.033s
+sys	0m0.014s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22556 +/- 0.193917
+<x2> = 0.986832 +/- 0.214546
+information: H =  4.785 bits 
+evidence: logZ = -162.627 +/- 0.182118
+
+real	0m2.343s
+user	0m1.274s
+sys	0m0.015s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.23959 +/- 0.178836
+<x2> = 1.0059 +/- 0.199335
+information: H =  4.72442 bits 
+evidence: logZ = -162.433 +/- 0.180962
+
+real	0m1.658s
+user	0m1.300s
+sys	0m0.014s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.2321 +/- 0.200117
+<x2> = 0.996046 +/- 0.204221
+information: H =  3.9648 bits 
+evidence: logZ = -162.068 +/- 0.165777
+
+real	0m1.757s
+user	0m1.258s
+sys	0m0.016s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.21448 +/- 0.185167
+<x2> = 0.987211 +/- 0.20087
+information: H =  4.61466 bits 
+evidence: logZ = -162.385 +/- 0.178847
+
+real	0m1.556s
+user	0m1.249s
+sys	0m0.014s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.21356 +/- 0.186416
+<x2> = 0.993408 +/- 0.205681
+information: H =  4.1079 bits 
+evidence: logZ = -162.095 +/- 0.168742
+
+real	0m1.579s
+user	0m1.266s
+sys	0m0.021s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.23056 +/- 0.19789
+<x2> = 0.992321 +/- 0.215516
+information: H =  4.32645 bits 
+evidence: logZ = -162.352 +/- 0.173172
+
+real	0m1.772s
+user	0m1.424s
+sys	0m0.014s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.20801 +/- 0.190527
+<x2> = 0.988409 +/- 0.206514
+information: H =  4.36987 bits 
+evidence: logZ = -162.295 +/- 0.174039
+
+real	0m1.671s
+user	0m1.295s
+sys	0m0.017s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.23541 +/- 0.179704
+<x2> = 0.966739 +/- 0.196096
+information: H =  4.71074 bits 
+evidence: logZ = -162.374 +/- 0.1807
+
+real	0m1.754s
+user	0m1.259s
+sys	0m0.014s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22982 +/- 0.18636
+<x2> = 0.979842 +/- 0.192243
+information: H =  4.78186 bits 
+evidence: logZ = -162.448 +/- 0.182059
+
+real	0m1.685s
+user	0m1.335s
+sys	0m0.019s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.21616 +/- 0.178354
+<x2> = 0.982311 +/- 0.193942
+information: H =  4.57699 bits 
+evidence: logZ = -162.261 +/- 0.178116
+
+real	0m1.535s
+user	0m1.177s
+sys	0m0.018s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.23816 +/- 0.197614
+<x2> = 0.984819 +/- 0.195187
+information: H =  4.40167 bits 
+evidence: logZ = -162.287 +/- 0.174671
+
+real	0m1.868s
+user	0m1.246s
+sys	0m0.014s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.2274 +/- 0.198219
+<x2> = 1.00462 +/- 0.204251
+information: H =  4.11211 bits 
+evidence: logZ = -162.164 +/- 0.168828
+
+real	0m2.094s
+user	0m1.419s
+sys	0m0.020s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.23186 +/- 0.179858
+<x2> = 0.961321 +/- 0.185566
+information: H =  4.33086 bits 
+evidence: logZ = -162.065 +/- 0.173261
+
+real	0m2.268s
+user	0m1.231s
+sys	0m0.015s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.21947 +/- 0.197602
+<x2> = 1.00247 +/- 0.204443
+information: H =  4.17616 bits 
+evidence: logZ = -162.207 +/- 0.170138
+
+real	0m1.572s
+user	0m1.147s
+sys	0m0.019s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.23114 +/- 0.208294
+<x2> = 0.984569 +/- 0.199756
+information: H =  4.52089 bits 
+evidence: logZ = -162.47 +/- 0.177021
+
+real	0m1.944s
+user	0m1.357s
+sys	0m0.015s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.21852 +/- 0.185668
+<x2> = 0.990118 +/- 0.215141
+information: H =  4.2907 bits 
+evidence: logZ = -162.238 +/- 0.172455
+
+real	0m2.415s
+user	0m1.225s
+sys	0m0.014s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22692 +/- 0.186669
+<x2> = 0.990888 +/- 0.197079
+information: H =  4.41167 bits 
+evidence: logZ = -162.228 +/- 0.17487
+
+real	0m2.505s
+user	0m1.241s
+sys	0m0.012s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22123 +/- 0.186288
+<x2> = 1.00328 +/- 0.196219
+information: H =  4.2053 bits 
+evidence: logZ = -162.098 +/- 0.170731
+
+real	0m1.765s
+user	0m1.322s
+sys	0m0.015s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22196 +/- 0.19055
+<x2> = 0.979437 +/- 0.207929
+information: H =  4.41519 bits 
+evidence: logZ = -162.318 +/- 0.174939
+
+real	0m1.707s
+user	0m1.290s
+sys	0m0.013s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.23523 +/- 0.193262
+<x2> = 0.980504 +/- 0.21606
+information: H =  4.73797 bits 
+evidence: logZ = -162.598 +/- 0.181221
+
+real	0m1.640s
+user	0m1.230s
+sys	0m0.020s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.23053 +/- 0.198424
+<x2> = 0.996402 +/- 0.195465
+information: H =  4.68976 bits 
+evidence: logZ = -162.482 +/- 0.180297
+
+real	0m1.880s
+user	0m1.284s
+sys	0m0.020s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.23276 +/- 0.191136
+<x2> = 0.995394 +/- 0.201619
+information: H =  4.16501 bits 
+evidence: logZ = -162.104 +/- 0.169911
+
+real	0m1.568s
+user	0m1.076s
+sys	0m0.006s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.23786 +/- 0.195625
+<x2> = 0.986309 +/- 0.203465
+information: H =  4.82661 bits 
+evidence: logZ = -162.592 +/- 0.182909
+
+real	0m2.229s
+user	0m1.574s
+sys	0m0.022s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.23408 +/- 0.193033
+<x2> = 0.986093 +/- 0.20773
+information: H =  4.22045 bits 
+evidence: logZ = -162.206 +/- 0.171038
+
+real	0m1.507s
+user	0m1.033s
+sys	0m0.012s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.22077 +/- 0.200194
+<x2> = 1.00327 +/- 0.206125
+information: H =  4.11859 bits 
+evidence: logZ = -162.204 +/- 0.168961
+
+real	0m1.544s
+user	0m1.311s
+sys	0m0.017s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.23074 +/- 0.192575
+<x2> = 0.979208 +/- 0.204868
+information: H =  4.28478 bits 
+evidence: logZ = -162.25 +/- 0.172336
+
+real	0m1.823s
+user	0m1.147s
+sys	0m0.015s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.23366 +/- 0.189532
+<x2> = 0.991336 +/- 0.218854
+information: H =  4.31028 bits 
+evidence: logZ = -162.304 +/- 0.172849
+
+real	0m2.383s
+user	0m1.540s
+sys	0m0.013s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.23939 +/- 0.191439
+<x2> = 1.0018 +/- 0.21355
+information: H =  4.19701 bits 
+evidence: logZ = -162.224 +/- 0.170562
+
+real	0m1.369s
+user	0m1.070s
+sys	0m0.014s
+./multinest 100 0.5 
+1701 iterations used
+<x1> = 1.2286 +/- 0.19393
+<x2> = 0.989585 +/- 0.203301
+information: H =  4.50636 bits 
+evidence: logZ = -162.385 +/- 0.176736
+
+real	0m1.857s
+user	0m1.168s
+sys	0m0.013s

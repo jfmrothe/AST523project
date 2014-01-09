@@ -1,0 +1,8 @@
+problem     : lighthouse
+n_column    : 1        
+Dimension   : 2 
+Npoints     : 1000
+e           : 1.0
+repartition : 1.2
+param_1     : uniform   -2.0   2.0
+param_2     : uniform    0.0   2.0
