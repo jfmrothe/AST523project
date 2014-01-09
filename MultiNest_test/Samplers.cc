@@ -174,7 +174,7 @@ void Samplers::mcmc(Point* pt, Data data_obj, double logLmin)
         }
 
         trial->transform_prior();
-        data_obj.lighthouse_logL(trial);
+        data_obj.logL(trial);
 
         if(trial->get_logL() > logLmin){*pt = *trial; accept++;}
         else reject++;

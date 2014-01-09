@@ -21,13 +21,14 @@ class Samplers
         vector<Ellipsoid *> clustering;
 
     public:
-        Samplers(int Dim, double eff) {D=Dim; e=eff;} 
+        Samplers(int Dim, double eff) {D=Dim; e=eff; Vtot=0.0;} 
 
         gsl_vector * get_newcoor();
         void EllipsoidalPartitioning(vector<Point *>&, double);
         int get_NumEll() {return clustering.size();}
         void mcmc(Point*, Data, double);
         void CalcVtot(); 
+        double ClusteringQuality(double Xtot) {return Vtot/Xtot;} 
         void ClearCluster() {clustering.clear();}
 };
 #endif

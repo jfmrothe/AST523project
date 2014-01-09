@@ -8,15 +8,16 @@ class Data
     private:
         int D;
         int num_col; 
+        string data_filename;
         vector< list<double> > data;
         list<double>::iterator datum;
 
     public:
         Data();
-        Data(int Dim, int n_col) : data(n_col) {D = Dim; num_col = n_col;}
-        void get_data(string);
+        Data(int Dim, int n_col, string filename);
+        void get_data();
         void get_results(list<Point>&, double);
         void lighthouse_logL(Point*);
-        void eggbox_logL(Point*);
+        void logL(Point*);
 };
 #endif
