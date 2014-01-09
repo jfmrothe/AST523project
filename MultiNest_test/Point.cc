@@ -1,3 +1,17 @@
+/***************************************************
+
+File: Point.cc
+
+Description:
+Soucre code for the Point class. 
+
+To do:
+Add more prior distribution transformations. 
+
+Programmers: Johnny Greco & Johannes Rothe
+Contacts: greco@princeton.edu, jrothe@princeton.edu
+
+****************************************************/
 #include "Point.h"
 
 Point::Point(int Dim) : myparams(Dim) {D=Dim;}

@@ -1,8 +1,8 @@
 problem     : gauss_shell
-n_column    : 0        
-Dimension   : 2 
+n_column    : 0
+Dimension   : 2
 Npoints     : 1000
-e           : 1.0  
+e           : 1.0
 repartition : 1.2
 param_1     : uniform     -6.0    6.0
 param_2     : uniform     -6.0    6.0

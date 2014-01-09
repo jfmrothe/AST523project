@@ -1,4 +1,4 @@
-problem     : lighthouse
+data_file   : lighthouse.dat
 n_column    : 1        
 Dimension   : 2 
 Npoints     : 1000

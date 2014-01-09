@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
     Samplers sampler(D, e); // create sampler object
     srand(time(NULL));  // seed random number generator
     
-    cout << "creating " << N << " active points" << endl;
+    cout << "creating " << N << " active points in " << D << " dimensions" << endl;
 
     // **** create N active points and set params
     vector <Point *> pts(N); 

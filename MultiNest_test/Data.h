@@ -1,3 +1,15 @@
+/***************************************************
+
+File: Data.h 
+
+Description:
+Header file for the Data class. Data objects handle
+all interaction with data and likelihood evaluations.
+
+Programmers: Johnny Greco & Johannes Rothe
+Contacts: greco@princeton.edu, jrothe@princeton.edu
+
+****************************************************/
 #ifndef DATA_H
 #define DATA_H
 
@@ -16,7 +28,6 @@ class Data
         Data(int Dim, int n_col, string filename);
         void get_data();
         void get_results(list<Point *>&, double);
-        void lighthouse_logL(Point*);
         void logL(Point*);
 };
 #endif

@@ -1,3 +1,21 @@
+/***************************************************
+
+File: Data.cc 
+
+Description:
+Source code for the Data class. 
+
+To do:
+At the moment, the likelihood evaluations are quite
+suboptimal; the likelihood function is determined by 
+the file name given by the user. This will be changed 
+to a pointer to a user defined function that is passed
+to the Data constructor at run time. 
+
+Programmers: Johnny Greco & Johannes Rothe
+Contacts: greco@princeton.edu, jrothe@princeton.edu
+
+****************************************************/
 #include "Data.h"
 
 Data::Data(int Dim, int n_col, string filename) : data(n_col)
@@ -11,7 +29,6 @@ void Data::get_data()
 {
     double dat;
     ifstream datafile(data_filename.c_str());
-
 
     while(!datafile.eof())
     {
