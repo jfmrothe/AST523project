@@ -39,7 +39,7 @@ Samplers.o : Samplers.cc $(HDRS)
 SamplersUtilities.o : SamplersUtilities.cc $(HDRS)
 	$(CC) $(CFLAGS) -c SamplersUtilities.cc
 
-Elipsoid.o : Ellipsoid.cc $(HDRS)
+Ellipsoid.o : Ellipsoid.cc $(HDRS)
 	$(CC) $(CFLAGS) -c Ellipsoid.cc
 
 clean:
