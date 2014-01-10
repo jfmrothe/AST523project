@@ -43,7 +43,7 @@ if z_axis == 'logL':
     ax.set_zlabel('log(L)')
 elif z_axis == 'post':
     ax.scatter(x, y, post, color='blue', s=1.5)
-    ax.set_zlabel('L')
+    ax.set_zlabel('L/Z')
 else:
     "nothing to plot"
     exit(1)

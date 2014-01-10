@@ -113,8 +113,7 @@ void Data::logL(Point* pt)
         arg1 = -pow(sqrt(dist1_sq) - r, 2)/(2*ww);
         arg2 = -pow(sqrt(dist2_sq) - r, 2)/(2*ww);
 
-        if(arg1 > arg2) {logL = log(Norm) + arg1 + log(1.0 + exp(arg2 - arg1));}
-        else {logL = log(Norm) + arg2 + log(1.0 + exp(arg1 - arg2));}
+        logL = log(Norm) + PLUS(arg1, arg2);
 
         pt->set_logL(logL);
     }

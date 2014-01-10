@@ -12,12 +12,12 @@ How to run the code:
 The program takes the name of a runtime parameter file as 
 a command-line argument. The file should be located in 
 RunTimeFiles. For example, to run the lighthouse, 
-egg-box, or Gaussian shells problems enter the commands
+egg-box, or Gaussian shells problems, enter the commands
 below.
 
 ./multinest lighthouse.txt
 ./multinest eggbox.txt
-./multinest gauss_shell.txt
+./multinest gauss_shells.txt
 
 All relevant parameters such as the number of active 
 points are set in the runtime files. 
@@ -101,7 +101,7 @@ int main(int argc, char *argv[])
 
     // ****************************************** start nested sampling algorithm 
     double logZ = -DBL_MAX;
-    double logwidth, logZnew, logZ_err, X_i; 
+    double logwidth, logZnew, logZ_err, Xtot; 
     double logLmin, H=0.0;
     double logLmax = -999.9;
     double logL_tmp = 0.0;
@@ -110,10 +110,12 @@ int main(int argc, char *argv[])
     nest = 0;
     list<Point *> discard_pts; // list of Point objects to sample posterior 
 
-    logwidth = log(1.0 - exp(-1.0/N)); 
     do
     {
-        X_i = exp(-nest/N);
+        // calculate log(delta_X) using the trapezium rule
+        logwidth = log(0.5) + log(exp(-(nest-1)/N) - exp(-(nest+1)/N)); 
+
+        Xtot = exp(-nest/N); // total remaining prior mass
         worst = 0; 
         for(j=1; j<N; j++) // for lowest and highest logL
         {
@@ -134,27 +136,32 @@ int main(int argc, char *argv[])
 
         
         // **************** ellipsoidal partitioning 
-        if(nest==0 || sampler.ClusteringQuality(X_i) > RepartitionFactor)  // recluster? 
+        if(nest==0 || sampler.ClusteringQuality(Xtot) > RepartitionFactor)  // recluster? 
         {
             sampler.ClearCluster();
-            sampler.EllipsoidalPartitioning(pts, X_i);
+            sampler.EllipsoidalPartitioning(pts, Xtot);
             sampler.CalcVtot();
             NumRecluster++;
         }
-	// **************** ellipsoidal sampling 
-	do
+    	// **************** ellipsoidal sampling 
+    	do
         {
             pts[worst]->set_u(sampler.get_newcoor());
             pts[worst]->transform_prior();
             data_obj.logL(pts[worst]);
         }
         while(logLmin > pts[worst]->get_logL());
-	// *********************************************
-        logwidth -= 1.0/N;
+    	// *********************************************
+        
         nest++;
     }
-    while(THRESH < abs(X_i*logLmax)); // stopping criterion
+    while(exp(log(Xtot) + logLmax - logZ) > THRESH); // stopping criterion
     // ****************************************** end nested sampling algorithm 
+
+    // add final contribution to logZ from the remaining live points
+    double X_last = exp(-(nest)/N);
+    for(int i = 0; i<N; i++) {logZ += pts[i]->get_logL()*(X_last/N);}
+
 
     // ************* output results
     logZ_err = sqrt(H/N);
@@ -170,8 +177,8 @@ int main(int argc, char *argv[])
     list<Point *>::iterator s;
     for(s=discard_pts.begin(); s!=discard_pts.end(); s++)
       outfile << (*s)->get_theta(0) << " " << (*s)->get_theta(1) << " " << (*s)->get_logL() << " " << exp((*s)->get_logL() - logZ) << endl;
-    // ************* 
     outfile.close();
+    // ************* 
 
     for(int j=0; j<N; j++){delete pts[j];} 
     for(list<Point *>::iterator s=discard_pts.begin();s!=discard_pts.end();s++){delete *s;} 

@@ -32,9 +32,9 @@ Contacts: greco@princeton.edu, jrothe@princeton.edu
 #include <gsl/gsl_linalg.h>
 using namespace std;
 
-#define THRESH 1.0e-5
+#define THRESH 0.0001
 #define UNIFORM ((rand() + 0.5)/(RAND_MAX+1.0))
-#define PLUS(x,y) (x>y ? x+log(1+exp(y-x)) : y+log(1+exp(x-y)))
+#define PLUS(x,y) (x>y ? x+log(1+exp(y-x)) : y+log(1+exp(x-y))) // returns log(exp(x)+exp(y))
 
 class Point
 {
