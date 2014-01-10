@@ -3,7 +3,7 @@
 File: Data.cc 
 
 Description:
-Source code for the Data class. 
+Source code for the methods of the Data class.
 
 To do:
 At the moment, the likelihood evaluations are quite
@@ -26,9 +26,12 @@ Data::Data(int Dim, int n_col, string filename) : data(n_col)
 }
 
 void Data::get_data()
+// Get the data for likelihood evaluation. Currently, 
+// only the lighthouse problem uses this method.
 {
     double dat;
-    ifstream datafile(data_filename.c_str());
+    string tmpname = "DataFiles/"+data_filename;
+    ifstream datafile(tmpname.c_str());
 
     while(!datafile.eof())
     {
@@ -42,6 +45,8 @@ void Data::get_data()
 }
 
 void Data::get_results(list<Point *>& samples, double logZ)
+// print out results for the lighthouse problem, this method is
+// only useful for unimodal likelihoods.
 {
     vector<double> x(D, 0.0);
     vector<double> xx(D, 0.0);
@@ -65,8 +70,10 @@ void Data::get_results(list<Point *>& samples, double logZ)
 }
 
 void Data::logL(Point* pt)
+// Evaluate likelihood function. In a future version, this will become 
+// a very general function, which handles a user defined likelihood. 
 {
-    if(data_filename == "lighthouse.dat")
+    if(data_filename == "lighthouse.dat") // lighthouse likelihood
     {
         double x, y;
         double logL = 0;
@@ -78,14 +85,14 @@ void Data::logL(Point* pt)
         }
         pt->set_logL(logL);
     }
-    else if (data_filename == "eggbox")
+    else if (data_filename == "eggbox") // egg-box likelihood
     {
         double x = 1.0;
         for(int i = 0; i < D; i++) {x *= cos(pt->get_theta(i)/2.0);}
         pt->set_logL(pow(2.0 + x, 5.0));
 
     }
-    else if (data_filename == "gauss_shell")
+    else if (data_filename == "gauss_shells") // Gaussian shells likelihood
     {
         vector<double> c1(D), c2(D);
         double r = 2.0;

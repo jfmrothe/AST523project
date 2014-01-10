@@ -1,7 +1,20 @@
+/***************************************************
+
+File: Samplers.cc
+
+Description:
+Source code for the Samplers class. 
+
+Programmers: Johnny Greco & Johannes Rothe
+Contacts: greco@princeton.edu, jrothe@princeton.edu
+
+****************************************************/
 #include "Samplers.h"
 #include "Point.h"
 
 gsl_vector * Samplers::get_newcoor()
+// find the new coordinate, which will 
+// replace the discarded point
 {
     int RandEll;
     int NumEll = clustering.size();
@@ -32,6 +45,7 @@ gsl_vector * Samplers::get_newcoor()
 }
 
 void Samplers::CalcVtot()
+// calculate the total volume of all the ellipsoids
 {
     Vtot=0.0; 
 
@@ -155,6 +169,8 @@ void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot)
 }
 
 void Samplers::mcmc(Point* pt, Data data_obj, double logLmin)
+// MCMC algorithm for finding new points. 
+// It was adapted from Sivia & Skilling (2006). 
 {
     vector<double> new_coords(D);
     double step = 0.1;
@@ -164,8 +180,11 @@ void Samplers::mcmc(Point* pt, Data data_obj, double logLmin)
     trial = new Point(D);
     *trial = *pt;
 
+    // 20 iterations is emprically enough to get the job done
     for(int j = 20; j > 0; j--)
     {
+        // kick each coordinate in a random direction, 
+        // starting from input position
         for(int i = 0; i<D; i++)
         {
             new_coords[i] = pt->get_u(i) + step*(2.0*UNIFORM - 1.0);
@@ -176,11 +195,13 @@ void Samplers::mcmc(Point* pt, Data data_obj, double logLmin)
         trial->transform_prior();
         data_obj.logL(trial);
 
+        // **** refine step size
         if(trial->get_logL() > logLmin){*pt = *trial; accept++;}
         else reject++;
 
         if(accept > reject) step *= exp(1.0 / accept);
         else if(accept < reject) step /= exp(1.0 / reject);
+        // ****
     }
 
     delete trial;
