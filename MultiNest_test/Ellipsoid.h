@@ -1,3 +1,22 @@
+/***************************************************
+
+File: Ellipsoid.h 
+
+Description:
+Header file for the Ellipsoid class. Ellipsoid objects
+are used to represent MultiNest's clustering of the 
+active points. They keep track of their own position
+and dimensions in MultiNest's native hypercube parameter
+space and own a list of the Point objects they enclose.
+Important methods are the Mahalanobis distance needed 
+for optimization of the clustering, and a sampling method
+that returns a random coordinate uniformly distributed
+in the ellipsoid.
+
+Programmers: Johnny Greco & Johannes Rothe
+Contacts: greco@princeton.edu, jrothe@princeton.edu
+
+****************************************************/
 #ifndef ELLIPSOID_H
 #define ELLIPSOID_H
 

@@ -1,0 +1,28 @@
+\documentclass{article}
+
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{natbib}
+%\usepackage{aas_macros}
+%\usepackage{multirow}
+
+\def\mnras{MNRAS}
+
+
+\begin{document}
+\section{The MultiNest Algorithm}
+The MultiNest algorithm is a Bayesian inference tool for parameter space exploration and model selection that has come to widespread use in Astrophysics and Cosmology over the past years. 
+
+It builds upon the nested sampling technique producing the Bayesian evidence by integrating the likelihood associated with a given set of parameters over the multidimensional parameter space, and creates samples of the posterior distribution as a by-product.
+
+The novel way in which MultiNest represents the sampled volume by an optimized set of ellipsoids makes it especially powerful for exploring multi-modal posteriors or posteriors with curving degeneracies in high dimensions.
+
+Our implementation follows the full description of the algorithm in \cite{2009MNRAS.398.1601F}.
+\section{Performance}
+put comparison tables and colorful pictures here
+\section{User Instructions}
+this is where the README-equivalent can go
+\bibliographystyle{myplainnat}
+\bibliography{writeup}
+
+\end{document}

@@ -13,8 +13,8 @@ Contacts: greco@princeton.edu, jrothe@princeton.edu
 #include "Point.h"
 
 gsl_vector * Samplers::get_newcoor()
-// find the new coordinate, which will 
-// replace the discarded point
+// Draws a random sample from the union of all ellipsoids
+// uniformly distributed in the parameter hypercube
 {
     int RandEll;
     int NumEll = clustering.size();
@@ -57,22 +57,12 @@ void Samplers::CalcVtot()
 
 void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot) 
 {
-  // this is the variant currently in development, because segfaults could be
-  // avoided. will check if this implementation is "good" in some sense...
-  // vector of ellipsoid pointers is returned, these are deleted after use in
-  // the function calling EllipsoidalPartitioningVec performs Algorithm I from
-  // Feroz, Hobson and Bridges (2009) on N points in D-dimensional
-  // [0,1]-hypercube given in coors. Returns resulting number of ellipsoids in
-  // Nell, uses new to create array of ellipsoids, first address is returned in
-  // clustering
-
-  /////////////////
-  // ALGORITHM I //
-  /////////////////
+  // Performs Algorithm I from Feroz, Hobson and Bridges (2009) Section 5.2 
+  // on N points in D-dimensional [0,1]-hypercube given in pts
+  // new ellipsoids are appended to clustering
+  // works recursively: calls itself for sub-splitting of parts of the point cloud.
 
   // create mainEllipsoid which may be split further
-  // ?? in recursion depth, this first ellipsoid can be passed by parent??
-
   int N = pts.size();
 
   Ellipsoid mainEll = FindEnclosingEllipsoid(pts,D);
@@ -180,7 +170,7 @@ void Samplers::mcmc(Point* pt, Data data_obj, double logLmin)
     trial = new Point(D);
     *trial = *pt;
 
-    // 20 iterations is emprically enough to get the job done
+    // 20 iterations is empirically enough to get the job done
     for(int j = 20; j > 0; j--)
     {
         // kick each coordinate in a random direction, 

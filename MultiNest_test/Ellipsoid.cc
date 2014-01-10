@@ -1,3 +1,15 @@
+/****************************************************
+
+File: Ellipsoid.cc
+
+Description:
+Source code for the Ellipsoid class and associated 
+functions. 
+
+Programmers: Johnny Greco & Johannes Rothe
+Contacts: greco@princeton.edu, jrothe@princeton.edu
+
+****************************************************/
 #include "Ellipsoid.h"
 
 float boxmuller()
@@ -35,6 +47,8 @@ void unisphere(float * coor, int D)
 }
 
 Ellipsoid::Ellipsoid(int D, gsl_vector * center, gsl_matrix * C, double f, vector<Point *>& ell_pts) {
+  // Ellipsoid constructor, given the physical dimensions of the ellipsoid and the points it enclusters
+  // calculates other often-needed parameters, such as the inverse covariance matrix and the characteristic matrix A needed for the intersection check
   int i;
   D_ = D;
   f_ = f;
@@ -110,6 +124,7 @@ Ellipsoid::Ellipsoid(int D, gsl_vector * center, gsl_matrix * C, double f, vecto
 }
 
 Ellipsoid::~Ellipsoid() {
+  // dectructor for the Ellipsoid class
   gsl_vector_free(center_);
   gsl_vector_free(newcoor_);
   gsl_matrix_free(covMat_);
@@ -174,6 +189,8 @@ void Ellipsoid::printout() {
 }
 
 double Ellipsoid::mdist(Point *pt) {
+  // Calculates the Mahalanobis distance of a Point to the Ellipsoid
+  // Mahalanobis distance 1 characterizes the ellipsoid surface
   int i;
   double dist;
   gsl_vector * tmpvec = gsl_vector_alloc(D_);
@@ -196,8 +213,9 @@ double Ellipsoid::mdist(Point *pt) {
 
 void Ellipsoid::SampleEllipsoid()
 {
-  //returns pseudorandom number coor uniformly distributed in ellipsoid given by the center vector center, 
-  //covariance matrix C and enlargement factor f, so that x^T(fC)^-1x<=1
+  // Returns coordinate uniformly distributed in the ellipsoid,
+  // so that x^T(fC)^-1x<=1. Saves this coordinate in member 
+  // variable newcoor_
   int i;
  
   // create gsl_vector uniformly sampled from sphere
@@ -244,11 +262,8 @@ void Ellipsoid::SampleEllipsoid()
 
 bool Ellipsoid::IsMember(gsl_vector * coor)
 {
-  // returns 1 if point specified by coor lies within ellipsoid specified by center, C, f. returns 0 if not
-
+  // Returns 1 if point specified by coor lies within the ellipsoid, 0 if not
   gsl_permutation *p = gsl_permutation_calloc(D_);
-  //  int sign = +1;
-  //  int * signum = &sign;
   int i;
   int myone = 1;
   int * signum;
@@ -282,6 +297,8 @@ bool Ellipsoid::IsMember(gsl_vector * coor)
 
 
 bool Ellipsoid::intersect(Ellipsoid& other) {
+  // Checks whether two solid ellipsoids intersect using the method described in
+  // Alfano S., Greer M. L., 2003, J. Guid. Control Dyn., 26, 106
 
   if(other.getD() != D_) {return false;}
 
