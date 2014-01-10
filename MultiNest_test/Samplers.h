@@ -1,3 +1,19 @@
+/***************************************************
+
+File: Samplers.h
+
+Description:
+Header file for the Samplers class. Sampler objects 
+drive the sampling of new points. Currently, the 
+two sampling options are MCMC, which is only useful
+for unimodal likelihoods, and the MultiNest algorithm. 
+"Samplers Utilities" are a set of functions that are 
+needed during the sampling process. 
+
+Programmers: Johnny Greco & Johannes Rothe
+Contacts: greco@princeton.edu, jrothe@princeton.edu
+
+****************************************************/
 #ifndef SAMPLERS_H
 #define SAMPLERS_H
 

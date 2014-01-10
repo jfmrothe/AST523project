@@ -1,3 +1,15 @@
+/***************************************************
+
+File: SamplersUtilities.cc
+
+Description:
+This file contains various functions that are needed
+by the sampling routines. 
+
+Programmers: Johnny Greco & Johannes Rothe
+Contacts: greco@princeton.edu, jrothe@princeton.edu
+
+****************************************************/
 #include "Samplers.h"
 
 double dist(int D, Point *pt, gsl_vector * pos2)
@@ -168,6 +180,7 @@ void SelectFromGrouping(vector<Point *>& pts, int D, int * grouping, int index, 
 }
 
 bool u_in_hypercube(gsl_vector * newcoor, int D)
+// check if the input coordinate is still in the hypercube
 {
     double x_i;
 

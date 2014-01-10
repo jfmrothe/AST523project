@@ -1,8 +1,0 @@
-problem     : eggbox
-n_column    : 0        
-Dimension   : 2 
-Npoints     : 2000
-e           : 1.0  
-repartition : 1.2
-param_1     : uniform     0    31.41592654     
-param_2     : uniform     0    31.41592654     

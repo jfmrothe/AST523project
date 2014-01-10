@@ -1,3 +1,37 @@
+/***************************************************
+
+File: main.cc
+
+Description:
+This is the primary driver of the program. It reads in 
+a runtime parameter file and executes the nested sampling 
+algorithm, where the sampling is done with the multiple 
+ellipsoidal sampling method of Feroz, Hobson, & Bridges (2009).
+
+How to run the code:
+The program takes the name of a runtime parameter file as 
+a command-line argument. The file should be located in 
+RunTimeFiles. For example, to run the lighthouse, 
+egg-box, or Gaussian shells problems enter the commands
+below.
+
+./multinest lighthouse.txt
+./multinest eggbox.txt
+./multinest gauss_shell.txt
+
+All relevant parameters such as the number of active 
+points are set in the runtime files. 
+
+To do: 
+The main function is far too complicated. We plan to 
+make some changes to the data structure, which will allow 
+for a much more compact main function. As it stands, 
+this code is not ready for more general use. 
+
+Programmers: Johnny Greco & Johannes Rothe
+Contacts: greco@princeton.edu, jrothe@princeton.edu
+
+****************************************************/
 #include "Point.h"
 #include "Data.h"
 #include "Samplers.h"
@@ -15,6 +49,7 @@ int main(int argc, char *argv[])
 
     // **** get runtime parameters
     string runtime_filename = argv[1];
+    runtime_filename = "RunTimeFiles/"+runtime_filename;
     int N, D, num_cols;
     double e, RepartitionFactor;
     ifstream runtime_file(runtime_filename.c_str());
@@ -118,7 +153,7 @@ int main(int argc, char *argv[])
         logwidth -= 1.0/N;
         nest++;
     }
-    while(THRESH < abs(X_i*logLmax)); // stoping criterion
+    while(THRESH < abs(X_i*logLmax)); // stopping criterion
     // ****************************************** end nested sampling algorithm 
 
     // ************* output results
