@@ -1,0 +1,11 @@
+Ideas for the next steps ahead - 2013/12/13
+
+Nested Sampling phase:
+Johannes continues building the ellipsoid-treating functions inherent to MultiNest, especially EllipsoidalPartitioning and DrawSample
+Johnny implements the Lighthouse example for Nested Sampling
+
+Ellipsoidal Sampling phase:
+When Johnny is done with Nested Sampling, and Johannes FindEnclosingEllipsoid, we will implement EllipsoidalSampling and test with some monomodal toy problem
+
+MultiNest phase:
+This leads to a working configuration of the functions MultiNestDriver, InitializeEverything, RandomSampler and CheckForStoppingCrit from Johnny, which can be coupled to MultiNest's DrawSample, CheckForClusteringCrit, EllipsoidalPartitioning and EllipsoidalScaling functions supplied by Johannes

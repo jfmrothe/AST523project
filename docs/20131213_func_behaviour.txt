@@ -1,0 +1,194 @@
+MULTINEST functional entities and their behaviour
+2013/12/13 johannes rothe
+
+--------------------------
+MultiNestDriver
+
+Gets:
+	number of active points N, dimensionality D, tolerance DeltaZmax, clustering quality tolerance h
+Returns:
+	success flag
+Variables: 
+	N-array of D-dimensional hypercube coordinates
+	N-array of likelihood values (at these coordinates)
+	Cluster information (variable-size array of Ellipsoid (objects?) with center, covariance matrix and enlargement factor for each)
+	discarded point information (growing array of coordinates & likelihood values)
+	Evidence uncertainty tolerance DeltaZmax
+
+Does:
+	InitializeEverything(N)
+	Infinite Loop:
+		 CheckForStoppingCrit -> break if true
+		 CheckForClusteringCrit
+			-> EllipsoidalPartitioning if true
+			-> EllipsoidalScaling if false
+		 request new random sample from RandomSampler
+		 store iteration number, lowest-likelihood and coordinate in discarded point information
+	Post-process stored inactive point information to obtain evidence and posterior samples
+
+
+
+--------------------------
+CheckForStoppingCrit
+
+Gets:
+	Likelihood list, N, i, DeltaZmax
+Returns:
+	true -> break iteration
+	false -> continue
+Does:
+	finds remaining prior volume Xi = exp(-i/N)
+	finds highest occuring likelihood value Lmax
+	returns ( DeltaZmax > Xi*Lmax ) 	
+
+
+
+--------------------------
+CheckForClusteringCrit
+
+Gets:
+	ClusterInfo, i, N, h
+Returns:
+	true -> call EllipsoidalPartitioning
+	false -> call EllipsoidalScaling
+Does:
+	evaluates F(S) and returns ( F(S) > h )	
+	#I don't understand how F(S) works yet, and why h is a good index of quality --jfr 12/13
+
+
+--------------------------
+RandomSampler
+
+Gets:
+	ClusterInfo, Lth = min(likelihood list)
+Returns:
+	coordinate & likelihood of new uniform sample with L > Lth
+	(or error message if no sample was found after Nmax trials?)
+Does:
+	calls DrawSample until Lnew > Lth (parallelize here!)
+	
+--------------------------
+DrawSample
+
+Gets:
+	ClusterInfo
+Returns:
+	coordinates and likelihood of uniformly randomized samples in this clustering
+Does:
+	randomly choose ellipsoid
+	SampleEllipsoid -> check for overlaps with IsMember-loop, drop & repeat if neccessary
+	call LikelihoodEvaluator(coordinates)
+	
+--------------------------
+SampleEllipsoid
+
+Gets:
+	Ellipsoid (object?) center, covariance matrix, enlargement factor
+Returns:
+	uniformly random coordinate in given ellipsoid
+Does:
+	as described in paper Shaw, Bridges and Hobson 2007, section 3.1
+
+
+void SampleEllipsoid(int D, gsl_vector * center, gsl_matrix * C, double f, gsl_vector * coor)
+	
+--------------------------
+IsMember
+
+Gets:
+	coordinates, ellipsoid center, covariance matrix, enlargement factor
+Returns:
+	true if coordinates are in ellipsoid, false if not
+Does:
+	returns ( (coor-center)^T.C^-1.(coor-center) < f)
+
+int IsMember(int D, gsl_vector * coor,  gsl_vector * center, gsl_matrix * C, double f)	
+
+--------------------------
+LikelihoodEvaluator
+
+Gets:
+	hypercube coordinate u_j
+Returns:
+	corresponding likelihood value
+Does:
+	theta_j = CoordinateTransform(u_j)
+	return Likelihood(theta_j)
+
+--------------------------
+CoordinateTransform
+
+Gets:
+	hypercube coordinate u_j
+Returns:
+	corresponding parameter space coordinate theta_j
+Does:
+	calls Prior(theta_j)
+	performs integrations given in MultiNets paper Feroz, Hobson & Bridges 2009 section 5.1
+	# unsure how to implement this for non-uniform priors. invert from lookup table? -- jfr 12/13
+	
+--------------------------
+Likelihood
+
+Gets:
+	parameter coordinate theta_j
+Returns:
+	corresponding likelihood value
+Does:
+	evaluate built-in function
+	
+--------------------------
+Prior
+
+Gets:
+	parameter coordinate theta_j
+Returns:
+	corresponding prior value
+Does:
+	evaluate built-in function
+	
+--------------------------
+EllipsoidalPartitioning
+
+Gets:
+	coordinate list, N, i
+Returns:
+	new ClusterInfo : variable-length list of ellipsoids (center, covariance matrix, enlargement factor)
+Does:
+	"Algorithm 1" as described in Feroz, Hobson & Bridges 2009
+	
+--------------------------
+EllipsoidalScaling
+
+Gets:
+	current ClusterInfo, coordinates, N, i
+Returns:
+	new ClusterInfo
+Does:
+	leaves centers, covariance matrices untouched, rescales all ellipsoids
+	
+--------------------------
+FindEnclosingEllipsoid
+
+Gets:
+	list of coordinates
+Returns:     
+	enclosing ellipsoid
+Does:
+	finds center and covariance matrix from point cloud, then rescales so that all points lie within the described ellipsoid
+
+void FindEnclosingEllipsoid(int D, int N, gsl_vector ** coors,  gsl_vector * center, gsl_matrix * C, double * f)
+	
+--------------------------
+k-means
+
+Gets:
+	list of coordinates, k (number of groups to split into)
+Returns:
+	list of group memberships
+Does:
+	k-means algorithm as in Skilling (2004)
+
+int k_means(int D, int N, int k, float * points, int * grouping)
+	
+--------------------------
