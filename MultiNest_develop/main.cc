@@ -69,9 +69,10 @@ int main(int argc, char *argv[])
         // **************** ellipsoidal partitioning 
         if(nest==0 || sampler.ClusteringQuality(X_i) > RepartitionFactor)  // recluster? 
         {
-	  vector <Point *> allpts = sampler.allpts();
 	  sampler.ClearCluster();
-	  sampler.EllipsoidalPartitioning(allpts, X_i);
+	  vector <Point *> empty;
+	  sampler.EllipsoidalPartitioning(empty, X_i);
+	  sampler.EraseFirst();
 	  sampler.CalcVtot();
 	  NumRecluster++;
         }

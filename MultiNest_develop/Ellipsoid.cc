@@ -103,6 +103,9 @@ Ellipsoid::Ellipsoid(int D, gsl_vector * center, gsl_matrix * C, double f, vecto
 
   vol_ = 4.0/3.0*M_PI*sqrt(pow(f_,D)*det);
 
+
+  //  ell_pts_ = ell_pts;
+  // Chelsea's suggested problem: as ell_pts goes out of scope, Points referenced within are auto-destroyed
   for(int i=0;i<ell_pts.size();i++) {
     ell_pts_.push_back(new Point(*ell_pts[i]));
   }
@@ -312,4 +315,12 @@ bool Ellipsoid::intersect(Ellipsoid& other) {
   gsl_eigen_nonsymm_free(w);
   gsl_vector_complex_free(eval);
   return result;
+}
+
+void Ellipsoid::fetchPoints(Ellipsoid& other) {
+
+  for(int j=0; j<other.ell_pts_.size(); j++) {
+    ell_pts_.push_back(other.ell_pts_[j]);    
+  }
+
 }

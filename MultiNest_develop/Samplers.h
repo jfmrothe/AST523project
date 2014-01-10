@@ -30,13 +30,14 @@ class Samplers
         gsl_vector * DrawSample();
 	double ResetWorstPoint(int nest, Data data_obj);
 	void printout();
-	vector <Point *> allpts();
-        void EllipsoidalPartitioning(vector<Point *>& pts, double Xi);
+	void EllipsoidalPartitioning(vector<Point *>& pts, double Xi);
         int get_NumEll() {return clustering.size();}
         void mcmc(Point*, Data, double);
         void CalcVtot(); 
         double ClusteringQuality(double Xtot) {return Vtot/Xtot;} 
-        void ClearCluster() {clustering.clear();}
+        void ClearCluster();
+	void EraseFirst() {clustering.erase(clustering.begin());}
+
 	int getN() {return N;}
 };
 #endif

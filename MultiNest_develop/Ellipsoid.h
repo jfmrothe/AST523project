@@ -20,6 +20,7 @@ public:
   void SampleEllipsoid();
   bool IsMember(gsl_vector *);
   bool intersect(Ellipsoid& other);
+  void fetchPoints(Ellipsoid& other);
   double getEnlFac();
   void setEnlFac(double f);
   double getVol();

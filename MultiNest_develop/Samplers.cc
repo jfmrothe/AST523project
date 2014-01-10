@@ -139,17 +139,18 @@ void Samplers::printout() {
   outfile.close();
 }
 
+void Samplers::ClearCluster() {
 
- vector <Point *> Samplers::allpts() {
-  // this returns a vector to all points in the sampler object, needed for the first iteration of EllipsoidalPartitioning 
-  vector <Point *> allpts;
-  for(int i=0; i<clustering.size(); i++) {
-    for(int j=0; j<clustering[i]->ell_pts_.size(); j++) {
-      allpts.push_back(clustering[i]->ell_pts_[j]);    
-    }
+  for(int i=1; i<clustering.size(); i++) {
+    (*clustering[0]).fetchPoints(*clustering[i]);
   }
-  return allpts;
+
+  while(clustering.size()>1) {
+    clustering.pop_back();
+  }
+  
 }
+
 
 
 void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot) 
@@ -169,6 +170,12 @@ void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot)
 
   // create mainEllipsoid which may be split further
   // ?? in recursion depth, this first ellipsoid can be passed by parent??
+
+
+  // if function was called from main.cc (and not itself), pts will be empty, data instead will be in (irrelevant) first ellipsoid
+  if(pts.size()==0) {
+    pts = clustering[0]->ell_pts_;
+  }
 
   int N = pts.size();
 
