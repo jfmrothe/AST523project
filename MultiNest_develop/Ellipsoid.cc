@@ -103,8 +103,9 @@ Ellipsoid::Ellipsoid(int D, gsl_vector * center, gsl_matrix * C, double f, vecto
 
   vol_ = 4.0/3.0*M_PI*sqrt(pow(f_,D)*det);
 
-
-  ell_pts_ = ell_pts;
+  for(int i=0;i<ell_pts.size();i++) {
+    ell_pts_.push_back(new Point(*ell_pts[i]));
+  }
 
   gsl_matrix_free(voltmpmat); 
   gsl_permutation_free(volp);

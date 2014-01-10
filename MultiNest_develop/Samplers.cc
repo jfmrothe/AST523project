@@ -148,7 +148,7 @@ void Samplers::printout() {
       allpts.push_back(clustering[i]->ell_pts_[j]);    
     }
   }
-  
+  return allpts;
 }
 
 
