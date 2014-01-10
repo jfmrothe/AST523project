@@ -14,7 +14,7 @@ Contacts: greco@princeton.edu, jrothe@princeton.edu
 
 double dist(int D, Point *pt, gsl_vector * pos2)
 {
-  // returns 2-norm of difference between two given vectors
+  // Returns 2-norm of difference between two given vectors
   double val=0;
   for (int i=0;i<D;i++){
     val += pow(pt->get_u(i)-gsl_vector_get(pos2,i),2);
@@ -24,21 +24,18 @@ double dist(int D, Point *pt, gsl_vector * pos2)
 
 int KMeans(vector<Point *>& pts, int D, int k, int * grouping)
 {
- // Implementation of the K-means algorithm following MacKay, D. C. J., 2003,
- // Information Theory, Inference and Learning Algorithms, Cambridge University
- // Press, Cambridge, p. 640 points gives the coordinates of N points in the
- // D-dimensional [0,1]-hypercube, to be split into k clusters. Association of
- // each point to a cluster is returned in int-array grouping
+  // Implementation of the K-means algorithm following MacKay, D. C. J., 2003,
+  // Information Theory, Inference and Learning Algorithms, Cambridge University
+  // Press, Cambridge, p. 640 
+  // pts gives the coordinates of N points in the D-dimensional [0,1]-hypercube
+  // to be split into k clusters. Association of each point to a cluster is 
+  // returned in int-array grouping
+  
   int i,j;
   int N = pts.size();
 
   gsl_vector * centers[k];
-  //  double centers[k][D];
-  //  double ** centers = new double * [k];
-  //  for(i=0;i<k;i++){
-  //    centers[i] = new double [D];
-  //  }
-
+  
   int nomemb[k];
   bool changed = true;
   int current = 0; 
@@ -48,7 +45,7 @@ int KMeans(vector<Point *>& pts, int D, int k, int * grouping)
   }
 
   while(changed){
-  // calculate group centers
+    // calculate group centers
     for(i=0;i<k;i++){
       nomemb[i] = 0;
       centers[i] = gsl_vector_calloc(D);
@@ -64,7 +61,7 @@ int KMeans(vector<Point *>& pts, int D, int k, int * grouping)
     gsl_vector_set(centers[i],j,gsl_vector_get(centers[i],j)/nomemb[i]);
       }
     }
-  // assign points to closest group center
+    // assign points to closest group center
     changed = false;
     for(i=0;i<N;i++){
       current = grouping[i];
@@ -82,14 +79,15 @@ int KMeans(vector<Point *>& pts, int D, int k, int * grouping)
       }
     }
   }
-
+  
   return 0;
 }
 
 Ellipsoid FindEnclosingEllipsoid(vector<Point *>& pts, int D)
 {
-  // enclosing ellipsoid data for a given point cloud (N D-dimensional
-  // coordinates), enlargement factor f is chosen so that all points are below
+  // Returns enclosing ellipsoid object for a given point cloud 
+  // Defining matrix is chosen to be the point cloud's covariance matrix
+  // Enlargement factor f is chosen so that all points are below
   // the ellipsoid surface
 
   int i,j;
@@ -135,8 +133,7 @@ Ellipsoid FindEnclosingEllipsoid(vector<Point *>& pts, int D)
   gsl_matrix * tmpmat = gsl_matrix_alloc(D,D);
   gsl_matrix * Cinv = gsl_matrix_alloc(D,D);
   gsl_permutation *p = gsl_permutation_calloc(D);
-  //  gsl_vector * tmpvec = gsl_vector_alloc(D);
-
+ 
   gsl_matrix_memcpy(tmpmat,C);
   gsl_linalg_LU_decomp (tmpmat, p, &signum);
   gsl_linalg_LU_invert (tmpmat, p, Cinv);
