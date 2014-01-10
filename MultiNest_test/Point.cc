@@ -3,7 +3,7 @@
 File: Point.cc
 
 Description:
-Soucre code for the Point class. 
+Source code for the Point class. 
 
 To do:
 Add more prior distribution transformations. 

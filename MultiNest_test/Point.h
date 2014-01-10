@@ -8,7 +8,7 @@ all information about live and dead points, such as
 parameter values and prior distributions, logL, 
 contribution to the evidence, etc. In addition, 
 the hypercube to physical prior transformations 
-take plane in a method of this class. 
+take place in a method of this class. 
 
 
 Programmers: Johnny Greco & Johannes Rothe
