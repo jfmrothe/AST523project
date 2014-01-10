@@ -1,0 +1,25 @@
+52 iterations used
+<x1> = 1.27777 +/- 0.05192
+<x2> = 0.902079 +/- 0.0610394
+information: H =  2.35123 bits 
+evidence: logZ = -159.689 +/- 0.737054
+86 iterations used
+<x1> = 0.748561 +/- 0.0712029
+<x2> = 1.11347 +/- 0.134515
+information: H =  4.83347 bits 
+evidence: logZ = -165.376 +/- 0.818573
+171 iterations used
+<x1> = 1.2631 +/- 0.181932
+<x2> = 0.98706 +/- 0.20072
+information: H =  2.49054 bits 
+evidence: logZ = -160.881 +/- 0.415489
+851 iterations used
+<x1> = 1.23651 +/- 0.149536
+<x2> = 0.974269 +/- 0.185286
+information: H =  4.47622 bits 
+evidence: logZ = -161.994 +/- 0.249106
+1701 iterations used
+<x1> = 1.21617 +/- 0.208243
+<x2> = 1.00568 +/- 0.224899
+information: H =  4.13688 bits 
+evidence: logZ = -162.357 +/- 0.169336

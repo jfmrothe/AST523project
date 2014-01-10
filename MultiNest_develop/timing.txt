@@ -1,0 +1,86 @@
+timings for lighthouse problem with reclustering every iteration
+
+time ./multinest 3 
+52 iterations used
+<x1> = 0.989525 +/- 0.145341
+<x2> = 0.806133 +/- 0.10494
+information: H =  3.26622 bits 
+evidence: logZ = -162.398 +/- 0.86871
+
+real	0m0.021s
+user	0m0.001s
+sys	0m0.001s
+
+
+time ./multinest 5 
+86 iterations used
+<x1> = 1.00644 +/- 0.133852
+<x2> = 1.3542 +/- 0.109934
+information: H =  4.80479 bits 
+evidence: logZ = -164.235 +/- 0.81614
+
+real	0m0.046s
+user	0m0.003s
+sys	0m0.000s
+
+
+time ./multinest 10 
+171 iterations used
+<x1> = 1.29207 +/- 0.151819
+<x2> = 0.938529 +/- 0.174657
+information: H =  3.67273 bits 
+evidence: logZ = -161.466 +/- 0.504554
+
+real	0m0.028s
+user	0m0.008s
+sys	0m0.001s
+
+
+time ./multinest 50 
+851 iterations used
+<x1> = 1.22803 +/- 0.183181
+<x2> = 0.963641 +/- 0.205185
+information: H =  4.51385 bits 
+evidence: logZ = -162.308 +/- 0.25015
+
+real	0m0.453s
+user	0m0.249s
+sys	0m0.005s
+
+
+time ./multinest 100 
+1701 iterations used
+<x1> = 1.24048 +/- 0.197524
+<x2> = 0.983156 +/- 0.193108
+information: H =  4.34674 bits 
+evidence: logZ = -162.239 +/- 0.173578
+
+real	0m1.789s
+user	0m1.112s
+sys	0m0.013s
+
+
+time ./multinest 500 
+8501 iterations used
+<x1> = 1.22843 +/- 0.194865
+<x2> = 0.986772 +/- 0.198429
+information: H =  4.67546 bits 
+evidence: logZ = -162.466 +/- 0.0805081
+
+real	1m38.739s
+user	1m14.517s
+sys	0m0.391s
+
+
+time ./multinest 1000 
+17001 iterations used
+<x1> = 1.22436 +/- 0.196286
+<x2> = 0.993979 +/- 0.20788
+information: H =  4.5797 bits 
+evidence: logZ = -162.483 +/- 0.0563419
+
+real	9m3.050s
+user	6m56.528s
+sys	0m1.575s
+
+
