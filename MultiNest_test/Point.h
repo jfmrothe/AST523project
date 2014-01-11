@@ -10,7 +10,6 @@ contribution to the evidence, etc. In addition,
 the hypercube to physical prior transformations 
 take place in a method of this class. 
 
-
 Programmers: Johnny Greco & Johannes Rothe
 Contacts: greco@princeton.edu, jrothe@princeton.edu
 

@@ -36,7 +36,6 @@ x, y, logL, post = np.loadtxt(datafile, unpack=True)
 
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
-plt.title("Gaussian shells: 2000 active points")
 
 if z_axis == 'logL':
     ax.scatter(x, y, logL, color='blue', s=1.5)

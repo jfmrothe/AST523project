@@ -3,11 +3,14 @@
 \usepackage{url}
 \usepackage{hyperref}
 \usepackage{natbib}
+\usepackage{changepage}
+\usepackage{amsmath}
+\def\mtt{\mathtt}
+\def\mrm{\mathrm}
 %\usepackage{aas_macros}
 %\usepackage{multirow}
 
 \def\mnras{MNRAS}
-
 
 \begin{document}
 \section{The MultiNest Algorithm}
@@ -20,9 +23,54 @@ The novel way in which MultiNest represents the sampled volume by an optimized s
 Our implementation follows the full description of the algorithm in \cite{2009MNRAS.398.1601F}.
 \section{Performance}
 put comparison tables and colorful pictures here
+
 \section{User Instructions}
-this is where the README-equivalent can go
-\bibliographystyle{myplainnat}
+Compile the code using {\tt make}.  This program relies on the GNU Scientific Library (GSL) to do linear algebra, so be sure  you have GSL installed and that the compiler knows where to find its source files. Before running the program, run time parameters must be set in a file in the {\tt RunTimeFiles} directory. The format of run time files must be as follows. 
+
+\begin{align*}
+&\mtt{problem/data \ file}                    &:& \ \ \mtt{problem \ or \ data \ file \ name}\\
+&\mtt{N_{columns}}  	     &:& \ \ \mtt{\#}\\       
+&\mtt{Dimension} 	             &:& \ \ \mtt{\# }\\
+&\mtt{N_{points}}                 &:& \ \ \mtt{\#}\\
+&\mtt{efficiency \  \ factor}    &:& \ \ \mtt{1.0 \ (default \ vaule)}\\  
+&\mtt{repartition \  \ factor}   &:& \ \ \mtt{1.2 \ (default \ value)}\\
+&\mtt{\theta_1}                     &:& \ \ \mtt{prior \  \ \  \theta_{1,min}  \  \ \ \theta_{1,max}}\\     
+&\mtt{\theta_2}                     &:& \ \ \mtt{prior \  \  \ \theta_{2,min}  \  \ \  \theta_{2,max}}\\     
+\end{align*}
+
+\noindent Here, $\theta_i$ is the $i^\mrm{th}$ parameter, {\tt prior} is the prior probability distribution for a given parameter, and the efficiency and repartition factors are optimization settings that are related to ellipsoidal partitioning and sampling. We have supplied three run time files for the test problems described above. The lighthouse problem is the only test case that requires data for likelihood evaluations, and its data file can be found in the {\tt DataFiles} directory. The current version of the code can only run these three problems, but we plan to adapt it for much more general use. 
+
+The program takes the name of the run time file as a command-line argument. From the {\tt MultiNest} directory, run the three test cases using the commands below.
+
+\begin{adjustwidth*}{5cm}{3.5cm}
+ {\tt 
+ ./multinest eggbox.txt\\
+./multinest gauss\_shells.txt\\
+ ./multinest lighthouse.txt\\
+ }
+ \end{adjustwidth*}
+ 
+\noindent If you would like to run make quick test runs with the code, lower the number of active points ({\tt Npoints}) in the run time files. Although our code can run the egg-box and Gaussian shells problems in an arbitrary number of dimensions, we have focused on 2 dimensions (2D), which allows for easy visualization and requires practical computation times. 
+
+If the program runs successfully, it will output {\tt posterior\_pdfs.dat}, which has columns  $\theta_1$, $\theta_2$, log($\mathcal{L}$), and $\mathcal{L/Z}$. As the name implies, this file contains the necessary data to visualize the desired 2D posterior probability distributions. In addition, the program will output text similar to the following to the command-line. 
+
+\begin{adjustwidth*}{1.2cm}{1.2cm}
+{\tt
+getting runtime parameters\\
+creating 2000 active points in 2 dimensions\\
+running MultiNest algorithm... this may take a few minutes\\
+job complete!\\
+**** results ****\\
+number iterations = 34001\\
+number reclusters = 2534\\
+information: H =  8.9353 bits\\
+global evidence: logZ = 235.683 +/- 0.0556484\\
+****************}
+\end{adjustwidth*}
+
+As promised, the code tells us the evidence $\mathcal{Z}$, plus some additional information about how the algorithm is progressing. 
+
+\bibliographystyle{plainnat}
 \bibliography{writeup}
 
 \end{document}
