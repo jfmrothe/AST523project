@@ -47,8 +47,8 @@ else:
     "nothing to plot"
     exit(1)
 
-ax.set_xlabel('x')
-ax.set_ylabel('y')
+ax.set_xlabel(r'$\theta_1$')
+ax.set_ylabel(r'$\theta_2$')
 
 ax.set_xlim3d(theta_min[0], theta_max[0])
 ax.set_ylim3d(theta_min[1], theta_max[1])
