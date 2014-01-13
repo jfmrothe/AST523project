@@ -54,7 +54,7 @@ A lighthouse is somewhere off a piece of straight coastline at position $\alpha$
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=12.0cm,trim=0cm 0cm 0cm 0cm,clip=true]{lighthouse.pdf}
+\includegraphics[width=12.0cm,trim=0cm 0cm 0cm 0cm,clip=true]{lighthouse}
 \caption{Posterior probability distribution of the lighthouse location. We used 1000 active points.}
 \label{fig:lighthouse}
 \end{center}
@@ -69,8 +69,8 @@ The first toy model is called the egg-box likelihood. It is designed to show Mul
 The likelihood function and its sampling returned by a run of our code with 2000 points is shown in figure~\ref{eggbox}.
 
 \begin{figure}\label{eggbox}
-\includegraphics[width=0.5\textwidth]{figures/eggbox_analytic.pdf}
-\includegraphics[width=0.5\textwidth]{figures/eggbox.pdf}
+\includegraphics[width=0.5\textwidth]{figures/eggbox_analytic}
+\includegraphics[width=0.5\textwidth]{figures/eggbox}
 \caption{Analytical and sampled likelihood function of the eggbox toy model}
 \end{figure}
 
@@ -84,15 +84,15 @@ where
 The two dimensional appearance of this likelihood function is shown in figure~\ref{gauss-shell}.
 
 \begin{figure}\label{gauss-shell}
-\includegraphics[width=0.5\textwidth]{figures/gauss_shells_analytic.pdf}
-\includegraphics[width=0.5\textwidth]{figures/gauss_shells.pdf}
+\includegraphics[width=0.5\textwidth]{figures/gauss_shells_analytic}
+\includegraphics[width=0.5\textwidth]{figures/gauss_shells}
 \caption{Analytical and sampled likelihood function of the gaussian-shells toy model}
 \end{figure}
 
-The total log-likelihood evaluates to $-1.75$, while our algorithm returns $-1.41\pm 0.03$  with 2000 points.
+The total log-likelihood evaluates to $-1.75$, while our algorithm returns $-1.41\pm 0.03$  with 2000 points, which is again too low.
 
 \subsection{Increasing Dimensionality and Sampling Efficiency}
-The gaussian shell-problem can be easily expanded to arbitrary dimensions, and used to show the unparalleled scaling behaviour of the number of likelihood evaluation MultiNest needs to reach a given accuracy and the sampling efficiency (successfully finding a point of higher likelihood value than the current lowest from the set of ellipsoids) it achieves.
+The gaussian shell-problem can be easily expanded to arbitrary dimensions, and used to show the scaling behaviour of the number of likelihood evaluation MultiNest needs to reach a given accuracy and the sampling efficiency (successfully finding a point of higher likelihood value than the current lowest from the set of ellipsoids) it achieves.
 \begin{table}\label{tab:NlikeEff}
 \centering
 \begin{tabular}{rrrrr}
@@ -100,11 +100,15 @@ The gaussian shell-problem can be easily expanded to arbitrary dimensions, and u
 &\multicolumn{2}{c}{\cite{2009MNRAS.398.1601F}} &\multicolumn{2}{c}{Own Implementation} \\
 D&$N_{like}$ & Efficiency & $N_{like}$ & Efficiency \\ \hline
  2 &  7370 & 0.7077 & 75980 & 0.3422 \\
- 5 & 17967 & 0.5102 &       &        \\
-10 & 52901 & 0.3428 &       &        \\ \hline
+ 5 & 17967 & 0.5102 &  ---  &  ---   \\
+10 & 52901 & 0.3428 &  ---  &  ---   \\ \hline
 \end{tabular}
 \caption{Comparison between published and own performance of number of likelihood evaluations and sampling efficiency in gaussian-shell-problems of varying dimensionality}
 \end{table}
+
+Our algorithm at this point fails to reproduce the promised performance of MultiNest. With increasing number of dimensions, our sampling efficiency drop so fast as to prevent precise calculation of the evidence altogether. But even taking into account the lower sampling efficiency at $D=2$, our number of likelihood evaluations in unreasonably high.
+
+Some uncertainty remains as many parameters such as the number of active points and desired final accuracy are not mentioned along with the quoted results.
 
 \subsection{Profiled Run}
 Using gprof, the following flat profile was found for a MultiNest run of the eggbox problem with 2000 points:
@@ -147,7 +151,7 @@ Using gprof, the following flat profile was found for a MultiNest run of the egg
   0.00     17.35     0.00        1     0.00     0.00  global constructors keyed to main
   0.00     17.35     0.00        1     0.00     0.00  Data::Data(int, int, std::string)
 \end{verbatim}
-Interestingly, the most time-consuming function is K-means, a simple algorithm used for the preliminary partitioning of the data cloud, before the splitting is optimized using a more sophisticated scheme taking into account the desired ellipsoidal form of the clusters.
+Interestingly, the most time-consuming function appears to be K-means, a simple algorithm used for the preliminary partitioning of the data cloud, before the splitting is optimized using a more sophisticated scheme taking into account the desired ellipsoidal form of the clusters.
 \section{User Instructions}
 Compile the code using {\tt make}.  This program relies on the GNU Scientific Library (GSL) to do linear algebra, so be sure  you have GSL installed and that the compiler knows where to find its source files. Before running the program, run time parameters must be set in a file in the {\tt RunTimeFiles} directory. The format of run time files must be as follows. 
 
