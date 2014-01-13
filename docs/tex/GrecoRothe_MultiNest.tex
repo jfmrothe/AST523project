@@ -1,12 +1,14 @@
-\documentclass{article}
+`\documentclass{article}
 
 \usepackage{url}
 \usepackage{hyperref}
 \usepackage{natbib}
 \usepackage{changepage}
 \usepackage{amsmath}
+\usepackage[pdftex]{graphicx}
 \def\mtt{\mathtt}
 \def\mrm{\mathrm}
+\usepackage[margin=1.4cm]{caption}
 %\usepackage{aas_macros}
 %\usepackage{multirow}
 
@@ -24,25 +26,65 @@ Our implementation follows the full description of the algorithm in \cite{2009MN
 \section{Performance}
 put comparison tables and colorful pictures here
 
+\subsection{Test cases}
+
+\subsubsection{The egg-box}
+
+\subsubsection{Gaussian shells}
+
+\subsubsection{Locate the lighthouse}
+
+The following problem was taken from \cite{Siv2006}:
+
+\vspace{0.2cm}
+
+\begin{adjustwidth*}{1.2cm}{2.cm}
+A lighthouse is somewhere off a piece of straight coastline at position $\alpha$ along the shore and a distance $\beta$ out to sea. It emits a series of highly collimated flashes at random intervals and hence random azimuths. These pulses are intercepted on the coast by photo-detectors that record only the fact that a flash has occurred, but not the angle from which it came. $N$ flashes have so far been recorded at positions \{$x_k$\}. Where is the lighthouses?
+ \end{adjustwidth*}
+ 
+ \vspace{0.2cm}
+ 
+\noindent We are told $-2 < \alpha < 2$ and $0 < \beta < 2$, so we assume uniform priors for $\alpha$ and $\beta$ in these ranges. For a given flash measurement $x_k$, it can be shown that 
+
+\begin{equation*}
+\mrm{prob}(x_k | \alpha, \beta) = \frac{\beta}{\beta^2 + (x_k - \alpha)^2},
+\end{equation*}
+
+\noindent which says the probability that the $k^\mrm{th}$ flash will be measured at $x_k$, given the lighthouse is located at ($\alpha$, $\beta$), follows the Cauchy distribution. Thus, the likelihood function is given by
+
+\begin{equation*}
+\mathcal{L}(\alpha, \beta) = \prod_{k=1}^N \mrm{prob}(x_k | \alpha, \beta).
+\end{equation*}
+
+\noindent Simulated data of $N=64$ pulses are stored in {\tt lighthouse.dat} in the {\tt DataFiles} directory. With our program, we find $\alpha = 1.24 \pm 0.19$, $\beta = 0.97 \pm 0.16$, and $\log(\mathcal{Z}) =  -161.49 \pm 0.05$, which is consistent with \cite{Siv2006}. Figure \ref{fig:lighthouse} shows the joint posterior distribution for $\alpha$ and $\beta$. 
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=12.0cm,trim=0cm 0cm 0cm 0cm,clip=true]{lighthouse.pdf}
+\caption{Posterior probability distribution of the lighthouse location. We used 1000 active points.}
+\label{fig:lighthouse}
+\end{center}
+\end{figure}
+
 \section{User Instructions}
 Compile the code using {\tt make}.  This program relies on the GNU Scientific Library (GSL) to do linear algebra, so be sure  you have GSL installed and that the compiler knows where to find its source files. Before running the program, run time parameters must be set in a file in the {\tt RunTimeFiles} directory. The format of run time files must be as follows. 
 
 \begin{align*}
-&\mtt{problem/data \ file}                    &:& \ \ \mtt{problem \ or \ data \ file \ name}\\
+&\mtt{problem/data \ file}    &:& \ \ \mtt{problem \ or \ data \ file \ name}\\
 &\mtt{N_{columns}}  	     &:& \ \ \mtt{\#}\\       
-&\mtt{Dimension} 	             &:& \ \ \mtt{\# }\\
-&\mtt{N_{points}}                 &:& \ \ \mtt{\#}\\
-&\mtt{efficiency \  \ factor}    &:& \ \ \mtt{1.0 \ (default \ vaule)}\\  
-&\mtt{repartition \  \ factor}   &:& \ \ \mtt{1.2 \ (default \ value)}\\
-&\mtt{\theta_1}                     &:& \ \ \mtt{prior \  \ \  \theta_{1,min}  \  \ \ \theta_{1,max}}\\     
-&\mtt{\theta_2}                     &:& \ \ \mtt{prior \  \  \ \theta_{2,min}  \  \ \  \theta_{2,max}}\\     
+&\mtt{Dimension} 	            &:& \ \ \mtt{\# }\\
+&\mtt{N_{points}}                &:& \ \ \mtt{\#}\\
+&\mtt{efficiency \  \ factor}   &:& \ \ \mtt{1.0 \ (default \ vaule)}\\  
+&\mtt{repartition \  \ factor}  &:& \ \ \mtt{1.2 \ (default \ value)}\\
+&\mtt{\theta_1}                    &:& \ \ \mtt{prior \  \ \  \theta_{1,min}  \  \ \ \theta_{1,max}}\\     
+&\mtt{\theta_2}                    &:& \ \ \mtt{prior \  \  \ \theta_{2,min}  \  \ \  \theta_{2,max}}\\     
 \end{align*}
 
 \noindent Here, $\theta_i$ is the $i^\mrm{th}$ parameter, {\tt prior} is the prior probability distribution for a given parameter, and the efficiency and repartition factors are optimization settings that are related to ellipsoidal partitioning and sampling. We have supplied three run time files for the test problems described above. The lighthouse problem is the only test case that requires data for likelihood evaluations, and its data file can be found in the {\tt DataFiles} directory. The current version of the code can only run these three problems, but we plan to adapt it for much more general use. 
 
-The program takes the name of the run time file as a command-line argument. From the {\tt MultiNest} directory, run the three test cases using the commands below.
+The program takes the name of the run time file as a command-line argument. From the {\tt GrecoRothe\_MultiNest} directory, run the three test cases using the commands below.
 
-\begin{adjustwidth*}{5cm}{3.5cm}
+\begin{adjustwidth*}{3.6cm}{3.5cm}
  {\tt 
  ./multinest eggbox.txt\\
 ./multinest gauss\_shells.txt\\

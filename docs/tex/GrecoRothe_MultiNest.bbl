@@ -1,0 +1,21 @@
+\begin{thebibliography}{2}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{Feroz} et~al.(2009){Feroz}, {Hobson}, and
+  {Bridges}]{2009MNRAS.398.1601F}
+F.~{Feroz}, M.~P. {Hobson}, and M.~{Bridges}.
+\newblock {MULTINEST: an efficient and robust Bayesian inference tool for
+  cosmology and particle physics}.
+\newblock \emph{\mnras}, 398:\penalty0 1601--1614, October 2009.
+\newblock \doi{10.1111/j.1365-2966.2009.14548.x}.
+
+\bibitem[{Sivia} and {Skilling}(2006)]{Siv2006}
+D.~S. {Sivia} and J.~{Skilling}.
+\newblock \emph{{Data Analysis: A Bayesian Tutorial}}.
+\newblock Oxford University Press, 2 edition, 2006.
+
+\end{thebibliography}
