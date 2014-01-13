@@ -162,11 +162,11 @@ int main(int argc, char *argv[])
     double X_last = exp(-(nest)/N);
     for(int i = 0; i<N; i++) {logZ += pts[i]->get_logL()*(X_last/N);}
 
-
     // ************* output results
     logZ_err = sqrt(H/N);
     cout << "job complete!" << endl;
     cout << "**** results ****" << endl;
+    if(datafile_name == "lighthouse.dat"){data_obj.get_results(discard_pts, logZ);}
     cout << "number iterations = " << nest << endl;
     cout << "number reclusters = " << NumRecluster <<endl;
     cout << "information: H =  " << H/log(2.0) << " bits " << endl;

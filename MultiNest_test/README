@@ -32,11 +32,11 @@ runtime.txt - This file tells the program the name of the data file, the number 
               Format:
               data_file_name    num_columns
               dimension
-              param_1    prior_type    min_val    max_val    initial_guess
-              param_2    prior_type    min_val    max_val    initial_guess
-                 .                        .                        . 
-                 .                        .                        .
-                 .                        .                        .
+              param_1    prior_type    min_val    max_val    
+              param_2    prior_type    min_val    max_val    
+                 .                        .                  
+                 .                        .                  
+                 .                        .                  
 
 Run_N_Plot.py - This python script runs the lighthouse test case and plots the joint 
                 posterior distribution with matplotlib. 

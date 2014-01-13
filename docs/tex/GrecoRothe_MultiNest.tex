@@ -3,12 +3,17 @@
 \usepackage{url}
 \usepackage{hyperref}
 \usepackage{natbib}
-\usepackage{graphicx}
+%\usepackage{graphicx}
+\usepackage{changepage}
+\usepackage{amsmath}
+\usepackage[pdftex]{graphicx}
+\def\mtt{\mathtt}
+\def\mrm{\mathrm}
+\usepackage[margin=1.4cm]{caption}
 %\usepackage{aas_macros}
 %\usepackage{multirow}
 
 \def\mnras{MNRAS}
-
 
 \begin{document}
 \section{The MultiNest Algorithm}
@@ -20,11 +25,43 @@ The novel way in which MultiNest represents the sampled volume by an optimized s
 
 Our implementation follows the full description of the algorithm in \cite{2009MNRAS.398.1601F}.
 \section{Performance}
-put comparison tables and colorful pictures here
-\subsection{Lighthouse example}
+
+\subsection{Locate the lighthouse}
+
+While implementing our project, we used a simple (unimodal) problem from the literature to create a working infrastructure for all neccessary user and data interactions before integrating the algorithmical modules of MultiNest.  The following problem, which uses a likelihood function derived from observed data, was taken from \cite{Siv2006}:
+
+\vspace{0.2cm}
+
+\begin{adjustwidth*}{1.2cm}{2.cm}
+A lighthouse is somewhere off a piece of straight coastline at position $\alpha$ along the shore and a distance $\beta$ out to sea. It emits a series of highly collimated flashes at random intervals and hence random azimuths. These pulses are intercepted on the coast by photo-detectors that record only the fact that a flash has occurred, but not the angle from which it came. $N$ flashes have so far been recorded at positions \{$x_k$\}. Where is the lighthouses?
+ \end{adjustwidth*}
+ 
+ \vspace{0.2cm}
+ 
+\noindent We are told $-2 < \alpha < 2$ and $0 < \beta < 2$, so we assume uniform priors for $\alpha$ and $\beta$ in these ranges. For a given flash measurement $x_k$, it can be shown that 
+
+\begin{equation*}
+\mrm{prob}(x_k | \alpha, \beta) = \frac{\beta}{\beta^2 + (x_k - \alpha)^2},
+\end{equation*}
+
+\noindent which says the probability that the $k^\mrm{th}$ flash will be measured at $x_k$, given the lighthouse is located at ($\alpha$, $\beta$), follows the Cauchy distribution. Thus, the likelihood function is given by
+
+\begin{equation*}
+\mathcal{L}(\alpha, \beta) = \prod_{k=1}^N \mrm{prob}(x_k | \alpha, \beta).
+\end{equation*}
+
+\noindent Simulated data of $N=64$ pulses are stored in {\tt lighthouse.dat} in the {\tt DataFiles} directory. With our program, we find $\alpha = 1.24 \pm 0.19$, $\beta = 0.97 \pm 0.16$, and $\log(\mathcal{Z}) =  -161.49 \pm 0.05$, which is consistent with \cite{Siv2006}. Figure \ref{fig:lighthouse} shows the joint posterior distribution for $\alpha$ and $\beta$. 
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=12.0cm,trim=0cm 0cm 0cm 0cm,clip=true]{lighthouse.pdf}
+\caption{Posterior probability distribution of the lighthouse location. We used 1000 active points.}
+\label{fig:lighthouse}
+\end{center}
+\end{figure}
 
 \subsection{Toy model 1: ``egg-box''}
-Although our implementation is currently lacking one major feature from  \cite{2009MNRAS.398.1601F}, mode identification (described in section 5.6), we can use the test cases presented there to gauge our code's performance.
+Although our MultiNest implementation is currently lacking one major feature from  \cite{2009MNRAS.398.1601F}, mode identification (described in section 5.6), we can use the test cases presented there to test our code's performance.
 
 The first toy model is called the egg-box likelihood. It is designed to show MultiNest's performance in highly multimodal problems. Instead of deriving the likelihood function from observed data and a realistic model, it is given analytically:
 \[L(\theta_1,\theta_2) = \mathrm{exp}
@@ -54,10 +91,110 @@ The two dimensional appearance of this likelihood function is shown in figure~\r
 
 The total log-likelihood evaluates to $-1.75$, while our algorithm returns $-1.41\pm 0.03$  with 2000 points.
 
-\subsection{Profiled run}
+\subsection{Increasing Dimensionality and Sampling Efficiency}
+The gaussian shell-problem can be easily expanded to arbitrary dimensions, and used to show the unparalleled scaling behaviour of the number of likelihood evaluation MultiNest needs to reach a given accuracy and the sampling efficiency (successfully finding a point of higher likelihood value than the current lowest from the set of ellipsoids) it achieves.
+\begin{table}\label{tab:NlikeEff}
+\centering
+\begin{tabular}{rrrrr}
+\hline
+&\multicolumn{2}{c}{\cite{2009MNRAS.398.1601F}} &\multicolumn{2}{c}{Own Implementation} \\
+D&$N_{like}$ & Efficiency & $N_{like}$ & Efficiency \\ \hline
+ 2 &  7370 & 0.7077 & 75980 & 0.3422 \\
+ 5 & 17967 & 0.5102 &       &        \\
+10 & 52901 & 0.3428 &       &        \\ \hline
+\end{tabular}
+\caption{Comparison between published and own performance of number of likelihood evaluations and sampling efficiency in gaussian-shell-problems of varying dimensionality}
+\end{table}
+
+\subsection{Profiled Run}
+Using gprof, the following flat profile was found for a MultiNest run of the eggbox problem with 2000 points:
+
+\begin{verbatim}
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 35.43      6.23     6.23   388786     0.02     0.02  KMeans(std::vector<Point*, std::allocator<Point*> >&, int, int, int*)
+ 19.48      9.66     3.43  1481594     0.00     0.00  FindEnclosingEllipsoid(std::vector<Point*, std::allocator<Point*> >&, int)
+ 16.15     12.50     2.84 218581886     0.00     0.00  Ellipsoid::mdist(Point*)
+ 12.17     14.64     2.14     3128     0.68     5.10  Samplers::EllipsoidalPartitioning(std::vector<Point*, std::allocator<Point*> >&, double)
+  6.31     15.75     1.11  1870380     0.00     0.00  SelectFromGrouping(std::vector<Point*, std::allocator<Point*> >&, int, int*, int, std::vector<Point*, std::allocator<Point*> >&)
+  3.24     16.32     0.57   238084     0.00     0.00  Samplers::get_newcoor()
+  2.96     16.84     0.52 34052242     0.00     0.00  Ellipsoid::IsMember(gsl_vector*)
+  1.31     17.07     0.23                             main
+  0.80     17.21     0.14  1677551     0.00     0.00  Ellipsoid::Ellipsoid(int, gsl_vector*, gsl_matrix*, double, std::vector<Point*, std::allocator<Point*> >&)
+  0.23     17.25     0.04 36676332     0.00     0.00  Ellipsoid::getVol()
+  0.23     17.29     0.04  3557834     0.00     0.00  std::vector<Point*, std::allocator<Point*> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Point**, std::vector<Point*, std::allocator<Point*> > >, Point* const&)
+  0.11     17.31     0.02   377845     0.00     0.00  unisphere(float*, int)
+  0.06     17.32     0.01  1677551     0.00     0.00  std::vector<Point*, std::allocator<Point*> >::operator=(std::vector<Point*, std::allocator<Point*> > const&)
+  0.06     17.33     0.01   377845     0.00     0.00  u_in_hypercube(gsl_vector*, int)
+  0.06     17.34     0.01   377845     0.00     0.00  Ellipsoid::SampleEllipsoid()
+  0.06     17.35     0.01   240084     0.00     0.00  Point::transform_prior()
+  0.00     17.35     0.00  1481594     0.00     0.00  Ellipsoid::~Ellipsoid()
+  0.00     17.35     0.00   673094     0.00     0.00  Ellipsoid::getEnlFac()
+  0.00     17.35     0.00   477137     0.00     0.00  Ellipsoid::setEnlFac(double)
+  0.00     17.35     0.00   240084     0.00     0.00  Data::logL(Point*)
+  0.00     17.35     0.00   195957     0.00     0.00  Ellipsoid::getCenter()
+  0.00     17.35     0.00   195957     0.00     0.00  Ellipsoid::getCovMat()
+  0.00     17.35     0.00     3128     0.00     0.00  Samplers::CalcVtot()
+  0.00     17.35     0.00     2000     0.00     0.00  Point::set_params(std::vector<std::string, std::allocator<std::string> >, std::vector<double, std::allocator<double> >, std::vector<double, std::allocator<double> >)
+  0.00     17.35     0.00     2000     0.00     0.00  Point::hypercube_prior()
+  0.00     17.35     0.00     2000     0.00     0.00  Point::Point(int)
+  0.00     17.35     0.00        9     0.00     0.00  std::vector<Ellipsoid*, std::allocator<Ellipsoid*> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Ellipsoid**, std::vector<Ellipsoid*, std::allocator<Ellipsoid*> > >, Ellipsoid* const&)
+  0.00     17.35     0.00        1     0.00     0.00  global constructors keyed to _Z4distiP5PointP10gsl_vector
+  0.00     17.35     0.00        1     0.00     0.00  global constructors keyed to _Z9boxmullerv
+  0.00     17.35     0.00        1     0.00     0.00  global constructors keyed to _ZN4DataC2EiiSs
+  0.00     17.35     0.00        1     0.00     0.00  global constructors keyed to _ZN5PointC2Ei
+  0.00     17.35     0.00        1     0.00     0.00  global constructors keyed to _ZN8Samplers11get_newcoorEv
+  0.00     17.35     0.00        1     0.00     0.00  global constructors keyed to main
+  0.00     17.35     0.00        1     0.00     0.00  Data::Data(int, int, std::string)
+\end{verbatim}
+Interestingly, the most time-consuming function is K-means, a simple algorithm used for the preliminary partitioning of the data cloud, before the splitting is optimized using a more sophisticated scheme taking into account the desired ellipsoidal form of the clusters.
 \section{User Instructions}
-this is where the README-equivalent can go
-\bibliographystyle{myplainnat}
+Compile the code using {\tt make}.  This program relies on the GNU Scientific Library (GSL) to do linear algebra, so be sure  you have GSL installed and that the compiler knows where to find its source files. Before running the program, run time parameters must be set in a file in the {\tt RunTimeFiles} directory. The format of run time files must be as follows. 
+
+\begin{align*}
+&\mtt{problem/data \ file}    &:& \ \ \mtt{problem \ or \ data \ file \ name}\\
+&\mtt{N_{columns}}  	     &:& \ \ \mtt{\#}\\       
+&\mtt{Dimension} 	            &:& \ \ \mtt{\# }\\
+&\mtt{N_{points}}                &:& \ \ \mtt{\#}\\
+&\mtt{efficiency \  \ factor}   &:& \ \ \mtt{1.0 \ (default \ vaule)}\\  
+&\mtt{repartition \  \ factor}  &:& \ \ \mtt{1.2 \ (default \ value)}\\
+&\mtt{\theta_1}                    &:& \ \ \mtt{prior \  \ \  \theta_{1,min}  \  \ \ \theta_{1,max}}\\     
+&\mtt{\theta_2}                    &:& \ \ \mtt{prior \  \  \ \theta_{2,min}  \  \ \  \theta_{2,max}}\\     
+\end{align*}
+
+\noindent Here, $\theta_i$ is the $i^\mrm{th}$ parameter, {\tt prior} is the prior probability distribution for a given parameter, and the efficiency and repartition factors are optimization settings that are related to ellipsoidal partitioning and sampling. We have supplied three run time files for the test problems described above. The lighthouse problem is the only test case that requires data for likelihood evaluations, and its data file can be found in the {\tt DataFiles} directory. The current version of the code can only run these three problems, but we plan to adapt it for much more general use. 
+
+The program takes the name of the run time file as a command-line argument. From the {\tt GrecoRothe\_MultiNest} directory, run the three test cases using the commands below.
+
+\begin{adjustwidth*}{3.6cm}{3.5cm}
+ {\tt 
+ ./multinest eggbox.txt\\
+./multinest gauss\_shells.txt\\
+ ./multinest lighthouse.txt\\
+ }
+ \end{adjustwidth*}
+ 
+\noindent If you would like to run make quick test runs with the code, lower the number of active points ({\tt Npoints}) in the run time files. Although our code can run the egg-box and Gaussian shells problems in an arbitrary number of dimensions, we have focused on 2 dimensions (2D), which allows for easy visualization and requires practical computation times. 
+
+If the program runs successfully, it will output {\tt posterior\_pdfs.dat}, which has columns  $\theta_1$, $\theta_2$, log($\mathcal{L}$), and $\mathcal{L/Z}$. As the name implies, this file contains the necessary data to visualize the desired 2D posterior probability distributions. In addition, the program will output text similar to the following to the command-line. 
+
+\begin{adjustwidth*}{1.2cm}{1.2cm}
+{\tt
+getting runtime parameters\\
+creating 2000 active points in 2 dimensions\\
+running MultiNest algorithm... this may take a few minutes\\
+job complete!\\
+**** results ****\\
+number iterations = 34001\\
+number reclusters = 2534\\
+information: H =  8.9353 bits\\
+global evidence: logZ = 235.683 +/- 0.0556484\\
+****************}
+\end{adjustwidth*}
+
+As promised, the code tells us the evidence $\mathcal{Z}$, plus some additional information about how the algorithm is progressing. 
+
+\bibliographystyle{plainnat}
 \bibliography{writeup}
 
 \end{document}
