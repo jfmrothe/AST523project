@@ -52,17 +52,13 @@ A lighthouse is somewhere off a piece of straight coastline at position $\alpha$
 
 \noindent Simulated data of $N=64$ pulses are stored in {\tt lighthouse.dat} in the {\tt DataFiles} directory. With our program, we find $\alpha = 1.24 \pm 0.19$, $\beta = 0.97 \pm 0.16$, and $\log(\mathcal{Z}) =  -161.49 \pm 0.05$, which is consistent with \cite{Siv2006}. Figure~\ref{lighthouse} shows the joint posterior distribution for $\alpha$ and $\beta$. 
 
-\vspace{-0.32cm}
-
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=12.0cm,trim=0cm 0cm 0cm 0cm,clip=true]{lighthouse.pdf}
+\includegraphics[width=12.0cm,trim=0cm 0cm 0cm 0cm,clip=true]{lighthouse}
 \caption{Posterior probability distribution of the lighthouse location. We used 1000 active points.}
 \label{lighthouse}
 \end{center}
 \end{figure}
-
-\vspace{-0.54cm}
 
 \subsection{Toy model 1: ``egg-box''}
 Although our MultiNest implementation is currently lacking one major feature from  \cite{2009MNRAS.398.1601F}, mode identification (described in section 5.6), we can use the test cases presented there to test our code's performance.
@@ -95,10 +91,10 @@ The two dimensional appearance of this likelihood function is shown in Figure~\r
 \label{gaussshell}
 \end{figure}
 
-The total log-likelihood evaluates to $-1.75$, while our algorithm returns $-1.41\pm 0.03$  with 2000 points.
+The total log-likelihood evaluates to $-1.75$, while our algorithm returns $-1.41\pm 0.03$  with 2000 points, which is again too low.
 
 \subsection{Increasing Dimensionality and Sampling Efficiency}
-The gaussian shell-problem can be easily expanded to arbitrary dimensions, and used to show the unparalleled scaling behaviour of the number of likelihood evaluation MultiNest needs to reach a given accuracy and the sampling efficiency (successfully finding a point of higher likelihood value than the current lowest from the set of ellipsoids) it achieves.
+The gaussian shell-problem can be easily expanded to arbitrary dimensions, and used to show the scaling behaviour of the number of likelihood evaluation MultiNest needs to reach a given accuracy and the sampling efficiency (successfully finding a point of higher likelihood value than the current lowest from the set of ellipsoids) it achieves.
 \begin{table}\label{tab:NlikeEff}
 \centering
 \begin{tabular}{rrrrr}
@@ -106,11 +102,15 @@ The gaussian shell-problem can be easily expanded to arbitrary dimensions, and u
 &\multicolumn{2}{c}{\cite{2009MNRAS.398.1601F}} &\multicolumn{2}{c}{Own Implementation} \\
 D&$N_{like}$ & Efficiency & $N_{like}$ & Efficiency \\ \hline
  2 &  7370 & 0.7077 & 75980 & 0.3422 \\
- 5 & 17967 & 0.5102 &       &        \\
-10 & 52901 & 0.3428 &       &        \\ \hline
+ 5 & 17967 & 0.5102 &  ---  &  ---   \\
+10 & 52901 & 0.3428 &  ---  &  ---   \\ \hline
 \end{tabular}
 \caption{Comparison between published and own performance of number of likelihood evaluations and sampling efficiency in gaussian-shell-problems of varying dimensionality}
 \end{table}
+
+Our algorithm at this point fails to reproduce the promised performance of MultiNest. With increasing number of dimensions, our sampling efficiency drop so fast as to prevent precise calculation of the evidence altogether. But even taking into account the lower sampling efficiency at $D=2$, our number of likelihood evaluations in unreasonably high.
+
+Some uncertainty remains as many parameters such as the number of active points and desired final accuracy are not mentioned along with the quoted results.
 
 \subsection{Profiled Run}
 Using gprof, the following flat profile was found for a MultiNest run of the eggbox problem with 2000 points:
@@ -143,7 +143,7 @@ Using gprof, the following flat profile was found for a MultiNest run of the egg
   0.00     17.35     0.00     2000     0.00     0.00  Point::Point
   0.00     17.35     0.00        1     0.00     0.00  Data::Data
 \end{verbatim}
-Interestingly, the most time-consuming function is K-means, a simple algorithm used for the preliminary partitioning of the data cloud, before the splitting is optimized using a more sophisticated scheme taking into account the desired ellipsoidal form of the clusters.
+Interestingly, the most time-consuming function appears to be K-means, a simple algorithm used for the preliminary partitioning of the data cloud, before the splitting is optimized using a more sophisticated scheme taking into account the desired ellipsoidal form of the clusters.
 \section{User Instructions}
 Compile the code using {\tt make}.  This program relies on the GNU Scientific Library (GSL) to do linear algebra, so be sure  you have GSL installed and that the compiler knows where to find its source files. Before running the program, run time parameters must be set in a file in the {\tt RunTimeFiles} directory. The format of run time files must be as follows. 
 
