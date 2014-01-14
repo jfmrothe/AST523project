@@ -50,15 +50,19 @@ A lighthouse is somewhere off a piece of straight coastline at position $\alpha$
 \mathcal{L}(\alpha, \beta) = \prod_{k=1}^N \mrm{prob}(x_k | \alpha, \beta).
 \end{equation*}
 
-\noindent Simulated data of $N=64$ pulses are stored in {\tt lighthouse.dat} in the {\tt DataFiles} directory. With our program, we find $\alpha = 1.24 \pm 0.19$, $\beta = 0.97 \pm 0.16$, and $\log(\mathcal{Z}) =  -161.49 \pm 0.05$, which is consistent with \cite{Siv2006}. Figure \ref{fig:lighthouse} shows the joint posterior distribution for $\alpha$ and $\beta$. 
+\noindent Simulated data of $N=64$ pulses are stored in {\tt lighthouse.dat} in the {\tt DataFiles} directory. With our program, we find $\alpha = 1.24 \pm 0.19$, $\beta = 0.97 \pm 0.16$, and $\log(\mathcal{Z}) =  -161.49 \pm 0.05$, which is consistent with \cite{Siv2006}. Figure~\ref{lighthouse} shows the joint posterior distribution for $\alpha$ and $\beta$. 
+
+\vspace{-0.32cm}
 
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=12.0cm,trim=0cm 0cm 0cm 0cm,clip=true]{lighthouse.pdf}
 \caption{Posterior probability distribution of the lighthouse location. We used 1000 active points.}
-\label{fig:lighthouse}
+\label{lighthouse}
 \end{center}
 \end{figure}
+
+\vspace{-0.54cm}
 
 \subsection{Toy model 1: ``egg-box''}
 Although our MultiNest implementation is currently lacking one major feature from  \cite{2009MNRAS.398.1601F}, mode identification (described in section 5.6), we can use the test cases presented there to test our code's performance.
@@ -66,12 +70,13 @@ Although our MultiNest implementation is currently lacking one major feature fro
 The first toy model is called the egg-box likelihood. It is designed to show MultiNest's performance in highly multimodal problems. Instead of deriving the likelihood function from observed data and a realistic model, it is given analytically:
 \[L(\theta_1,\theta_2) = \mathrm{exp}
 \left[\left\{2+\cos\left(\frac{\theta_1}{2}\right)+\cos\left(\frac{\theta_2}{2}\right)\right\}^5\right]\]
-The likelihood function and its sampling returned by a run of our code with 2000 points is shown in figure~\ref{eggbox}.
+The likelihood function and its sampling returned by a run of our code with 2000 points is shown in Figure~\ref{eggbox}.
 
-\begin{figure}\label{eggbox}
-\includegraphics[width=0.5\textwidth]{figures/eggbox_analytic.pdf}
-\includegraphics[width=0.5\textwidth]{figures/eggbox.pdf}
-\caption{Analytical and sampled likelihood function of the eggbox toy model}
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{eggbox_analytic.pdf}
+\includegraphics[width=0.5\textwidth]{eggbox.pdf}
+\caption{Analytical and sampled likelihood function of the egg-box toy model}
+\label{eggbox}
 \end{figure}
 
 Given the analytical likelihood, the total log-evidence can be numerically integrated to 235.88. Our algorithm gives a result of $235.57\pm 0.06$ which is too low. Presumably, a bug either in the uniform sampling or in the final integration after convergenge limits our accuracy. This deviation will be investigated further.
@@ -81,12 +86,13 @@ The second toy model in \cite{2009MNRAS.398.1601F} tests MultiNest's performance
 \[L(\theta) = \mathrm{circ}(\theta;c_1,r_1,w_1)+\mathrm{circ}(\theta;c_2,r_2,w_2)\]
 where
 \[ \mathrm{circ}(\theta;c,r,w) = \frac{1}{\sqrt{2\pi w^2}}\mathrm{exp}\left[-\frac{(|\theta - c|-r)^2}{2w^2}\right]\]
-The two dimensional appearance of this likelihood function is shown in figure~\ref{gauss-shell}.
+The two dimensional appearance of this likelihood function is shown in Figure~\ref{gaussshell}.
 
-\begin{figure}\label{gauss-shell}
-\includegraphics[width=0.5\textwidth]{figures/gauss_shells_analytic.pdf}
-\includegraphics[width=0.5\textwidth]{figures/gauss_shells.pdf}
+\begin{figure}[h]
+\includegraphics[width=0.5\textwidth]{gauss_shells_analytic.pdf}
+\includegraphics[width=0.5\textwidth]{gauss_shells.pdf}
 \caption{Analytical and sampled likelihood function of the gaussian-shells toy model}
+\label{gaussshell}
 \end{figure}
 
 The total log-likelihood evaluates to $-1.75$, while our algorithm returns $-1.41\pm 0.03$  with 2000 points.
@@ -110,47 +116,37 @@ D&$N_{like}$ & Efficiency & $N_{like}$ & Efficiency \\ \hline
 Using gprof, the following flat profile was found for a MultiNest run of the eggbox problem with 2000 points:
 
 \begin{verbatim}
-{\tiny
   %   cumulative   self              self     total           
  time   seconds   seconds    calls  ms/call  ms/call  name    
- 35.43      6.23     6.23   388786     0.02     0.02  KMeans(std::vector<Point*, std::allocator<Point*> >&, int, int, int*)
- 19.48      9.66     3.43  1481594     0.00     0.00  FindEnclosingEllipsoid(std::vector<Point*, std::allocator<Point*> >&, int)
- 16.15     12.50     2.84 218581886     0.00     0.00  Ellipsoid::mdist(Point*)
- 12.17     14.64     2.14     3128     0.68     5.10  Samplers::EllipsoidalPartitioning(std::vector<Point*, std::allocator<Point*> >&, double)
-  6.31     15.75     1.11  1870380     0.00     0.00  SelectFromGrouping(std::vector<Point*, std::allocator<Point*> >&, int, int*, int, std::vector<Point*, std::allocator<Point*> >&)
-  3.24     16.32     0.57   238084     0.00     0.00  Samplers::get_newcoor()
-  2.96     16.84     0.52 34052242     0.00     0.00  Ellipsoid::IsMember(gsl_vector*)
+ 35.43      6.23     6.23   388786     0.02     0.02  KMeans
+ 19.48      9.66     3.43  1481594     0.00     0.00  FindEnclosingEllipsoid
+ 16.15     12.50     2.84 218581886     0.00     0.00  Ellipsoid::mdist
+ 12.17     14.64     2.14     3128     0.68     5.10  Samplers::EllipsoidalPartitioning
+  6.31     15.75     1.11  1870380     0.00     0.00  SelectFromGrouping
+  3.24     16.32     0.57   238084     0.00     0.00  Samplers::get_newcoor
+  2.96     16.84     0.52 34052242     0.00     0.00  Ellipsoid::IsMember
   1.31     17.07     0.23                             main
-  0.80     17.21     0.14  1677551     0.00     0.00  Ellipsoid::Ellipsoid(int, gsl_vector*, gsl_matrix*, double, std::vector<Point*, std::allocator<Point*> >&)
-  0.23     17.25     0.04 36676332     0.00     0.00  Ellipsoid::getVol()
-  0.23     17.29     0.04  3557834     0.00     0.00  std::vector<Point*, std::allocator<Point*> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Point**, std::vector<Point*, std::allocator<Point*> > >, Point* const&)
-  0.11     17.31     0.02   377845     0.00     0.00  unisphere(float*, int)
-  0.06     17.32     0.01  1677551     0.00     0.00  std::vector<Point*, std::allocator<Point*> >::operator=(std::vector<Point*, std::allocator<Point*> > const&)
-  0.06     17.33     0.01   377845     0.00     0.00  u_in_hypercube(gsl_vector*, int)
-  0.06     17.34     0.01   377845     0.00     0.00  Ellipsoid::SampleEllipsoid()
-  0.06     17.35     0.01   240084     0.00     0.00  Point::transform_prior()
-  0.00     17.35     0.00  1481594     0.00     0.00  Ellipsoid::~Ellipsoid()
-  0.00     17.35     0.00   673094     0.00     0.00  Ellipsoid::getEnlFac()
-  0.00     17.35     0.00   477137     0.00     0.00  Ellipsoid::setEnlFac(double)
-  0.00     17.35     0.00   240084     0.00     0.00  Data::logL(Point*)
-  0.00     17.35     0.00   195957     0.00     0.00  Ellipsoid::getCenter()
-  0.00     17.35     0.00   195957     0.00     0.00  Ellipsoid::getCovMat()
-  0.00     17.35     0.00     3128     0.00     0.00  Samplers::CalcVtot()
-  0.00     17.35     0.00     2000     0.00     0.00  Point::set_params(std::vector<std::string, std::allocator<std::string> >, std::vector<double, std::allocator<double> >, std::vector<double, std::allocator<double> >)
-  0.00     17.35     0.00     2000     0.00     0.00  Point::hypercube_prior()
-  0.00     17.35     0.00     2000     0.00     0.00  Point::Point(int)
-  0.00     17.35     0.00        9     0.00     0.00  std::vector<Ellipsoid*, std::allocator<Ellipsoid*> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Ellipsoid**, std::vector<Ellipsoid*, std::allocator<Ellipsoid*> > >, Ellipsoid* const&)
-  0.00     17.35     0.00        1     0.00     0.00  global constructors keyed to _Z4distiP5PointP10gsl_vector
-  0.00     17.35     0.00        1     0.00     0.00  global constructors keyed to _Z9boxmullerv
-  0.00     17.35     0.00        1     0.00     0.00  global constructors keyed to _ZN4DataC2EiiSs
-  0.00     17.35     0.00        1     0.00     0.00  global constructors keyed to _ZN5PointC2Ei
-  0.00     17.35     0.00        1     0.00     0.00  global constructors keyed to _ZN8Samplers11get_newcoorEv
-  0.00     17.35     0.00        1     0.00     0.00  global constructors keyed to main
-  0.00     17.35     0.00        1     0.00     0.00  Data::Data(int, int, std::string)}
+  0.80     17.21     0.14  1677551     0.00     0.00  Ellipsoid::Ellipsoid
+  0.23     17.25     0.04 36676332     0.00     0.00  Ellipsoid::getVol
+  0.11     17.31     0.02   377845     0.00     0.00  unisphere
+  0.06     17.33     0.01   377845     0.00     0.00  u_in_hypercube
+  0.06     17.34     0.01   377845     0.00     0.00  Ellipsoid::SampleEllipsoid
+  0.06     17.35     0.01   240084     0.00     0.00  Point::transform_prior
+  0.00     17.35     0.00  1481594     0.00     0.00  Ellipsoid::~Ellipsoid
+  0.00     17.35     0.00   673094     0.00     0.00  Ellipsoid::getEnlFac
+  0.00     17.35     0.00   477137     0.00     0.00  Ellipsoid::setEnlFac
+  0.00     17.35     0.00   240084     0.00     0.00  Data::logL
+  0.00     17.35     0.00   195957     0.00     0.00  Ellipsoid::getCenter
+  0.00     17.35     0.00   195957     0.00     0.00  Ellipsoid::getCovMat
+  0.00     17.35     0.00     3128     0.00     0.00  Samplers::CalcVtot
+  0.00     17.35     0.00     2000     0.00     0.00  Point::hypercube_prior
+  0.00     17.35     0.00     2000     0.00     0.00  Point::Point
+  0.00     17.35     0.00        1     0.00     0.00  Data::Data
 \end{verbatim}
 Interestingly, the most time-consuming function is K-means, a simple algorithm used for the preliminary partitioning of the data cloud, before the splitting is optimized using a more sophisticated scheme taking into account the desired ellipsoidal form of the clusters.
 \section{User Instructions}
 Compile the code using {\tt make}.  This program relies on the GNU Scientific Library (GSL) to do linear algebra, so be sure  you have GSL installed and that the compiler knows where to find its source files. Before running the program, run time parameters must be set in a file in the {\tt RunTimeFiles} directory. The format of run time files must be as follows. 
+
 
 \begin{align*}
 &\mtt{problem/data \ file}    &:& \ \ \mtt{problem \ or \ data \ file \ name}\\
@@ -194,6 +190,20 @@ global evidence: logZ = 235.683 +/- 0.0556484\\
 \end{adjustwidth*}
 
 As promised, the code tells us the evidence $\mathcal{Z}$, plus some additional information about how the algorithm is progressing. 
+
+If you would like to create any of the figures in this paper, there is a python script called {\tt run\_N\_plot.py} in the {\tt scripts} directory. You will need Matplotlib and Numpy for it to work. The script takes two command-line arguments plus one optional argument. Run the script using 
+
+\vspace{0.2cm}
+
+\begin{adjustwidth*}{2cm}{2cm}
+{\tt ./run\_N\_plot.py runtime\_filename logL|post (0|1)}
+\end{adjustwidth*}
+
+\vspace{0.2cm}
+
+\noindent where {\tt runtime\_filename} is the name of the run time file and {\tt logL} or {\tt post} refers to the z-axis you want to plot. The optional argument is a boolean for running the full program or just plotting (1 = run full code and plot, 0 = just plot); it is set to 1 by default. There are a few examples at the top of the script file. 
+
+\vspace{-0.3cm}
 
 \bibliographystyle{plainnat}
 \bibliography{writeup}
