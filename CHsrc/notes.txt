@@ -1,0 +1,6 @@
+what Data need to know is only theta from points
+what point need to know is only L from data
+I am going to seperate that by passing arrays around instead of class Point
+The data part will be coded as a seperate part regarding its format
+build an upper class to hold the point list and sampler list, the the initial 
+and iteration more general
