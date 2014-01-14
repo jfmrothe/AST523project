@@ -1,192 +1,166 @@
+/***************************************************
+
+File: Samplers.cc
+
+Description:
+Source code for the Samplers class. 
+
+Programmers: Johnny Greco & Johannes Rothe
+Contacts: greco@princeton.edu, jrothe@princeton.edu
+
+****************************************************/
 #include "Samplers.h"
 #include "Point.h"
 
-float boxmuller()
+gsl_vector * Samplers::get_newcoor()
+// Draws a random sample from the union of all ellipsoids
+// uniformly distributed in the parameter hypercube
 {
-  //returns univariate, zero-mean gaussian sample
-  float u1 = UNIFORM;
-  float u2 = UNIFORM;
-  float pi = 2*acos(0);
-  while( u1 == 0.0 ){
-    u1 = UNIFORM;
-  }
-  return sqrt(-2.0*log(u1))*cos(2*pi*u2);
-}
+    int RandEll;
+    int NumEll = clustering.size();
+    int n_e;
+    gsl_vector * tmp_coor = gsl_vector_alloc(D);
 
-float quadr()
-{
-  //returns sample from quadratic distribution between 0 and 1
-  return pow(UNIFORM,1.0/3.0);
-}
-
-void unisphere(float * coor, int D)
-{
-  //returns pseudorandom number uniformly distributed in D-sphere (r=1)
-  int i;
-  float sample[D];
-  float r=0;
-  for(i=0;i<D;i++){
-    sample[i] = boxmuller();
-    r+=pow(sample[i],2);
-  }
-  r=sqrt(r);
-  r/=quadr();
-  for(i=0;i<D;i++){
-    coor[i] = sample[i]/r;
-  }
-}
-
-// ************************************** Samplers methods start here
-
-Samplers::Samplers(int Dim)
-{
-    D = Dim;
-    center = gsl_vector_alloc(D);
-    coor = gsl_vector_alloc(D);
-    C = gsl_matrix_calloc(D,D);
-}
-
-Samplers::~Samplers()
-{
-    gsl_vector_free(center);
-    gsl_vector_free(coor);
-    gsl_matrix_free(C);
-}
-
-void Samplers::set_vectors_zero()
-{
-    gsl_vector_set_zero(center);
-    gsl_vector_set_zero(coor);
-}
-
-bool Samplers::u_in_hypercube()
-{
-    double x_i;
-
-    for(int i = 0; i<D; i++)
+    do 
     {
-        x_i = gsl_vector_get(coor, i);
-        if(x_i < 0 || x_i > 1) {return false;}
+        do RandEll= rand() % clustering.size();
+        while (clustering[RandEll]->getVol()/Vtot < UNIFORM);
+
+        do clustering[RandEll]->SampleEllipsoid();
+        while (!u_in_hypercube(clustering[RandEll]->get_newcoor(), D));
+
+        gsl_vector_memcpy(tmp_coor, clustering[RandEll]->get_newcoor());
+
+        n_e = 0;
+        for(int i = 0; i<NumEll; i++)
+        {
+           if(clustering[i]->IsMember(tmp_coor)) {n_e++;}
+        }
     }
-    return true;
+    while(1.0/n_e < UNIFORM);
+    
+    gsl_vector_free(tmp_coor);
+
+    return clustering[RandEll]->get_newcoor();
 }
 
-void Samplers::FindEnclosingEllipsoid(int N, vector<Point *> pts)
+void Samplers::CalcVtot()
+// calculate the total volume of all the ellipsoids
 {
-  /* returns enclosing ellipsoid data for a given point cloud (N D-dimensional coordinates), 
-     enlargement factor f is chosen so that all points are below the ellipsoid surface */
-  int i,j;
-  double tmp;
-  gsl_vector * tmpvec = gsl_vector_alloc(D);
-  gsl_vector * tmpvec2 = gsl_vector_alloc(D);
-   
-  //find center -> works
-  for(i=0;i<D;i++){
-    tmp = 0.0;
-    for(j=0;j<N;j++){
-      tmp += pts[j]->get_u(i);
+    Vtot=0.0; 
+
+    for(int i=0; i<clustering.size(); i++)
+    {
+       Vtot += clustering[i]->getVol();
     }
-    gsl_vector_set(center,i,tmp/N);
-  }
-
-  //find covariance matrix
-  // set C to zero
-  gsl_blas_dgemm(CblasNoTrans, CblasNoTrans, 0.0, C, C, 0.0, C);
-  //add covariance
-  for(j=0;j<N;j++){
-    for(i=0;i<D;i++){
-      // subtract center from each coor to tmpvec
-      gsl_vector_set(tmpvec,i,pts[j]->get_u(i)-gsl_vector_get(center,i));
-    }
-    // symmetric rank-1 update
-    gsl_blas_dsyr(CblasUpper, 1.0/N , tmpvec, C);
-  }
-  // copy upper half into lower half
-  for(i=0;i<D;i++){
-    for(j=i+1;j<D;j++){
-      gsl_matrix_set(C,j,i,gsl_matrix_get(C,i,j));
-    }
-  }
-
-  //invert covariance matrix
-  int signum = +1;
-  gsl_matrix * tmpmat = gsl_matrix_alloc(D,D);
-  gsl_matrix * Cinv = gsl_matrix_alloc(D,D);
-  gsl_permutation *p = gsl_permutation_calloc(D);
-  //  gsl_vector * tmpvec = gsl_vector_alloc(D);
-
-  gsl_matrix_memcpy(tmpmat,C);
-  gsl_linalg_LU_decomp (tmpmat, p, &signum);
-  gsl_linalg_LU_invert (tmpmat, p, Cinv);
-
-  //find enlargement factor
-  f = 0;
-  for(j=0;j<N;j++){
-    for(i=0;i<D;i++){
-      // subtract center from each coor to tmpvec
-      gsl_vector_set(tmpvec2,i,pts[j]->get_u(i)-gsl_vector_get(center,i));
-    }
-  gsl_blas_dsymv (CblasUpper, 1.0, Cinv, tmpvec2, 0.0, tmpvec);
-  gsl_blas_ddot (tmpvec2, tmpvec, &tmp);
-  if (tmp > f) f = tmp;
-  }
-
-  gsl_vector_free(tmpvec);
-  gsl_vector_free(tmpvec2);
-  gsl_matrix_free(tmpmat);
-  gsl_matrix_free(Cinv);
-  gsl_permutation_free(p);
 }
 
-void Samplers::SampleEllipsoid()
+void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot) 
 {
-  /*returns pseudorandom number coor uniformly distributed in ellipsoid given by the center vector center,
-    covariance matrix C and enlargement factor f, so that x^T(fC)^-1x<=1 */
+  // Performs Algorithm I from Feroz, Hobson and Bridges (2009) Section 5.2 
+  // on N points in D-dimensional [0,1]-hypercube given in pts
+  // new ellipsoids are appended to clustering
+  // works recursively: calls itself for sub-splitting of parts of the point cloud.
+
+  // create mainEllipsoid which may be split further
+  int N = pts.size();
+
+  Ellipsoid mainEll = FindEnclosingEllipsoid(pts,D);
+
+  //enlarge if neccessary
+  if(Xtot/e>mainEll.getVol()) {
+    mainEll.setEnlFac(mainEll.getEnlFac()*pow(Xtot/mainEll.getVol()/e,1.0/D));
+  }
+  // initialize splitting using kmeans
   int i;
+  int grouping[N];
+  int k=2;
+  KMeans(pts,D,k,&grouping[0]);
+  vector<Point *> pts_group_0;
+  vector<Point *> pts_group_1;
 
-  // create gsl_vector uniformly sampled from sphere
-  float spherical[D];
-  unisphere(&spherical[0],D);
-  gsl_vector * spheresample = gsl_vector_alloc(D);
-  for(i=0;i<D;i++){
-    gsl_vector_set(spheresample,i,spherical[i]);
+  SelectFromGrouping(pts, D, grouping, 0, pts_group_0);
+  SelectFromGrouping(pts, D, grouping, 1, pts_group_1);
+
+  bool changed = true;
+  double X1;
+  double X2;
+  double h1;
+  double h2;
+  double tmp1,tmp2;
+  double vol1,vol2;
+
+  while(changed) {
+    // return main ellipsoid immediately if partitioning would create singular (flat) ellipsoid
+    if(pts_group_0.size()<D+1 or pts_group_1.size()<D+1) {
+      clustering.push_back (new Ellipsoid(D, mainEll.getCenter(), mainEll.getCovMat(), mainEll.getEnlFac(), pts) );
+      return;
+    }
+    // find new sub-Ellipsoids
+    //"locality" of these variables removes object overwriting trouble
+    Ellipsoid subEll1 = FindEnclosingEllipsoid(pts_group_0,D);
+    vol1 = subEll1.getVol();
+    X1 = ((double)pts_group_0.size()/N)*Xtot;
+    Ellipsoid subEll2 = FindEnclosingEllipsoid(pts_group_1,D);
+    vol2 = subEll2.getVol();
+    X2 = ((double)pts_group_1.size()/N)*Xtot;
+
+    //enlarge if neccessary
+    if(X1/e>vol1) {
+      subEll1.setEnlFac(subEll1.getEnlFac()*pow(X1/vol1/e,(double)(1.0/D)));
+      vol1 = subEll1.getVol();
+    }
+    if(X2/e>vol2) {
+    subEll2.setEnlFac(subEll2.getEnlFac()*pow(X2/vol2/e,(double)(1.0/D)));
+    vol2 = subEll2.getVol();
+    }
+
+    // optimize splitting using mahalanobis-h-metric
+    changed = false;    
+    for(i=0;i<N;i++) 
+    {
+      tmp1 = subEll1.mdist(pts[i]);
+      tmp2 = subEll2.mdist(pts[i]);
+   
+      h1 = vol1 / X1 * tmp1;
+      h2 = vol2 / X2 * tmp2;
+
+      if (h2<h1 and grouping[i]==0) 
+      {
+          changed = true;
+          grouping[i] = 1;
+      }
+      if (h1<h2 and grouping[i]==1) 
+      {
+          changed = true;
+          grouping[i] = 0;
+      }
+     }
+
+     pts_group_0.clear();
+     pts_group_1.clear();
+     SelectFromGrouping(pts, D, grouping, 0, pts_group_0);
+     SelectFromGrouping(pts, D, grouping, 1, pts_group_1);
   }
+  // judgement if splitting should be continued
+  if( vol1+vol2<mainEll.getVol() or mainEll.getVol()>2*Xtot) {
 
-  gsl_matrix * myC = gsl_matrix_calloc(D,D);
-  gsl_matrix * T = gsl_matrix_calloc(D,D);
-  gsl_matrix * X = gsl_matrix_calloc(D,D);
-  gsl_vector * eval = gsl_vector_alloc(D);
-  gsl_matrix * Dprime = gsl_matrix_calloc(D,D);
+    // recursively start the splittings of subEll1 and subEll2
+    EllipsoidalPartitioning(pts_group_0, X1);
+    // second one
+    EllipsoidalPartitioning(pts_group_1, X2);
 
-  // allocate workspace for eigensystem calculation 
-  gsl_eigen_symmv_workspace * w = gsl_eigen_symmv_alloc(D);
-  // perform eigensystem calculation
-  gsl_matrix_memcpy(myC,C);
-  gsl_eigen_symmv(myC, eval, X, w);
-  // free workspace
-  gsl_eigen_symmv_free(w);
-
-  // fill matrix Dprime
-  for(i=0;i<D;i++){
-    gsl_matrix_set(Dprime,i,i,sqrt(gsl_vector_get(eval,i)));
   }
-
-  // calculate transfer matrix
-  gsl_blas_dgemm(CblasNoTrans, CblasNoTrans, sqrt(f), X, Dprime, 0.0, T);
-
-  // final coordinates
-  gsl_vector_memcpy(coor,center);
-  gsl_blas_dgemv(CblasNoTrans, 1.0, T, spheresample, 1.0, coor);
-
-  gsl_vector_free(spheresample);
-  gsl_matrix_free(myC);
-  gsl_matrix_free(T);
-  gsl_matrix_free(X);
-  gsl_vector_free(eval);
-  gsl_matrix_free(Dprime);
+  else{
+    // allocate memory for mainEll and push it to the vector
+    clustering.push_back (new Ellipsoid(D, mainEll.getCenter(), mainEll.getCovMat(), mainEll.getEnlFac(), pts));
+  }
+  return;
 }
 
 void Samplers::mcmc(Point* pt, Data data_obj, double logLmin)
+// MCMC algorithm for finding new points. 
+// It was adapted from Sivia & Skilling (2006). 
 {
     vector<double> new_coords(D);
     double step = 0.1;
@@ -196,8 +170,11 @@ void Samplers::mcmc(Point* pt, Data data_obj, double logLmin)
     trial = new Point(D);
     *trial = *pt;
 
+    // 20 iterations is empirically enough to get the job done
     for(int j = 20; j > 0; j--)
     {
+        // kick each coordinate in a random direction, 
+        // starting from input position
         for(int i = 0; i<D; i++)
         {
             new_coords[i] = pt->get_u(i) + step*(2.0*UNIFORM - 1.0);
@@ -206,13 +183,15 @@ void Samplers::mcmc(Point* pt, Data data_obj, double logLmin)
         }
 
         trial->transform_prior();
-        data_obj.lighthouse_logL(trial);
+        data_obj.logL(trial);
 
+        // **** refine step size
         if(trial->get_logL() > logLmin){*pt = *trial; accept++;}
         else reject++;
 
         if(accept > reject) step *= exp(1.0 / accept);
         else if(accept < reject) step /= exp(1.0 / reject);
+        // ****
     }
 
     delete trial;

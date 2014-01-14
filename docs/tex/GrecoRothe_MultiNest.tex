@@ -79,9 +79,11 @@ Given the analytical likelihood, the total log-evidence can be numerically integ
 
 \subsection{Toy model 2: ``gaussian shells''}
 The second toy model in \cite{2009MNRAS.398.1601F} tests MultiNest's performance with curving degeneracies and high dimensionalities. The analytic likelihood function is given by
-\[L(\theta) = \mathrm{circ}(\theta;c_1,r_1,w_1)+\mathrm{circ}(\theta;c_2,r_2,w_2)\]
+\[L(\mbox{\boldmath$\theta$}) = \mathrm{circ}(\mbox{\boldmath$\theta$};{\bf c_1},r_1,w_1)
++\mathrm{circ}(\mbox{\boldmath$\theta$};{\bf c_2},r_2,w_2)\]
 where
-\[ \mathrm{circ}(\theta;c,r,w) = \frac{1}{\sqrt{2\pi w^2}}\mathrm{exp}\left[-\frac{(|\theta - c|-r)^2}{2w^2}\right]\]
+\[ \mathrm{circ}(\mbox{\boldmath$\theta$};{\bf c},r,w) = \frac{1}{\sqrt{2\pi w^2}}\mathrm{exp}\left[-\frac{(|\mbox{\boldmath$\theta$} 
+- {\bf c}|-r)^2}{2w^2}\right]\]
 The two dimensional appearance of this likelihood function is shown in Figure~\ref{gaussshell}.
 
 \begin{figure}[h]
@@ -94,7 +96,7 @@ The two dimensional appearance of this likelihood function is shown in Figure~\r
 The total log-likelihood evaluates to $-1.75$, while our algorithm returns $-1.41\pm 0.03$  with 2000 points, which is again too low.
 
 \subsection{Increasing Dimensionality and Sampling Efficiency}
-The gaussian shell-problem can be easily expanded to arbitrary dimensions, and used to show the scaling behaviour of the number of likelihood evaluation MultiNest needs to reach a given accuracy and the sampling efficiency (successfully finding a point of higher likelihood value than the current lowest from the set of ellipsoids) it achieves.
+The gaussian shell-problem can be easily expanded to arbitrary dimensions, and used to show the scaling behaviour of the number of likelihood evaluations MultiNest needs to reach a given accuracy and the sampling efficiency (successfully finding a point of higher likelihood value than the current lowest from the set of ellipsoids) it achieves.
 \begin{table}\label{tab:NlikeEff}
 \centering
 \begin{tabular}{rrrrr}
@@ -108,9 +110,9 @@ D&$N_{like}$ & Efficiency & $N_{like}$ & Efficiency \\ \hline
 \caption{Comparison between published and own performance of number of likelihood evaluations and sampling efficiency in gaussian-shell-problems of varying dimensionality}
 \end{table}
 
-Our algorithm at this point fails to reproduce the promised performance of MultiNest. With increasing number of dimensions, our sampling efficiency drop so fast as to prevent precise calculation of the evidence altogether. But even taking into account the lower sampling efficiency at $D=2$, our number of likelihood evaluations in unreasonably high.
+Our algorithm at this point fails to reproduce the promised performance of MultiNest. With increasing number of dimensions, our sampling efficiency drops so fast as to prevent precise calculation of the evidence altogether. But even taking into account the lower sampling efficiency at $D=2$, our number of likelihood evaluations in unreasonably high.
 
-Some uncertainty remains as many parameters such as the number of active points and desired final accuracy are not mentioned along with the quoted results.
+Some uncertainty remains as many parameters such as the number of active points and desired final accuracy are not mentioned along with the results quoted by \cite{2009MNRAS.398.1601F}.
 
 \subsection{Profiled Run}
 Using gprof, the following flat profile was found for a MultiNest run of the eggbox problem with 2000 points:

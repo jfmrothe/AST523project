@@ -1,0 +1,8 @@
+problem     : gauss_shells
+n_column    : 0
+Dimension   : 2
+Npoints     : 500
+e           : 1.0
+repartition : 1.2
+param_1     : uniform     -6.0    6.0
+param_2     : uniform     -6.0    6.0

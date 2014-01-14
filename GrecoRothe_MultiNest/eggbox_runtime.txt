@@ -1,4 +1,0 @@
-lighthouse.dat   1        
-2
-x    uniform     0    10*M_PI   
-y    uniform     0    10*M_PI

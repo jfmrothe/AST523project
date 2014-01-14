@@ -1,3 +1,19 @@
+/***************************************************
+
+File: Point.h 
+
+Description:
+Header file for the Point class. Point objects store 
+all information about live and dead points, such as
+parameter values and prior distributions, logL, 
+contribution to the evidence, etc. In addition, 
+the hypercube to physical prior transformations 
+take place in a method of this class. 
+
+Programmers: Johnny Greco & Johannes Rothe
+Contacts: greco@princeton.edu, jrothe@princeton.edu
+
+****************************************************/
 #ifndef POINT_H
 #define POINT_H
 #include <iostream>
@@ -15,9 +31,9 @@
 #include <gsl/gsl_linalg.h>
 using namespace std;
 
-#define THRESH 1.0e-5
+#define THRESH 0.0001
 #define UNIFORM ((rand() + 0.5)/(RAND_MAX+1.0))
-#define PLUS(x,y) (x>y ? x+log(1+exp(y-x)) : y+log(1+exp(x-y)))
+#define PLUS(x,y) (x>y ? x+log(1+exp(y-x)) : y+log(1+exp(x-y))) // returns log(exp(x)+exp(y))
 
 class Point
 {
@@ -27,19 +43,18 @@ class Point
         double logWt;
         struct Parameter
         {
-            std::string name;
             std::string prior;
-            double theta;
             double u;
+            double theta;
             double min;
             double max;
         };
-        std::vector<Parameter> myparams;
+        vector<Parameter> myparams;
 
     public:
 
-        Point(int Dim) : myparams(Dim) {D = Dim;}
-        void set_params(vector<string>, vector<string>,double [],double []);
+        Point(int);
+        void set_params(vector<string>,vector<double>,vector<double>);
         void set_u(int i, double x){myparams[i].u = x;}
         void set_u(gsl_vector * coor){for(int i = 0; i < D; i++){myparams[i].u = gsl_vector_get(coor,i);}}
         void set_theta(int i, double x){myparams[i].theta = x;}

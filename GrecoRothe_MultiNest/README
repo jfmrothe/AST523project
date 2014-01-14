@@ -1,57 +1,13 @@
-This folder contains the skeleton of the Greco-Rothe MultiNest project. 
+Johnny Greco & Johannes Rothe MultiNest implementation 
 
-# ********************* files
+Compile with make. 
 
-main.cc - Driver of the program. Contains the nested sampling algorithm 
-          and the stopping criterion.  
+The program takes the name of the run time file as a command-line argument.
+From the GrecoRothe_MultiNest directory, run the three test cases using
+the commands below.
 
-Point.h/Point.cc - This is a very important component of the program. It contains a 
-                   class for active points, which stores all their important 
-                   information. Note there is a Parameter struct in this class, 
-                   which stores the info for each parameter. 
+./multinest eggbox.txt
+./multinest gauss\_shells.txt
+./multinest lighthouse.txt
 
-                   Two important methods:
-
-                   - hypercube_prior(): generates coors on uniform prior from 0-1. 
-                   - transform_prior(): transforms prior to physical prior. Right 
-                     now, it only transforms to U(a,b), but I will add an analytic 
-                     transformation to a Jeffreys prior. 
-
-Data.h/Data.cc - All data interaction takes place in this class. In addition, likelihood
-                 evaluations will take place in a method of this class. This is a good 
-                 idea since these evaluations need the data. 
-
-
-Samplers.h/Samplers.cc - This is class for all things to do with sampling. 
-                         I've also included a method for MCMC sampling, which is good 
-                         for a unimodal likelihood. 
-
-runtime.txt - This file tells the program the name of the data file, the number of columns
-              it has, the dimension of the problem, and information about the parameters.
-
-              Format:
-              data_file_name    num_columns
-              dimension
-              param_1    prior_type    min_val    max_val    initial_guess
-              param_2    prior_type    min_val    max_val    initial_guess
-                 .                        .                        . 
-                 .                        .                        .
-                 .                        .                        .
-
-Run_N_Plot.py - This python script runs the lighthouse test case and plots the joint 
-                posterior distribution with matplotlib. 
-
-lighthouse.dat - input data file for lighthouse test case 
-
-posterior_pdfs.dat - output data file
-
-Makefile -  compiles the code with the command 'make'.
-
-# ********************* 
-
-# ********************* running the program
-The program takes as input the number of active points and the file
-runtime.txt, which must be formatted as stated above. After compiling the code
-with make, run the lighthouse test case with
-
-./run Npoints -or- ./Run_N_Plot.py Npoints. 
+******* See the writeup for the complete user instructions. 

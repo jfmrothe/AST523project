@@ -1,4 +1,0 @@
-lighthouse.dat   1        
-2
-x    uniform    -2    2     
-y    uniform     0    2     
