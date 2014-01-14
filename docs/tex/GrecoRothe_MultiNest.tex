@@ -110,6 +110,7 @@ D&$N_{like}$ & Efficiency & $N_{like}$ & Efficiency \\ \hline
 Using gprof, the following flat profile was found for a MultiNest run of the eggbox problem with 2000 points:
 
 \begin{verbatim}
+{\tiny
   %   cumulative   self              self     total           
  time   seconds   seconds    calls  ms/call  ms/call  name    
  35.43      6.23     6.23   388786     0.02     0.02  KMeans(std::vector<Point*, std::allocator<Point*> >&, int, int, int*)
@@ -145,7 +146,7 @@ Using gprof, the following flat profile was found for a MultiNest run of the egg
   0.00     17.35     0.00        1     0.00     0.00  global constructors keyed to _ZN5PointC2Ei
   0.00     17.35     0.00        1     0.00     0.00  global constructors keyed to _ZN8Samplers11get_newcoorEv
   0.00     17.35     0.00        1     0.00     0.00  global constructors keyed to main
-  0.00     17.35     0.00        1     0.00     0.00  Data::Data(int, int, std::string)
+  0.00     17.35     0.00        1     0.00     0.00  Data::Data(int, int, std::string)}
 \end{verbatim}
 Interestingly, the most time-consuming function is K-means, a simple algorithm used for the preliminary partitioning of the data cloud, before the splitting is optimized using a more sophisticated scheme taking into account the desired ellipsoidal form of the clusters.
 \section{User Instructions}
