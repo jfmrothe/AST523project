@@ -3,10 +3,10 @@
 \usepackage{url}
 \usepackage{hyperref}
 \usepackage{natbib}
-\usepackage{graphicx}
+%\usepackage{graphicx}
 \usepackage{changepage}
 \usepackage{amsmath}
-%\usepackage[pdftex]{graphicx}
+\usepackage[pdftex]{graphicx}
 \def\mtt{\mathtt}
 \def\mrm{\mathrm}
 \usepackage[margin=1.4cm]{caption}
@@ -59,7 +59,7 @@ A lighthouse is somewhere off a piece of straight coastline at position $\alpha$
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=12.0cm,trim=0cm 0cm 0cm 0cm,clip=true]{figures/lighthouse_s.eps}
+\includegraphics[width=12.0cm,trim=0cm 0cm 0cm 0cm,clip=true]{lighthouse.pdf}
 \caption{Posterior probability distribution of the lighthouse location. We used 1000 active points.}
 \label{lighthouse}
 \end{center}
@@ -74,8 +74,8 @@ The first toy model is called the egg-box likelihood. It is designed to show Mul
 The likelihood function and its sampling returned by a run of our code with 2000 points is shown in Figure~\ref{eggbox}.
 
 \begin{figure}
-\includegraphics[width=0.5\textwidth]{figures/eggbox_analytic_s.eps}
-\includegraphics[width=0.5\textwidth]{figures/eggbox_s.eps}
+\includegraphics[width=0.5\textwidth]{eggbox_analytic.pdf}
+\includegraphics[width=0.5\textwidth]{eggbox.pdf}
 \caption{Analytical and sampled likelihood function of the egg-box toy model}
 \label{eggbox}
 \end{figure}
@@ -92,8 +92,8 @@ where
 The two dimensional appearance of this likelihood function is shown in Figure~\ref{gaussshell}.
 
 \begin{figure}[h]
-\includegraphics[width=0.5\textwidth]{figures/gauss_shells_analytic_s.eps}
-\includegraphics[width=0.5\textwidth]{figures/gauss_shells_s.eps}
+\includegraphics[width=0.5\textwidth]{gauss_shells_analytic.pdf}
+\includegraphics[width=0.5\textwidth]{gauss_shells.pdf}
 \caption{Analytical and sampled likelihood function of the gaussian-shells toy model}
 \label{gaussshell}
 \end{figure}
