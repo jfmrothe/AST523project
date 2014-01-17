@@ -18,6 +18,7 @@ public:
   gsl_matrix * getA();
   gsl_matrix * getAinv();
   void SampleEllipsoid();
+  void RescaleToCatch();
   bool IsMember(gsl_vector *);
   bool intersect(Ellipsoid& other);
   void fetchPoints(Ellipsoid& other);

@@ -58,17 +58,18 @@ int main(int argc, char *argv[])
     int NumRecluster = 0;
     int j, nest;
     nest = 0;
+    int nLeval = N;
 
     do
     {
-        X_i = exp((double)-nest/N);
+      X_i = exp((double)-nest/N);
 
 	// discard and resample, get logLmax for convergence check as byproduct
-	logLmax = sampler.ResetWorstPoint(nest, data_obj);
+	logLmax = sampler.ResetWorstPoint(nest, data_obj,&nLeval);
 
         // **************** ellipsoidal partitioning 
         if(nest==0 || sampler.ClusteringQuality(X_i) > RepartitionFactor)  // recluster? 
-        {
+	{
 	  sampler.ClearCluster();
 	  vector <Point *> empty;
 	  sampler.EllipsoidalPartitioning(empty, X_i);
@@ -76,10 +77,15 @@ int main(int argc, char *argv[])
 	  sampler.CalcVtot();
 	  NumRecluster++;
         }
+	else
+	{
+	  sampler.EllipsoidalRescaling(X_i);
+	}
+
         // *********************************************
 	nest++;
     }
-    while(THRESH < abs(X_i*logLmax)); // stopping criterion
+    while(log(X_i) + logLmax - sampler.get_logZ() > log(THRESH)); // stopping criterion
     // ****************************************** end nested sampling algorithm 
 
     // ************* output results
@@ -87,6 +93,8 @@ int main(int argc, char *argv[])
     cout << "job complete!" << endl;
     cout << "**** results ****" << endl;
     cout << "number iterations = " << nest << endl;
+    cout << "number likelihood evaluations = " << nLeval << endl;
+    cout << "sampling efficiency = " << (double)nest/nLeval << endl;
     cout << "number reclusters = " << NumRecluster <<endl;
     sampler.printout();
 
