@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
 
     do
     {
-        X_i = exp(-nest/N);
+        X_i = exp((double)-nest/N);
 
 	// discard and resample, get logLmax for convergence check as byproduct
 	logLmax = sampler.ResetWorstPoint(nest, data_obj);

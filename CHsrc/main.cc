@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
 
     do
     {
-        X_i = exp(-nest/N);
+      X_i = exp((double)-nest/N);
         
     //CH: before that, let's ask dataobj for logL
 	    sampler.getAlltheta(Alltheta, nx, ny);

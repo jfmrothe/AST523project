@@ -82,7 +82,7 @@ void Samplers::CalcVtot()
 
 void Samplers::DisgardWorstPoint(double * logL,int nL, int nest) {
 
-  double logwidth = log(1.0 - exp(-1.0/N)) - (double) nest/N; 
+  double logwidth = log(1.0 - exp((double)-1.0/N)) - (double) nest/N; 
   double  logZnew, logZ_err;
 
   //double logLmin = clustering[0]->ell_pts_[0]->get_logL();

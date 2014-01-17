@@ -82,7 +82,7 @@ void Samplers::CalcVtot()
 
 double Samplers::ResetWorstPoint(int nest, Data data_obj) {
 
-  double logwidth = log(1.0 - exp(-1.0/N)) - (double) nest/N; 
+  double logwidth = log(1.0 - exp((double)-1.0/N)) - (double) nest/N; 
   double  logZnew, logZ_err;
 
   double logLmin = clustering[0]->ell_pts_[0]->get_logL();
