@@ -7,9 +7,9 @@ from distutils.extension import Extension
 import numpy
 
 numpy_include = numpy.get_include()
-_Points = Extension("_Points",
-        ["Points_wrap.cxx",
-            "Points.cc"],
+_Point = Extension("_Point",
+        ["Point_wrap.cxx",
+            "Point.cc"],
         include_dirs = [numpy_include],
         )
 _Ellipsoid = Extension("_Ellipsoid",
@@ -29,5 +29,5 @@ setup(name="MutiNest",
         author_email = "",
         url = "",
         version = "0.0.0",
-        py_modules = ["oblateness","elliptic","oblatenessfast"],
-        ext_modules = [_oblateness,_elliptic,_oblatenessfast])
+        py_modules = ["Point","Ellipsoid, Samplers"],
+        ext_modules = [_Point,_Ellipsoid,_Samplers])

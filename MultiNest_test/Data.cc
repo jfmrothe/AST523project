@@ -25,7 +25,7 @@ Data::Data(int Dim, int n_col, string filename) : data(n_col)
     data_filename = filename;
 }
 
-void Data::get_data()
+/oid Data::get_data()
 // Get the data for likelihood evaluation. Currently, 
 // only the lighthouse problem uses this method.
 {

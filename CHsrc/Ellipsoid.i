@@ -7,8 +7,8 @@
 %init %{
 import_array();
 %}
-%
-{
+
+%{
 #include "Ellipsoid.h"
 %}
 

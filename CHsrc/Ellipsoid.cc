@@ -36,7 +36,6 @@ void unisphere(float * coor, int D)
 
 // constructor for EllipsoidalPartitioning
 Ellipsoid::Ellipsoid(int D, gsl_vector * center, gsl_matrix * C, double f, vector<Point *>& ell_pts) {
-  int i;
   D_ = D;
   f_ = f;
   center_ = gsl_vector_alloc(D_);
