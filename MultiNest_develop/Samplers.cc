@@ -80,9 +80,9 @@ void Samplers::CalcVtot()
     }
 }
 
-double Samplers::ResetWorstPoint(int nest, Data data_obj) {
+double Samplers::ResetWorstPoint(int nest, Data data_obj, int * nLeval) {
 
-  double logwidth = log(1.0 - exp(-1.0/N)) - (double) nest/N; 
+  double logwidth = log(1.0 - exp((double)-1.0/N)) - (double) nest/N; 
   double  logZnew, logZ_err;
 
   double logLmin = clustering[0]->ell_pts_[0]->get_logL();
@@ -119,6 +119,7 @@ double Samplers::ResetWorstPoint(int nest, Data data_obj) {
       worst->set_u(DrawSample());
       worst->transform_prior();
       data_obj.logL(worst);
+      (*nLeval)++;
     }
   while(logLmin > worst->get_logL());
 
@@ -302,4 +303,20 @@ void Samplers::mcmc(Point* pt, Data data_obj, double logLmin)
     }
 
     delete trial;
+}
+
+void Samplers::EllipsoidalRescaling(double Xi) {
+  // cycle through all ellipsoids, shrink by exponential decay of prior volume and rescale to make bounding again
+  int Npoints;
+  for(int i=0; i<clustering.size(); i++) {
+    Npoints = clustering[i]->ell_pts_.size();
+    // rescale to current partial prior volume
+    clustering[i]->setEnlFac(clustering[i]->getEnlFac()*pow(Xi/e*Npoints/N/clustering[i]->getVol(),(double)1/D));
+    // rescale to catch all points
+    clustering[i]->RescaleToCatch();
+
+  
+
+  }
+
 }

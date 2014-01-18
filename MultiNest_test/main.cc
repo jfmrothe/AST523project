@@ -113,9 +113,9 @@ int main(int argc, char *argv[])
     do
     {
         // calculate log(delta_X) using the trapezium rule
-        logwidth = log(0.5) + log(exp(-(nest-1)/N) - exp(-(nest+1)/N)); 
+      logwidth = log(0.5) + log(exp((double)-(nest-1)/N) - exp((double)-(nest+1)/N)); 
 
-        Xtot = exp(-nest/N); // total remaining prior mass
+        Xtot = exp((double)-nest/N); // total remaining prior mass
         worst = 0; 
         for(j=1; j<N; j++) // for lowest and highest logL
         {
