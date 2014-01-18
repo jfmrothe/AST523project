@@ -1,0 +1,9 @@
+Usage: for compile, use
+bash doBuild.sh
+to cleanup, use
+make clean
+
+to run, setup the import part of testmultinest.py
+you can also edit the lighthouse.py, eggbox.py, gaussianshell.py to 
+get the parameters; I'll move those into example.cfg later on.
+edit example.cfg to change the outfile name 
