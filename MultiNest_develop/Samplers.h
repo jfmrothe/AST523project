@@ -24,10 +24,12 @@ class Samplers
 
         vector<Ellipsoid *> clustering;
 	list<Point *> discard_pts;
+	gsl_vector * newcoor_;
+	FILE * file3;
     public:
         Samplers(int Dim, int Npts, Data data_obj, vector<string> prior_types, vector<double> min_vals, vector<double> max_vals, double eff);
 	~Samplers();
-        gsl_vector * DrawSample();
+        int DrawSample();
 	double ResetWorstPoint(int nest, Data data_obj, int * nLeval);
 	void printout();
 	void EllipsoidalPartitioning(vector<Point *>& pts, double Xi);
@@ -35,11 +37,13 @@ class Samplers
         int get_NumEll() {return clustering.size();}
         void mcmc(Point*, Data, double);
         void CalcVtot(); 
-        double ClusteringQuality(double Xtot) {return Vtot/Xtot;} 
+        double ClusteringQuality(double Xtot) {return e*Vtot/Xtot;} 
         void ClearCluster();
 	void EraseFirst() {clustering.erase(clustering.begin());}
+	void printClustering();
 
 	int getN() {return N;}
 	double get_logZ(){return logZ;}
+	gsl_vector * get_newcoor() {return newcoor_;}
 };
 #endif

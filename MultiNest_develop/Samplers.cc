@@ -8,9 +8,11 @@ Samplers::Samplers(int Dim, int Npts, Data data_obj, vector<string> prior_types,
   Vtot = 0.0;
   logZ = -DBL_MAX;
   H = 0.0;
+  newcoor_ = gsl_vector_alloc(D);
 
   cout << "creating " << N << " active points" << endl;
   
+  file3 = fopen("testrecl.dat","w");
   // **** create N active points and set params
   //temporary vector, but pointers will be given to the first ellipsoid
   vector <Point *> pts(N);
@@ -31,16 +33,18 @@ Samplers::Samplers(int Dim, int Npts, Data data_obj, vector<string> prior_types,
  
 Samplers::~Samplers() {
   
+  fclose(file3);
+  gsl_vector_free(newcoor_);
   for(list<Point *>::iterator s=discard_pts.begin();s!=discard_pts.end();s++){delete *s;} 
   int size = clustering.size();
   for(int i=0;i<size;i++){delete clustering[i];}
 }
 
-gsl_vector * Samplers::DrawSample()
+int Samplers::DrawSample()
 {
   // chooses an ellipsoid from clustering (volume-weighted for uniformity)
   // then causes it to sample a point into its newcoor member variable
-  // and returns a pointer to it
+  // and returns number of ellipsoid sampled
 
     int RandEll;
     int NumEll = clustering.size();
@@ -52,10 +56,10 @@ gsl_vector * Samplers::DrawSample()
         do RandEll= rand() % clustering.size();
         while (clustering[RandEll]->getVol()/Vtot < UNIFORM);
 
-        do clustering[RandEll]->SampleEllipsoid();
-        while (!u_in_hypercube(clustering[RandEll]->get_newcoor(), D));
+        do clustering[RandEll]->SampleEllipsoid(newcoor_);
+        while (!u_in_hypercube(newcoor_, D));
 
-        gsl_vector_memcpy(tmp_coor, clustering[RandEll]->get_newcoor());
+        gsl_vector_memcpy(tmp_coor, newcoor_);
 
         n_e = 0;
         for(int i = 0; i<NumEll; i++)
@@ -67,7 +71,7 @@ gsl_vector * Samplers::DrawSample()
     
     gsl_vector_free(tmp_coor);
 
-    return clustering[RandEll]->get_newcoor();
+    return RandEll;
 }
 
 void Samplers::CalcVtot()
@@ -92,7 +96,8 @@ double Samplers::ResetWorstPoint(int nest, Data data_obj, int * nLeval) {
   int ellworst = 0; 
   int ptworst = 0;
   Point * worst;
-  
+  int ellnew;
+
   // find lowest and highest logL
   for(int i=0; i<clustering.size(); i++) {
     for(int j=0; j<clustering[i]->ell_pts_.size(); j++) {
@@ -114,14 +119,22 @@ double Samplers::ResetWorstPoint(int nest, Data data_obj, int * nLeval) {
   discard_pts.push_back( new Point(*worst) ); 
   
   // **************** ellipsoidal sampling 
+  int ndraw = 0;
   do
     {
-      worst->set_u(DrawSample());
+      ellnew = DrawSample();
+      worst->set_u(newcoor_);
       worst->transform_prior();
       data_obj.logL(worst);
       (*nLeval)++;
+      ndraw++;
     }
   while(logLmin > worst->get_logL());
+  fprintf(file3,"%i\n",ndraw);
+  // remove worst entry from ellworst pointlist
+  clustering[ellworst]->ell_pts_.erase(clustering[ellworst]->ell_pts_.begin() + ptworst);     
+  // add overwritten worst to ellnew pointlist
+  clustering[ellnew]->ell_pts_.push_back(worst);
 
   return logLmax;
 }
@@ -310,13 +323,30 @@ void Samplers::EllipsoidalRescaling(double Xi) {
   int Npoints;
   for(int i=0; i<clustering.size(); i++) {
     Npoints = clustering[i]->ell_pts_.size();
-    // rescale to current partial prior volume
-    clustering[i]->setEnlFac(clustering[i]->getEnlFac()*pow(Xi/e*Npoints/N/clustering[i]->getVol(),(double)1/D));
-    // rescale to catch all points
-    clustering[i]->RescaleToCatch();
-
-  
+    if( Npoints > 0 ) {
+      // rescale to current partial prior volume
+      clustering[i]->setEnlFac(clustering[i]->getEnlFac()*pow(Xi/e*Npoints/N/clustering[i]->getVol(),(double)1/D));
+      // rescale to catch all points
+      clustering[i]->RescaleToCatch();
+    }
+    
 
   }
 
+}
+
+void Samplers::printClustering() {
+  // prints out all active points and ellipsoids
+  for(int i=0;i<clustering.size();i++) { 
+    for(int j=0;j<clustering[i]->ell_pts_.size();j++) {
+      for(int k=0;k<D;k++) {
+	printf("%f ",clustering[i]->ell_pts_[j]->get_u(k));
+      }
+      printf("\n");
+    }
+  }
+  for(int i=0;i<clustering.size();i++) {
+    clustering[i]->printout();
+  }
+  printf("\n");
 }
