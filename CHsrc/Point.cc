@@ -1,8 +1,48 @@
 #include "Point.h"
 
-Point::Point(int Dim) : myparams(Dim) {D=Dim;}
-
-void Point::set_params(string const& prior_types, vector<double> min_vals, vector<double> max_vals)
+Point::Point(int Dim):myparams(Dim){
+  D=Dim;
+  logL=0;
+  logWt=0;
+}
+Point::Point(Point &pt):myparams(pt.get_D()){
+  int tempD=pt.get_D();
+  D = tempD;
+  set_logL(pt.get_logL());
+  set_logWt(pt.get_logWt());
+  double *theta = new double [D];
+  for (int i =0; i< D; i++){
+    double tempu=0;
+    tempu=pt.get_u(i);
+    myparams[i].u=tempu;
+  }
+  pt.get_theta(theta,D);
+  for (int i=0; i<D; i++){
+    set_theta(i,theta[i]);
+  }
+  string prior_types;
+  double *min_vals = new double[D];
+  double *max_vals = new double [D];
+  pt.get_params(prior_types,min_vals,max_vals);
+  for(int i = 0; i<D; i++)
+  {
+        myparams[i].prior = prior_types;
+        myparams[i].min = min_vals[i];
+        myparams[i].max = max_vals[i];
+  }
+  delete [] theta;
+  delete [] min_vals;
+  delete [] max_vals;
+}
+void Point::get_params(string & prior_types, double *min_vals, double *max_vals){
+    prior_types = myparams[0].prior;
+    for(int i = 0; i<D; i++)
+    {
+        min_vals[i] = myparams[i].min; 
+        max_vals[i] = myparams[i].max; 
+    }
+}
+void Point::set_params(string const& prior_types, double *min_vals, double *max_vals)
 {
     for(int i = 0; i<D; i++)
     {
@@ -37,10 +77,11 @@ void Point::get_theta(double *theta,int nt){
     cout<<"Point::get_theta:the dimention of parameters are not correct\n"<<endl;
     exit(1);
   }
-  for (int i=; i<D; i++){
+  for (int i=0; i<D; i++){
+    //printf("i=%d,myparams[i]=%f\n",i,myparams[i].theta);
     theta[i] = myparams[i].theta;
   }
-  return
+  return;
 }
 
 int Point::get_D(){return D;}
