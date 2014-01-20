@@ -17,7 +17,7 @@ public:
   gsl_matrix * getCinv();
   gsl_matrix * getA();
   gsl_matrix * getAinv();
-  void SampleEllipsoid();
+  void SampleEllipsoid(gsl_vector * target);
   void RescaleToCatch();
   bool IsMember(gsl_vector *);
   bool intersect(Ellipsoid& other);
@@ -27,7 +27,6 @@ public:
   double getVol();
   double mdist(Point *);
   void printout();
-  gsl_vector * get_newcoor() {return newcoor_;}
   vector<Point *> ell_pts_;
 private:
   int D_;
@@ -36,7 +35,6 @@ private:
   gsl_matrix * A_;
   gsl_matrix * Ainv_;
   gsl_matrix * covMat_;
-  gsl_vector * newcoor_;
   double f_;
   double vol_;
 

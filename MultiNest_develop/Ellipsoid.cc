@@ -40,7 +40,6 @@ Ellipsoid::Ellipsoid(int D, gsl_vector * center, gsl_matrix * C, double f, vecto
   D_ = D;
   f_ = f;
   center_ = gsl_vector_alloc(D_);
-  newcoor_ = gsl_vector_alloc(D_);
   gsl_vector_memcpy(center_,center);
   covMat_ = gsl_matrix_alloc(D_,D_);
   gsl_matrix_memcpy(covMat_,C);
@@ -116,7 +115,6 @@ Ellipsoid::Ellipsoid(int D, gsl_vector * center, gsl_matrix * C, double f, vecto
 
 Ellipsoid::~Ellipsoid() {
   gsl_vector_free(center_);
-  gsl_vector_free(newcoor_);
   gsl_matrix_free(covMat_);
   gsl_matrix_free(Cinv_);
   gsl_matrix_free(A_);
@@ -201,7 +199,7 @@ double Ellipsoid::mdist(Point *pt) {
   return dist;
 }
 
-void Ellipsoid::SampleEllipsoid()
+void Ellipsoid::SampleEllipsoid(gsl_vector * target)
 {
   //creates pseudorandom number coor uniformly distributed in ellipsoid given by the center vector center, 
   //covariance matrix C and enlargement factor f, so that x^T(fC)^-1x<=1
@@ -239,8 +237,8 @@ void Ellipsoid::SampleEllipsoid()
   gsl_blas_dgemm(CblasNoTrans, CblasNoTrans, sqrt(f_), X, Dprime, 0.0, T);
 
   // final coordinates
-  gsl_vector_memcpy(newcoor_,center_);
-  gsl_blas_dgemv(CblasNoTrans, 1.0, T, spheresample, 1.0, newcoor_);
+  gsl_vector_memcpy(target,center_);
+  gsl_blas_dgemv(CblasNoTrans, 1.0, T, spheresample, 1.0, target);
 
   gsl_vector_free(spheresample);
   gsl_matrix_free(myC);
