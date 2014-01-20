@@ -23,14 +23,15 @@ class Samplers
 	      double logZ; 
 	      double H;
         double logLmax_,logLmin_;
-        int ellworst_,ptworst_;
+        gsl_vector * newcoor_;
+        int ellworst_,ptworst_,ellnew_;
         vector<Ellipsoid *> clustering;
 	      list<Point *> discard_pts;
     public:
         //Samplers(int Dim, int Npts, vector<string> prior_types, vector<double> min_vals, vector<double> max_vals, double eff);
         Samplers(double* min_vals, int nmin,double *max_vals, int nmax, double eff, int Npts, string const& prior_types);
 	      ~Samplers();
-        gsl_vector* DrawSample();
+        void DrawSample();
         void SetAllPoint(double * logL,int nL);
 	      void DisgardWorstPoint(int nest);
         void ResetWorstPoint(double *theta, int nt);
@@ -51,5 +52,6 @@ class Samplers
         int countTotal();
         void getlogZ(double *logzinfo, int nz);
         void getPosterior(double * posterior, int nx, int ny, double * prob, int np);
+        void EllipsoidalRescaling(double Xi);
 };
 #endif
