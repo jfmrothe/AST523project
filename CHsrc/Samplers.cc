@@ -9,6 +9,7 @@ Samplers::Samplers(double* min_vals, int nmin, double* max_vals, int nmax, doubl
   logZ = -DBL_MAX;
   H = 0.0;
   newcoor_ = gsl_vector_alloc(D_);
+
   printf("creating %d active points\n",N);
   
   // **** create N active points and set params
@@ -132,6 +133,7 @@ void Samplers::DisgardWorstPoint(int nest) {
   logZ = logZnew; // update global evidence
   
   // save discarded point for posterior sampling
+
   discard_pts.push_back( new Point(*worst) );
   double * theta = new double [D_];
   worst->get_theta(theta,D_);
@@ -140,6 +142,7 @@ void Samplers::DisgardWorstPoint(int nest) {
   }	
   printf("%f\n",worst->get_logL());
   delete [] theta;
+
   clustering[ellworst_]->ell_pts_.erase(clustering[ellworst_]->ell_pts_.begin() + ptworst_);
   if(clustering[ellworst_]->ell_pts_.size() ==0){
     clustering.erase(clustering.begin()+ellworst_);
