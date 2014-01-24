@@ -74,8 +74,7 @@ void Point::transform_prior()
 
 void Point::get_theta(double *theta,int nt){
   if(nt!=D){
-    cout<<"Point::get_theta:the dimention of parameters are not correct\n"<<endl;
-    exit(1);
+    printf("Point::get_theta:the dimention of parameters are not correct\n");
   }
   for (int i=0; i<D; i++){
     //printf("i=%d,myparams[i]=%f\n",i,myparams[i].theta);

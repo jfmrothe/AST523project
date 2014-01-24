@@ -8,8 +8,8 @@ Samplers::Samplers(double* min_vals, int nmin, double* max_vals, int nmax, doubl
   Vtot = 0.0;
   logZ = -DBL_MAX;
   H = 0.0;
-
-  cout << "creating " << N << " active points" << endl;
+  newcoor_ = gsl_vector_alloc(D_);
+  printf("creating %d active points\n",N);
   
   // **** create N active points and set params
   //temporary vector, but pointers will be given to the first ellipsoid
@@ -20,32 +20,22 @@ Samplers::Samplers(double* min_vals, int nmin, double* max_vals, int nmax, doubl
       pts[j]->set_params(prior_types, min_vals, max_vals);
       pts[j]->hypercube_prior();
       pts[j]->transform_prior();
-      //double *tempparam = new double[D];
-      //pts[j]->get_theta(tempparam,D);
-      //for (int k=0; k<D; k++){
-      //  printf("pts[%d]-theta[%d]=%f\n",j,k,tempparam[k]);
-      //}
-      //delete [] tempparam;
-      //data_obj.logL(pts[j]); //this need to be done not within sampler
     }
-  //printf("initial points fine\n");
   // ******************************************
   Ellipsoid  firstEll = FindEnclosingEllipsoid(pts,D_); //I think this does not need L right now
-  //printf("initial ellipsoid fine\n");
   clustering.push_back(new Ellipsoid(D_, firstEll.getCenter(), firstEll.getCovMat(), firstEll.getEnlFac(), pts)); //new ellipsolid also doesn't need to know L
-  //printf("initial ellipsoid fine\n");
   // firstEll and vector points go out of scope here, but values survive copied into clustering[0
   CalcVtot();
 }
  
 Samplers::~Samplers() {
-  
+  gsl_vector_free(newcoor_); 
   for(list<Point *>::iterator s=discard_pts.begin();s!=discard_pts.end();s++){delete *s;} 
   int size = clustering.size();
   for(int i=0;i<size;i++){delete clustering[i];}
 }
 
-gsl_vector* Samplers::DrawSample()
+void Samplers::DrawSample()
 {
   // chooses an ellipsoid from clustering (volume-weighted for uniformity)
   // then causes it to sample a point into its newcoor member variable
@@ -63,7 +53,8 @@ gsl_vector* Samplers::DrawSample()
         do clustering[RandEll]->SampleEllipsoid();
         while (!u_in_hypercube(clustering[RandEll]->get_newcoor(), D_));
 
-        gsl_vector_memcpy(tmp_coor, clustering[RandEll]->get_newcoor());
+        gsl_vector_memcpy(newcoor_,clustering[RandEll]->get_newcoor());
+        gsl_vector_memcpy(tmp_coor, newcoor_);
 
         n_e = 0;
         for(int i = 0; i<NumEll; i++)
@@ -74,8 +65,10 @@ gsl_vector* Samplers::DrawSample()
     while(1.0/n_e < UNIFORM);
     
     gsl_vector_free(tmp_coor);
-
-    return clustering[RandEll]->get_newcoor();
+    ellnew_ = RandEll;
+    gsl_vector_memcpy(newcoor_,clustering[RandEll]->get_newcoor());
+    //printf("ellnew_=%d, RandEll=%d\n",ellnew_,RandEll);
+    //return clustering[RandEll]->get_newcoor();
     //for(int i = 0; i < D; i++) {theta[i] = gsl_vector_get(coor,i);}
 }
 
@@ -126,11 +119,12 @@ void Samplers::DisgardWorstPoint(int nest) {
       if(logL_tmp > logLmax_) {logLmax_ = logL_tmp;}
     }
   }
-  //printf("logLmin_=%f, logLmax_=%f,ellworst=%d, ptworst=%d\n",logLmin_,logLmax_,ellworst,ptworst);
+  //printf("logLmin_=%f, logLmax_=%f,ellworst=%d, ptworst=%d\n",logLmin_,logLmax_,ellworst_,ptworst_);
+  //printf("clustering.size=%d,%d\n",clustering.size(),clustering[0]->ell_pts_.size());
   // find contribution to evidence
   worst = clustering[ellworst_]->ell_pts_[ptworst_];
   //worst->set_logWt(logwidth + worst->get_logL()); 
-  //printf("logwidth=%f,ellworst=%d,clustsize=%d,ptworst=%d\n",logwidth,ellworst,ptworst);
+  //printf("logwidth=%f,ellworst=%d,clustsize=%d,ptworst=%d\n",logwidth,ellworst_,ptworst_);
   worst->set_logWt(logwidth + logLmin_); 
   //printf("worst,get_logWt\n", worst->get_logWt()); 
   logZnew = PLUS(logZ, worst->get_logWt()); 
@@ -138,24 +132,50 @@ void Samplers::DisgardWorstPoint(int nest) {
   logZ = logZnew; // update global evidence
   
   // save discarded point for posterior sampling
-  discard_pts.push_back( new Point(*worst) ); 
-
+  discard_pts.push_back( new Point(*worst) );
+  double * theta = new double [D_];
+  worst->get_theta(theta,D_);
+  for (int k=0;k<D_; k++){ 
+    printf("%f ",theta[k]);
+  }	
+  printf("%f\n",worst->get_logL());
+  delete [] theta;
+  clustering[ellworst_]->ell_pts_.erase(clustering[ellworst_]->ell_pts_.begin() + ptworst_);
+  if(clustering[ellworst_]->ell_pts_.size() ==0){
+    clustering.erase(clustering.begin()+ellworst_);
+  }
+  //printf("erase\n");
 }
 
 void Samplers::ResetWorstPoint(double *theta, int nt){  
   // **************** ellipsoidal sampling
-  // CH:I need to think about how to change this
   Point * worst;
-  worst = clustering[ellworst_]->ell_pts_[ptworst_];
-  worst->set_u(DrawSample());
+  
+  worst = new Point(*(clustering[0]->ell_pts_[0])); //copy the format of a random point
+  DrawSample();
+  //printf("%d %f %f\n",ellnew_,gsl_vector_get(newcoor_,0),gsl_vector_get(newcoor_,1));
+  //worst = clustering[ellworst_]->ell_pts_[ptworst_];
+  worst->set_u(newcoor_);
   worst->transform_prior();
   worst->get_theta(theta,nt);
+  //printf("%d %f %f %f %f\n",ellnew_,gsl_vector_get(newcoor_,0),gsl_vector_get(newcoor_,1),theta[0],theta[1]);
+  
+  delete worst;
   //data_obj.logL(worst);
   return ;
 }
 
 void Samplers::ResetWorstPointLogL(double logL){
-  clustering[ellworst_]->ell_pts_[ptworst_]->set_logL(logL);
+  //printf("ellworst_=%d, ptworst_=%d,logL=%f\n",ellworst_,ptworst_,logL);
+  //printf("ellnew_=%d\n",ellnew_);
+  clustering[ellnew_]->ell_pts_.push_back(new Point(*(clustering[0]->ell_pts_[0])));
+  int n = clustering[ellnew_]->ell_pts_.size();
+  //printf("n=%d\n",n);
+  clustering[ellnew_]->ell_pts_[n-1]->set_u(newcoor_);
+  //printf("newcoor_=\n");
+  clustering[ellnew_]->ell_pts_[n-1]->transform_prior();
+  //printf("transform_=\n");
+  clustering[ellnew_]->ell_pts_[n-1]->set_logL(logL);
 }
 
 void Samplers::getAlltheta(double *Alltheta, int nx, int ny){
@@ -178,12 +198,12 @@ void Samplers::Recluster(double X_i){
     ClearCluster();
 	  vector <Point *> empty;
 	  EllipsoidalPartitioning(empty, X_i);
-	  EraseFirst();
+    EraseFirst();
 	  CalcVtot();
 }
 
 int Samplers::countTotal(){
-  return discard_pts.size();
+  return discard_pts.size()+N;
 }
 
 void Samplers::getPosterior(double * posterior, int nx, int ny, double *prob, int np) {
@@ -192,24 +212,25 @@ void Samplers::getPosterior(double * posterior, int nx, int ny, double *prob, in
   int counter = 0, i=0, k=0;
   for(s=discard_pts.begin(); s!=discard_pts.end(); s++){
       (*s)->get_theta(&posterior[counter],D_);
-      prob[i] = (*s)->get_logL();
+      prob[k] = (*s)->get_logL();
       //printf("prob[i]=%f\n",prob[i]);
     counter+=D_;
-    i+=1;
+    k+=1;
+    
   }
    
-  //for(i=0; i<clustering.size(); i++) {
-  //  for(int j=0; j<clustering[i]->ell_pts_.size(); j++) {
-  //    pt = clustering[i]->ell_pts_[j];
-  //    //printf("i=%d,j=%d\n", i,j);
-  //    pt->get_theta(&posterior[counter],D_);
-  //    prob[k] = pt->get_logL();
-  //    //printf("Alltheta[counter]=%f,%f",Alltheta[counter],Alltheta[counter+1]);
-  //    k++;
-  //    counter+=D_;
-  //    //printf("counter=%d\n", counter);
-  //  }
-  //}
+  for(i=0; i<clustering.size(); i++) {
+    for(int j=0; j<clustering[i]->ell_pts_.size(); j++) {
+      pt = clustering[i]->ell_pts_[j];
+      //printf("i=%d,j=%d\n", i,j);
+      pt->get_theta(&posterior[counter],D_);
+      prob[k] = pt->get_logL();
+      //printf("Alltheta[counter]=%f,%f",Alltheta[counter],Alltheta[counter+1]);
+      k++;
+      counter+=D_;
+      //printf("counter=%d\n", counter);
+    }
+  }
 }
 void Samplers::getlogZ(double *logzinfo, int nz){
   double logZ_err = sqrt(H/N);
@@ -282,6 +303,9 @@ void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot)
   double h2;
   double tmp1,tmp2;
   double vol1,vol2;
+  
+  //debug
+  
 
   while(changed) {
     // return main ellipsoid immediately if partitioning would create singular (flat) ellipsoid
@@ -335,6 +359,8 @@ void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot)
      SelectFromGrouping(pts, D_, grouping, 0, pts_group_0);
      SelectFromGrouping(pts, D_, grouping, 1, pts_group_1);
   }
+ 
+
   // judgement if splitting should be continued
   if( vol1+vol2<mainEll.getVol() or mainEll.getVol()>2*Xtot) {
 
@@ -348,8 +374,32 @@ void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot)
     // allocate memory for mainEll and push it to the vector
     clustering.push_back (new Ellipsoid(D_, mainEll.getCenter(), mainEll.getCovMat(), mainEll.getEnlFac(), pts));
   }
+  
   return;
 }
+
+void Samplers::EllipsoidalRescaling(double Xi) {
+    // cycle through all ellipsoids, shrink by exponential decay of prior volume and rescale to make bounding again
+  int Npoints;
+  double Vscale;
+  //printf("Vtotal=%f",Vtot);
+  for(int i=0; i<clustering.size(); i++) {
+    Npoints = clustering[i]->ell_pts_.size();
+    if(Npoints>0){
+    // rescale to current partial prior volume
+    Vscale = Xi*Npoints/N;
+    if(Vscale>clustering[i]->getVol()){
+      //printf("did rescaling,Vscale=%f,Vold=%f\n",Vscale,clustering[i]->getVol());
+    clustering[i]->setEnlFac(clustering[i]->getEnlFac()*pow(Xi/e_*(double)Npoints/(double)N/clustering[i]->getVol(),(double)1./(double)D_));
+    // rescale to catch all points
+    clustering[i]->RescaleToCatch();
+    }
+    }
+  }
+  //CalcVtot();
+  //printf("Vtotal=%f",Vtot);
+} 
+    
 
 double dist(int D, Point *pt, gsl_vector * pos2)
 {

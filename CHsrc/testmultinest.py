@@ -6,8 +6,8 @@
 import sys
 sys.path.append("oblateTransit")
 #import transitmodel as model #module that call occultquad, and also hold the data
-#from lighthouse import lighthousemodel as Model #module that call occultquad, and also hold the data
-from eggbox import eggboxmodel as Model #module that call occultquad, and also hold the data
+from lighthouse import lighthousemodel as Model #module that call occultquad, and also hold the data
+#from eggbox import eggboxmodel as Model #module that call occultquad, and also hold the data
 #from gaussianshell import guaussianshellmodel as Model #module that call occultquad, and also hold the data
 #from occultquad import occultquad
 from Point import Point

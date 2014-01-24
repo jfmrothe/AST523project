@@ -153,7 +153,7 @@ double Ellipsoid::getEnlFac() {
 
 void Ellipsoid::setEnlFac(double f) {
   // adjust volume
-  vol_ *= pow(f/f_,D_);
+  vol_ *= pow(f/f_,1.0*D_);
   // save new enlargement factor
   f_ = f;
 }
@@ -240,6 +240,7 @@ void Ellipsoid::SampleEllipsoid()
   // final coordinates
   gsl_vector_memcpy(newcoor_,center_);
   gsl_blas_dgemv(CblasNoTrans, 1.0, T, spheresample, 1.0, newcoor_);
+  //gsl_vector_memcpy(newcoor,newcoor_);
 
   gsl_vector_free(spheresample);
   gsl_matrix_free(myC);
@@ -323,3 +324,30 @@ void Ellipsoid::fetchPoints(Ellipsoid& other) {
   }
 
 }
+
+
+void Ellipsoid::RescaleToCatch() {
+    // rescale to catch all points
+    double tmp;
+    double f = 0.0;
+    int Npoints = ell_pts_.size();
+    gsl_vector * tmpvec = gsl_vector_alloc(D_);
+    gsl_vector * tmpvec2 = gsl_vector_alloc(D_);
+    
+    for(int j=0;j<Npoints;j++){
+      for(int i=0;i<D_;i++){
+        // subtract center from each coor to tmpvec
+        gsl_vector_set(tmpvec2,i,ell_pts_[j]->get_u(i)-gsl_vector_get(center_,i));
+      }
+      gsl_blas_dsymv (CblasUpper, 1.0, Cinv_, tmpvec2, 0.0, tmpvec);
+      gsl_blas_ddot (tmpvec2, tmpvec, &tmp);
+      if (tmp > f) f = tmp;
+    }
+
+    if (f>f_) {
+      setEnlFac(f);
+    }
+    gsl_vector_free(tmpvec);
+    gsl_vector_free(tmpvec2);
+}
+

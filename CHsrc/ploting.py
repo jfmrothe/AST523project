@@ -11,14 +11,17 @@ def plotlighthouse():
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
     #x,y,prob = np.loadtxt(infile,usecols=[0,1,2],unpack=True)
-    #ax.scatter(x,y,np.exp(prob+160.455184),color='blue',s=1.5)
+    ##ax.scatter(x,y,np.exp(prob+160.455184),color='blue',s=1.5)
     #ax.scatter(x,y,np.exp(prob+235.83),color='blue',s=1.5)
-    #infile = 'lighthouse.tab'
+    #infile = 'data/gaussianshell_norescale.tab'
     #infile = 'eggbox.tab'
-    infile = 'gaussianshell.tab'
-    x,y,prob = np.loadtxt(infile,usecols=[0,1,2],unpack=True)
+    #infile = 'gaussianshell.tab'
+    #x,y,prob = np.loadtxt(infile,usecols=[0,1,2],unpack=True)
     #ax.scatter(x,y,np.exp(prob+160.455184),color='red',s=1.5)
-    ax.scatter(x,y,np.exp(prob+235.83),color='red',s=1.5)
+    #ax.scatter(x,y,np.exp(prob+235.83),color='red',s=1.5)
+    infile = 'data/gaussianshell_rescale1.tab'
+    x,y,prob = np.loadtxt(infile,usecols=[0,1,2],unpack=True)
+    ax.scatter(x,y,np.exp(prob+160.455184),color='blue',s=1.5)
     plt.show()
     return
 
