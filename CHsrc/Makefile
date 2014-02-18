@@ -28,7 +28,7 @@ clean:
 	$(RM) $(PROJECT_DEBUG)
 	$(RM) *.so *.pyc *_wrap.h
 	$(RM) -r *.dSYM
-	$(RM) -r build
+	$(RM) build/temp.linux-x86_64-2.7/*
 	$(RM) $(WRAPPERS)
 	$(RM) $(PROXIES)
 	$(RM) *.o

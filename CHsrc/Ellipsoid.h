@@ -1,7 +1,18 @@
 #ifndef ELLIPSOID_H
 #define ELLIPSOID_H
 
+#include <list>
+#include <fstream>
+#include <string>
+#include <float.h>
+#include <math.h>
+#include <vector>
+#include <gsl/gsl_eigen.h>
+#include <gsl/gsl_blas.h>
+#include <gsl/gsl_permutation.h>
+#include <gsl/gsl_linalg.h>
 #include "Point.h"
+
 
 float boxmuller();
 float quadr();

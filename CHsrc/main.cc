@@ -4,7 +4,6 @@
 
 int main(int argc, char *argv[])
 {
-
     if (argc != 2)   // check for command-line arguments
     {
         cout << "usage: " << argv[0] << " problem"<< endl;
@@ -54,8 +53,6 @@ int main(int argc, char *argv[])
     cout << "finish reading data" << endl; 
     //Samplers sampler(D, N, data_obj, prior_types, min_vals, max_vals, e); // create sampler object
     Samplers sampler( min_vals, D, max_vals,D,e,N,prior_types); // create sampler object
-
-
     cout << "running MultiNest algorithm... this may take a few minutes" << endl;
 
     // ****************************************** start nested sampling algorithm 
@@ -121,7 +118,6 @@ int main(int argc, char *argv[])
     cout << "**** results ****" << endl;
     cout << "number iterations = " << nest << endl;
     cout << "number reclusters = " << NumRecluster <<endl;
-//sampler.printout();
     double logzinfo[3];
     sampler.getlogZ(logzinfo,3);
     cout << "information: H=" << logzinfo[0] << "bits" <<endl;

@@ -9,7 +9,8 @@ Samplers::Samplers(double* min_vals, int nmin, double* max_vals, int nmax, doubl
   logZ = -DBL_MAX;
   H = 0.0;
   newcoor_ = gsl_vector_alloc(D_);
-  cout << "creating " << N << " active points" << endl;
+
+  printf("creating %d active points\n",N);
   
   // **** create N active points and set params
   //temporary vector, but pointers will be given to the first ellipsoid
@@ -132,8 +133,16 @@ void Samplers::DisgardWorstPoint(int nest) {
   logZ = logZnew; // update global evidence
   
   // save discarded point for posterior sampling
-  discard_pts.push_back( new Point(*worst) ); 
-  //printf("push back\n");
+
+  discard_pts.push_back( new Point(*worst) );
+  double * theta = new double [D_];
+  worst->get_theta(theta,D_);
+  for (int k=0;k<D_; k++){ 
+    printf("%f ",theta[k]);
+  }	
+  printf("%f\n",worst->get_logL());
+  delete [] theta;
+
   clustering[ellworst_]->ell_pts_.erase(clustering[ellworst_]->ell_pts_.begin() + ptworst_);
   if(clustering[ellworst_]->ell_pts_.size() ==0){
     clustering.erase(clustering.begin()+ellworst_);
@@ -188,12 +197,40 @@ void Samplers::getAlltheta(double *Alltheta, int nx, int ny){
   }
 }
 
-void Samplers::Recluster(double X_i){
-    ClearCluster();
-	  vector <Point *> empty;
-	  EllipsoidalPartitioning(empty, X_i);
-    EraseFirst();
-	  CalcVtot();
+int Samplers::Recluster(double X_i, double qualthresh){
+  // returns 1 iff reclustering happened
+  // instead of just performing the case distinction between top-level and recursion-call, this provides the details of the individual-ellipsoid-reclustering
+
+  // delete all ellipsoids, keep first to store all points
+  //ClearCluster();
+  // use empty vector to signal top-level-call to EllipsoidalPartitioning
+  //vector <Point *> empty;
+  //EllipsoidalPartitioning(empty, X_i);
+  //EraseFirst();
+  
+  int reclustered = 0;
+  // remember number of previous ellipsoids to avoid rechecking newly created ones
+  int Nellprev = clustering.size();
+
+  // check individual ellipsoids for reclustering
+  for(int i=0;i<Nellprev;i++) {
+    // check clustering criterion
+    double Xell = X_i*clustering[i]->ell_pts_.size()/N;
+    if(clustering[i]->getVol()/Xell > qualthresh) {
+      // if necessary, call partitioning on its list of points.
+      reclustered = 1;
+      EllipsoidalPartitioning(clustering[i]->ell_pts_,Xell);
+      // new ellipsoids have been appended to clustering with hard copies of this one's points, so it can be removed
+      clustering.erase(clustering.begin()+i);
+      // one ellipsoid fewer to worry about
+      Nellprev--;
+    }
+    // good ellipsoids are left alone
+  }
+  
+  CalcVtot();
+
+  return reclustered;
 }
 
 int Samplers::countTotal(){

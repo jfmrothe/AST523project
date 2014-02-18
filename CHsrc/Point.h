@@ -1,7 +1,7 @@
 #ifndef POINT_H
 #define POINT_H
-#include <iostream>
 #include <list>
+#include <iostream>
 #include <fstream>
 #include <string>
 #include <float.h>

@@ -6,8 +6,8 @@
 import sys
 sys.path.append("oblateTransit")
 #import transitmodel as model #module that call occultquad, and also hold the data
-#from lighthouse import lighthousemodel as Model #module that call occultquad, and also hold the data
-from eggbox import eggboxmodel as Model #module that call occultquad, and also hold the data
+from lighthouse import lighthousemodel as Model #module that call occultquad, and also hold the data
+#from eggbox import eggboxmodel as Model #module that call occultquad, and also hold the data
 #from gaussianshell import guaussianshellmodel as Model #module that call occultquad, and also hold the data
 #from occultquad import occultquad
 from Point import Point
@@ -59,12 +59,13 @@ def main():
         #print 'after reset'
         
         #ellipsoidal partitioning 
-        if(nest==0 or sampler.ClusteringQuality(X_i) > model.repartition): 
-            # recluster?
-            #print 'before recluster'
-            sampler.Recluster(X_i)
-            #print 'after recluster'
-            NumRecluster+=1
+        # I will check the criterion inside the function Recluster. I feel the nest==0 exception is unnecessary, reclustering should only happen if quality is bad. talk to chelsea
+        #if(nest==0 or sampler.ClusteringQuality(X_i) > model.repartition): 
+        # recluster?
+        #print 'before recluster'
+        NumRecluster += sampler.Recluster(X_i,model.repartition)
+        #print 'after recluster'
+        #NumRecluster+=1
         nest+=1 
         #print nest,X_i
         #Flag = False

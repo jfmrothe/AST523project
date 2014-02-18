@@ -12,7 +12,6 @@ Contacts: greco@princeton.edu, jrothe@princeton.edu
 ****************************************************/
 #ifndef DATA_H
 #define DATA_H
-
 #include "Point.h"
 
 class Data

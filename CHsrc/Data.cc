@@ -32,7 +32,6 @@ void Data::get_data()
     double dat;
     string tmpname = "DataFiles/"+data_filename;
     ifstream datafile(tmpname.c_str());
-
     while(!datafile.eof())
     {
         for(int i=0; i<num_col; i++)
@@ -43,31 +42,6 @@ void Data::get_data()
     }
     datafile.close();
 }
-
-//void Data::get_results(list<Point *>& samples, double logZ)
-//// print out results for the lighthouse problem, this method is
-//// only useful for unimodal likelihoods.
-//{
-//    vector<double> x(D, 0.0);
-//    vector<double> xx(D, 0.0);
-//
-//    double w;
-//    list<Point *>::iterator s;
-//    for(s=samples.begin(); s!=samples.end(); s++)
-//    {
-//      w = exp((*s)->get_logWt() - logZ);
-//        for(int i = 0; i<D; i++)
-//        {
-//            x[i] += w*((*s)->get_theta(i));
-//            xx[i] += w*((*s)->get_theta(i))*((*s)->get_theta(i));
-//        }
-//    }
-//
-//    for(int i = 0; i<D; i++)
-//    {
-//        cout << "<x" << i+1 << "> = " << x[i] << " +/- " << sqrt(xx[i] - x[i]*x[i]) << endl;
-//    }
-//}
 
 void Data::Get_L(double *theta, double *logLarr, int nl)
 // Evaluate likelihood function. In a future version, this will become 

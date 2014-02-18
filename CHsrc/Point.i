@@ -8,12 +8,11 @@
 import_array();
 %}
 %{
-#include <iostream.h>
-#include <list.h>
-#include <fstream.h>
-#include <string.h>
+#include <list>
+#include <fstream>
+#include <string>
 #include <float.h>
-#include <vector.h>
+#include <vector>
 #include <math.h>
 #include <gsl/gsl_eigen.h>
 #include <gsl/gsl_blas.h>
