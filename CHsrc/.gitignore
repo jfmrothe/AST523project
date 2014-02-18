@@ -2,3 +2,4 @@ oblateTransit/
 .gitignore
 plotting.py
 data/
+DataFiles/
