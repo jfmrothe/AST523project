@@ -17,11 +17,11 @@ class Samplers
 {
     private:
         int D_;
-	      int N;
+	int N;
         double Vtot;
         double e_;
-	      double logZ; 
-	      double H;
+	double logZ; 
+	double H;
         double logLmax_,logLmin_;
         gsl_vector * newcoor_;
         int ellworst_,ptworst_,ellnew_;
@@ -47,7 +47,7 @@ class Samplers
         void getAlltheta(double *Alltheta, int nx, int ny);
 	double getlogLmax(){return logLmax_;}
 	double getlogLmin(){return logLmin_;}
-        void Recluster(double X_i);
+        int Recluster(double X_i, double qualthresh);
         int getN() {return N;}
         int countTotal();
         void getlogZ(double *logzinfo, int nz);
