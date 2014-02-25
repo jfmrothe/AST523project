@@ -103,11 +103,15 @@ Ellipsoid::Ellipsoid(int D, gsl_vector * center, gsl_matrix * C, double f, vecto
 
   vol_ = 4.0/3.0*M_PI*sqrt(pow(f_,D)*det);
 
+
+  //  ell_pts_ = ell_pts;
+  // Chelsea's suggested problem: as ell_pts goes out of scope, Points referenced within are auto-destroyed
+  for(int i=0;i<ell_pts.size();i++) {
+    ell_pts_.push_back(new Point(*ell_pts[i]));
+  }
+
   gsl_matrix_free(voltmpmat); 
   gsl_permutation_free(volp);
-
-  ell_pts_ = ell_pts;
-
 }
 
 Ellipsoid::~Ellipsoid() {
@@ -199,8 +203,9 @@ double Ellipsoid::mdist(Point *pt) {
 
 void Ellipsoid::SampleEllipsoid()
 {
-  //returns pseudorandom number coor uniformly distributed in ellipsoid given by the center vector center, 
+  //creates pseudorandom number coor uniformly distributed in ellipsoid given by the center vector center, 
   //covariance matrix C and enlargement factor f, so that x^T(fC)^-1x<=1
+  //stores is in new_coor member variable
   int i;
  
   // create gsl_vector uniformly sampled from sphere

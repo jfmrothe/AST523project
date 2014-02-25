@@ -16,6 +16,7 @@ class guaussianshellmodel():
         self.repartition = 1.2
         self.fixparams_=[2.0,0.1,-3.0,0,3.0,0.0]; #r,ww,c1[0],c1[1],c2[0],c2[1]
         self.neginf = -1.e7
+	self.NL_=0
         return
     
     def Getinitial(self):
@@ -28,6 +29,7 @@ class guaussianshellmodel():
         #print r1,r2
         return ((r1[0]-r2[0])**2.+(r1[1]-r2[1])**2.)**0.5
     def Get_L(self,model_params, logL, nl):
+	self.NL_+=1
         norm = 1.0/np.sqrt(2*np.pi*self.fixparams_[1]**2.)
         #print self.fixparams_
         #self.fixparams_=[2.0,0.1,-3.0,0,3.0,0.0]; #r,ww,c1[0],c1[1],c2[0],c2[1]

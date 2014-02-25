@@ -59,7 +59,8 @@ int main(int argc, char *argv[])
   
     double X_i, logLmax;
     int NumRecluster = 0;
-    int j, nest;
+    int NumSample = 0;
+    int nest;
     nest = 0;
     double *Alltheta = new double [D*N];
     double *logL = new double [N];
@@ -81,7 +82,7 @@ int main(int argc, char *argv[])
     
     do
     {
-        X_i = exp(-nest/N);
+      X_i = exp((double) -nest/N);
     // discard and resample, get logLmax for convergence check as byproduct
 	      sampler.DisgardWorstPoint(nest); 
         logLmax = sampler.getlogLmax();
@@ -92,6 +93,7 @@ int main(int argc, char *argv[])
         templogL[0]=0;
         while (FlagSample){
           sampler.ResetWorstPoint(theta,D);
+	  NumSample++;
           data_obj.Get_L(theta,templogL,1);
           //cout << theta[0] << " " << theta[1] << " " << templogL[0] <<  " " << logLmin << endl;
           if(logLmin < templogL[0]){
@@ -101,11 +103,7 @@ int main(int argc, char *argv[])
         double temp = templogL[0];
         sampler.ResetWorstPointLogL(temp);
         // **************** ellipsoidal partitioning 
-        if(nest==0 || sampler.ClusteringQuality(X_i) > RepartitionFactor)  // recluster? 
-        {
-          sampler.Recluster(X_i);
-	        NumRecluster++;    
-        }
+	NumRecluster += sampler.Recluster(X_i,RepartitionFactor);
         // *********************************************
 	nest++;
     }
@@ -118,6 +116,7 @@ int main(int argc, char *argv[])
     cout << "**** results ****" << endl;
     cout << "number iterations = " << nest << endl;
     cout << "number reclusters = " << NumRecluster <<endl;
+    cout << "sampling efficiency = " << (double) nest/NumSample << endl;
     double logzinfo[3];
     sampler.getlogZ(logzinfo,3);
     cout << "information: H=" << logzinfo[0] << "bits" <<endl;

@@ -10,10 +10,11 @@ class eggboxmodel():
         self.inpath_ = cfgp.File_parse(cfgfile,'inpath')
         #self.data_ = []; readcolumn(self.data_,1,self.infile_); self.data_ = np.array(self.data_)
         self.D=2
-        self.Np_=100
+        self.Np_=2000
         self.var0_=[31.41592654/2.,31.41592654/2.]
         self.varerr_=self.var0_
         self.repartition = 1.2
+	self.NL_=0
         return
     
     def Getinitial(self):
@@ -24,6 +25,7 @@ class eggboxmodel():
 
 
     def Get_L(self,model_params, logL, nl):
+	self.NL_+=1
         for i in xrange(nl):
             #print model_params[i*self.D],model_params[i*self.D+1]
             x = model_params[i*self.D]

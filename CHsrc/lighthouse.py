@@ -14,6 +14,7 @@ class lighthousemodel():
         self.var0_=[0.,1.]
         self.varerr_=[2.,1.]
         self.repartition = 1.2
+	self.NL_=0
         return
     
     def Getinitial(self):
@@ -24,7 +25,8 @@ class lighthousemodel():
 
 
     def Get_L(self,model_params, logL, nl):
-        for i in xrange(nl):
+        self.NL_ +=1
+	for i in xrange(nl):
             #print model_params[i*self.D],model_params[i*self.D+1]
             x = model_params[i*self.D]
             y = model_params[i*self.D+1]

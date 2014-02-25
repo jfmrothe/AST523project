@@ -6,16 +6,18 @@
 import sys
 sys.path.append("oblateTransit")
 #import transitmodel as model #module that call occultquad, and also hold the data
-from lighthouse import lighthousemodel as Model #module that call occultquad, and also hold the data
-#from eggbox import eggboxmodel as Model #module that call occultquad, and also hold the data
+#from lighthouse import lighthousemodel as Model #module that call occultquad, and also hold the data
+from eggbox import eggboxmodel as Model #module that call occultquad, and also hold the data
 #from gaussianshell import guaussianshellmodel as Model #module that call occultquad, and also hold the data
 #from occultquad import occultquad
 from Point import Point
 from Ellipsoid import Ellipsoid
 from Samplers import Samplers as MNest
 import numpy as np
+import cmd_parse as cmdp
+import cfg_parse as cfgp
 def main():
-    model = Model('example.cfg')
+    model = Model('eggbox.cfg')
     minvals,maxvals,e,Np = model.Getinitial()
     #print minvals,maxvals,e
     sampler = MNest(minvals,maxvals,e,Np, "uniform")
@@ -70,10 +72,11 @@ def main():
         #print nest,X_i
         #Flag = False
         Flag = THRESH < abs(X_i*logLmax)
-    #print NumRecluster
+    print NumRecluster
     #print 'before output'
     #output
     ntotal = sampler.countTotal()
+    print 1.0*ntotal/model.NL_   
     posterior = np.zeros([model.D,ntotal])
     prob = np.zeros(ntotal)
     sampler.getPosterior(posterior,prob)

@@ -24,7 +24,7 @@ _Samplers = Extension("_Samplers",
         )
 
 setup(name="MutiNest",
-        description = "Baysen tools for model fitting",
+        description = "Bayesian tools for model fitting",
         author = "Johnny Greco, Johannes Rothe for the c++ part, Xu Huang for the python part and modeling",
         author_email = "",
         url = "",

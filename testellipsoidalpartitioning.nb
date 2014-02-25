@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[   1491703,      25010]
-NotebookOptionsPosition[   1491055,      24985]
-NotebookOutlinePosition[   1491394,      25000]
-CellTagsIndexPosition[   1491351,      24997]
+NotebookDataLength[   1491773,      25010]
+NotebookOptionsPosition[   1491125,      24985]
+NotebookOutlinePosition[   1491464,      25000]
+CellTagsIndexPosition[   1491421,      24997]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -329,17 +329,17 @@ Cell[BoxData[{
 Cell[BoxData["1000"], "Output",
  CellChangeTimes->{
   3.59801145319494*^9, {3.598012984098796*^9, 3.5980130047530413`*^9}, 
-   3.598013045298545*^9}],
+   3.598013045298545*^9, 3.5980137636112833`*^9}],
 
 Cell[BoxData["72"], "Output",
  CellChangeTimes->{
   3.59801145319494*^9, {3.598012984098796*^9, 3.5980130047530413`*^9}, 
-   3.598013045300358*^9}],
+   3.598013045298545*^9, 3.5980137636362886`*^9}],
 
 Cell[BoxData["\<\"1.043624\"\>"], "Output",
  CellChangeTimes->{
   3.59801145319494*^9, {3.598012984098796*^9, 3.5980130047530413`*^9}, 
-   3.5980130453055058`*^9}]
+   3.598013045298545*^9, 3.5980137636811647`*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -24984,7 +24984,7 @@ Cell[BoxData["\<\"1.043624\"\>"], "Output",
 }, Open  ]]
 },
 WindowSize->{1299, 744},
-WindowMargins->{{Automatic, 238}, {Automatic, 25}},
+WindowMargins->{{Automatic, 236}, {Automatic, 25}},
 FrontEndVersion->"7.0 for Linux x86 (64-bit) (February 25, 2009)",
 StyleDefinitions->"Default.nb"
 ]
@@ -25002,15 +25002,15 @@ Notebook[{
 Cell[557, 20, 6902, 193, 297, "Input"],
 Cell[CellGroupData[{
 Cell[7484, 217, 4477, 109, 275, "Input"],
-Cell[11964, 328, 149, 3, 31, "Output"],
-Cell[12116, 333, 147, 3, 31, "Output"],
-Cell[12266, 338, 163, 3, 31, "Output"]
+Cell[11964, 328, 173, 3, 31, "Output"],
+Cell[12140, 333, 171, 3, 31, "Output"],
+Cell[12314, 338, 185, 3, 31, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[12466, 346, 2009, 46, 121, "Input"],
-Cell[14478, 394, 1476282, 24582, 481, 1398449, 23304, "CachedBoxData", \
+Cell[12536, 346, 2009, 46, 121, "Input"],
+Cell[14548, 394, 1476282, 24582, 481, 1398449, 23304, "CachedBoxData", \
 "BoxData", "Output"],
-Cell[1490763, 24978, 276, 4, 31, "Output"]
+Cell[1490833, 24978, 276, 4, 31, "Output"]
 }, Open  ]]
 }
 ]

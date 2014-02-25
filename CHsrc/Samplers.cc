@@ -10,6 +10,9 @@ Samplers::Samplers(double* min_vals, int nmin, double* max_vals, int nmax, doubl
   H = 0.0;
   newcoor_ = gsl_vector_alloc(D_);
 
+
+  srand(time(NULL));  // seed random number generator
+
   printf("creating %d active points\n",N);
   
   // **** create N active points and set params
@@ -137,10 +140,10 @@ void Samplers::DisgardWorstPoint(int nest) {
   discard_pts.push_back( new Point(*worst) );
   double * theta = new double [D_];
   worst->get_theta(theta,D_);
-  for (int k=0;k<D_; k++){ 
-    printf("%f ",theta[k]);
-  }	
-  printf("%f\n",worst->get_logL());
+  //for (int k=0;k<D_; k++){ 
+  //  printf("%f ",theta[k]);
+  //}	
+  //printf("%f\n",worst->get_logL());
   delete [] theta;
 
   clustering[ellworst_]->ell_pts_.erase(clustering[ellworst_]->ell_pts_.begin() + ptworst_);
@@ -214,16 +217,18 @@ int Samplers::Recluster(double X_i, double qualthresh){
 
   // check individual ellipsoids for reclustering
   for(int i=0;i<Nellprev;i++) {
-    // check clustering criterion
-    double Xell = X_i*clustering[i]->ell_pts_.size()/N;
-    if(clustering[i]->getVol()/Xell > qualthresh) {
-      // if necessary, call partitioning on its list of points.
-      reclustered = 1;
-      EllipsoidalPartitioning(clustering[i]->ell_pts_,Xell);
-      // new ellipsoids have been appended to clustering with hard copies of this one's points, so it can be removed
-      clustering.erase(clustering.begin()+i);
-      // one ellipsoid fewer to worry about
-      Nellprev--;
+    if(clustering[i]->ell_pts_.size() > D_+1) {
+      // check clustering criterion
+      double Xell = X_i*clustering[i]->ell_pts_.size()/N;
+      if(clustering[i]->getVol()/Xell > qualthresh) {
+	// if necessary, call partitioning on its list of points.
+	reclustered = 1;
+	EllipsoidalPartitioning(clustering[i]->ell_pts_,Xell);
+	// new ellipsoids have been appended to clustering with hard copies of this one's points, so it can be removed
+	clustering.erase(clustering.begin()+i);
+	// one ellipsoid fewer to worry about
+	Nellprev--;
+      }
     }
     // good ellipsoids are left alone
   }
@@ -339,11 +344,14 @@ void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot)
   
 
   while(changed) {
+
     // return main ellipsoid immediately if partitioning would create singular (flat) ellipsoid
     if(pts_group_0.size()<D_+1 or pts_group_1.size()<D_+1) {
       clustering.push_back (new Ellipsoid(D_, mainEll.getCenter(), mainEll.getCovMat(), mainEll.getEnlFac(), pts) );
       return;
     }
+
+
     // find new sub-Ellipsoids
     //"locality" of these variables removes object overwriting trouble
     Ellipsoid subEll1 = FindEnclosingEllipsoid(pts_group_0,D_);
@@ -389,6 +397,7 @@ void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot)
      pts_group_1.clear();
      SelectFromGrouping(pts, D_, grouping, 0, pts_group_0);
      SelectFromGrouping(pts, D_, grouping, 1, pts_group_1);
+
   }
  
 
