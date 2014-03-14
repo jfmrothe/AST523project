@@ -209,21 +209,26 @@ void Samplers::getAlltheta(double *Alltheta, int nx, int ny){
   }
 }
 
+void Samplers::FullRecluster(double X_i)
+{
+  //deletes all ellipsoids and performs a top-down recursive reclustering
+
+  // delete all ellipsoids, keep first to store all points
+  ClearCluster();
+  // use empty vector to signal top-level-call to EllipsoidalPartitioning
+  vector <Point *> empty;
+  EllipsoidalPartitioning(empty, X_i);
+  EraseFirst();
+
+}
+
 int Samplers::Recluster(double X_i, double qualthresh){
   // returns 1 iff reclustering happened
   // instead of just performing the case distinction between top-level and recursion-call, this provides the details of the individual-ellipsoid-reclustering
 
-  // delete all ellipsoids, keep first to store all points
-  //ClearCluster();
-  // use empty vector to signal top-level-call to EllipsoidalPartitioning
-  //vector <Point *> empty;
-  //EllipsoidalPartitioning(empty, X_i);
-  //EraseFirst();
-  
   int reclustered = 0;
   // remember number of previous ellipsoids to avoid rechecking newly created ones
   int Nellprev = clustering.size();
-  //int record[Nellprev];
   // check individual ellipsoids for reclustering
   for(int i=0;i<Nellprev;i++) {
     if(clustering[i]->ell_pts_.size() > D_+1) {
@@ -298,27 +303,30 @@ void Samplers::ClearCluster() {
   
 }
 
+void Samplers::EraseFirst() {
+  clustering.erase(clustering.begin());
+}
 
 void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot)
 {
   // this is the variant currently in development, because segfaults could be
-     // avoided. will check if this implementation is "good" in some sense...
-       // vector of ellipsoid pointers is returned, these are deleted after use in
-         // the function calling EllipsoidalPartitioningVec performs Algorithm I from
-           // Feroz, Hobson and Bridges (2009) on N points in D-dimensional
-             // [0,1]-hypercube given in coors. Returns resulting number of ellipsoids in
-               // Nell, uses new to create array of ellipsoids, first address is returned in
-                 // clustering
+  // avoided. will check if this implementation is "good" in some sense...
+  // vector of ellipsoid pointers is returned, these are deleted after use in
+  // the function calling EllipsoidalPartitioningVec performs Algorithm I from
+  // Feroz, Hobson and Bridges (2009) on N points in D-dimensional
+  // [0,1]-hypercube given in coors. Returns resulting number of ellipsoids in
+  // Nell, uses new to create array of ellipsoids, first address is returned in
+  // clustering
   
-                   /////////////////
-                     // ALGORITHM I //
-                       /////////////////
+  /////////////////
+  // ALGORITHM I //
+  /////////////////
   
-                         // create mainEllipsoid which may be split further
-                           // ?? in recursion depth, this first ellipsoid can be passed by parent??
+  // create mainEllipsoid which may be split further
+  // ?? in recursion depth, this first ellipsoid can be passed by parent??
   
   
- // if function was called from main.cc (and not itself), pts will be empty, data instead will be in (irrelevant) first ellipsoid
+  // if function was called from main.cc (and not itself), pts will be empty, data instead will be in (irrelevant) first ellipsoid
   if(pts.size()==0) {
     pts = clustering[0]->ell_pts_;
   }

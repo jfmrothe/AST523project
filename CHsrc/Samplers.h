@@ -43,10 +43,11 @@ class Samplers
 
         double ClusteringQuality(double Xtot) {return e_*Vtot/Xtot;} 
         void ClearCluster();
-	void EraseFirst() {clustering.erase(clustering.begin());}
+	void EraseFirst(); 
         void getAlltheta(double *Alltheta, int nx, int ny);
 	double getlogLmax(){return logLmax_;}
 	double getlogLmin(){return logLmin_;}
+	void FullRecluster(double X_i);
         int Recluster(double X_i, double qualthresh);
         int getN() {return N_;}
         int countTotal();

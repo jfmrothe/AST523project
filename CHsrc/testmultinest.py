@@ -38,6 +38,7 @@ def main():
     logLmax = 0.
     logLmin = 0.
     THRESH  = 1.0e-7
+    FullReclusterPeriod = 1000
     sampler.getAlltheta(Alltheta)
     model.Get_L(Alltheta.ravel(),logL,Np)
     sampler.SetAllPoint(logL) 
@@ -95,8 +96,11 @@ def main():
             sampler.getPosterior(posterior,prob)
             print posterior
             print prob
-        
-        NumRecluster += sampler.Recluster(X_i,model.repartition)
+        if nest % FullReclusterPeriod == 0:
+            NumRecluster += 1
+            sampler.FullRecluster(X_i)
+        else:
+            NumRecluster += sampler.Recluster(X_i,model.repartition)
         #ellipsoidal partitioning 
         #if(nest==0 or sampler.ClusteringQuality(X_i) > model.repartition):
         #    count+=1
