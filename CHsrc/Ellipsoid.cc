@@ -105,7 +105,7 @@ Ellipsoid::Ellipsoid(int D, gsl_vector * center, gsl_matrix * C, double f, vecto
 
   //  ell_pts_ = ell_pts;
   // Chelsea's suggested problem: as ell_pts goes out of scope, Points referenced within are auto-destroyed
-  for(int i=0;i<ell_pts.size();i++) {
+  for(unsigned int i=0;i<ell_pts.size();i++) {
     ell_pts_.push_back(new Point(*ell_pts[i]));
   }
 
@@ -120,8 +120,10 @@ Ellipsoid::~Ellipsoid() {
   gsl_matrix_free(Cinv_);
   gsl_matrix_free(A_);
   gsl_matrix_free(Ainv_);
-  int size = ell_pts_.size();
-  for(int j=0; j<size; j++){delete ell_pts_[j];}
+  //int size = ell_pts_.size();
+  for(unsigned int j=0; j<ell_pts_.size(); j++){delete ell_pts_[j];}
+  ell_pts_.clear();
+  //delete ell_pts_;
 }
 
 int Ellipsoid::getD() {

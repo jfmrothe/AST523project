@@ -5,6 +5,8 @@ Point::Point(int Dim):myparams(Dim){
   logL=0;
   logWt=0;
 }
+Point::~Point(){
+}
 Point::Point(Point &pt):myparams(pt.get_D()){
   int tempD=pt.get_D();
   D = tempD;

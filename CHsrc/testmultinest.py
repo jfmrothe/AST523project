@@ -1,24 +1,27 @@
 #!/usr/bin/env python
+import os
 #os.chdir("oblateTransit")
 #os.system("make clean")
 #os.system("make all")
 #os.chdir("..")
 import sys
 sys.path.append("oblateTransit")
-#import transitmodel as model #module that call occultquad, and also hold the data
+#from transitmodel import transitmodel as Model #module that call occultquad, and also hold the data
 #from lighthouse import lighthousemodel as Model #module that call occultquad, and also hold the data
 #from eggbox import eggboxmodel as Model #module that call occultquad, and also hold the data
 from toygauss import toygaussmodel as Model
+#from poly import polymodel as Model #module that call occultquad, and also hold
 #from gaussianshell import guaussianshellmodel as Model #module that call occultquad, and also hold the data
 #from occultquad import occultquad
 from Point import Point
 from Ellipsoid import Ellipsoid
 from Samplers import Samplers as MNest
 import numpy as np
-import cmd_parse as cmdp
-import cfg_parse as cfgp
 def main():
     model = Model('toygauss.cfg')
+    #model = Model('example.cfg')
+    #model = Model('oblateTransit/sorted_example.cfg')
+    #model = Model('oblateTransit/testmarching_example.cfg')
     minvals,maxvals,e,Np = model.Getinitial()
     #print minvals,maxvals,e
     sampler = MNest(minvals,maxvals,e,Np, "uniform")
@@ -31,7 +34,7 @@ def main():
     NumLeval = Np
     Alltheta = np.zeros([model.D,int(Np)])
     theta = np.zeros(model.D)
-    logL = np.zeros(Np)
+    logL = np.zeros(Np)*1.0
     logLmax = 0.
     logLmin = 0.
     THRESH  = 1.0e-7
@@ -40,13 +43,32 @@ def main():
     sampler.SetAllPoint(logL) 
     #print Alltheta[0,0],Alltheta[1,0]
     #Flag = False
-    while Flag: 
+    Debug = False
+    count=0
+    logzinfo = np.zeros(3)
+    while Flag:
+
         X_i = np.exp(-1.0*nest/(1.0*Np))
-        #print Alltheta.shape
-        #print 'after Alltheta'
-        #print Alltheta
         #discard and resample, get logLmax for convergence check as byproduct
+        if(Debug):
+            print '----------------------'
+            ntotal = sampler.countTotal()
+            posterior = np.zeros([model.D,ntotal])
+            prob = np.zeros(ntotal)
+            sampler.getPosterior(posterior,prob)
+            print posterior
+            print prob
+        
         sampler.DisgardWorstPoint(int(nest)) 
+        if(Debug): 
+            print '----------------------'
+            ntotal = sampler.countTotal()
+            posterior = np.zeros([model.D,ntotal])
+            prob = np.zeros(ntotal)
+            sampler.getPosterior(posterior,prob)
+            print posterior
+            print prob
+
         logLmax = sampler.getlogLmax() 
         logLmin = sampler.getlogLmin()
         #print logLmax,logLmin
@@ -59,18 +81,40 @@ def main():
             NumLeval += 1
             #print theta, templogL,logLmin
             FlagSample=(logLmin > templogL[0])
+            #FlagSample=False
+        
         temp = templogL[0]
+        #print templogL[0]
         sampler.ResetWorstPointLogL(temp) 
         #print 'after reset'
+        if (Debug): 
+            print '----------------------'
+            ntotal = sampler.countTotal()
+            posterior = np.zeros([model.D,ntotal])
+            prob = np.zeros(ntotal)
+            sampler.getPosterior(posterior,prob)
+            print posterior
+            print prob
         
-        #ellipsoidal partitioning 
-        # I will check the criterion inside the function Recluster. I feel the nest==0 exception is unnecessary, reclustering should only happen if quality is bad. talk to chelsea
-        #if(nest==0 or sampler.ClusteringQuality(X_i) > model.repartition): 
-        # recluster?
-        #print 'before recluster'
         NumRecluster += sampler.Recluster(X_i,model.repartition)
-        #print 'after recluster'
-        #NumRecluster+=1
+        #ellipsoidal partitioning 
+        #if(nest==0 or sampler.ClusteringQuality(X_i) > model.repartition):
+        #    count+=1
+        #    # recluster?
+        #    if count==5:
+        #        print 'before recluster'
+        #        sampler.Recluster(X_i)
+        #        print 'after recluster'
+        #        NumRecluster+=1
+        #        count=0
+        #        #sampler.EllipsoidalRescaling(X_i);
+
+        #    Flag1 = True
+        #else:
+        #    print sampler.ClusteringQuality(X_i)
+        #    sampler.EllipsoidalRescaling(X_i);
+        #    print sampler.ClusteringQuality(X_i)
+         #   Flag1 = False
         nest+=1 
         if(nest%1000==0):
             logzinfo = np.zeros(3)
@@ -81,6 +125,7 @@ def main():
         Flag = THRESH < abs(X_i*logLmax)
     #print 'before output'
     #output
+    print "#",NumRecluster
     ntotal = sampler.countTotal()
     print "number of iterations = ",ntotal
     print "sampling efficiency = ",1.0*ntotal/NumLeval 
@@ -94,21 +139,22 @@ def main():
     logzinfo = np.zeros(3)
     sampler.getlogZ(logzinfo)
     model.Output(posterior.ravel(),prob)
-    print "information: H=%f bits" % logzinfo[0]
-    print "global evidence: logZ = %f +/- %f" % (logzinfo[1],logzinfo[2])
+    print "#information: H=%f bits" % logzinfo[0]
+    print "#global evidence: logZ = %f +/- %f" % (logzinfo[1],logzinfo[2])
+    #os.system("tail -n %d multivar.tab >> temp9.txt" % model.Np_)
     return
 
 def testL():
     model = Model('example.cfg')
     minvals,maxvals,e,Np = model.Getinitial()
-    #x = 4.0*np.random.randn(10000)-(minvals[0]+maxvals[0])/2.
+    x = 4.0*np.random.randn(10000)-(minvals[0]+maxvals[0])/2.
     #x = 16.0*np.random.randn(10000)+(minvals[0]+maxvals[0])/2.
     #y = 16.0*np.random.randn(10000)+(minvals[0]+maxvals[0])/2.
-    x = 6.0*np.random.randn(10000)+(minvals[0]+maxvals[0])/2.
-    y = 6.0*np.random.randn(10000)+(minvals[0]+maxvals[0])/2.
-    #y = np.random.randn(10000)*4.0
+    #x = 6.0*np.random.randn(10000)+(minvals[0]+maxvals[0])/2.
+    #y = 6.0*np.random.randn(10000)+(minvals[0]+maxvals[0])/2.
+    y = np.random.randn(10000)*4.0
     #lighthouse
-    if(0):
+    if(1):
         indexa = y>0.5
         indexb = y<1.5
         indexc = x>-2
@@ -119,7 +165,7 @@ def testL():
         indexb = y<31.415
         indexc = x>0
         indexd = x<31.415
-    if(1):
+    if(0):
         indexa = y>-6
         indexb = y<6
         indexc = x>-6

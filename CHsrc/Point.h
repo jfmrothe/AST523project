@@ -1,7 +1,7 @@
 #ifndef POINT_H
 #define POINT_H
-#include <list>
 #include <iostream>
+#include <list>
 #include <fstream>
 #include <string>
 #include <float.h>
@@ -15,7 +15,7 @@ using namespace std;
 
 #define THRESH 1.0e-5
 #define UNIFORM ((rand() + 0.5)/(RAND_MAX+1.0))
-#define PLUS(x,y) (x>y ? x+log(1+exp(y-x)) : y+log(1+exp(x-y)))
+#define PLUS(x,y) (x>y ? x+log(1.+exp(y-x)) : y+log(1.+exp(x-y)))
 
 class Point
 {
@@ -36,6 +36,7 @@ class Point
     public:
 
         Point(int);
+        ~Point();
         Point(Point &pt);
         void get_params(string & prior_types, double *min_vals, double *max_vals);
         void set_params(string const& prior_types,double* min_vals,double* max_vals); //use the same prior_type right now
