@@ -10,7 +10,7 @@ import_array();
 %{
 #include <list>
 #include <fstream>
-#include <string>
+#include <string.h>
 #include <float.h>
 #include <vector>
 #include <math.h>

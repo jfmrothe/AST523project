@@ -84,7 +84,7 @@ int main(int argc, char *argv[])
     {
       X_i = exp((double) -nest/N);
     // discard and resample, get logLmax for convergence check as byproduct
-	      sampler.DisgardWorstPoint(nest); 
+	sampler.DisgardWorstPoint(nest); 
         logLmax = sampler.getlogLmax();
         logLmin = sampler.getlogLmin();
         //cout << nest <<  " " << logLmin << endl;
@@ -93,7 +93,7 @@ int main(int argc, char *argv[])
         templogL[0]=0;
         while (FlagSample){
           sampler.ResetWorstPoint(theta,D);
-	  NumSample++;
+	        NumSample++;
           data_obj.Get_L(theta,templogL,1);
           //cout << theta[0] << " " << theta[1] << " " << templogL[0] <<  " " << logLmin << endl;
           if(logLmin < templogL[0]){
@@ -121,5 +121,10 @@ int main(int argc, char *argv[])
     sampler.getlogZ(logzinfo,3);
     cout << "information: H=" << logzinfo[0] << "bits" <<endl;
     cout << "global evidence: logZ =" << logzinfo[1] << "+/-" << logzinfo[2] << endl;
+    
+    delete [] Alltheta;
+    delete [] logL;
+    delete [] theta; 
+    delete [] templogL;  
     return 0;
 }

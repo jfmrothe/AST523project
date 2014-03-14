@@ -17,7 +17,7 @@ class Samplers
 {
     private:
         int D_;
-	int N;
+	int N_;
         double Vtot;
         double e_;
 	double logZ; 
@@ -48,7 +48,7 @@ class Samplers
 	double getlogLmax(){return logLmax_;}
 	double getlogLmin(){return logLmin_;}
         int Recluster(double X_i, double qualthresh);
-        int getN() {return N;}
+        int getN() {return N_;}
         int countTotal();
         void getlogZ(double *logzinfo, int nz);
         void getPosterior(double * posterior, int nx, int ny, double * prob, int np);
