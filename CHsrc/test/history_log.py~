@@ -1,0 +1,19 @@
+import matplotlib
+from matplotlib import pyplot as plt
+import numpy as np
+
+
+logfile = open("log",'r')
+logdata = logfile.read()
+logfile.close()
+logdata = logdata.split("\n")
+lines=[]
+for line in logdata:
+    lines.append(line.split(" "))
+
+print lines[1:20]
+logZ=[]
+Niter=[]
+
+for line in lines:  
+    logZ.append(line[4])

@@ -1,0 +1,80 @@
+import matplotlib
+from matplotlib import pyplot as plt
+import numpy as np
+
+
+logfile = open("log",'r')
+logdata = logfile.read()
+logfile.close()
+logdata = logdata.split("\n")
+lines=[]
+for line in logdata:
+    lines.append(line.split(" "))
+
+#print lines[1:20]
+
+logZ=[]
+logZerr=[]
+Niter=[]
+Nrecl=[]
+Nlike=[]
+for line in lines:
+    if len(line)>1:
+        if line[0] == "global":
+            logZ.append(line[4])
+            logZerr.append(line[6])
+        if line[2] == "iterations":
+            Niter.append(line[5])
+        if line[2] == "reclusterings":
+            Nrecl.append(line[5])
+        if line[2] == "likelihood":
+            Nlike.append(line[6])
+
+logZ = np.array(logZ,float)
+logZerr = np.array(logZerr,float)
+Niter = np.array(Niter,int)
+Nrecl = np.array(Nrecl,int)
+Nlike = np.array(Nlike,int)
+
+cut = -6
+numres = -3.46044
+logZclean = []
+logZerrclean = []
+
+for i in range(len(logZ)):
+    if logZ[i] > cut:
+        logZclean.append(logZ[i])
+        logZerrclean.append(logZerr[i])
+
+fig = plt.figure()
+histogram = fig.add_subplot(231)
+plt.xlabel("resulting logZ")
+plt.hist(logZ)
+plt.vlines([cut,np.mean(logZclean),np.mean(logZclean)+np.std(logZclean),np.mean(logZclean)-np.std(logZclean)],0,50)
+plt.vlines(numres,0,50,color='r')
+#errors = fig.add_subplot(232)
+#plt.ylabel("individual results")
+#plt.errorbar(range(len(logZ)),logZ,logZerr, linestyle='None')
+#plt.hlines(numres,0,len(logZ),color='r')
+niterhist = fig.add_subplot(232)
+plt.hist(Niter)
+plt.xlabel("number of iterations")
+nreclhist = fig.add_subplot(233)
+plt.xlabel("number of reclusterings")
+plt.hist(Nrecl)
+niterlogzcorr = fig.add_subplot(234)
+plt.ylabel("logZ")
+plt.xlabel("number of iterations")
+plt.hlines(numres,np.min(Niter),np.max(Niter),color='r')
+plt.scatter(Niter,logZ)
+nrecllogzcorr = fig.add_subplot(235)
+plt.ylabel("logZ")
+plt.xlabel("number of reclusterings")
+plt.hlines(numres,np.min(Nrecl),np.max(Nrecl),color='r')
+plt.scatter(Nrecl,logZ)
+nlikelogzcorr = fig.add_subplot(236)
+plt.ylabel("logZ")
+plt.xlabel("number of L-evaluations")
+plt.hlines(numres,np.min(Nlike),np.max(Nlike),color='r')
+plt.scatter(Nlike,logZ)
+plt.show()

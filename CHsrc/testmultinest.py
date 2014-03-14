@@ -7,7 +7,8 @@ import sys
 sys.path.append("oblateTransit")
 #import transitmodel as model #module that call occultquad, and also hold the data
 #from lighthouse import lighthousemodel as Model #module that call occultquad, and also hold the data
-from eggbox import eggboxmodel as Model #module that call occultquad, and also hold the data
+#from eggbox import eggboxmodel as Model #module that call occultquad, and also hold the data
+from toygauss import toygaussmodel as Model
 #from gaussianshell import guaussianshellmodel as Model #module that call occultquad, and also hold the data
 #from occultquad import occultquad
 from Point import Point
@@ -17,7 +18,7 @@ import numpy as np
 import cmd_parse as cmdp
 import cfg_parse as cfgp
 def main():
-    model = Model('eggbox.cfg')
+    model = Model('toygauss.cfg')
     minvals,maxvals,e,Np = model.Getinitial()
     #print minvals,maxvals,e
     sampler = MNest(minvals,maxvals,e,Np, "uniform")
@@ -27,12 +28,13 @@ def main():
     nest = 0
     Flag = True
     NumRecluster = 0
+    NumLeval = Np
     Alltheta = np.zeros([model.D,int(Np)])
     theta = np.zeros(model.D)
     logL = np.zeros(Np)
     logLmax = 0.
     logLmin = 0.
-    THRESH  = 1.0e-5
+    THRESH  = 1.0e-7
     sampler.getAlltheta(Alltheta)
     model.Get_L(Alltheta.ravel(),logL,Np)
     sampler.SetAllPoint(logL) 
@@ -54,6 +56,7 @@ def main():
         while FlagSample:
             sampler.ResetWorstPoint(theta) 
             model.Get_L(theta,templogL,1)
+            NumLeval += 1
             #print theta, templogL,logLmin
             FlagSample=(logLmin > templogL[0])
         temp = templogL[0]
@@ -69,18 +72,25 @@ def main():
         #print 'after recluster'
         #NumRecluster+=1
         nest+=1 
+        if(nest%1000==0):
+            logzinfo = np.zeros(3)
+            sampler.getlogZ(logzinfo)
+            print "logZ after ",nest+Np," iterations: %f" % logzinfo[1]
         #print nest,X_i
         #Flag = False
         Flag = THRESH < abs(X_i*logLmax)
-    print NumRecluster
     #print 'before output'
     #output
     ntotal = sampler.countTotal()
-    print 1.0*ntotal/model.NL_   
+    print "number of iterations = ",ntotal
+    print "sampling efficiency = ",1.0*ntotal/NumLeval 
     posterior = np.zeros([model.D,ntotal])
     prob = np.zeros(ntotal)
     sampler.getPosterior(posterior,prob)
-    print posterior.shape
+    print "dimensions of posterior sampling = ",posterior.shape
+    print "number of likelihood evaluations = ",NumLeval
+    print "number of modellikelihood evaluations = ",model.NL_
+    print "number of reclusterings = ",NumRecluster
     logzinfo = np.zeros(3)
     sampler.getlogZ(logzinfo)
     model.Output(posterior.ravel(),prob)

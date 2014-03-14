@@ -1,0 +1,1987 @@
+number of iterations =  12514
+sampling efficiency =  0.961653730885
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  6744
+output to toygauss.tab
+information: H=0.008712 bits
+global evidence: logZ = 0.021009 +/- 0.002457
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.913630722056
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7016
+output to toygauss.tab
+information: H=0.017163 bits
+global evidence: logZ = 0.044983 +/- 0.003449
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.951852133567
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  5762
+output to toygauss.tab
+information: H=0.015615 bits
+global evidence: logZ = 0.040842 +/- 0.003290
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.950189825361
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7047
+output to toygauss.tab
+information: H=0.020628 bits
+global evidence: logZ = 0.049443 +/- 0.003781
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.913030789435
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7130
+output to toygauss.tab
+information: H=0.020607 bits
+global evidence: logZ = 0.048915 +/- 0.003779
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.960104342489
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  6290
+output to toygauss.tab
+information: H=0.015575 bits
+global evidence: logZ = 0.043015 +/- 0.003286
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.930339751691
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  6938
+output to toygauss.tab
+information: H=0.018482 bits
+global evidence: logZ = 0.041707 +/- 0.003579
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.966257431859
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8348
+output to toygauss.tab
+information: H=0.014992 bits
+global evidence: logZ = 0.036882 +/- 0.003224
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12510
+sampling efficiency =  0.938132733408
+dimensions of posterior sampling =  (2, 12510)
+number of reclusterings =  8349
+output to toygauss.tab
+information: H=0.013476 bits
+global evidence: logZ = 0.038204 +/- 0.003056
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12495
+sampling efficiency =  0.968754845713
+dimensions of posterior sampling =  (2, 12495)
+number of reclusterings =  7742
+output to toygauss.tab
+information: H=0.006537 bits
+global evidence: logZ = 0.018387 +/- 0.002129
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12513
+sampling efficiency =  0.955920550038
+dimensions of posterior sampling =  (2, 12513)
+number of reclusterings =  8294
+output to toygauss.tab
+information: H=0.012148 bits
+global evidence: logZ = 0.034496 +/- 0.002902
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.982723417622
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8894
+output to toygauss.tab
+information: H=0.011083 bits
+global evidence: logZ = 0.031429 +/- 0.002772
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12504
+sampling efficiency =  0.984489410283
+dimensions of posterior sampling =  (2, 12504)
+number of reclusterings =  5928
+output to toygauss.tab
+information: H=0.005324 bits
+global evidence: logZ = 0.016890 +/- 0.001921
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.929648614516
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  9024
+output to toygauss.tab
+information: H=0.017132 bits
+global evidence: logZ = 0.042515 +/- 0.003446
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12493
+sampling efficiency =  0.980843212687
+dimensions of posterior sampling =  (2, 12493)
+number of reclusterings =  7305
+output to toygauss.tab
+information: H=0.005927 bits
+global evidence: logZ = 0.017420 +/- 0.002027
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.955996944232
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  5213
+output to toygauss.tab
+information: H=0.014272 bits
+global evidence: logZ = 0.036930 +/- 0.003145
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.946524468648
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  6768
+output to toygauss.tab
+information: H=0.014895 bits
+global evidence: logZ = 0.041604 +/- 0.003213
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12512
+sampling efficiency =  0.973772277998
+dimensions of posterior sampling =  (2, 12512)
+number of reclusterings =  7842
+output to toygauss.tab
+information: H=0.013692 bits
+global evidence: logZ = 0.038783 +/- 0.003081
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.979646156255
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7435
+output to toygauss.tab
+information: H=0.007137 bits
+global evidence: logZ = 0.018956 +/- 0.002224
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.9778854419
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7773
+output to toygauss.tab
+information: H=0.012108 bits
+global evidence: logZ = 0.035995 +/- 0.002897
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.964470134875
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  9814
+output to toygauss.tab
+information: H=0.020227 bits
+global evidence: logZ = 0.048072 +/- 0.003744
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.971961165049
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8209
+output to toygauss.tab
+information: H=0.013508 bits
+global evidence: logZ = 0.035415 +/- 0.003060
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.953883680159
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  9621
+output to toygauss.tab
+information: H=0.017027 bits
+global evidence: logZ = 0.040689 +/- 0.003435
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12511
+sampling efficiency =  0.969018666254
+dimensions of posterior sampling =  (2, 12511)
+number of reclusterings =  8156
+output to toygauss.tab
+information: H=0.009903 bits
+global evidence: logZ = 0.031167 +/- 0.002620
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.959221217231
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7770
+output to toygauss.tab
+information: H=0.017029 bits
+global evidence: logZ = 0.041924 +/- 0.003436
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.932280414214
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8675
+output to toygauss.tab
+information: H=0.018009 bits
+global evidence: logZ = 0.044370 +/- 0.003533
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.942603193733
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7110
+output to toygauss.tab
+information: H=0.015433 bits
+global evidence: logZ = 0.041094 +/- 0.003271
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.964247187548
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  10867
+output to toygauss.tab
+information: H=0.016304 bits
+global evidence: logZ = 0.040555 +/- 0.003362
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.968725808949
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7630
+output to toygauss.tab
+information: H=0.012257 bits
+global evidence: logZ = 0.037720 +/- 0.002915
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.9788032851
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7466
+output to toygauss.tab
+information: H=0.010281 bits
+global evidence: logZ = 0.030041 +/- 0.002669
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.964470134875
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  5594
+output to toygauss.tab
+information: H=0.005525 bits
+global evidence: logZ = 0.016264 +/- 0.001957
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.954538520214
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8201
+output to toygauss.tab
+information: H=0.010966 bits
+global evidence: logZ = 0.034080 +/- 0.002757
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.966033657558
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8870
+output to toygauss.tab
+information: H=0.016176 bits
+global evidence: logZ = 0.041794 +/- 0.003348
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.964024343271
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  6463
+output to toygauss.tab
+information: H=0.015018 bits
+global evidence: logZ = 0.036110 +/- 0.003226
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.980644150145
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7091
+output to toygauss.tab
+information: H=0.010857 bits
+global evidence: logZ = 0.032093 +/- 0.002743
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.982569095477
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  10984
+output to toygauss.tab
+information: H=0.016491 bits
+global evidence: logZ = 0.041994 +/- 0.003381
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.973624834669
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  6569
+output to toygauss.tab
+information: H=0.006836 bits
+global evidence: logZ = 0.018534 +/- 0.002177
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.933323389021
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8312
+output to toygauss.tab
+information: H=0.018027 bits
+global evidence: logZ = 0.043787 +/- 0.003535
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12488
+sampling efficiency =  0.989854153456
+dimensions of posterior sampling =  (2, 12488)
+number of reclusterings =  6310
+output to toygauss.tab
+information: H=0.004544 bits
+global evidence: logZ = 0.014919 +/- 0.001775
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.934229189996
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  5999
+output to toygauss.tab
+information: H=0.015023 bits
+global evidence: logZ = 0.040114 +/- 0.003227
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.947312641938
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  10709
+output to toygauss.tab
+information: H=0.019704 bits
+global evidence: logZ = 0.048639 +/- 0.003696
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.936816888756
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  6421
+output to toygauss.tab
+information: H=0.018423 bits
+global evidence: logZ = 0.044422 +/- 0.003574
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.941185318893
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  6766
+output to toygauss.tab
+information: H=0.016270 bits
+global evidence: logZ = 0.041346 +/- 0.003358
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.985431923774
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8450
+output to toygauss.tab
+information: H=0.011036 bits
+global evidence: logZ = 0.033763 +/- 0.002766
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.946309739867
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8596
+output to toygauss.tab
+information: H=0.017227 bits
+global evidence: logZ = 0.041870 +/- 0.003456
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.959515411747
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  6821
+output to toygauss.tab
+information: H=0.019531 bits
+global evidence: logZ = 0.048949 +/- 0.003679
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.98636399464
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7218
+output to toygauss.tab
+information: H=0.007540 bits
+global evidence: logZ = 0.019118 +/- 0.002286
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.962689437649
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  6443
+output to toygauss.tab
+information: H=0.017441 bits
+global evidence: logZ = 0.042471 +/- 0.003477
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.91664225022
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8035
+output to toygauss.tab
+information: H=0.016953 bits
+global evidence: logZ = 0.044539 +/- 0.003428
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.951707354171
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8663
+output to toygauss.tab
+information: H=0.017710 bits
+global evidence: logZ = 0.045199 +/- 0.003504
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.948102128949
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8441
+output to toygauss.tab
+information: H=0.016362 bits
+global evidence: logZ = 0.041613 +/- 0.003368
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.941681089623
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  9608
+output to toygauss.tab
+information: H=0.018571 bits
+global evidence: logZ = 0.045673 +/- 0.003588
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.937588971304
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7321
+output to toygauss.tab
+information: H=0.014468 bits
+global evidence: logZ = 0.042958 +/- 0.003167
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.929994054697
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  6417
+output to toygauss.tab
+information: H=0.015611 bits
+global evidence: logZ = 0.039025 +/- 0.003289
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.966033657558
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  6316
+output to toygauss.tab
+information: H=0.011668 bits
+global evidence: logZ = 0.031604 +/- 0.002844
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12512
+sampling efficiency =  0.966998995286
+dimensions of posterior sampling =  (2, 12512)
+number of reclusterings =  5583
+output to toygauss.tab
+information: H=0.005641 bits
+global evidence: logZ = 0.017268 +/- 0.001977
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.973852140078
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7243
+output to toygauss.tab
+information: H=0.010421 bits
+global evidence: logZ = 0.028771 +/- 0.002688
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.909910564968
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7518
+output to toygauss.tab
+information: H=0.014308 bits
+global evidence: logZ = 0.038096 +/- 0.003149
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12513
+sampling efficiency =  0.970075199628
+dimensions of posterior sampling =  (2, 12513)
+number of reclusterings =  8199
+output to toygauss.tab
+information: H=0.010686 bits
+global evidence: logZ = 0.032413 +/- 0.002722
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.921027452712
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7193
+output to toygauss.tab
+information: H=0.007445 bits
+global evidence: logZ = 0.021284 +/- 0.002272
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.981644179479
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7534
+output to toygauss.tab
+information: H=0.013690 bits
+global evidence: logZ = 0.035508 +/- 0.003080
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.97552229498
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7615
+output to toygauss.tab
+information: H=0.008780 bits
+global evidence: logZ = 0.021134 +/- 0.002467
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.962467312721
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7976
+output to toygauss.tab
+information: H=0.012774 bits
+global evidence: logZ = 0.035379 +/- 0.002976
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.935766095865
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8993
+output to toygauss.tab
+information: H=0.014373 bits
+global evidence: logZ = 0.034124 +/- 0.003156
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.973700591348
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8152
+output to toygauss.tab
+information: H=0.007270 bits
+global evidence: logZ = 0.019639 +/- 0.002245
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.961653730885
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  9039
+output to toygauss.tab
+information: H=0.016344 bits
+global evidence: logZ = 0.041309 +/- 0.003366
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.967153566736
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8527
+output to toygauss.tab
+information: H=0.019654 bits
+global evidence: logZ = 0.049086 +/- 0.003691
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.951345598297
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  10267
+output to toygauss.tab
+information: H=0.016617 bits
+global evidence: logZ = 0.042137 +/- 0.003394
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.95753309358
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7420
+output to toygauss.tab
+information: H=0.012008 bits
+global evidence: logZ = 0.030422 +/- 0.002885
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.953665599756
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  6518
+output to toygauss.tab
+information: H=0.013203 bits
+global evidence: logZ = 0.035153 +/- 0.003025
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.949324836899
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  4985
+output to toygauss.tab
+information: H=0.014875 bits
+global evidence: logZ = 0.039303 +/- 0.003211
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12513
+sampling efficiency =  0.935062023614
+dimensions of posterior sampling =  (2, 12513)
+number of reclusterings =  6877
+output to toygauss.tab
+information: H=0.012968 bits
+global evidence: logZ = 0.038431 +/- 0.002998
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.906154960174
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  9873
+output to toygauss.tab
+information: H=0.022254 bits
+global evidence: logZ = 0.050779 +/- 0.003928
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12513
+sampling efficiency =  0.951848471018
+dimensions of posterior sampling =  (2, 12513)
+number of reclusterings =  7559
+output to toygauss.tab
+information: H=0.014299 bits
+global evidence: logZ = 0.039938 +/- 0.003148
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12508
+sampling efficiency =  0.983487969807
+dimensions of posterior sampling =  (2, 12508)
+number of reclusterings =  7169
+output to toygauss.tab
+information: H=0.005621 bits
+global evidence: logZ = 0.016840 +/- 0.001974
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.948173965752
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8564
+output to toygauss.tab
+information: H=0.015148 bits
+global evidence: logZ = 0.038211 +/- 0.003240
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.970227942317
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  6943
+output to toygauss.tab
+information: H=0.017742 bits
+global evidence: logZ = 0.047176 +/- 0.003507
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.966555958909
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7377
+output to toygauss.tab
+information: H=0.010809 bits
+global evidence: logZ = 0.027878 +/- 0.002737
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.942035531466
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8270
+output to toygauss.tab
+information: H=0.017089 bits
+global evidence: logZ = 0.042070 +/- 0.003442
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12502
+sampling efficiency =  0.968696730203
+dimensions of posterior sampling =  (2, 12502)
+number of reclusterings =  9000
+output to toygauss.tab
+information: H=0.007604 bits
+global evidence: logZ = 0.019236 +/- 0.002296
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.981490196078
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8792
+output to toygauss.tab
+information: H=0.014668 bits
+global evidence: logZ = 0.037091 +/- 0.003189
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.960251688152
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  6887
+output to toygauss.tab
+information: H=0.017730 bits
+global evidence: logZ = 0.047322 +/- 0.003506
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.953084539223
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8638
+output to toygauss.tab
+information: H=0.020322 bits
+global evidence: logZ = 0.045322 +/- 0.003753
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.973321925799
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  6688
+output to toygauss.tab
+information: H=0.013312 bits
+global evidence: logZ = 0.037538 +/- 0.003038
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12509
+sampling efficiency =  0.984340572867
+dimensions of posterior sampling =  (2, 12509)
+number of reclusterings =  7413
+output to toygauss.tab
+information: H=0.004380 bits
+global evidence: logZ = 0.014452 +/- 0.001742
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.970227942317
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  6958
+output to toygauss.tab
+information: H=0.015650 bits
+global evidence: logZ = 0.041738 +/- 0.003294
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.962615384615
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  9245
+output to toygauss.tab
+information: H=0.017336 bits
+global evidence: logZ = 0.043671 +/- 0.003467
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.942319277108
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7017
+output to toygauss.tab
+information: H=0.015758 bits
+global evidence: logZ = 0.041611 +/- 0.003305
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12512
+sampling efficiency =  0.964315992293
+dimensions of posterior sampling =  (2, 12512)
+number of reclusterings =  8848
+output to toygauss.tab
+information: H=0.012684 bits
+global evidence: logZ = 0.038912 +/- 0.002965
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.940336639615
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  5433
+output to toygauss.tab
+information: H=0.013430 bits
+global evidence: logZ = 0.035884 +/- 0.003051
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12513
+sampling efficiency =  0.972261072261
+dimensions of posterior sampling =  (2, 12513)
+number of reclusterings =  8779
+output to toygauss.tab
+information: H=0.011398 bits
+global evidence: logZ = 0.032559 +/- 0.002811
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.974686502064
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7065
+output to toygauss.tab
+information: H=0.011196 bits
+global evidence: logZ = 0.033509 +/- 0.002786
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.962689437649
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7677
+output to toygauss.tab
+information: H=0.008447 bits
+global evidence: logZ = 0.026790 +/- 0.002420
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.974838357872
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  9197
+output to toygauss.tab
+information: H=0.017846 bits
+global evidence: logZ = 0.043261 +/- 0.003517
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.967452647855
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  9006
+output to toygauss.tab
+information: H=0.019581 bits
+global evidence: logZ = 0.046170 +/- 0.003684
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.953883680159
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  6789
+output to toygauss.tab
+information: H=0.016274 bits
+global evidence: logZ = 0.041928 +/- 0.003359
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.956362246848
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8086
+output to toygauss.tab
+information: H=0.020242 bits
+global evidence: logZ = 0.047209 +/- 0.003746
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.940054086538
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8381
+output to toygauss.tab
+information: H=0.021263 bits
+global evidence: logZ = 0.053238 +/- 0.003839
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.974307069449
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8141
+output to toygauss.tab
+information: H=0.007305 bits
+global evidence: logZ = 0.018912 +/- 0.002250
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12506
+sampling efficiency =  0.963705016568
+dimensions of posterior sampling =  (2, 12506)
+number of reclusterings =  6410
+output to toygauss.tab
+information: H=0.007294 bits
+global evidence: logZ = 0.020187 +/- 0.002248
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.942106451856
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7660
+output to toygauss.tab
+information: H=0.012970 bits
+global evidence: logZ = 0.031643 +/- 0.002998
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.943455971049
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7875
+output to toygauss.tab
+information: H=0.019026 bits
+global evidence: logZ = 0.047094 +/- 0.003631
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.977732635362
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  10638
+output to toygauss.tab
+information: H=0.015937 bits
+global evidence: logZ = 0.040536 +/- 0.003324
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.974307069449
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7356
+output to toygauss.tab
+information: H=0.014229 bits
+global evidence: logZ = 0.037756 +/- 0.003141
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.952794274402
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7410
+output to toygauss.tab
+information: H=0.019548 bits
+global evidence: logZ = 0.049025 +/- 0.003681
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.97181020424
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7566
+output to toygauss.tab
+information: H=0.018745 bits
+global evidence: logZ = 0.047964 +/- 0.003605
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.966705291618
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8166
+output to toygauss.tab
+information: H=0.016891 bits
+global evidence: logZ = 0.042355 +/- 0.003422
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.938573464337
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7548
+output to toygauss.tab
+information: H=0.015904 bits
+global evidence: logZ = 0.039450 +/- 0.003320
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.92463425447
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  9682
+output to toygauss.tab
+information: H=0.017732 bits
+global evidence: logZ = 0.041672 +/- 0.003506
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.948820987186
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7770
+output to toygauss.tab
+information: H=0.018802 bits
+global evidence: logZ = 0.046580 +/- 0.003610
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12513
+sampling efficiency =  0.977501757675
+dimensions of posterior sampling =  (2, 12513)
+number of reclusterings =  6628
+output to toygauss.tab
+information: H=0.005572 bits
+global evidence: logZ = 0.016941 +/- 0.001965
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.9618754804
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  9322
+output to toygauss.tab
+information: H=0.014577 bits
+global evidence: logZ = 0.037208 +/- 0.003179
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.97218769422
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7750
+output to toygauss.tab
+information: H=0.007747 bits
+global evidence: logZ = 0.022967 +/- 0.002317
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.945166163142
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7196
+output to toygauss.tab
+information: H=0.013849 bits
+global evidence: logZ = 0.038371 +/- 0.003098
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.954101860323
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  10525
+output to toygauss.tab
+information: H=0.019260 bits
+global evidence: logZ = 0.044348 +/- 0.003654
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.954174609226
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8987
+output to toygauss.tab
+information: H=0.017065 bits
+global evidence: logZ = 0.042049 +/- 0.003439
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.973624834669
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7625
+output to toygauss.tab
+information: H=0.011641 bits
+global evidence: logZ = 0.032644 +/- 0.002841
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.959441846201
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7907
+output to toygauss.tab
+information: H=0.016092 bits
+global evidence: logZ = 0.037548 +/- 0.003340
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.895392100744
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8834
+output to toygauss.tab
+information: H=0.017694 bits
+global evidence: logZ = 0.045049 +/- 0.003502
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.96113671275
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7256
+output to toygauss.tab
+information: H=0.006730 bits
+global evidence: logZ = 0.018609 +/- 0.002160
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.943598250641
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8256
+output to toygauss.tab
+information: H=0.016885 bits
+global evidence: logZ = 0.039239 +/- 0.003421
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.963875837634
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  6766
+output to toygauss.tab
+information: H=0.015682 bits
+global evidence: logZ = 0.039078 +/- 0.003297
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12505
+sampling efficiency =  0.972621918021
+dimensions of posterior sampling =  (2, 12505)
+number of reclusterings =  6252
+output to toygauss.tab
+information: H=0.006607 bits
+global evidence: logZ = 0.018335 +/- 0.002140
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.938573464337
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8235
+output to toygauss.tab
+information: H=0.020239 bits
+global evidence: logZ = 0.046863 +/- 0.003745
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.949324836899
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7975
+output to toygauss.tab
+information: H=0.016214 bits
+global evidence: logZ = 0.040708 +/- 0.003352
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.930754927482
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7829
+output to toygauss.tab
+information: H=0.015767 bits
+global evidence: logZ = 0.036710 +/- 0.003306
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.941893722716
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8848
+output to toygauss.tab
+information: H=0.019723 bits
+global evidence: logZ = 0.046867 +/- 0.003697
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.940831516427
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  10678
+output to toygauss.tab
+information: H=0.017954 bits
+global evidence: logZ = 0.042175 +/- 0.003528
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12513
+sampling efficiency =  0.950546946217
+dimensions of posterior sampling =  (2, 12513)
+number of reclusterings =  7492
+output to toygauss.tab
+information: H=0.011006 bits
+global evidence: logZ = 0.031795 +/- 0.002762
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.922045387563
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  5928
+output to toygauss.tab
+information: H=0.013562 bits
+global evidence: logZ = 0.036814 +/- 0.003066
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.962171305551
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7891
+output to toygauss.tab
+information: H=0.016116 bits
+global evidence: logZ = 0.040982 +/- 0.003342
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.96506516542
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8234
+output to toygauss.tab
+information: H=0.019966 bits
+global evidence: logZ = 0.047452 +/- 0.003720
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12500
+sampling efficiency =  0.968016727329
+dimensions of posterior sampling =  (2, 12500)
+number of reclusterings =  8164
+output to toygauss.tab
+information: H=0.008013 bits
+global evidence: logZ = 0.021539 +/- 0.002357
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12506
+sampling efficiency =  0.977795152463
+dimensions of posterior sampling =  (2, 12506)
+number of reclusterings =  6791
+output to toygauss.tab
+information: H=0.005986 bits
+global evidence: logZ = 0.017588 +/- 0.002037
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.963727377744
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7797
+output to toygauss.tab
+information: H=0.019916 bits
+global evidence: logZ = 0.043964 +/- 0.003715
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.941751956653
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  10058
+output to toygauss.tab
+information: H=0.018406 bits
+global evidence: logZ = 0.044607 +/- 0.003572
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.913497335572
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  6283
+output to toygauss.tab
+information: H=0.015843 bits
+global evidence: logZ = 0.040455 +/- 0.003314
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.970152725017
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  9553
+output to toygauss.tab
+information: H=0.018991 bits
+global evidence: logZ = 0.046900 +/- 0.003628
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.944524115028
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8964
+output to toygauss.tab
+information: H=0.020980 bits
+global evidence: logZ = 0.049555 +/- 0.003813
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.911634005974
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7336
+output to toygauss.tab
+information: H=0.010729 bits
+global evidence: logZ = 0.031676 +/- 0.002727
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12484
+sampling efficiency =  0.995534290271
+dimensions of posterior sampling =  (2, 12484)
+number of reclusterings =  7494
+output to toygauss.tab
+information: H=0.004698 bits
+global evidence: logZ = 0.016464 +/- 0.001805
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.942887281495
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7618
+output to toygauss.tab
+information: H=0.017206 bits
+global evidence: logZ = 0.042442 +/- 0.003453
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.939277940404
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7771
+output to toygauss.tab
+information: H=0.010117 bits
+global evidence: logZ = 0.032346 +/- 0.002648
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.914097881665
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  9379
+output to toygauss.tab
+information: H=0.014148 bits
+global evidence: logZ = 0.034917 +/- 0.003132
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12512
+sampling efficiency =  0.971956808825
+dimensions of posterior sampling =  (2, 12512)
+number of reclusterings =  6331
+output to toygauss.tab
+information: H=0.007926 bits
+global evidence: logZ = 0.020376 +/- 0.002344
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.933184190902
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7358
+output to toygauss.tab
+information: H=0.015505 bits
+global evidence: logZ = 0.040217 +/- 0.003278
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.943242632095
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8854
+output to toygauss.tab
+information: H=0.017523 bits
+global evidence: logZ = 0.043086 +/- 0.003485
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.953229737965
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8079
+output to toygauss.tab
+information: H=0.022085 bits
+global evidence: logZ = 0.048691 +/- 0.003913
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.960989095377
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8145
+output to toygauss.tab
+information: H=0.014623 bits
+global evidence: logZ = 0.036796 +/- 0.003184
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12513
+sampling efficiency =  0.985896627797
+dimensions of posterior sampling =  (2, 12513)
+number of reclusterings =  8375
+output to toygauss.tab
+information: H=0.007655 bits
+global evidence: logZ = 0.020130 +/- 0.002304
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.978879849812
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8444
+output to toygauss.tab
+information: H=0.016611 bits
+global evidence: logZ = 0.038179 +/- 0.003393
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12511
+sampling efficiency =  0.94230624388
+dimensions of posterior sampling =  (2, 12511)
+number of reclusterings =  8066
+output to toygauss.tab
+information: H=0.012232 bits
+global evidence: logZ = 0.033248 +/- 0.002912
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.954465715811
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8389
+output to toygauss.tab
+information: H=0.022893 bits
+global evidence: logZ = 0.053095 +/- 0.003984
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.952141824545
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  6244
+output to toygauss.tab
+information: H=0.017853 bits
+global evidence: logZ = 0.044453 +/- 0.003518
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.968500890024
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  9173
+output to toygauss.tab
+information: H=0.017221 bits
+global evidence: logZ = 0.043710 +/- 0.003455
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.931170473994
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8560
+output to toygauss.tab
+information: H=0.014315 bits
+global evidence: logZ = 0.036776 +/- 0.003150
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12491
+sampling efficiency =  0.975783141942
+dimensions of posterior sampling =  (2, 12491)
+number of reclusterings =  7475
+output to toygauss.tab
+information: H=0.004874 bits
+global evidence: logZ = 0.016038 +/- 0.001838
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.9441677984
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7106
+output to toygauss.tab
+information: H=0.016297 bits
+global evidence: logZ = 0.043163 +/- 0.003361
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.943527105481
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7892
+output to toygauss.tab
+information: H=0.016555 bits
+global evidence: logZ = 0.038559 +/- 0.003387
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.935206636275
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  6850
+output to toygauss.tab
+information: H=0.019271 bits
+global evidence: logZ = 0.047734 +/- 0.003655
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12513
+sampling efficiency =  0.948241891482
+dimensions of posterior sampling =  (2, 12513)
+number of reclusterings =  6687
+output to toygauss.tab
+information: H=0.015555 bits
+global evidence: logZ = 0.041092 +/- 0.003284
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.960841523342
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7765
+output to toygauss.tab
+information: H=0.015339 bits
+global evidence: logZ = 0.041467 +/- 0.003261
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.978267667292
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7615
+output to toygauss.tab
+information: H=0.016613 bits
+global evidence: logZ = 0.042097 +/- 0.003393
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.949252825609
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8146
+output to toygauss.tab
+information: H=0.017957 bits
+global evidence: logZ = 0.046830 +/- 0.003528
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.95250418633
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7462
+output to toygauss.tab
+information: H=0.016567 bits
+global evidence: logZ = 0.044461 +/- 0.003389
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.977350827866
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8083
+output to toygauss.tab
+information: H=0.005767 bits
+global evidence: logZ = 0.016507 +/- 0.001999
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.956727828746
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  6578
+output to toygauss.tab
+information: H=0.014179 bits
+global evidence: logZ = 0.034631 +/- 0.003135
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.957752946579
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8538
+output to toygauss.tab
+information: H=0.012659 bits
+global evidence: logZ = 0.036142 +/- 0.002962
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12512
+sampling efficiency =  0.973923873278
+dimensions of posterior sampling =  (2, 12512)
+number of reclusterings =  6149
+output to toygauss.tab
+information: H=0.005449 bits
+global evidence: logZ = 0.015773 +/- 0.001943
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12513
+sampling efficiency =  0.959806703996
+dimensions of posterior sampling =  (2, 12513)
+number of reclusterings =  7647
+output to toygauss.tab
+information: H=0.013684 bits
+global evidence: logZ = 0.038408 +/- 0.003080
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12505
+sampling efficiency =  0.984955891619
+dimensions of posterior sampling =  (2, 12505)
+number of reclusterings =  7489
+output to toygauss.tab
+information: H=0.005342 bits
+global evidence: logZ = 0.015388 +/- 0.001924
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.947025881641
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8884
+output to toygauss.tab
+information: H=0.011815 bits
+global evidence: logZ = 0.033134 +/- 0.002862
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.962097332206
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8781
+output to toygauss.tab
+information: H=0.022327 bits
+global evidence: logZ = 0.052920 +/- 0.003934
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.943100459718
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  4644
+output to toygauss.tab
+information: H=0.018712 bits
+global evidence: logZ = 0.043699 +/- 0.003601
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.941326914397
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7032
+output to toygauss.tab
+information: H=0.011533 bits
+global evidence: logZ = 0.031578 +/- 0.002827
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.968051365359
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  11477
+output to toygauss.tab
+information: H=0.018152 bits
+global evidence: logZ = 0.044382 +/- 0.003547
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.966033657558
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  6314
+output to toygauss.tab
+information: H=0.011570 bits
+global evidence: logZ = 0.031879 +/- 0.002832
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.943598250641
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8402
+output to toygauss.tab
+information: H=0.015768 bits
+global evidence: logZ = 0.039896 +/- 0.003306
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.957679651029
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8478
+output to toygauss.tab
+information: H=0.016950 bits
+global evidence: logZ = 0.043403 +/- 0.003428
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.953084539223
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7891
+output to toygauss.tab
+information: H=0.020049 bits
+global evidence: logZ = 0.050264 +/- 0.003728
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.967826759474
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8179
+output to toygauss.tab
+information: H=0.017829 bits
+global evidence: logZ = 0.042792 +/- 0.003515
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.953447619048
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8459
+output to toygauss.tab
+information: H=0.010849 bits
+global evidence: logZ = 0.031786 +/- 0.002742
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.962467312721
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8080
+output to toygauss.tab
+information: H=0.016009 bits
+global evidence: logZ = 0.040890 +/- 0.003331
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.964470134875
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8248
+output to toygauss.tab
+information: H=0.011532 bits
+global evidence: logZ = 0.034246 +/- 0.002827
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.913564023945
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8596
+output to toygauss.tab
+information: H=0.016570 bits
+global evidence: logZ = 0.040864 +/- 0.003389
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.968575851393
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8403
+output to toygauss.tab
+information: H=0.018410 bits
+global evidence: logZ = 0.045596 +/- 0.003572
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12507
+sampling efficiency =  0.98426064374
+dimensions of posterior sampling =  (2, 12507)
+number of reclusterings =  7932
+output to toygauss.tab
+information: H=0.005825 bits
+global evidence: logZ = 0.016098 +/- 0.002009
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12487
+sampling efficiency =  0.990717232625
+dimensions of posterior sampling =  (2, 12487)
+number of reclusterings =  6792
+output to toygauss.tab
+information: H=0.005946 bits
+global evidence: logZ = 0.017184 +/- 0.002030
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.929855847823
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  6919
+output to toygauss.tab
+information: H=0.016358 bits
+global evidence: logZ = 0.038265 +/- 0.003367
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.985044080605
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  10179
+output to toygauss.tab
+information: H=0.017380 bits
+global evidence: logZ = 0.041492 +/- 0.003471
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12509
+sampling efficiency =  0.964010480888
+dimensions of posterior sampling =  (2, 12509)
+number of reclusterings =  6044
+output to toygauss.tab
+information: H=0.005262 bits
+global evidence: logZ = 0.016345 +/- 0.001910
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.953447619048
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  8776
+output to toygauss.tab
+information: H=0.018450 bits
+global evidence: logZ = 0.047594 +/- 0.003576
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.941114537114
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7356
+output to toygauss.tab
+information: H=0.012348 bits
+global evidence: logZ = 0.036104 +/- 0.002926
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.986441746808
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7606
+output to toygauss.tab
+information: H=0.005362 bits
+global evidence: logZ = 0.015954 +/- 0.001928
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.965288491206
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  9199
+output to toygauss.tab
+information: H=0.014437 bits
+global evidence: logZ = 0.038626 +/- 0.003163
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.930962654367
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  7072
+output to toygauss.tab
+information: H=0.012355 bits
+global evidence: logZ = 0.034545 +/- 0.002926
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12513
+sampling efficiency =  0.919938244376
+dimensions of posterior sampling =  (2, 12513)
+number of reclusterings =  7296
+output to toygauss.tab
+information: H=0.013343 bits
+global evidence: logZ = 0.036929 +/- 0.003041
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12512
+sampling efficiency =  0.987763479908
+dimensions of posterior sampling =  (2, 12512)
+number of reclusterings =  8636
+output to toygauss.tab
+information: H=0.010425 bits
+global evidence: logZ = 0.031576 +/- 0.002688
+creating 1000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  12514
+sampling efficiency =  0.962171305551
+dimensions of posterior sampling =  (2, 12514)
+number of reclusterings =  9413
+output to toygauss.tab
+information: H=0.018671 bits
+global evidence: logZ = 0.045376 +/- 0.003597

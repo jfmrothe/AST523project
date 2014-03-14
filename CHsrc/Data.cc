@@ -63,7 +63,7 @@ void Data::Get_L(double *theta, double *logLarr, int nl)
       else if (data_filename == "eggbox") // egg-box likelihood
       {
           double x = 1.0;
-          for(int j = 0; j < D; j++) {x *= (cos(theta[D*i+j])/2.0);}
+          for(int j = 0; j < D; j++) {x *= cos(theta[D*i+j]/2.0);}
           logLarr[i]=pow(2.0 + x, 5.0);
 
       }
