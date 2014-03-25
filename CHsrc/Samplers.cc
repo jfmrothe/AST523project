@@ -1,5 +1,4 @@
 #include "Samplers.h"
-#include "Point.h"
 
 Samplers::Samplers(double* min_vals, int nmin, double* max_vals, int nmax, double eff, int Npts, string const& prior_types) {
   N_ = Npts;
@@ -11,21 +10,34 @@ Samplers::Samplers(double* min_vals, int nmin, double* max_vals, int nmax, doubl
   H = 0.0;
   newcoor_ = gsl_vector_alloc(D_);
 
-
-  srand(time(NULL));  // seed random number generator
-
+  srand(time(NULL));  
+  unsigned long long int seed = rand();
+  myrand.v=4101842887655102017LL;myrand.w=1;
+  myrand.v = seed^myrand.v; myrand.int64();
+  myrand.w = myrand.v; myrand.int64();                                                 
+//srand(time(NULL));  // seed random number generator
+  //Ran myrand(rand());        
   printf("creating %d active points\n",N_);
-  
+  //for (int i=0; i<1000; i++){
+  //printf("%d\n",myrand.int64()%10);
+  //} 
   // **** create N active points and set params
   //temporary vector, but pointers will be given to the first ellipsoid
   vector <Point *> pts(N_);
-  for(int j=0; j<N_; j++)
+  
+    for(int j=0; j<N_; j++)
     {
       pts[j] = new Point(D_); 
       pts[j]->set_params(prior_types, min_vals, max_vals);
-      pts[j]->hypercube_prior();
+      for (int i=0; i<D_;i++){
+      //pts[j]->set_u_single(i,randomsave[i+j*D_]); 
+      pts[j]->set_u_single(i,myrand.doub());
+      //printf("u=%f",pts[j]->get_u(i)); 
+      }
+      //pts[j]->hypercube_prior();
       pts[j]->transform_prior();
     }
+  //delete [] randomsave;
   // ******************************************
   Ellipsoid  firstEll = FindEnclosingEllipsoid(pts,D_); //I think this does not need L right now
   clustering.push_back(new Ellipsoid(D_, firstEll.getCenter(), firstEll.getCovMat(), firstEll.getEnlFac(), pts)); //new ellipsolid also doesn't need to know L
@@ -55,11 +67,18 @@ void Samplers::DrawSample()
     int RandEll;
     int NumEll = clustering.size();
     int n_e;
+    //srand(time(NULL));  
+    //Ran myrand(rand());        
     gsl_vector * tmp_coor = gsl_vector_alloc(D_);
     do 
     {
-        do RandEll= rand() % clustering.size();
-        while (clustering[RandEll]->getVol()/Vtot < UNIFORM);
+        //do RandEll= rand() % clustering.size();
+        //if(clustering.size()==1){
+	  //RandEll=0;
+	//} else{
+		do RandEll= myrand.int64() % (clustering.size());
+        	while (clustering[RandEll]->getVol()/Vtot < myrand.doub());
+	//}
 
         do clustering[RandEll]->SampleEllipsoid();
         while (!u_in_hypercube(clustering[RandEll]->get_newcoor(), D_));
@@ -73,7 +92,8 @@ void Samplers::DrawSample()
            if(clustering[i]->IsMember(tmp_coor)) {n_e++;}
         }
     }
-    while(1.0/n_e < UNIFORM);
+    //while(1.0/n_e < UNIFORM);
+    while(1.0/n_e < myrand.doub());
     
     gsl_vector_free(tmp_coor);
     ellnew_ = RandEll;
@@ -173,7 +193,7 @@ void Samplers::ResetWorstPoint(double *theta, int nt){
   worst->set_u(newcoor_);
   worst->transform_prior();
   worst->get_theta(theta,nt);
-  //printf("%d %f %f %f %f\n",ellnew_,gsl_vector_get(newcoor_,0),gsl_vector_get(newcoor_,1),theta[0],theta[1]);
+  //printf("reset,%d %f %f %f %f\n",ellnew_,gsl_vector_get(newcoor_,0),gsl_vector_get(newcoor_,1),theta[0],theta[1]);
   
   delete worst;
   //data_obj.logL(worst);
@@ -219,6 +239,7 @@ void Samplers::FullRecluster(double X_i)
   vector <Point *> empty;
   EllipsoidalPartitioning(empty, X_i);
   EraseFirst();
+  CalcVtot();
 
 }
 
@@ -256,6 +277,28 @@ int Samplers::Recluster(double X_i, double qualthresh){
 
 int Samplers::countTotal(){
   return discard_pts.size()+N_;
+}
+
+
+void Samplers::OutputClusters(){
+ double *theta = new double [D_]; 
+ Point * pt;
+ for(int i=0; i<clustering.size(); i++) {
+    for (int j=0;j<clustering[i]->ell_pts_.size(); j++){
+   
+    pt = clustering[i]->ell_pts_[j];
+    pt->get_theta(theta,D_);
+    for (int k=0;k<D_; k++){
+       printf("%f ",theta[k]);
+    }
+     printf("\n");
+    }
+  }
+  delete [] theta;
+
+ for(int i=0; i<clustering.size(); i++) {
+  clustering[i]->printout();
+ }
 }
 
 void Samplers::getPosterior(double * posterior, int nx, int ny, double *prob, int np) {
@@ -296,7 +339,6 @@ void Samplers::ClearCluster() {
   for(int i=1; i<clustering.size(); i++) {
     (*clustering[0]).fetchPoints(*clustering[i]);
   }
-
   while(clustering.size()>1) {
     clustering.pop_back();
   }
@@ -304,6 +346,7 @@ void Samplers::ClearCluster() {
 }
 
 void Samplers::EraseFirst() {
+  delete clustering[0];
   clustering.erase(clustering.begin());
 }
 
@@ -400,7 +443,7 @@ if( vol1+vol2<mainEll.getVol() or mainEll.getVol()>2*Xtot) {
                  EllipsoidalPartitioning(pts_group_1, X2);
     
                    }
-                     else{
+  else{
                          // allocate memory for mainEll and push it to the vector
                              clustering.push_back (new Ellipsoid(D_, mainEll.getCenter(), mainEll.getCovMat(), mainEll.getEnlFac(), pts));
                                } 
@@ -431,7 +474,7 @@ void Samplers::EllipsoidalRescaling(double Xi) {
 } 
     
 
-double dist(int D, Point *pt, gsl_vector * pos2)
+double Samplers::dist(int D, Point *pt, gsl_vector * pos2)
 {
   // returns 2-norm of difference between two given vectors
   double val=0;
@@ -441,7 +484,7 @@ double dist(int D, Point *pt, gsl_vector * pos2)
   return sqrt(val);
 }
 
-int KMeans(vector<Point *>& pts, int D, int k, int * grouping)
+int Samplers::KMeans(vector<Point *>& pts, int D, int k, int * grouping)
 {
  // Implementation of the K-means algorithm following MacKay, D. C. J., 2003,
  // Information Theory, Inference and Learning Algorithms, Cambridge University
@@ -461,9 +504,13 @@ int KMeans(vector<Point *>& pts, int D, int k, int * grouping)
   int nomemb[k];
   bool changed = true;
   int current = 0; 
+  //srand(time(NULL));  
+  //Ran myrand(rand());        
   // assign points randomly to groups
   for(i=0;i<N;i++){
-    grouping[i] = rand()%k;
+    //grouping[i] = rand()%k;
+    //grouping[i] = myrand.int64()%(k-1);
+    grouping[i] = myrand.int64()%(k);
   }
 
   while(changed){
@@ -507,7 +554,7 @@ int KMeans(vector<Point *>& pts, int D, int k, int * grouping)
   return 0;
 }
 
-Ellipsoid FindEnclosingEllipsoid(vector<Point *>& pts, int D)
+Ellipsoid Samplers::FindEnclosingEllipsoid(vector<Point *>& pts, int D)
 {
   // enclosing ellipsoid data for a given point cloud (N D-dimensional
   // coordinates), enlargement factor f is chosen so that all points are below
@@ -591,7 +638,7 @@ Ellipsoid FindEnclosingEllipsoid(vector<Point *>& pts, int D)
   return encl;
 }
 
-void SelectFromGrouping(vector<Point *>& pts, int D, int * grouping, int index, vector<Point *>& pts_subset) 
+void Samplers::SelectFromGrouping(vector<Point *>& pts, int D, int * grouping, int index, vector<Point *>& pts_subset) 
 {
   // copies the coor-vectors for which the grouping entry equals index into group, 
   // length of array group must be pre-arranged and all entries calloced
@@ -603,7 +650,7 @@ void SelectFromGrouping(vector<Point *>& pts, int D, int * grouping, int index, 
   }
 }
 
-bool u_in_hypercube(gsl_vector * newcoor, int D)
+bool Samplers::u_in_hypercube(gsl_vector * newcoor, int D)
 {
     double x_i;
 

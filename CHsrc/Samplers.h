@@ -3,20 +3,34 @@
 #include<string>
 //#include "Data.h"
 #include "Ellipsoid.h"
+#include "Point.h"
+#include <time.h>
 using namespace std;
 
-// **** Samplers Utilities 
-double dist(int, Point *, gsl_vector *);
-int KMeans(vector<Point *>&, int, int, int *);
-Ellipsoid FindEnclosingEllipsoid(vector<Point *>&, int);
-void SelectFromGrouping(vector<Point *>&, int, int *, int, vector<Point *>&);
-bool u_in_hypercube(gsl_vector *, int);
-// ****
+
 
 class Samplers
 {
     private:
-        int D_;
+        struct Ran{
+  	   unsigned long long int u,v,w;
+  	   //Ran(unsigned long long int j) : v(4101842887655102017LL),w(1){
+           //u = j^v; int64();
+           //w = v; int64();
+           //}
+           inline unsigned long long int int64() {
+           u = u*2862933555777941757LL + 7046029254386353087LL;
+           v ^=v >> 17; v^=v<<31; v^=v >>8;
+           w = 4294957665U*(w & 0xffffffff) + (w>>32);
+           unsigned long long int x = u^(u<<21); x^=x>>35; x^=x<<4;
+              return (x +v) ^w;
+           }
+           inline double doub(){return 5.42101086242752217E-20 * int64();}
+          inline unsigned int int32() {return (unsigned int) int64();}
+        };
+
+	Ran myrand;
+	int D_;
 	int N_;
         double Vtot;
         double e_;
@@ -27,6 +41,13 @@ class Samplers
         int ellworst_,ptworst_,ellnew_;
         vector<Ellipsoid *> clustering;
 	list<Point *> discard_pts;
+	// **** Samplers Utilities 
+	double dist(int, Point *, gsl_vector *);
+	int KMeans(vector<Point *>&, int, int, int *);
+	Ellipsoid FindEnclosingEllipsoid(vector<Point *>&, int);
+	void SelectFromGrouping(vector<Point *>&, int, int *, int, vector<Point *>&);
+	bool u_in_hypercube(gsl_vector *, int);
+
     public:
         //Samplers(int Dim, int Npts, vector<string> prior_types, vector<double> min_vals, vector<double> max_vals, double eff);
         Samplers(double* min_vals, int nmin,double *max_vals, int nmax, double eff, int Npts, string const& prior_types);
@@ -51,7 +72,8 @@ class Samplers
         int Recluster(double X_i, double qualthresh);
         int getN() {return N_;}
         int countTotal();
-        void getlogZ(double *logzinfo, int nz);
+        void OutputClusters();
+	void getlogZ(double *logzinfo, int nz);
         void getPosterior(double * posterior, int nx, int ny, double * prob, int np);
         void EllipsoidalRescaling(double Xi);
 

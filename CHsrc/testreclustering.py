@@ -47,6 +47,7 @@ def main():
     Debug = False
     count=0
     logzinfo = np.zeros(3)
+    count = 0
     while Flag:
 
         X_i = np.exp(-1.0*nest/(1.0*Np))
@@ -96,22 +97,22 @@ def main():
             sampler.getPosterior(posterior,prob)
             print posterior
             print prob
-        #if nest % FullReclusterPeriod == 0:
-        #    NumRecluster += 1
-        #    sampler.FullRecluster(X_i)
-        #else:
-        #    NumRecluster += sampler.Recluster(X_i,model.repartition)
-        #ellipsoidal partitioning 
-        if(nest==0 or sampler.ClusteringQuality(X_i) > model.repartition):
-            #count+=1
-            # recluster?
-            #if count==5:
-            #print 'before recluster'
+        if nest % FullReclusterPeriod == 0:
+            NumRecluster += 1
             sampler.FullRecluster(X_i)
-            #print 'after recluster'
-            NumRecluster+=1
-            #count=0
-            #sampler.EllipsoidalRescaling(X_i);
+        else:
+            NumRecluster += sampler.Recluster(X_i,model.repartition)
+        #ellipsoidal partitioning 
+        #if(nest==0 or sampler.ClusteringQuality(X_i) > model.repartition):
+        #    count+=1
+        #    # recluster?
+        #    if count==5:
+        #        print 'before recluster'
+        #        sampler.Recluster(X_i)
+        #        print 'after recluster'
+        #        NumRecluster+=1
+        #        count=0
+        #        #sampler.EllipsoidalRescaling(X_i);
 
         #    Flag1 = True
         #else:
@@ -127,78 +128,19 @@ def main():
         #print nest,X_i
         #Flag = False
         Flag = THRESH < abs(zold-logzinfo[1])
+        count +=1
+        if(count>2000):
+            for i in xrange(1000):
+                sampler.ResetWorstPoint(theta) 
+                model.Get_L(theta,templogL,1)
+                print theta[0],theta[1],templogL
+            break
         #Flag = THRESH < abs(X_i*logLmax)
     #print 'before output'
     #output
-    print "#",NumRecluster
-    ntotal = sampler.countTotal()
-    print "number of iterations = ",ntotal
-    print "sampling efficiency = ",1.0*ntotal/NumLeval 
-    posterior = np.zeros([model.D,ntotal])
-    prob = np.zeros(ntotal)
-    sampler.getPosterior(posterior,prob)
-    print "dimensions of posterior sampling = ",posterior.shape
-    print "number of likelihood evaluations = ",NumLeval
-    #print "number of modellikelihood evaluations = ",model.NL_
-    print "number of reclusterings = ",NumRecluster
-    logzinfo = np.zeros(3)
-    sampler.getlogZ(logzinfo)
-    model.Output(posterior.ravel(),prob)
-    print "#information: H=%f bits" % logzinfo[0]
-    print "#global evidence: logZ = %f +/- %f" % (logzinfo[1],logzinfo[2])
-    #os.system("tail -n %d multivar.tab >> temp9.txt" % model.Np_)
     return
-
-def simu():
-    for i in xrange(100):
-        main()
-    return
-
-def testL():
-    model = Model('example.cfg')
-    minvals,maxvals,e,Np = model.Getinitial()
-    x = 4.0*np.random.randn(10000)-(minvals[0]+maxvals[0])/2.
-    #x = 16.0*np.random.randn(10000)+(minvals[0]+maxvals[0])/2.
-    #y = 16.0*np.random.randn(10000)+(minvals[0]+maxvals[0])/2.
-    #x = 6.0*np.random.randn(10000)+(minvals[0]+maxvals[0])/2.
-    #y = 6.0*np.random.randn(10000)+(minvals[0]+maxvals[0])/2.
-    y = np.random.randn(10000)*4.0
-    #lighthouse
-    if(1):
-        indexa = y>0.5
-        indexb = y<1.5
-        indexc = x>-2
-        indexd = x<2
-    #eggbox
-    if(0):
-        indexa = y>0
-        indexb = y<31.415
-        indexc = x>0
-        indexd = x<31.415
-    if(0):
-        indexa = y>-6
-        indexb = y<6
-        indexc = x>-6
-        indexd = x<6
-
-    y = y[indexa*indexb*indexc*indexd]
-    x = x [indexa*indexb*indexc*indexd]
-    logL = np.zeros(len(y))
-    theta = np.vstack((x,y)).ravel(order='F')
-    #print theta.shape
-    #.ravel()
-    #print theta[0],theta[1],x[0],y[0]
-    #return
-    #print theta.shape
-    #print x
-    #return
-    model.Get_L(theta,logL,len(y))
-    for i in xrange(len(y)):
-        print x[i],y[i],logL[i]
 
 
 if __name__=='__main__':
-    simu()
-    #main()
-    #testL()
+    main()
     
