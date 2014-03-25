@@ -103,7 +103,10 @@ int main(int argc, char *argv[])
         double temp = templogL[0];
         sampler.ResetWorstPointLogL(temp);
         // **************** ellipsoidal partitioning 
-	NumRecluster += sampler.Recluster(X_i,RepartitionFactor);
+
+	//	NumRecluster += sampler.Recluster(X_i,RepartitionFactor);
+	NumRecluster++;
+	sampler.FullRecluster(X_i);
         // *********************************************
 	nest++;
     }

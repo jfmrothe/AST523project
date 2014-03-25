@@ -1,22 +1,5 @@
 #include "Ellipsoid.h"
 
-float boxmuller()
-{
-  //returns univariate, zero-mean gaussian sample
-  float u1 = UNIFORM;
-  float u2 = UNIFORM;
-  while( u1 == 0.0 ){
-    u1 = UNIFORM;
-  }
-  return sqrt(-2.0*log(u1))*cos(2*M_PI*u2);
-}
-
-float quadr()
-{
-  //returns sample from quadratic distribution between 0 and 1
-  return pow(UNIFORM,1.0/3.0);
-}
-
 void unisphere(float * coor, int D)
 {
   //returns pseudorandom number uniformly distributed in D-sphere (r=1)
@@ -24,11 +7,14 @@ void unisphere(float * coor, int D)
   float sample[D];
   float r=0;
   for(i=0;i<D;i++){
-    sample[i] = boxmuller();
+    float u1 = UNIFORM;
+    float u2 = UNIFORM;
+    while( u1 == 0.0 ){ u1 = UNIFORM; }
+    sample[i] = sqrt(-2.0*log(u1))*cos(2*M_PI*u2);
     r+=pow(sample[i],2);
   }
   r=sqrt(r);
-  r/=quadr();
+  r/= pow(UNIFORM,1.0/D);
   for(i=0;i<D;i++){
     coor[i] = sample[i]/r;
   }

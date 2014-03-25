@@ -13,9 +13,6 @@
 #include <gsl/gsl_linalg.h>
 #include "Point.h"
 
-
-float boxmuller();
-float quadr();
 void unisphere(float *, int);
 
 class Ellipsoid {
