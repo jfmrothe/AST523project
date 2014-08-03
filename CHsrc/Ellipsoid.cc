@@ -1,21 +1,25 @@
 #include "Ellipsoid.h"
 
-float boxmuller()
-{
-  //returns univariate, zero-mean gaussian sample
-  float u1 = UNIFORM;
-  float u2 = UNIFORM;
-  while( u1 == 0.0 ){
-    u1 = UNIFORM;
-  }
-  return sqrt(-2.0*log(u1))*cos(2*M_PI*u2);
-}
-
-float quadr()
-{
-  //returns sample from quadratic distribution between 0 and 1
-  return pow(UNIFORM,1.0/3.0);
-}
+//float boxmuller()
+//{
+//  //returns univariate, zero-mean gaussian sample
+//  //float u1 = UNIFORM;
+//  //float u2 = UNIFORM;
+//  float u1 = myrand.doub();
+//  float u2 = myrand.doub();
+//  while( u1 == 0.0 ){
+//    //u1 = UNIFORM;
+//    u1 = myrand.doub();
+//  }
+//  return sqrt(-2.0*log(u1))*cos(2*M_PI*u2);
+//}
+//
+//float quadr()
+//{
+//  //returns sample from quadratic distribution between 0 and 1
+//  //return pow(UNIFORM,1.0/3.0);
+//  return pow(myrand.doub(),1.0/3.0);
+//}
 
 void unisphere(float * coor, int D)
 {
@@ -23,12 +27,18 @@ void unisphere(float * coor, int D)
   int i;
   float sample[D];
   float r=0;
+  Ran myrand(rand()); 
   for(i=0;i<D;i++){
-    sample[i] = boxmuller();
+    double u1 = myrand.doub();
+    double u2 = myrand.doub();
+    while( u1 == 0.0 ){
+    u1 = myrand.doub();
+     }
+   sample[i]=sqrt(-2.0*log(u1))*cos(2*M_PI*u2);
     r+=pow(sample[i],2);
   }
   r=sqrt(r);
-  r/=quadr();
+  r/= pow(myrand.doub(),1.0/D);
   for(i=0;i<D;i++){
     coor[i] = sample[i]/r;
   }
@@ -105,7 +115,7 @@ Ellipsoid::Ellipsoid(int D, gsl_vector * center, gsl_matrix * C, double f, vecto
 
   //  ell_pts_ = ell_pts;
   // Chelsea's suggested problem: as ell_pts goes out of scope, Points referenced within are auto-destroyed
-  for(int i=0;i<ell_pts.size();i++) {
+  for(unsigned int i=0;i<ell_pts.size();i++) {
     ell_pts_.push_back(new Point(*ell_pts[i]));
   }
 
@@ -120,8 +130,10 @@ Ellipsoid::~Ellipsoid() {
   gsl_matrix_free(Cinv_);
   gsl_matrix_free(A_);
   gsl_matrix_free(Ainv_);
-  int size = ell_pts_.size();
-  for(int j=0; j<size; j++){delete ell_pts_[j];}
+  //int size = ell_pts_.size();
+  for(unsigned int j=0; j<ell_pts_.size(); j++){delete ell_pts_[j];}
+  ell_pts_.clear();
+  //delete ell_pts_;
 }
 
 int Ellipsoid::getD() {

@@ -1,0 +1,434 @@
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  25027
+sampling efficiency =  0.943240492971
+dimensions of posterior sampling =  (2, 25027)
+number of reclusterings =  18380
+output to toygauss.tab
+information: H=0.017818 bits
+global evidence: logZ = 0.042508 +/- 0.002485
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  25027
+sampling efficiency =  0.931896038129
+dimensions of posterior sampling =  (2, 25027)
+number of reclusterings =  17506
+output to toygauss.tab
+information: H=0.014437 bits
+global evidence: logZ = 0.036411 +/- 0.002237
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  25027
+sampling efficiency =  0.978725900434
+dimensions of posterior sampling =  (2, 25027)
+number of reclusterings =  21507
+output to toygauss.tab
+information: H=0.014593 bits
+global evidence: logZ = 0.038396 +/- 0.002249
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  25027
+sampling efficiency =  0.974609603178
+dimensions of posterior sampling =  (2, 25027)
+number of reclusterings =  21267
+output to toygauss.tab
+information: H=0.014838 bits
+global evidence: logZ = 0.037517 +/- 0.002268
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  25027
+sampling efficiency =  0.98114317077
+dimensions of posterior sampling =  (2, 25027)
+number of reclusterings =  20658
+output to toygauss.tab
+information: H=0.016225 bits
+global evidence: logZ = 0.040832 +/- 0.002371
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  25027
+sampling efficiency =  0.976510983651
+dimensions of posterior sampling =  (2, 25027)
+number of reclusterings =  16744
+output to toygauss.tab
+information: H=0.012284 bits
+global evidence: logZ = 0.035227 +/- 0.002063
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  25027
+sampling efficiency =  0.982684152662
+dimensions of posterior sampling =  (2, 25027)
+number of reclusterings =  15767
+output to toygauss.tab
+information: H=0.015877 bits
+global evidence: logZ = 0.043126 +/- 0.002346
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  25027
+sampling efficiency =  0.940652484402
+dimensions of posterior sampling =  (2, 25027)
+number of reclusterings =  20582
+output to toygauss.tab
+information: H=0.016045 bits
+global evidence: logZ = 0.039288 +/- 0.002358
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  25027
+sampling efficiency =  1.00968249486
+dimensions of posterior sampling =  (2, 25027)
+number of reclusterings =  17518
+output to toygauss.tab
+information: H=0.006802 bits
+global evidence: logZ = 0.020058 +/- 0.001535
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  25025
+sampling efficiency =  0.98807596636
+dimensions of posterior sampling =  (2, 25025)
+number of reclusterings =  14466
+output to toygauss.tab
+information: H=0.006742 bits
+global evidence: logZ = 0.018543 +/- 0.001529
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  25027
+sampling efficiency =  0.996813637631
+dimensions of posterior sampling =  (2, 25027)
+number of reclusterings =  18444
+output to toygauss.tab
+information: H=0.017223 bits
+global evidence: logZ = 0.039153 +/- 0.002443
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  25027
+sampling efficiency =  0.974154373127
+dimensions of posterior sampling =  (2, 25027)
+number of reclusterings =  16347
+output to toygauss.tab
+information: H=0.008937 bits
+global evidence: logZ = 0.026275 +/- 0.001760
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  25024
+sampling efficiency =  0.966364162966
+dimensions of posterior sampling =  (2, 25024)
+number of reclusterings =  15803
+output to toygauss.tab
+information: H=0.013958 bits
+global evidence: logZ = 0.037913 +/- 0.002199
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  25027
+sampling efficiency =  0.949863367239
+dimensions of posterior sampling =  (2, 25027)
+number of reclusterings =  20957
+output to toygauss.tab
+information: H=0.018109 bits
+global evidence: logZ = 0.044369 +/- 0.002505
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  25027
+sampling efficiency =  0.976625302427
+dimensions of posterior sampling =  (2, 25027)
+number of reclusterings =  18703
+output to toygauss.tab
+information: H=0.019729 bits
+global evidence: logZ = 0.051172 +/- 0.002615
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  25027
+sampling efficiency =  0.976053976054
+dimensions of posterior sampling =  (2, 25027)
+number of reclusterings =  23027
+output to toygauss.tab
+information: H=0.017602 bits
+global evidence: logZ = 0.042762 +/- 0.002470
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  25027
+sampling efficiency =  0.964580282124
+dimensions of posterior sampling =  (2, 25027)
+number of reclusterings =  17484
+output to toygauss.tab
+information: H=0.018798 bits
+global evidence: logZ = 0.045774 +/- 0.002552
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  25027
+sampling efficiency =  0.9797987707
+dimensions of posterior sampling =  (2, 25027)
+number of reclusterings =  20912
+output to toygauss.tab
+information: H=0.013658 bits
+global evidence: logZ = 0.036862 +/- 0.002176
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  25027
+sampling efficiency =  0.985043491951
+dimensions of posterior sampling =  (2, 25027)
+number of reclusterings =  17649
+output to toygauss.tab
+information: H=0.014855 bits
+global evidence: logZ = 0.041905 +/- 0.002269
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  25027
+sampling efficiency =  0.955411338042
+dimensions of posterior sampling =  (2, 25027)
+number of reclusterings =  17456
+output to toygauss.tab
+information: H=0.018411 bits
+global evidence: logZ = 0.046601 +/- 0.002526
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+number of iterations =  25027
+sampling efficiency =  0.959587439132
+dimensions of posterior sampling =  (2, 25027)
+number of reclusterings =  13919
+output to toygauss.tab
+information: H=0.007759 bits
+global evidence: logZ = 0.021632 +/- 0.001640
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+

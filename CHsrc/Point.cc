@@ -5,6 +5,8 @@ Point::Point(int Dim):myparams(Dim){
   logL=0;
   logWt=0;
 }
+Point::~Point(){
+}
 Point::Point(Point &pt):myparams(pt.get_D()){
   int tempD=pt.get_D();
   D = tempD;
@@ -52,10 +54,10 @@ void Point::set_params(string const& prior_types, double *min_vals, double *max_
     }
 }
 
-void Point::hypercube_prior()
-{
-    for(int i = 0; i<D; i++) {myparams[i].u = UNIFORM;}
-}
+//void Point::hypercube_prior()
+//{
+//    for(int i = 0; i<D; i++) {myparams[i].u = UNIFORM;}
+//}
 
 void Point::transform_prior()
 {

@@ -3,7 +3,7 @@ import numpy as np
 import scipy as sp
 import cfg_parse as cfgp
 from dataio import readcolumn
-class eggboxmodel():
+class toygaussmodel():
     def __init__(self,cfgfile):
         #self.infile_ = cfgp.File_parse(cfgfile,'infile')
         self.outfile_ = cfgp.File_parse(cfgfile,'outfile')
@@ -11,7 +11,7 @@ class eggboxmodel():
         #self.data_ = []; readcolumn(self.data_,1,self.infile_); self.data_ = np.array(self.data_)
         self.D=2
         self.Np_=2000
-        self.var0_=[31.41592654/2.,31.41592654/2.]
+        self.var0_=[1.0/2.,1.0/2.]
         self.varerr_=self.var0_
         self.repartition = 1.2
 	self.NL_=0
@@ -25,12 +25,12 @@ class eggboxmodel():
 
 
     def Get_L(self,model_params, logL, nl):
-	    self.NL_+=1
+	self.NL_+=1
         for i in xrange(nl):
             #print model_params[i*self.D],model_params[i*self.D+1]
             x = model_params[i*self.D]
             y = model_params[i*self.D+1]
-            L=(2+np.cos(x/2.)*np.cos(y/2.))**5.
+            L=-100*((x-0.5)**2+(y-0.5)**2)
             #L = np.log(y/np.pi/((self.data_-x)**2.+y**2.))
             logL[i] = L 
             #print x,y,logL[i]

@@ -1,0 +1,78 @@
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+logZ after  3000  iterations: -22.061171
+logZ after  4000  iterations: -14.821910
+logZ after  5000  iterations: -10.247104
+logZ after  6000  iterations: -7.392524
+logZ after  7000  iterations: -5.768787
+logZ after  8000  iterations: -4.777362
+logZ after  9000  iterations: -4.199370
+logZ after  10000  iterations: -3.857665
+logZ after  11000  iterations: -3.655074
+logZ after  12000  iterations: -3.534634
+logZ after  13000  iterations: -3.462215
+number of iterations =  13613
+sampling efficiency =  0.90194129729
+dimensions of posterior sampling =  (2, 13613)
+number of likelihood evaluations =  15093
+number of modellikelihood evaluations =  13094
+number of reclusterings =  11613
+output to toygauss.tab
+information: H=3.416331 bits
+global evidence: logZ = -3.432673 +/- 0.034409
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+logZ after  3000  iterations: -22.812507
+logZ after  4000  iterations: -15.430637
+logZ after  5000  iterations: -10.743165
+logZ after  6000  iterations: -8.007727
+logZ after  7000  iterations: -6.386307
+logZ after  8000  iterations: -5.432830
+logZ after  9000  iterations: -4.811193
+logZ after  10000  iterations: -4.415724
+logZ after  11000  iterations: -4.167466
+logZ after  12000  iterations: -4.010573
+logZ after  13000  iterations: -3.912323
+logZ after  14000  iterations: -3.850341
+logZ after  15000  iterations: -3.811359
+number of iterations =  15408
+sampling efficiency =  0.91550802139
+dimensions of posterior sampling =  (2, 15408)
+number of likelihood evaluations =  16830
+number of modellikelihood evaluations =  14831
+number of reclusterings =  9150
+output to toygauss.tab
+information: H=3.632551 bits
+global evidence: logZ = -3.800077 +/- 0.035482
+creating 2000 active points
+running MultiNest algorithm... this may take a few minutes
+
+logZ after  3000  iterations: -23.472484
+logZ after  4000  iterations: -17.076337
+logZ after  5000  iterations: -12.900665
+logZ after  6000  iterations: -10.092355
+logZ after  7000  iterations: -8.210810
+logZ after  8000  iterations: -6.905990
+logZ after  9000  iterations: -6.020022
+logZ after  10000  iterations: -5.454729
+logZ after  11000  iterations: -5.059583
+logZ after  12000  iterations: -4.802255
+logZ after  13000  iterations: -4.636467
+logZ after  14000  iterations: -4.532130
+logZ after  15000  iterations: -4.467703
+logZ after  16000  iterations: -4.426970
+logZ after  17000  iterations: -4.400343
+logZ after  18000  iterations: -4.383443
+logZ after  19000  iterations: -4.373125
+logZ after  20000  iterations: -4.366882
+number of iterations =  20862
+sampling efficiency =  0.919192809306
+dimensions of posterior sampling =  (2, 20862)
+number of likelihood evaluations =  22696
+number of modellikelihood evaluations =  20697
+number of reclusterings =  12303
+output to toygauss.tab
+information: H=4.353596 bits
+global evidence: logZ = -4.363519 +/- 0.038844
