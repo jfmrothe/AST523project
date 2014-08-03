@@ -102,7 +102,7 @@ void Samplers::SetAllPoint(double * logL,int nL) {
 }
 void Samplers::DisgardWorstPoint(int nest) {
 
-  double logwidth = log(1.0 - exp(-1.0/N)) - (double) nest/(double) N; 
+  double logwidth = log(1.0 - exp(-1.0 / (double) N)) - (double) nest/(double) N; 
   double  logZnew;
 
   //double logLmin = clustering[0]->ell_pts_[0]->get_logL();
