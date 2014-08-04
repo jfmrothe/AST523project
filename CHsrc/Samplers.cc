@@ -178,6 +178,15 @@ void Samplers::DisgardWorstPoint(int nest) {
   clustering[ellworst_]->ell_pts_.erase(clustering[ellworst_]->ell_pts_.begin() + ptworst_);
   if(clustering[ellworst_]->ell_pts_.size() ==0){
     clustering.erase(clustering.begin()+ellworst_);
+  } else {
+    if(clustering[ellworst_]->ell_pts_.size()>D_){
+    Ellipsoid newEll = FindEnclosingEllipsoid(clustering[ellworst_]->ell_pts_,D_);
+    //printf("create newEll\n");
+    clustering.erase(clustering.begin()+ellworst_);
+    //printf("erase\n");
+    clustering.push_back(new Ellipsoid(D_, newEll.getCenter(), newEll.getCovMat(), newEll.getEnlFac(), newEll.ell_pts_));
+    //printf("push back\n");
+  }
   }
   //printf("erase\n");
 }

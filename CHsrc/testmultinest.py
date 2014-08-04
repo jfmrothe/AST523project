@@ -8,9 +8,9 @@ import sys
 sys.path.append("oblateTransit")
 #from transitmodel import transitmodel as Model #module that call occultquad, and also hold the data
 #from lighthouse import lighthousemodel as Model #module that call occultquad, and also hold the data
-#from eggbox import eggboxmodel as Model #module that call occultquad, and also hold the data
+from eggbox import eggboxmodel as Model #module that call occultquad, and also hold the data
 #from toygauss import toygaussmodel as Model
-from poly import polymodel as Model #module that call occultquad, and also hold
+#from poly import polymodel as Model #module that call occultquad, and also hold
 #from gaussianshell import guaussianshellmodel as Model #module that call occultquad, and also hold the data
 #from occultquad import occultquad
 from Point import Point
@@ -18,15 +18,10 @@ from Ellipsoid import Ellipsoid
 from Samplers import Samplers as MNest
 import numpy as np
 def main():
-    #model = Model('toygauss.cfg')
     model = Model('example.cfg')
-    #model = Model('oblateTransit/sorted_example.cfg')
-    #model = Model('oblateTransit/testmarching_example.cfg')
     minvals,maxvals,e,Np = model.Getinitial()
-    #print minvals,maxvals,e
     sampler = MNest(minvals,maxvals,e,Np, "uniform")
     #what I intended to use, for sampler does not need to know the names
-    #sampler = MNest(priortypes,minvals,maxvals,guessvals) 
     print "running MultiNest algorithm... this may take a few minutes\n"
     nest = 0
     Flag = True
@@ -113,19 +108,13 @@ def main():
             #count=0
             #sampler.EllipsoidalRescaling(X_i);
 
-        #    Flag1 = True
-        #else:
-        #    print sampler.ClusteringQuality(X_i)
-        #    sampler.EllipsoidalRescaling(X_i);
-        #    print sampler.ClusteringQuality(X_i)
-         #   Flag1 = False
+        
         nest+=1 
         zold = logzinfo[1]
         sampler.getlogZ(logzinfo)
         if(nest%1000==0):
             print "logZ after ",nest+Np," iterations: %f" % logzinfo[1]
         #print nest,X_i
-        #Flag = False
         Flag = THRESH < abs(zold-logzinfo[1])
         #Flag = THRESH < abs(X_i*logLmax)
     #print 'before output'
