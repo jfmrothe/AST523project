@@ -54,10 +54,10 @@ void Point::set_params(string const& prior_types, double *min_vals, double *max_
     }
 }
 
-void Point::hypercube_prior()
-{
-    for(int i = 0; i<D; i++) {myparams[i].u = UNIFORM;}
-}
+//void Point::hypercube_prior()
+//{
+//    for(int i = 0; i<D; i++) {myparams[i].u = UNIFORM;}
+//}
 
 void Point::transform_prior()
 {

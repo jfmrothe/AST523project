@@ -10,7 +10,7 @@ class polymodel():
         self.inpath_ = cfgp.File_parse(cfgfile,'inpath')
         #self.data_ = []; readcolumn(self.data_,1,self.infile_); self.data_ = np.array(self.data_)
         self.D=2
-        self.Np_=2000
+        self.Np_=500
         self.var0_=[0.5,0.5]
         self.varerr_=self.var0_
         self.repartition = 1.2

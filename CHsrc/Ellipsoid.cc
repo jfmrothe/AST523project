@@ -1,20 +1,45 @@
 #include "Ellipsoid.h"
 
+//float boxmuller()
+//{
+//  //returns univariate, zero-mean gaussian sample
+//  //float u1 = UNIFORM;
+//  //float u2 = UNIFORM;
+//  float u1 = myrand.doub();
+//  float u2 = myrand.doub();
+//  while( u1 == 0.0 ){
+//    //u1 = UNIFORM;
+//    u1 = myrand.doub();
+//  }
+//  return sqrt(-2.0*log(u1))*cos(2*M_PI*u2);
+//}
+//
+//float quadr()
+//{
+//  //returns sample from quadratic distribution between 0 and 1
+//  //return pow(UNIFORM,1.0/3.0);
+//  return pow(myrand.doub(),1.0/3.0);
+//}
+
 void unisphere(float * coor, int D)
 {
   //returns pseudorandom number uniformly distributed in D-sphere (r=1)
   int i;
   float sample[D];
   float r=0;
+  Ran myrand(rand()); 
   for(i=0;i<D;i++){
-    float u1 = UNIFORM;
-    float u2 = UNIFORM;
-    while( u1 == 0.0 ){ u1 = UNIFORM; }
-    sample[i] = sqrt(-2.0*log(u1))*cos(2*M_PI*u2);
+
+    double u1 = myrand.doub();
+    double u2 = myrand.doub();
+    while( u1 == 0.0 ){
+    u1 = myrand.doub();
+     }
+   sample[i]=sqrt(-2.0*log(u1))*cos(2*M_PI*u2);
     r+=pow(sample[i],2);
   }
   r=sqrt(r);
-  r/= pow(UNIFORM,1.0/D);
+  r/= pow(myrand.doub(),1.0/D);
   for(i=0;i<D;i++){
     coor[i] = sample[i]/r;
   }
