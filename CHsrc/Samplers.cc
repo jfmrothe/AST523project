@@ -186,9 +186,8 @@ void Samplers::DisgardWorstPoint(int nest) {
     //printf("erase\n");
     clustering.push_back(new Ellipsoid(D_, newEll.getCenter(), newEll.getCovMat(), newEll.getEnlFac(), newEll.ell_pts_));
     //printf("push back\n");
-  }
-  }
-  //printf("erase\n");
+    }
+    }
 }
 
 void Samplers::ResetWorstPoint(double *theta, int nt){  
@@ -252,7 +251,7 @@ void Samplers::FullRecluster(double X_i)
 
 }
 
-int Samplers::Recluster(double X_i, double qualthresh){
+int Samplers::Recluster(double X_i, double qualthresh, bool verbose){
   // returns 1 iff reclustering happened
   // instead of just performing the case distinction between top-level and recursion-call, this provides the details of the individual-ellipsoid-reclustering
 
@@ -264,6 +263,10 @@ int Samplers::Recluster(double X_i, double qualthresh){
     if(clustering[i]->ell_pts_.size() > D_+1) {
       // check clustering criterion
       double Xell = X_i*clustering[i]->ell_pts_.size()/N_;
+      if(verbose) {
+	printf("%f %f %i %i %f %f\n",Xell,X_i,clustering[i]->ell_pts_.size(),N_,clustering[i]->getVol(),clustering[i]->getVol()/Xell);
+	clustering[i]->printout();
+      }
       if(clustering[i]->getVol()/Xell > qualthresh) {
 	// if necessary, call partitioning on its list of points.
 	reclustered = 1;
@@ -361,8 +364,6 @@ void Samplers::EraseFirst() {
 
 void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot)
 {
-  // this is the variant currently in development, because segfaults could be
-  // avoided. will check if this implementation is "good" in some sense...
   // vector of ellipsoid pointers is returned, these are deleted after use in
   // the function calling EllipsoidalPartitioningVec performs Algorithm I from
   // Feroz, Hobson and Bridges (2009) on N points in D-dimensional
@@ -446,18 +447,18 @@ changed = false;
 
 if( vol1+vol2<mainEll.getVol() or mainEll.getVol()>2*Xtot) {
 
-    // recursively start the splittings of subEll1 and subEll2
-         EllipsoidalPartitioning(pts_group_0, X1);
-             // second one
-                 EllipsoidalPartitioning(pts_group_1, X2);
-    
-                   }
-  else{
-                         // allocate memory for mainEll and push it to the vector
-                             clustering.push_back (new Ellipsoid(D_, mainEll.getCenter(), mainEll.getCovMat(), mainEll.getEnlFac(), pts));
-                               } 
-
-  return;
+  // recursively start the splittings of subEll1 and subEll2
+  EllipsoidalPartitioning(pts_group_0, X1);
+  // second one
+  EllipsoidalPartitioning(pts_group_1, X2);
+  
+ }
+ else{
+   // allocate memory for mainEll and push it to the vector
+   clustering.push_back (new Ellipsoid(D_, mainEll.getCenter(), mainEll.getCovMat(), mainEll.getEnlFac(), pts));
+ } 
+ 
+ return;
 }
 
 void Samplers::EllipsoidalRescaling(double Xi) {

@@ -33,7 +33,7 @@ def main():
     logLmax = 0.
     logLmin = 0.
     THRESH  = 1.0e-7
-    FullReclusterPeriod = 15000
+    FullReclusterPeriod = 100
     sampler.getAlltheta(Alltheta)
     model.Get_L(Alltheta.ravel(),logL,Np)
     sampler.SetAllPoint(logL) 
@@ -91,20 +91,24 @@ def main():
             sampler.getPosterior(posterior,prob)
             print posterior
             print prob
-        #if nest % FullReclusterPeriod == 0:
-        #    NumRecluster += 1
-        #    sampler.FullRecluster(X_i)
-        #else:
-        #    NumRecluster += sampler.Recluster(X_i,model.repartition)
+        if nest % FullReclusterPeriod == 0:
+            #NumRecluster += 1
+            #sampler.FullRecluster(X_i)
+            if(nest/FullReclusterPeriod == 50):
+                print "# "+str(nest)
+            NumRecluster += sampler.Recluster(X_i,model.repartition,nest/FullReclusterPeriod == 50)
+        else:
+            #NumRecluster += sampler.Recluster(X_i,model.repartition,nest/FullReclusterPeriod == 50)
+            pass
         #ellipsoidal partitioning 
-        if(nest==0 or sampler.ClusteringQuality(X_i) > model.repartition):
+        #if(nest==0 or sampler.ClusteringQuality(X_i) > model.repartition):
             #count+=1
             # recluster?
             #if count==5:
             #print 'before recluster'
-            sampler.FullRecluster(X_i)
+            #sampler.FullRecluster(X_i)
             #print 'after recluster'
-            NumRecluster+=1
+            #NumRecluster+=1
             #count=0
             #sampler.EllipsoidalRescaling(X_i);
 
@@ -187,7 +191,7 @@ def testL():
 
 
 if __name__=='__main__':
-    simu()
-    #main()
+    #simu()
+    main()
     #testL()
     

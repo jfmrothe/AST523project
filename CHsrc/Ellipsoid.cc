@@ -29,6 +29,7 @@ void unisphere(float * coor, int D)
   float r=0;
   Ran myrand(rand()); 
   for(i=0;i<D;i++){
+
     double u1 = myrand.doub();
     double u2 = myrand.doub();
     while( u1 == 0.0 ){

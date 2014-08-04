@@ -24,6 +24,7 @@ struct Ran{
 //Ran myrand(17);
 //float boxmuller();
 //float quadr();
+
 void unisphere(float *, int);
 
 class Ellipsoid {

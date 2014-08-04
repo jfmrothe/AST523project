@@ -69,7 +69,7 @@ class Samplers
 	double getlogLmax(){return logLmax_;}
 	double getlogLmin(){return logLmin_;}
 	void FullRecluster(double X_i);
-        int Recluster(double X_i, double qualthresh);
+        int Recluster(double X_i, double qualthresh, bool verbose);
         int getN() {return N_;}
         int countTotal();
         void OutputClusters();
