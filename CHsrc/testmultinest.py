@@ -92,11 +92,13 @@ def main():
             print posterior
             print prob
         if nest % FullReclusterPeriod == 0:
-            #NumRecluster += 1
-            #sampler.FullRecluster(X_i)
-            if(nest/FullReclusterPeriod == 50):
-                print "# "+str(nest)
-            NumRecluster += sampler.Recluster(X_i,model.repartition,nest/FullReclusterPeriod == 50)
+            NumRecluster += 1
+            sampler.FullRecluster(X_i)
+            sampler.CalcVtot()
+            print nest,X_i,X_i*sampler.ClusteringQuality(X_i)
+            #if(nest/FullReclusterPeriod == 50):
+            #    print "# "+str(nest)
+            #NumRecluster += sampler.Recluster(X_i,model.repartition,nest/FullReclusterPeriod == 50)
         else:
             #NumRecluster += sampler.Recluster(X_i,model.repartition,nest/FullReclusterPeriod == 50)
             pass
@@ -116,8 +118,8 @@ def main():
         nest+=1 
         zold = logzinfo[1]
         sampler.getlogZ(logzinfo)
-        if(nest%1000==0):
-            print "logZ after ",nest+Np," iterations: %f" % logzinfo[1]
+        #if(nest%1000==0):
+        #    print "logZ after ",nest+Np," iterations: %f" % logzinfo[1]
         #print nest,X_i
         Flag = THRESH < abs(zold-logzinfo[1])
         #Flag = THRESH < abs(X_i*logLmax)
@@ -125,15 +127,15 @@ def main():
     #output
     print "#",NumRecluster
     ntotal = sampler.countTotal()
-    print "number of iterations = ",ntotal
-    print "sampling efficiency = ",1.0*ntotal/NumLeval 
+    print "#number of iterations = ",ntotal
+    print "#sampling efficiency = ",1.0*ntotal/NumLeval 
     posterior = np.zeros([model.D,ntotal])
     prob = np.zeros(ntotal)
     sampler.getPosterior(posterior,prob)
-    print "dimensions of posterior sampling = ",posterior.shape
-    print "number of likelihood evaluations = ",NumLeval
+    print "#dimensions of posterior sampling = ",posterior.shape
+    print "#number of likelihood evaluations = ",NumLeval
     #print "number of modellikelihood evaluations = ",model.NL_
-    print "number of reclusterings = ",NumRecluster
+    print "#number of reclusterings = ",NumRecluster
     logzinfo = np.zeros(3)
     sampler.getlogZ(logzinfo)
     model.Output(posterior.ravel(),prob)

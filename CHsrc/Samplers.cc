@@ -239,15 +239,42 @@ void Samplers::getAlltheta(double *Alltheta, int nx, int ny){
 
 void Samplers::FullRecluster(double X_i)
 {
-  //deletes all ellipsoids and performs a top-down recursive reclustering
 
-  // delete all ellipsoids, keep first to store all points
-  ClearCluster();
-  // use empty vector to signal top-level-call to EllipsoidalPartitioning
-  vector <Point *> empty;
-  EllipsoidalPartitioning(empty, X_i);
-  EraseFirst();
-  CalcVtot();
+  //deletes all ellipsoids and performs a top-down recursive reclustering
+  
+   //use empty vector to signal top-level-call to EllipsoidalPartitioning
+   //New ways of doing reclustering:
+   //1)copy the clusters into a new one instead of clear it.
+   vector <Ellipsoid *>cpcluster;
+   for(int i=0; i<clustering.size(); i++) {
+      cpcluster.push_back (new Ellipsoid(clustering[i]));
+   }
+   //printf("vtot=%f,X_i=%f\n",Vtot,X_i);
+   //printf("copy successful to cpcluster\n");
+   //delete all ellipsoids, keep first to store all points
+   ClearCluster();
+   vector <Point *> empty;
+   EllipsoidalPartitioning(empty, X_i); 
+   //printf("partition successful\n");
+   EraseFirst();
+   CalcVtot();
+   //check the reclustering quality
+   double quality = ClusteringQuality(X_i);
+   //printf("quality=%f,vtot=%f,X_i=%f\n",quality,Vtot,X_i);
+   // if reclustering is good, keep the reclustering, else copy back 
+   // the old clustering
+   if (quality>1.2){
+      //printf("do not use the reclustering result\n");
+      while(clustering.size()>0) {
+        clustering.pop_back();
+      }
+      for(int i=0; i<cpcluster.size(); i++) {
+        clustering.push_back(new Ellipsoid(cpcluster[i]));
+      }
+      //printf("cp back successful\n");
+      //printf("quality=%f,vtot=%f,X_i=%f\n",quality,Vtot,X_i);
+   } 
+
 
 }
 

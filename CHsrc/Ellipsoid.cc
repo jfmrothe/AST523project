@@ -123,6 +123,33 @@ Ellipsoid::Ellipsoid(int D, gsl_vector * center, gsl_matrix * C, double f, vecto
   gsl_matrix_free(voltmpmat); 
   gsl_permutation_free(volp);
 }
+// copy constructor for EllipsoidalPartitioning
+Ellipsoid::Ellipsoid(Ellipsoid * ellip) {
+  D_ = ellip->getD();
+  f_ = ellip->getf();
+  center_ = gsl_vector_alloc(D_);
+  newcoor_ = gsl_vector_alloc(D_);
+  covMat_ = gsl_matrix_alloc(D_,D_);
+  Cinv_ = gsl_matrix_alloc(D_,D_);
+  A_ = gsl_matrix_alloc(D_+1,D_+1);
+  Ainv_ = gsl_matrix_alloc(D_+1,D_+1);
+
+  //copy the matrix
+  gsl_matrix_memcpy(A_,ellip->getA());
+  //gsl_vector_memcpy(newcoor,newcoor_);
+  gsl_vector_memcpy(center_,ellip->getCenter());
+  gsl_matrix_memcpy(Cinv_,ellip->getCinv());
+  gsl_matrix_memcpy(Ainv_,ellip->getAinv());
+  gsl_matrix_memcpy(covMat_,ellip->getCovMat());
+
+  //ellip->CopyMatrix(center_,Cinv_,A_,Ainv_,covMat_,newcoor_);
+  //
+  vol_ = ellip->getVol();
+  for(unsigned int i=0;i<ellip->ell_pts_.size();i++) {
+    ell_pts_.push_back(new Point(*(ellip->ell_pts_[i])));
+  }
+}
+
 
 Ellipsoid::~Ellipsoid() {
   gsl_vector_free(center_);
