@@ -14,7 +14,7 @@ class eggboxmodel():
         self.var0_=[31.41592654/2.,31.41592654/2.]
         self.varerr_=self.var0_
         self.repartition = 1.2
-	self.NL_=0
+        self.NL_=0
         return
     
     def Getinitial(self):
@@ -26,7 +26,7 @@ class eggboxmodel():
 
 
     def Get_L(self,model_params, logL, nl):
-	self.NL_+=1
+        self.NL_+=1
         for i in xrange(nl):
             #print model_params[i*self.D],model_params[i*self.D+1]
             x = model_params[i*self.D]
@@ -38,7 +38,7 @@ class eggboxmodel():
         return
     def Output(self,posterior, prob):
         fout = open(self.outfile_,mode='w')
-        print "output to %s" % self.outfile_
+        #print "output to %s" % self.outfile_
         #logLtemp = 0. 
         for i in xrange(posterior.shape[0]/self.D):
             for j in xrange(int(self.D)):

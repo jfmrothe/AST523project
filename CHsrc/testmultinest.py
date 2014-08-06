@@ -18,12 +18,8 @@ from Ellipsoid import Ellipsoid
 from Samplers import Samplers as MNest
 import numpy as np
 def main():
-    #model = Model('toygauss.cfg')
     model = Model('example.cfg')
-    #model = Model('oblateTransit/sorted_example.cfg')
-    #model = Model('oblateTransit/testmarching_example.cfg')
     minvals,maxvals,e,Np = model.Getinitial()
-    #print minvals,maxvals,e
     sampler = MNest(minvals,maxvals,e,Np, "uniform")
     #what I intended to use, for sampler does not need to know the names
     #sampler = MNest(priortypes,minvals,maxvals,guessvals) 
@@ -100,8 +96,11 @@ def main():
             NumRecluster += 1
             sampler.FullRecluster(X_i)
             sampler.OutputClusters()
-            #if(nest/FullReclusterPeriod == 5):
             print str(nest)+"\t"+str(X_i)+"\t"+str(sampler.getVtot())+"\n"
+            sampler.CalcVtot()
+            print nest,X_i,X_i*sampler.ClusteringQuality(X_i)
+            #if(nest/FullReclusterPeriod == 50):
+            #    print "# "+str(nest)
             #NumRecluster += sampler.Recluster(X_i,model.repartition,nest/FullReclusterPeriod == 50)
         else:
             #NumRecluster += sampler.Recluster(X_i,model.repartition,nest/FullReclusterPeriod == 50)
@@ -118,19 +117,13 @@ def main():
             #count=0
             #sampler.EllipsoidalRescaling(X_i);
 
-        #    Flag1 = True
-        #else:
-        #    print sampler.ClusteringQuality(X_i)
-        #    sampler.EllipsoidalRescaling(X_i);
-        #    print sampler.ClusteringQuality(X_i)
-         #   Flag1 = False
+        
         nest+=1 
         zold = logzinfo[1]
         sampler.getlogZ(logzinfo)
         #if(nest%1000==0):
         #    print "logZ after ",nest+Np," iterations: %f" % logzinfo[1]
         #print nest,X_i
-        #Flag = False
         Flag = THRESH < abs(zold-logzinfo[1])
         #Flag = THRESH < abs(X_i*logLmax)
     #print 'before output'

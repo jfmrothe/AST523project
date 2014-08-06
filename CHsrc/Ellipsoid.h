@@ -30,8 +30,10 @@ void unisphere(float *, int);
 class Ellipsoid {
 public:
   Ellipsoid(int D, gsl_vector * center, gsl_matrix * C, double f, vector<Point *>&);
+  Ellipsoid(Ellipsoid * ellips);
   ~Ellipsoid();
   int getD();
+  double getf(){return f_;}
   gsl_vector * getCenter();
   gsl_matrix * getCovMat();
   gsl_matrix * getCinv();
