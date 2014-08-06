@@ -61,6 +61,7 @@ class Samplers
 	void EllipsoidalPartitioning(vector<Point *>& pts, double Xi);
         int get_NumEll() {return clustering.size();}
         void CalcVtot(); 
+	double getVtot() {return Vtot;}
 
         double ClusteringQuality(double Xtot) {return e_*Vtot/Xtot;} 
         void ClearCluster();

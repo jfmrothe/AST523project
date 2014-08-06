@@ -294,20 +294,21 @@ int Samplers::countTotal(){
 
 
 void Samplers::OutputClusters(){
- double *theta = new double [D_]; 
+  //double *theta = new double [D_]; 
  Point * pt;
  for(int i=0; i<clustering.size(); i++) {
     for (int j=0;j<clustering[i]->ell_pts_.size(); j++){
    
     pt = clustering[i]->ell_pts_[j];
-    pt->get_theta(theta,D_);
+    //pt->get_theta(theta,D_);
     for (int k=0;k<D_; k++){
-       printf("%f ",theta[k]);
+       //printf("%f ",theta[k]);
+      printf("%f ",pt->get_u(k));
     }
      printf("\n");
     }
   }
-  delete [] theta;
+ //delete [] theta;
 
  for(int i=0; i<clustering.size(); i++) {
   clustering[i]->printout();

@@ -10,7 +10,7 @@ class eggboxmodel():
         self.inpath_ = cfgp.File_parse(cfgfile,'inpath')
         #self.data_ = []; readcolumn(self.data_,1,self.infile_); self.data_ = np.array(self.data_)
         self.D=2
-        self.Np_=200
+        self.Np_=2000
         self.var0_=[31.41592654/2.,31.41592654/2.]
         self.varerr_=self.var0_
         self.repartition = 1.2
@@ -21,7 +21,8 @@ class eggboxmodel():
         minvals = np.array(self.var0_)-np.array(self.varerr_)
         maxvals = np.array(self.var0_)+np.array(self.varerr_)
         guessvals = np.array(self.var0_)
-        return [minvals,maxvals,1.0,self.Np_]
+        eff = 0.3
+        return [minvals,maxvals,eff,self.Np_]
 
 
     def Get_L(self,model_params, logL, nl):

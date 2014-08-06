@@ -27,7 +27,7 @@ def main():
     sampler = MNest(minvals,maxvals,e,Np, "uniform")
     #what I intended to use, for sampler does not need to know the names
     #sampler = MNest(priortypes,minvals,maxvals,guessvals) 
-    print "running MultiNest algorithm... this may take a few minutes\n"
+    print "# running MultiNest algorithm... this may take a few minutes\n"
     nest = 0
     Flag = True
     NumRecluster = 0
@@ -52,23 +52,23 @@ def main():
         X_i = np.exp(-1.0*nest/(1.0*Np))
         #discard and resample, get logLmax for convergence check as byproduct
         if(Debug):
-            print '----------------------'
+            print '# ----------------------'
             ntotal = sampler.countTotal()
             posterior = np.zeros([model.D,ntotal])
             prob = np.zeros(ntotal)
             sampler.getPosterior(posterior,prob)
-            print posterior
-            print prob
+            print "#",posterior
+            print "#",prob
         
         sampler.DisgardWorstPoint(int(nest)) 
         if(Debug): 
-            print '----------------------'
+            print '# ----------------------'
             ntotal = sampler.countTotal()
             posterior = np.zeros([model.D,ntotal])
             prob = np.zeros(ntotal)
             sampler.getPosterior(posterior,prob)
-            print posterior
-            print prob
+            print "#",posterior
+            print "#",prob
 
         logLmax = sampler.getlogLmax() 
         logLmin = sampler.getlogLmin()
@@ -89,19 +89,20 @@ def main():
         sampler.ResetWorstPointLogL(temp) 
         #print 'after reset'
         if (Debug): 
-            print '----------------------'
+            print '# ----------------------'
             ntotal = sampler.countTotal()
             posterior = np.zeros([model.D,ntotal])
             prob = np.zeros(ntotal)
             sampler.getPosterior(posterior,prob)
-            print posterior
-            print prob
+            print "#",posterior
+            print "#",prob
         if nest % FullReclusterPeriod == 0:
-            #NumRecluster += 1
-            #sampler.FullRecluster(X_i)
-            if(nest/FullReclusterPeriod == 50):
-                print "# "+str(nest)
-            NumRecluster += sampler.Recluster(X_i,model.repartition,nest/FullReclusterPeriod == 50)
+            NumRecluster += 1
+            sampler.FullRecluster(X_i)
+            sampler.OutputClusters()
+            #if(nest/FullReclusterPeriod == 5):
+            print str(nest)+"\t"+str(X_i)+"\t"+str(sampler.getVtot())+"\n"
+            #NumRecluster += sampler.Recluster(X_i,model.repartition,nest/FullReclusterPeriod == 50)
         else:
             #NumRecluster += sampler.Recluster(X_i,model.repartition,nest/FullReclusterPeriod == 50)
             pass
@@ -126,8 +127,8 @@ def main():
         nest+=1 
         zold = logzinfo[1]
         sampler.getlogZ(logzinfo)
-        if(nest%1000==0):
-            print "logZ after ",nest+Np," iterations: %f" % logzinfo[1]
+        #if(nest%1000==0):
+        #    print "logZ after ",nest+Np," iterations: %f" % logzinfo[1]
         #print nest,X_i
         #Flag = False
         Flag = THRESH < abs(zold-logzinfo[1])
@@ -136,20 +137,20 @@ def main():
     #output
     print "#",NumRecluster
     ntotal = sampler.countTotal()
-    print "number of iterations = ",ntotal
-    print "sampling efficiency = ",1.0*ntotal/NumLeval 
+    print "# number of iterations = ",ntotal
+    print "# sampling efficiency = ",1.0*ntotal/NumLeval 
     posterior = np.zeros([model.D,ntotal])
     prob = np.zeros(ntotal)
     sampler.getPosterior(posterior,prob)
-    print "dimensions of posterior sampling = ",posterior.shape
-    print "number of likelihood evaluations = ",NumLeval
+    print "# dimensions of posterior sampling = ",posterior.shape
+    print "# number of likelihood evaluations = ",NumLeval
     #print "number of modellikelihood evaluations = ",model.NL_
-    print "number of reclusterings = ",NumRecluster
+    print "# number of reclusterings = ",NumRecluster
     logzinfo = np.zeros(3)
     sampler.getlogZ(logzinfo)
     model.Output(posterior.ravel(),prob)
-    print "#information: H=%f bits" % logzinfo[0]
-    print "#global evidence: logZ = %f +/- %f" % (logzinfo[1],logzinfo[2])
+    print "# information: H=%f bits" % logzinfo[0]
+    print "# global evidence: logZ = %f +/- %f" % (logzinfo[1],logzinfo[2])
     #os.system("tail -n %d multivar.tab >> temp9.txt" % model.Np_)
     return
 
