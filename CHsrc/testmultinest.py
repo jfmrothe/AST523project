@@ -98,7 +98,6 @@ def main():
             sampler.OutputClusters()
             print str(nest)+"\t"+str(X_i)+"\t"+str(sampler.getVtot())+"\n"
             sampler.CalcVtot()
-            print nest,X_i,X_i*sampler.ClusteringQuality(X_i)
             #if(nest/FullReclusterPeriod == 50):
             #    print "# "+str(nest)
             #NumRecluster += sampler.Recluster(X_i,model.repartition,nest/FullReclusterPeriod == 50)

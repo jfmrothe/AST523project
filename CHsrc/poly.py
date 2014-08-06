@@ -34,7 +34,7 @@ class polymodel():
         return
     def Output(self,posterior, prob):
         fout = open(self.outfile_,mode='w')
-        print "output to %s" % self.outfile_
+        print "# output to %s" % self.outfile_
         #logLtemp = 0. 
         for i in xrange(posterior.shape[0]/self.D):
             for j in xrange(int(self.D)):

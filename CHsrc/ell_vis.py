@@ -34,10 +34,10 @@ def readClustering(infile,Npts):
     starts = [i for i, j in enumerate(data) if j == ""]
     clusterings = []
     for i,start in enumerate(starts[:-1]):
-        points = [[float(el) for el in x.split(" ")] for x in data[start+1:start+Npts+1]]
+        points = [[float(el) for el in x.split()] for x in data[start+1:start+Npts+1]]
         enlFacs = [float(x) for x in data[start+Npts+1:starts[i+1]-1:4]]
-        centers = [[float(el) for el in x.split(" ")] for x in data[start+Npts+2:starts[i+1]:4]]
-        covMats = [[[float(el) for el in data[i].split(" ")],[float(el) for el in data[i+1].split(" ")]] for i in range(start+Npts+3,starts[i+1],4)]
+        centers = [[float(el) for el in x.split()] for x in data[start+Npts+2:starts[i+1]:4]]
+        covMats = [[[float(el) for el in data[i].split()],[float(el) for el in data[i+1].split()]] for i in range(start+Npts+3,starts[i+1],4)]
         clusterings.append(clustering(points,centers,covMats,enlFacs))     
     return clusterings
 
@@ -46,10 +46,12 @@ def plotCluster(cluster):
         lineEllipse(cluster.centers[i],cluster.covMats[i],cluster.enlFacs[i])
     return
 
-clusters = readClustering("egg2000.txt",2000)
+clusters = readClustering("test/egg2000.txt",2000)
+print len(clusters)
+no = 305
 
 fig = pyplot.figure()
-plotCluster(clusters[25])
-pyplot.scatter(*zip(*clusters[25].points),marker='+',
+plotCluster(clusters[no])
+pyplot.scatter(*zip(*clusters[no].points),marker='+',
      color='black', s=5)
 pyplot.show()
