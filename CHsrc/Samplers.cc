@@ -434,19 +434,19 @@ void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot)
   double h1;
   double h2;
   double tmp1,tmp2;
-double vol1,vol2;
- while(changed) {
- if(pts_group_0.size()<D_+1 or pts_group_1.size()<D_+1) {
+  double vol1,vol2;
+  while(changed) {
+    if(pts_group_0.size()<D_+1 or pts_group_1.size()<D_+1) {
       clustering.push_back (new Ellipsoid(D_, mainEll.getCenter(), mainEll.getCovMat(), mainEll.getEnlFac(), pts) );
       return;
     }
-  Ellipsoid subEll1 = FindEnclosingEllipsoid(pts_group_0,D_);
+    Ellipsoid subEll1 = FindEnclosingEllipsoid(pts_group_0,D_);
     vol1 = subEll1.getVol();
     X1 = ((double)pts_group_0.size()/N)*Xtot;
     Ellipsoid subEll2 = FindEnclosingEllipsoid(pts_group_1,D_);
     vol2 = subEll2.getVol();
     X2 = ((double)pts_group_1.size()/N)*Xtot;
-changed = false;
+    changed = false;
     for(i=0;i<N;i++)
     {
       tmp1 = subEll1.mdist(pts[i]);
@@ -466,27 +466,36 @@ changed = false;
           grouping[i] = 0;
       }
      }
-   pts_group_0.clear();
+     pts_group_0.clear();
      pts_group_1.clear();
      SelectFromGrouping(pts, D_, grouping, 0, pts_group_0);
      SelectFromGrouping(pts, D_, grouping, 1, pts_group_1);
 
   }
-
-if( vol1+vol2<mainEll.getVol() or mainEll.getVol()>2*Xtot) {
-
-  // recursively start the splittings of subEll1 and subEll2
-  EllipsoidalPartitioning(pts_group_0, X1);
-  // second one
-  EllipsoidalPartitioning(pts_group_1, X2);
+  if(X1/e_>vol1){
+    vol1=X1/e_;
+  }
+  if(X2/e_>vol2){
+    vol2=X2/e_;
+  }
+  if( vol1+vol2<mainEll.getVol() or mainEll.getVol()>2*Xtot/e_) {
+    if(vol1+vol2<mainEll.getVol()){
+      printf("split because of volumn\n");
+    } else{
+      printf("split because of Xtot\n");
+    }
+    // recursively start the splittings of subEll1 and subEll2
+    EllipsoidalPartitioning(pts_group_0, X1);
+    // second one
+    EllipsoidalPartitioning(pts_group_1, X2);
   
- }
- else{
-   // allocate memory for mainEll and push it to the vector
-   clustering.push_back (new Ellipsoid(D_, mainEll.getCenter(), mainEll.getCovMat(), mainEll.getEnlFac(), pts));
- } 
+  }
+  else{
+    // allocate memory for mainEll and push it to the vector
+    clustering.push_back (new Ellipsoid(D_, mainEll.getCenter(), mainEll.getCovMat(), mainEll.getEnlFac(), pts));
+  } 
  
- return;
+  return;
 }
 
 void Samplers::EllipsoidalRescaling(double Xi) {
