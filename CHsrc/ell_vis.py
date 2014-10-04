@@ -46,9 +46,10 @@ def plotCluster(cluster):
         lineEllipse(cluster.centers[i],cluster.covMats[i],cluster.enlFacs[i])
     return
 
-clusters = readClustering("test/egg2000.txt",2000)
+#clusters = readClustering("temp3.txt",2000)
+clusters = readClustering("test/eggbox_2000_055.txt",2000)
 print len(clusters)
-no = 305
+no = 120
 
 fig = pyplot.figure()
 plotCluster(clusters[no])

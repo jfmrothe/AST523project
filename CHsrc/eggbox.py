@@ -21,7 +21,7 @@ class eggboxmodel():
         minvals = np.array(self.var0_)-np.array(self.varerr_)
         maxvals = np.array(self.var0_)+np.array(self.varerr_)
         guessvals = np.array(self.var0_)
-        eff = 1.0
+        eff = 0.3
         return [minvals,maxvals,eff,self.Np_]
 
 

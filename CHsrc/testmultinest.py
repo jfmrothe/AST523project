@@ -124,6 +124,9 @@ def main():
         #    print "logZ after ",nest+Np," iterations: %f" % logzinfo[1]
         #print nest,X_i
         Flag = THRESH < abs(zold-logzinfo[1])
+
+        #if(NumRecluster> 20):
+        #    break
         #Flag = THRESH < abs(X_i*logLmax)
     #print 'before output'
     #output
