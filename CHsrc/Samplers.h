@@ -59,11 +59,12 @@ class Samplers
         void ResetWorstPointLogL(double logL);
 	//void printout();
 	void EllipsoidalPartitioning(vector<Point *>& pts, double Xi);
+	void InflateEllipsoids(double Xtot);
         int get_NumEll() {return clustering.size();}
         void CalcVtot(); 
 	double getVtot() {return Vtot;}
 
-        double ClusteringQuality(double Xtot) {return e_*Vtot/Xtot;} 
+        double ClusteringQuality(double Xtot) {return e_*Vtot/Xtot;}//Vtot contains enlargement factors due to e_? jfr 
         void ClearCluster();
 	void EraseFirst(); 
         void getAlltheta(double *Alltheta, int nx, int ny);

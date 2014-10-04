@@ -111,7 +111,7 @@ Ellipsoid::Ellipsoid(int D, gsl_vector * center, gsl_matrix * C, double f, vecto
   gsl_linalg_LU_decomp(voltmpmat, volp, &signum);
   det =  gsl_linalg_LU_det (voltmpmat, signum);
 
-  vol_ = 4.0/3.0*M_PI*sqrt(pow(f_,D)*det);
+  vol_ = M_PI*sqrt(pow(f_,D)*det);
 
 
   //  ell_pts_ = ell_pts;
@@ -193,7 +193,7 @@ double Ellipsoid::getEnlFac() {
 
 void Ellipsoid::setEnlFac(double f) {
   // adjust volume
-  vol_ *= pow(f/f_,1.0*D_);
+  vol_ *= pow(f/f_,0.5*D_);
   // save new enlargement factor
   f_ = f;
 }
@@ -204,6 +204,7 @@ double Ellipsoid::getVol() {
 
 void Ellipsoid::printout() {
   int i,j;
+  printf("%f\n",vol_);
   printf("%f\n",f_);
   for(j=0;j<D_;j++){
     printf("%f ",gsl_vector_get(center_,j));
@@ -211,7 +212,7 @@ void Ellipsoid::printout() {
   printf("\n"); 
   for(i=0;i<D_;i++){
     for(j=0;j<D_;j++){
-      printf("%f ",gsl_matrix_get(covMat_,i,j));
+      printf("%9.8f ",gsl_matrix_get(covMat_,i,j));
     }
     printf("\n"); 
   }

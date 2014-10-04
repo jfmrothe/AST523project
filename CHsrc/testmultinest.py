@@ -11,7 +11,7 @@ sys.path.append("oblateTransit")
 from eggbox import eggboxmodel as Model #module that call occultquad, and also hold the data
 #from toygauss import toygaussmodel as Model
 #from poly import polymodel as Model #module that call occultquad, and also hold
-#from gaussianshell import guaussianshellmodel as Model #module that call occultquad, and also hold the data
+#from gaussianshell import gaussianshellmodel as Model #module that call occultquad, and also hold the data
 #from occultquad import occultquad
 from Point import Point
 from Ellipsoid import Ellipsoid
@@ -92,15 +92,15 @@ def main():
             sampler.getPosterior(posterior,prob)
             print "#",posterior
             print "#",prob
-        if nest % FullReclusterPeriod == 0:
+        #if nest % FullReclusterPeriod == 0:
+        sampler.CalcVtot()
+        if sampler.ClusteringQuality(X_i) > model.repartition:
             NumRecluster += 1
             sampler.FullRecluster(X_i)
-            sampler.OutputClusters()
-            print str(nest)+"\t"+str(X_i)+"\t"+str(sampler.getVtot())+"\n"
+            #sampler.OutputClusters()
             sampler.CalcVtot()
-            #if(nest/FullReclusterPeriod == 50):
-            #    print "# "+str(nest)
-            #NumRecluster += sampler.Recluster(X_i,model.repartition,nest/FullReclusterPeriod == 50)
+            #print str(nest)+"\t"+str(X_i)+"\t"+str(sampler.getVtot())+"\n"
+            
         else:
             #NumRecluster += sampler.Recluster(X_i,model.repartition,nest/FullReclusterPeriod == 50)
             pass
@@ -127,7 +127,6 @@ def main():
         #Flag = THRESH < abs(X_i*logLmax)
     #print 'before output'
     #output
-    print "#",NumRecluster
     ntotal = sampler.countTotal()
     print "# number of iterations = ",ntotal
     print "# sampling efficiency = ",1.0*ntotal/NumLeval 

@@ -62,45 +62,34 @@ void Samplers::DrawSample()
 {
   // chooses an ellipsoid from clustering (volume-weighted for uniformity)
   // then causes it to sample a point into its newcoor member variable
-  // and returns a pointer to it
+  // and stores it in the clustering variable newcoor_
 
     int RandEll;
     int NumEll = clustering.size();
     int n_e;
-    //srand(time(NULL));  
-    //Ran myrand(rand());        
-    gsl_vector * tmp_coor = gsl_vector_alloc(D_);
+
     do 
     {
-        //do RandEll= rand() % clustering.size();
-        //if(clustering.size()==1){
-	  //RandEll=0;
-	//} else{
-		do RandEll= myrand.int64() % (clustering.size());
-        	while (clustering[RandEll]->getVol()/Vtot < myrand.doub());
-	//}
+      // pick an ellipsoid (weighted by volume)
+      do RandEll= myrand.int64() % (clustering.size());
+      while (clustering[RandEll]->getVol()/Vtot < myrand.doub());
+      
+      // choose a point from the ellipsoid lying within the hypercube
+      do clustering[RandEll]->SampleEllipsoid();
+      while (!u_in_hypercube(clustering[RandEll]->get_newcoor(), D_));
 
-        do clustering[RandEll]->SampleEllipsoid();
-        while (!u_in_hypercube(clustering[RandEll]->get_newcoor(), D_));
-
-        gsl_vector_memcpy(newcoor_,clustering[RandEll]->get_newcoor());
-        gsl_vector_memcpy(tmp_coor, newcoor_);
-
-        n_e = 0;
-        for(int i = 0; i<NumEll; i++)
+      // count ellipsoids intersecting over the chosen coordinate
+      n_e = 0;
+      for(int i = 0; i<NumEll; i++)
         {
-           if(clustering[i]->IsMember(tmp_coor)) {n_e++;}
+	  if(clustering[i]->IsMember(clustering[RandEll]->get_newcoor())) {n_e++;}
         }
     }
-    //while(1.0/n_e < UNIFORM);
+    // reject to not oversample overlapping volume
     while(1.0/n_e < myrand.doub());
     
-    gsl_vector_free(tmp_coor);
     ellnew_ = RandEll;
     gsl_vector_memcpy(newcoor_,clustering[RandEll]->get_newcoor());
-    //printf("ellnew_=%d, RandEll=%d\n",ellnew_,RandEll);
-    //return clustering[RandEll]->get_newcoor();
-    //for(int i = 0; i < D; i++) {theta[i] = gsl_vector_get(coor,i);}
 }
 
 void Samplers::CalcVtot()
@@ -181,6 +170,11 @@ void Samplers::DisgardWorstPoint(int nest) {
   } else {
     if(clustering[ellworst_]->ell_pts_.size()>D_){
     Ellipsoid newEll = FindEnclosingEllipsoid(clustering[ellworst_]->ell_pts_,D_);
+    double Xell = exp((double) -nest/N_)*newEll.ell_pts_.size()/N_;
+    if(Xell/e_>newEll.getVol()) {
+      newEll.setEnlFac(newEll.getEnlFac()*pow(Xell/newEll.getVol()/e_,2.0/D_));
+  }
+  
     //printf("create newEll\n");
     clustering.erase(clustering.begin()+ellworst_);
     //printf("erase\n");
@@ -254,9 +248,15 @@ void Samplers::FullRecluster(double X_i)
    //delete all ellipsoids, keep first to store all points
    ClearCluster();
    vector <Point *> empty;
+
+   //FILE * debugout;
+   //debugout = fopen("deb.out","a");
+   //fprintf(debugout,"\n");
+   
    EllipsoidalPartitioning(empty, X_i); 
    //printf("partition successful\n");
    EraseFirst();
+   //InflateEllipsoids(X_i);
    CalcVtot();
    //check the reclustering quality
    double quality = ClusteringQuality(X_i);
@@ -265,6 +265,7 @@ void Samplers::FullRecluster(double X_i)
    // the old clustering
    if (quality>1.2){
       //printf("do not use the reclustering result\n");
+      //fprintf(debugout,"did not use the reclustering result\n");
       while(clustering.size()>0) {
         clustering.pop_back();
       }
@@ -274,11 +275,13 @@ void Samplers::FullRecluster(double X_i)
       //printf("cp back successful\n");
       //printf("quality=%f,vtot=%f,X_i=%f\n",quality,Vtot,X_i);
    } 
+   //fclose(debugout);
 
 
 }
 
 int Samplers::Recluster(double X_i, double qualthresh, bool verbose){
+  // single ellipsoid reclustering
   // returns 1 iff reclustering happened
   // instead of just performing the case distinction between top-level and recursion-call, this provides the details of the individual-ellipsoid-reclustering
 
@@ -415,10 +418,19 @@ void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot)
   int N = pts.size();
 
   Ellipsoid mainEll = FindEnclosingEllipsoid(pts,D_);
- if(Xtot/e_>mainEll.getVol()) {
-    mainEll.setEnlFac(mainEll.getEnlFac()*pow(Xtot/mainEll.getVol()/e_,1.0/D_));
+
+  //FILE * debugout;
+  //debugout = fopen("deb.out","a");
+  //fprintf(debugout,"%f\t%f\t",Xtot,mainEll.getVol());
+
+  if(Xtot/e_>mainEll.getVol()) {
+    mainEll.setEnlFac(mainEll.getEnlFac()*pow(Xtot/mainEll.getVol()/e_,2.0/D_));
   }
- int i;
+  
+  //fprintf(debugout,"%f\n",mainEll.getVol());
+  //fclose(debugout);
+
+  int i;
   int grouping[N];
   int k=2;
   KMeans(pts,D_,k,&grouping[0]);
@@ -434,13 +446,13 @@ void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot)
   double h1;
   double h2;
   double tmp1,tmp2;
-double vol1,vol2;
+  double vol1,vol2;
  while(changed) {
- if(pts_group_0.size()<D_+1 or pts_group_1.size()<D_+1) {
+   if(pts_group_0.size()<D_+1 or pts_group_1.size()<D_+1) {
       clustering.push_back (new Ellipsoid(D_, mainEll.getCenter(), mainEll.getCovMat(), mainEll.getEnlFac(), pts) );
       return;
-    }
-  Ellipsoid subEll1 = FindEnclosingEllipsoid(pts_group_0,D_);
+   }
+   Ellipsoid subEll1 = FindEnclosingEllipsoid(pts_group_0,D_);
     vol1 = subEll1.getVol();
     X1 = ((double)pts_group_0.size()/N)*Xtot;
     Ellipsoid subEll2 = FindEnclosingEllipsoid(pts_group_1,D_);
@@ -472,9 +484,16 @@ changed = false;
      SelectFromGrouping(pts, D_, grouping, 1, pts_group_1);
 
   }
+ 
+ //if( vol1+vol2<mainEll.getVol() or mainEll.getVol()>2.0*Xtot/e_) {
+ //if( (vol1+vol2)/e_<mainEll.getVol() or mainEll.getVol()>2.0*Xtot/e_) {
 
-if( vol1+vol2<mainEll.getVol() or mainEll.getVol()>2*Xtot) {
+ //inflate post
+ //if( (vol1+vol2)<mainEll.getVol() or mainEll.getVol()>2.0*Xtot) {
 
+ // treat as inflated "at birth"
+ if( (max(vol1,X1/e_)+max(vol2,X2/e_))<mainEll.getVol() or mainEll.getVol()>2.0*Xtot/e_) {
+ 
   // recursively start the splittings of subEll1 and subEll2
   EllipsoidalPartitioning(pts_group_0, X1);
   // second one
@@ -487,6 +506,19 @@ if( vol1+vol2<mainEll.getVol() or mainEll.getVol()>2*Xtot) {
  } 
  
  return;
+}
+
+void Samplers::InflateEllipsoids(double Xtot) {
+  // after EllipsoidalPartitioning, match sampling efficiency by enlarging ellipsoids to volume X/e where necessary
+  for (int i=0;i<clustering.size();i++) {
+    //    printf("I checked ellipsoid %i\n",i);
+    //    printf("%i\t%i\t%f\t%f\t%f\n",clustering[i]->ell_pts_.size(),N_,Xtot,e_,clustering[i]->getVol());
+    if((double)clustering[i]->ell_pts_.size()/N_*Xtot/e_ > clustering[i]->getVol()) {
+      clustering[i]->setEnlFac(clustering[i]->getEnlFac()*pow((double)clustering[i]->ell_pts_.size()/N_*Xtot/clustering[i]->getVol()/e_,2.0/D_));
+      //      printf("I rescaled ellipsoid %i\n",i);
+    } 
+
+  }
 }
 
 void Samplers::EllipsoidalRescaling(double Xi) {
