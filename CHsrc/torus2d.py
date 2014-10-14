@@ -3,7 +3,7 @@ import numpy as np
 import scipy as sp
 import cfg_parse as cfgp
 from dataio import readcolumn
-class gaussianshellmodel():
+class torusmodel():
     def __init__(self,cfgfile):
         #self.infile_ = cfgp.File_parse(cfgfile,'infile')
         self.outfile_ = cfgp.File_parse(cfgfile,'outfile')
@@ -14,13 +14,9 @@ class gaussianshellmodel():
         self.var0_=[0. for i in range(self.D)]
         self.varerr_=[6.  for i in range(self.D)]
         self.repartition = 1.2
-        self.fixparams_=[2.0,0.1,-3.5,0,3.5,0.0]; #r,ww,c1[0],c1[1],c2[0],c2[1], all other center coors are 0
+        self.fixparams_=[0.0,0.1]; #r,ww,
         self.neginf = -1.e7
 	self.NL_=0
-        self.c1 = np.zeros(self.D)
-        self.c1[:2] = self.fixparams_[2:4]
-        self.c2 = np.zeros(self.D)
-        self.c2[:2] = self.fixparams_[4:6]
         return
     
     def Getinitial(self):
@@ -33,7 +29,7 @@ class gaussianshellmodel():
     def Get_dist(self,r1,r2):
         #print r1,r2
         if len(r1)!=len(r2):
-            print "Gaussianshell Get_dist dimension mismatch."
+            print "Torus Get_dist dimension mismatch.\n"
             return
         return np.sum([(r1[i]-r2[i])**2 for i in range(len(r1))])**0.5
     def Get_L(self,model_params, logL, nl):
@@ -43,9 +39,10 @@ class gaussianshellmodel():
         for i in xrange(nl):
             #print model_params[i*self.D],model_params[i*self.D+1]
             coor = model_params[i*self.D:(i+1)*self.D]
-            index1 = (self.Get_dist(coor,self.c1)-self.fixparams_[0])**2.
-            index2 = (self.Get_dist(coor,self.c2)-self.fixparams_[0])**2.
-            L = norm*(np.exp(-index1/2./self.fixparams_[1]**2.)+np.exp(-index2/2./self.fixparams_[1]**2.))
+            phi = np.arctan2(coor[1],coor[0])
+            torctr = np.array([self.fixparams_[0]*np.cos(phi),self.fixparams_[0]*np.sin(phi),0])
+            index1 = (self.Get_dist(coor,torctr)-self.fixparams_[0])**2.
+            L = norm*np.exp(-index1/2./self.fixparams_[1]**2.)
             #L = np.log(y/np.pi/((self.data_-x)**2.+y**2.))
             if(L ==0):
                 logL[i] = self.neginf

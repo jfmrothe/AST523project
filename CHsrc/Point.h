@@ -38,7 +38,7 @@ class Point
         Point(Point &pt);
         ~Point();
         void get_params(string & prior_types, double *min_vals, double *max_vals);
-        void set_params(string const& prior_types,double* min_vals,double* max_vals); //use the same prior_type right now
+	void set_params(string const& prior_types,double* min_vals,double* max_vals); //use the same prior_type right now
         void set_u_single(int i, double x){myparams[i].u = x;}
         //void set_u( * coor, int nt){for(int i = 0; i < D; i++) {myparams[i].u = coor[i];}}
         void set_u(gsl_vector * coor){for(int i = 0; i < D; i++) {myparams[i].u = gsl_vector_get(coor,i);}}

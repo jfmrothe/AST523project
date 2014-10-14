@@ -246,6 +246,10 @@ void Samplers::FullRecluster(double X_i)
    //printf("vtot=%f,X_i=%f\n",Vtot,X_i);
    //printf("copy successful to cpcluster\n");
    //delete all ellipsoids, keep first to store all points
+   double oldVtot;
+   CalcVtot();
+   oldVtot = Vtot;
+
    ClearCluster();
    vector <Point *> empty;
 
@@ -259,11 +263,13 @@ void Samplers::FullRecluster(double X_i)
    //InflateEllipsoids(X_i);
    CalcVtot();
    //check the reclustering quality
-   double quality = ClusteringQuality(X_i);
+   //double quality = ClusteringQuality(X_i);
+   
    //printf("quality=%f,vtot=%f,X_i=%f\n",quality,Vtot,X_i);
    // if reclustering is good, keep the reclustering, else copy back 
    // the old clustering
-   if (quality>1.2){
+   //if (quality>1.2){
+   if( Vtot > oldVtot ){
       //printf("do not use the reclustering result\n");
       //fprintf(debugout,"did not use the reclustering result\n");
       while(clustering.size()>0) {
@@ -484,7 +490,6 @@ void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot)
      SelectFromGrouping(pts, D_, grouping, 1, pts_group_1);
 
   }
-<<<<<<< HEAD
  
  //if( vol1+vol2<mainEll.getVol() or mainEll.getVol()>2.0*Xtot/e_) {
  //if( (vol1+vol2)/e_<mainEll.getVol() or mainEll.getVol()>2.0*Xtot/e_) {
@@ -499,24 +504,6 @@ void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot)
   EllipsoidalPartitioning(pts_group_0, X1);
   // second one
   EllipsoidalPartitioning(pts_group_1, X2);
-=======
-  if(X1/e_>vol1){
-    vol1=X1/e_;
-  }
-  if(X2/e_>vol2){
-    vol2=X2/e_;
-  }
-  if( vol1+vol2<mainEll.getVol() or mainEll.getVol()>2*Xtot/e_) {
-    if(vol1+vol2<mainEll.getVol()){
-      printf("split because of volumn\n");
-    } else{
-      printf("split because of Xtot\n");
-    }
-    // recursively start the splittings of subEll1 and subEll2
-    EllipsoidalPartitioning(pts_group_0, X1);
-    // second one
-    EllipsoidalPartitioning(pts_group_1, X2);
->>>>>>> 909843fbdf3382d0d7a29d63f2004fd8e3711d52
   
   }
   else{

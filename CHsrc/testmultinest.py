@@ -10,6 +10,7 @@ sys.path.append("oblateTransit")
 #from lighthouse import lighthousemodel as Model #module that call occultquad, and also hold the data
 from eggbox import eggboxmodel as Model #module that call occultquad, and also hold the data
 #from toygauss import toygaussmodel as Model
+#from torus2d import torusmodel as Model
 #from poly import polymodel as Model #module that call occultquad, and also hold
 #from gaussianshell import gaussianshellmodel as Model #module that call occultquad, and also hold the data
 #from occultquad import occultquad
@@ -34,7 +35,8 @@ def main():
     logLmax = 0.
     logLmin = 0.
     THRESH  = 1.0e-7
-    FullReclusterPeriod = 100
+    FullReclusterPeriod = int(np.sqrt(Np))
+    SinceLastReclustering = 0
     sampler.getAlltheta(Alltheta)
     model.Get_L(Alltheta.ravel(),logL,Np)
     sampler.SetAllPoint(logL) 
@@ -73,6 +75,7 @@ def main():
         templogL = np.array([0.])
         #print 'before reset'
         while FlagSample:
+            #print "ResetWorstPoint called with",theta
             sampler.ResetWorstPoint(theta) 
             model.Get_L(theta,templogL,1)
             NumLeval += 1
@@ -94,35 +97,22 @@ def main():
             print "#",prob
         #if nest % FullReclusterPeriod == 0:
         sampler.CalcVtot()
-        if sampler.ClusteringQuality(X_i) > model.repartition:
+                
+        if sampler.ClusteringQuality(X_i) > model.repartition and SinceLastReclustering > FullReclusterPeriod:
+            SinceLastReclustering = 0
             NumRecluster += 1
             sampler.FullRecluster(X_i)
-            #sampler.OutputClusters()
+            sampler.OutputClusters()
             sampler.CalcVtot()
-            #print str(nest)+"\t"+str(X_i)+"\t"+str(sampler.getVtot())+"\n"
+            print str(nest)+"\t"+str(X_i)+"\t"+str(sampler.getVtot())+"\n"
             
         else:
-            #NumRecluster += sampler.Recluster(X_i,model.repartition,nest/FullReclusterPeriod == 50)
-            pass
-        #ellipsoidal partitioning 
-        #if(nest==0 or sampler.ClusteringQuality(X_i) > model.repartition):
-            #count+=1
-            # recluster?
-            #if count==5:
-            #print 'before recluster'
-            #sampler.FullRecluster(X_i)
-            #print 'after recluster'
-            #NumRecluster+=1
-            #count=0
-            #sampler.EllipsoidalRescaling(X_i);
-
+            SinceLastReclustering += 1
         
         nest+=1 
         zold = logzinfo[1]
         sampler.getlogZ(logzinfo)
-        #if(nest%1000==0):
-        #    print "logZ after ",nest+Np," iterations: %f" % logzinfo[1]
-        #print nest,X_i
+
         Flag = THRESH < abs(zold-logzinfo[1])
 
         #if(NumRecluster> 20):
