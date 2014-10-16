@@ -15,6 +15,7 @@ class eggboxmodel():
         self.varerr_=self.var0_
         self.repartition = 1.2
         self.NL_=0
+        self.thresh = 1.0E-7
         return
     
     def Getinitial(self):

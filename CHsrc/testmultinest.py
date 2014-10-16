@@ -8,11 +8,12 @@ import sys
 sys.path.append("oblateTransit")
 #from transitmodel import transitmodel as Model #module that call occultquad, and also hold the data
 #from lighthouse import lighthousemodel as Model #module that call occultquad, and also hold the data
-from eggbox import eggboxmodel as Model #module that call occultquad, and also hold the data
+#from eggbox import eggboxmodel as Model #module that call occultquad, and also hold the data
 #from toygauss import toygaussmodel as Model
+#from twingauss import twingaussmodel as Model
 #from torus2d import torusmodel as Model
 #from poly import polymodel as Model #module that call occultquad, and also hold
-#from gaussianshell import gaussianshellmodel as Model #module that call occultquad, and also hold the data
+from gaussianshell import gaussianshellmodel as Model #module that call occultquad, and also hold the data
 #from occultquad import occultquad
 from Point import Point
 from Ellipsoid import Ellipsoid
@@ -24,7 +25,7 @@ def main():
     sampler = MNest(minvals,maxvals,e,Np, "uniform")
     #what I intended to use, for sampler does not need to know the names
     #sampler = MNest(priortypes,minvals,maxvals,guessvals) 
-    print "# running MultiNest algorithm... this may take a few minutes\n"
+    #print "# running MultiNest algorithm... this may take a few minutes\n"
     nest = 0
     Flag = True
     NumRecluster = 0
@@ -95,16 +96,21 @@ def main():
             sampler.getPosterior(posterior,prob)
             print "#",posterior
             print "#",prob
-        #if nest % FullReclusterPeriod == 0:
+
         sampler.CalcVtot()
-                
+        #if nest % 1000 == 0:
+        #    sampler.OutputClusters()
+        #    print str(nest)+"\t"+str(X_i)+"\t"+str(sampler.getVtot())+"\n"
+            
         if sampler.ClusteringQuality(X_i) > model.repartition and SinceLastReclustering > FullReclusterPeriod:
             SinceLastReclustering = 0
             NumRecluster += 1
+            print "reclustering",nest,"..."
             sampler.FullRecluster(X_i)
-            sampler.OutputClusters()
+            print "done."
             sampler.CalcVtot()
-            print str(nest)+"\t"+str(X_i)+"\t"+str(sampler.getVtot())+"\n"
+            #sampler.OutputClusters()
+            #print str(nest)+"\t"+str(X_i)+"\t"+str(sampler.getVtot())+"\n"
             
         else:
             SinceLastReclustering += 1

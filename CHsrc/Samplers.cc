@@ -239,6 +239,7 @@ void Samplers::FullRecluster(double X_i)
    //use empty vector to signal top-level-call to EllipsoidalPartitioning
    //New ways of doing reclustering:
    //1)copy the clusters into a new one instead of clear it.
+
    vector <Ellipsoid *>cpcluster;
    for(int i=0; i<clustering.size(); i++) {
       cpcluster.push_back (new Ellipsoid(clustering[i]));
@@ -257,7 +258,9 @@ void Samplers::FullRecluster(double X_i)
    //debugout = fopen("deb.out","a");
    //fprintf(debugout,"\n");
    
-   EllipsoidalPartitioning(empty, X_i); 
+   printf("EllipsoidalPartitioning Start\n");
+   EllipsoidalPartitioning(empty, X_i);
+   printf("EllipsoidalPartitioning Done\n"); 
    //printf("partition successful\n");
    EraseFirst();
    //InflateEllipsoids(X_i);
@@ -413,8 +416,8 @@ void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot)
   /////////////////
   
   // create mainEllipsoid which may be split further
-  // ?? in recursion depth, this first ellipsoid can be passed by parent??
-  
+  // ?? in recursion depth, this first ellipsoid can be passed by parent?? 
+  printf("Level down\n");
   
   // if function was called from main.cc (and not itself), pts will be empty, data instead will be in (irrelevant) first ellipsoid
   if(pts.size()==0) {
@@ -447,15 +450,25 @@ void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot)
   SelectFromGrouping(pts, D_, grouping, 1, pts_group_1);
 
   bool changed = true;
+  int whichchanged[N];
+  int whichchangedlast[N];
+  for (int i=0;i<N;i++)
+    {
+      whichchanged[i] = 0;
+      whichchangedlast[i] = 0;
+    }
+  bool sameaslastchange = true;
   double X1;
   double X2;
   double h1;
   double h2;
   double tmp1,tmp2;
   double vol1,vol2;
+  printf("TradePoints Start\n");
   while(changed) {
     if(pts_group_0.size()<D_+1 or pts_group_1.size()<D_+1) {
       clustering.push_back (new Ellipsoid(D_, mainEll.getCenter(), mainEll.getCovMat(), mainEll.getEnlFac(), pts) );
+      printf("Returning (splinter)\n");
       return;
     }
     Ellipsoid subEll1 = FindEnclosingEllipsoid(pts_group_0,D_);
@@ -476,21 +489,49 @@ void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot)
       if (h2<h1 and grouping[i]==0)
       {
           changed = true;
+	  whichchanged[i] = 1;
           grouping[i] = 1;
+	  printf("TradePoint > %i\n",i);
       }
-      if (h1<h2 and grouping[i]==1)
+      else if (h1<h2 and grouping[i]==1)
       {
           changed = true;
+	  whichchanged[i] = 1;
           grouping[i] = 0;
+	  printf("TradePoint < %i\n",i);
       }
+      else {whichchanged[i] = 0;}
+
      }
      pts_group_0.clear();
      pts_group_1.clear();
      SelectFromGrouping(pts, D_, grouping, 0, pts_group_0);
      SelectFromGrouping(pts, D_, grouping, 1, pts_group_1);
 
-  }
- 
+     // compare current point trade to previous one to prevent flip-flopping
+     sameaslastchange = true;
+     for(i=0;i<N;i++)
+     {
+       if (whichchanged[i] != whichchangedlast[i])
+	 {
+	   sameaslastchange = false;
+	 } 
+     }
+     
+     if (sameaslastchange) {changed = false;}
+     else
+       {
+	 for(i=0;i<N;i++) 
+	   {
+	     whichchangedlast[i] = whichchanged[i];
+	     whichchanged[i] = 0;
+	   }
+       }
+
+     printf("...\n");
+  } 
+  printf("TradePoints Done\n");
+
  //if( vol1+vol2<mainEll.getVol() or mainEll.getVol()>2.0*Xtot/e_) {
  //if( (vol1+vol2)/e_<mainEll.getVol() or mainEll.getVol()>2.0*Xtot/e_) {
 
@@ -511,6 +552,7 @@ void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot)
     clustering.push_back (new Ellipsoid(D_, mainEll.getCenter(), mainEll.getCovMat(), mainEll.getEnlFac(), pts));
   } 
  
+  printf("Returning (split worse)\n");
   return;
 }
 

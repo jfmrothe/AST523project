@@ -10,13 +10,14 @@ class torusmodel():
         self.inpath_ = cfgp.File_parse(cfgfile,'inpath')
         #self.data_ = []; readcolumn(self.data_,1,self.infile_); self.data_ = np.array(self.data_)
         self.D=3
-        self.Np_=1000
+        self.Np_=300
         self.var0_=[0. for i in range(self.D)]
-        self.varerr_=[6.  for i in range(self.D)]
+        self.varerr_=[1.0  for i in range(self.D)]
         self.repartition = 1.2
-        self.fixparams_=[0.0,0.1]; #r,ww,
+        self.fixparams_=[1.0,0.5]; #r,ww,
         self.neginf = -1.e7
 	self.NL_=0
+        self.thresh = 1.0E-7
         return
     
     def Getinitial(self):
@@ -40,8 +41,9 @@ class torusmodel():
             #print model_params[i*self.D],model_params[i*self.D+1]
             coor = model_params[i*self.D:(i+1)*self.D]
             phi = np.arctan2(coor[1],coor[0])
+            #print self.fixparams_
             torctr = np.array([self.fixparams_[0]*np.cos(phi),self.fixparams_[0]*np.sin(phi),0])
-            index1 = (self.Get_dist(coor,torctr)-self.fixparams_[0])**2.
+            index1 = (self.Get_dist(coor,torctr))**2.
             L = norm*np.exp(-index1/2./self.fixparams_[1]**2.)
             #L = np.log(y/np.pi/((self.data_-x)**2.+y**2.))
             if(L ==0):
