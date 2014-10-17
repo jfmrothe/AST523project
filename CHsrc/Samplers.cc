@@ -472,11 +472,17 @@ void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot)
       return;
     }
     Ellipsoid subEll1 = FindEnclosingEllipsoid(pts_group_0,D_);
-    vol1 = subEll1.getVol();
     X1 = ((double)pts_group_0.size()/N)*Xtot;
+    if(X1/e_>subEll1.getVol()) {
+      subEll1.setEnlFac(subEll1.getEnlFac()*pow(X1/e_/subEll1.getVol(),2.0/D_));
+    }
+    vol1 = subEll1.getVol();
     Ellipsoid subEll2 = FindEnclosingEllipsoid(pts_group_1,D_);
-    vol2 = subEll2.getVol();
     X2 = ((double)pts_group_1.size()/N)*Xtot;
+    if(X2/e_>subEll1.getVol()) {
+      subEll1.setEnlFac(subEll1.getEnlFac()*pow(X2/e_/subEll1.getVol(),2.0/D_));
+    }
+    vol2 = subEll2.getVol();
     changed = false;
     for(i=0;i<N;i++)
     {
@@ -539,7 +545,9 @@ void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot)
  //if( (vol1+vol2)<mainEll.getVol() or mainEll.getVol()>2.0*Xtot) {
 
  // treat as inflated "at birth"
- if( (max(vol1,X1/e_)+max(vol2,X2/e_))<mainEll.getVol() or mainEll.getVol()>2.0*Xtot/e_) {
+ //if( (max(vol1,X1/e_)+max(vol2,X2/e_))<mainEll.getVol() or mainEll.getVol()>2.0*Xtot/e_) {
+ // inflated at birth
+ if( (vol1+vol2)<mainEll.getVol() or mainEll.getVol()>2.0*Xtot/e_) {
  
   // recursively start the splittings of subEll1 and subEll2
   EllipsoidalPartitioning(pts_group_0, X1);
