@@ -35,7 +35,7 @@ def main():
     logL = np.zeros(Np)*1.0
     logLmax = 0.
     logLmin = 0.
-    THRESH  = 1.0e-7
+    THRESH  = 1.0*10**-2.5
     FullReclusterPeriod = int(np.sqrt(Np))
     SinceLastReclustering = 0
     sampler.getAlltheta(Alltheta)
@@ -105,12 +105,12 @@ def main():
         if sampler.ClusteringQuality(X_i) > model.repartition and SinceLastReclustering > FullReclusterPeriod:
             SinceLastReclustering = 0
             NumRecluster += 1
-            print "reclustering",nest,"..."
+            #print "reclustering",nest,"..."
             sampler.FullRecluster(X_i)
-            print "done."
+            #print "done."
             sampler.CalcVtot()
-            #sampler.OutputClusters()
-            #print str(nest)+"\t"+str(X_i)+"\t"+str(sampler.getVtot())+"\n"
+            sampler.OutputClusters()
+            print str(nest)+"\t"+str(X_i)+"\t"+str(sampler.getVtot())+"\n"
             
         else:
             SinceLastReclustering += 1
@@ -119,11 +119,12 @@ def main():
         zold = logzinfo[1]
         sampler.getlogZ(logzinfo)
 
-        Flag = THRESH < abs(zold-logzinfo[1])
+        #Flag = THRESH < abs(zold-logzinfo[1])
 
         #if(NumRecluster> 20):
         #    break
-        #Flag = THRESH < abs(X_i*logLmax)
+        Flag = THRESH < abs(X_i*logLmax)
+
     #print 'before output'
     #output
     ntotal = sampler.countTotal()
