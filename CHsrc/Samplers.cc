@@ -335,16 +335,15 @@ void Samplers::OutputClusters(){
  Point * pt;
  for(int i=0; i<clustering.size(); i++) {
     for (int j=0;j<clustering[i]->ell_pts_.size(); j++){
-   
-    pt = clustering[i]->ell_pts_[j];
-    //pt->get_theta(theta,D_);
-    for (int k=0;k<D_; k++){
-       //printf("%f ",theta[k]);
-      printf("%f ",pt->get_u(k));
+      pt = clustering[i]->ell_pts_[j];
+      //pt->get_theta(theta,D_);
+      for (int k=0;k<D_; k++){
+	//printf("%f ",theta[k]);
+	printf("%f ",pt->get_u(k));
+      }
+      printf("\n");
     }
-     printf("\n");
-    }
-  }
+ }
  //delete [] theta;
 
  for(int i=0; i<clustering.size(); i++) {
@@ -425,18 +424,27 @@ void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot)
 
   int N = pts.size();
 
-  Ellipsoid mainEll = FindEnclosingEllipsoid(pts,D_);
-
-  //FILE * debugout;
-  //debugout = fopen("deb.out","a");
+  FILE * debugout;
+  debugout = fopen("test/partitioning_detailed/partitioning_details.txt","a");
+  fprintf(debugout,"#New Instance\n");
+  for(int i=0;i<N;i++)
+    {
+      for(int j=0;j<D_;j++)
+	{
+	  fprintf(debugout,"%8.4f\t",pts[i]->get_u(j));
+	}
+      //fprintf(debugout,"%i\n",grouping[i]);
+    }
+  fclose(debugout);
   //fprintf(debugout,"%f\t%f\t",Xtot,mainEll.getVol());
+  
+  Ellipsoid mainEll = FindEnclosingEllipsoid(pts,D_);
 
   if(Xtot/e_>mainEll.getVol()) {
     mainEll.setEnlFac(mainEll.getEnlFac()*pow(Xtot/mainEll.getVol()/e_,2.0/D_));
   }
   
   //fprintf(debugout,"%f\n",mainEll.getVol());
-  //fclose(debugout);
 
   int i;
   int grouping[N];
@@ -445,6 +453,19 @@ void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot)
 
   // initialize splitting with K-means algorithm
   KMeans(pts,D_,k,&grouping[0]);
+
+  debugout = fopen("test/partitioning_detailed/partitioning_details.txt","a");
+  for(i=0;i<N;i++)
+    {
+      for(int j=0;j<D_;j++)
+	{
+	  fprintf(debugout,"%8.4f\t",pts[i]->get_u(j));
+	}
+      fprintf(debugout,"%i\n",grouping[i]);
+    }
+  fclose(debugout);
+ 
+
   vector<Point *> pts_group_0;
   vector<Point *> pts_group_1;
   vector<double> volumesave(convergescale);
@@ -466,6 +487,10 @@ void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot)
   // check initial splitting for vol0 ellipsoid and initialize ellipsoids
   if(pts_group_0.size()<D_+1 or pts_group_1.size()<D_+1) {
     clustering.push_back (new Ellipsoid(D_, mainEll.getCenter(), mainEll.getCovMat(), mainEll.getEnlFac(), pts) );
+    debugout = fopen("test/partitioning_detailed/partitioning_details.txt","a");
+    fprintf(debugout,"#Returning2 (splinter)\n");
+    fclose(debugout);
+
     //printf("Returning (splinter)\n");
     return;
   }
@@ -476,6 +501,7 @@ void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot)
     subEll1.setEnlFac(subEll1.getEnlFac()*pow(X1/e_/subEll1.getVol(),2.0/D_));
   }
   vol1 = subEll1.getVol();
+
  
   Ellipsoid subEll2 = FindEnclosingEllipsoid(pts_group_1,D_);
   X2 = ((double)pts_group_1.size()/N)*Xtot;
@@ -484,8 +510,12 @@ void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot)
   }
   vol2 = subEll2.getVol();
 
-
-
+  //subEll1.printout();
+  //subEll2.printout();
+  
+  debugout = fopen("test/partitioning_detailed/partitioning_details.txt","a");
+  fprintf(debugout,"#TradingPoints\n");
+  fclose(debugout);
     
   for (i=0;i<N;i++){
     lastgrouping[i] = grouping[i];
@@ -522,7 +552,10 @@ void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot)
     // check new splitting for vol0 ellipsoid and create new ellipsoids
     if(pts_group_0.size()<D_+1 or pts_group_1.size()<D_+1) {
       clustering.push_back (new Ellipsoid(D_, mainEll.getCenter(), mainEll.getCovMat(), mainEll.getEnlFac(), pts) );
-      //printf("Returning (splinter)\n");
+
+      debugout = fopen("test/partitioning_detailed/partitioning_details.txt","a");
+      fprintf(debugout,"#Returning (splinter)\n");
+      fclose(debugout);
       return;
     }
     Ellipsoid subEll1 = FindEnclosingEllipsoid(pts_group_0,D_);
@@ -584,6 +617,17 @@ void Samplers::EllipsoidalPartitioning(vector<Point *>& pts, double Xtot)
   } 
   //printf("TradePoints Done\n");
 
+  debugout = fopen("test/partitioning_detailed/partitioning_details.txt","a");
+  fprintf(debugout,"#CompletedTrade\n");
+  for(i=0;i<N;i++)
+    {
+      for(int j=0;j<D_;j++)
+	{
+	  fprintf(debugout,"%8.4f\t",pts[i]->get_u(j));
+	}
+      fprintf(debugout,"%i\n",lastgrouping[i]);
+    }
+  fclose(debugout);
   //if( vol1+vol2<mainEll.getVol() or mainEll.getVol()>2.0*Xtot/e_) {
   //if( (vol1+vol2)/e_<mainEll.getVol() or mainEll.getVol()>2.0*Xtot/e_) {
   
@@ -648,12 +692,121 @@ void Samplers::EllipsoidalRescaling(double Xi) {
 } 
     
 
+void Samplers::MergeEllipsoids(double Xi)
+{
+  // DESCRIPTION
+  // make list to mark merge checks
+  // loop over ellipsoids
+     // list ten closest other ellipsoids
+     // loop over 10-closest-list
+        // if total volume decreases, merge them and go back to list-step   
+     // if loop completed and no merge just happened, go to next ellipsoid
+
+  // IMPLEMENTATION
+  // make list to mark merge checks
+  //int checked[clustering.size()][clustering.size()];
+  //for (int i=0;i<clustering.size();i++) {
+  //  for (int j=0;j<clustering.size();j++) {
+  //    checked[i][j] = 0;
+  //  }
+  //}
+  
+  // number of closest ellipsoids to merge-check
+  int maxclosest = 10;
+  double allowed_growth = 1.0;
+  
+  // loop over ellipsoids
+  int ell_check = 0;
+  while (ell_check < clustering.size())
+    {
+      printf("# checking ell %i\n",ell_check);
+      
+      // indices and distances of closest ellipsoids
+      std::vector< std::pair<int,double> > closest;
+      // list ten closest other ellipsoids
+      double maxdist = 2*sqrt(D_); // high value      
+      for (int ell_other=0;ell_other<clustering.size();ell_other++) {
+	if (ell_other==ell_check)
+	  continue;
+	double d = distvec(D_,clustering[ell_check]->getCenter(),clustering[ell_other]->getCenter());
+	if (d<maxdist)
+	  {
+	    closest.push_back(std::pair<int,double> (ell_other,d));
+	    std::sort(closest.begin(),closest.end(),sort_ind_comp);
+	    if(closest.size()>maxclosest)
+	      {
+		closest.pop_back();
+		maxdist = closest[maxclosest-1].second;
+	      }
+	  }
+		    
+      }
+      // loop over 10-closest-list
+      bool merge = false;
+      for (int i_other=0;i_other<maxclosest;i_other++) {
+	int ell_other = closest[i_other].first;
+	printf("# neighbor %i: ell %i\tat %f\t\n",i_other,ell_other,closest[i_other].second);
+     
+	// create merged ellipsoid
+	vector<Point *> merge_pts;
+	for (int j=0;j<clustering[ell_check]->ell_pts_.size();j++) {
+	  merge_pts.push_back(clustering[ell_check]->ell_pts_[j]);
+	}
+	for (int j=0;j<clustering[ell_other]->ell_pts_.size();j++) {
+	  merge_pts.push_back(clustering[ell_other]->ell_pts_[j]);
+	}
+	Ellipsoid mergedEll = FindEnclosingEllipsoid(merge_pts,D_);
+	double Xm = ((double)mergedEll.ell_pts_.size()/N_)*Xi;
+	printf("# inflation args: %f\t%f\n",Xm/e_,mergedEll.getVol());
+	if(Xm/e_>mergedEll.getVol()) {
+	  mergedEll.setEnlFac(mergedEll.getEnlFac()*pow(Xm/e_/mergedEll.getVol(),2.0/D_));
+	}
+	//printf("# points: %i\t%i\t%i",clustering[ell_check]->ell_pts_.size(),clustering[ell_other]->ell_pts_.size(),mergedEll.ell_pts_.size());
+	
+	//clustering[ell_check]->printout();
+	//clustering[ell_other]->printout();
+	//mergedEll.printout();
+
+      	double vol1 = clustering[ell_check]->getVol();
+	double vol2 = clustering[ell_other]->getVol();
+	double volm = mergedEll.getVol();
+	// if total volume decreases, merge them and go back to list-step   
+	//printf("comparing %f+%f=%f,%f\n",vol1,vol2,vol1+vol2,volm);
+	if ( volm < allowed_growth*(vol1+vol2) )
+	  {
+	    printf("# merged!\n");
+	    merge = true;
+	    clustering[ell_check] = new Ellipsoid(D_, mergedEll.getCenter(), mergedEll.getCovMat(), mergedEll.getEnlFac(), merge_pts);
+	    //clustering[ell_check] = new Ellipsoid(mergedEll);
+	    clustering.erase(clustering.begin()+ell_other);
+	    break;
+	  }
+      }      
+      // if loop completed and no merge just happened, go to next ellipsoid
+      if (!merge) {ell_check++;}
+    }
+
+  return;
+}
+
+bool sort_ind_comp (const std::pair<int,double>& l, const std::pair<int,double>& r) { return l.second < r.second; }
+
 double Samplers::dist(int D, Point *pt, gsl_vector * pos2)
 {
-  // returns 2-norm of difference between two given vectors
+  // returns 2-norm of difference between vector and point coordinate
   double val=0;
   for (int i=0;i<D;i++){
     val += pow(pt->get_u(i)-gsl_vector_get(pos2,i),2);
+  }
+  return sqrt(val);
+}
+
+double Samplers::distvec(int D, gsl_vector * pos1, gsl_vector * pos2)
+{
+  // returns 2-norm of difference between two vectors
+  double val=0;
+  for (int i=0;i<D;i++){
+    val += pow(gsl_vector_get(pos1,i)-gsl_vector_get(pos2,i),2);
   }
   return sqrt(val);
 }
@@ -741,7 +894,7 @@ Ellipsoid Samplers::FindEnclosingEllipsoid(vector<Point *>& pts, int D)
 
   gsl_vector * center = gsl_vector_alloc(D);
   gsl_matrix * C = gsl_matrix_alloc(D,D);
-  float f;
+  double f;
   //printf("before find center\n");
   //find center
   for(i=0;i<D;i++){

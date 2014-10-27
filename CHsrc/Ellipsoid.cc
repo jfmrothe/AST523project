@@ -21,12 +21,12 @@
 //  return pow(myrand.doub(),1.0/3.0);
 //}
 
-void unisphere(float * coor, int D)
+void unisphere(double * coor, int D)
 {
   //returns pseudorandom number uniformly distributed in D-sphere (r=1)
   int i;
-  float sample[D];
-  float r=0;
+  double sample[D];
+  double r=0;
   Ran myrand(rand()); 
   for(i=0;i<D;i++){
 
@@ -249,7 +249,7 @@ void Ellipsoid::SampleEllipsoid()
   int i;
  
   // create gsl_vector uniformly sampled from sphere
-  float spherical[D_];
+  double spherical[D_];
   unisphere(&spherical[0],D_);
   gsl_vector * spheresample = gsl_vector_alloc(D_);
   for(i=0;i<D_;i++){

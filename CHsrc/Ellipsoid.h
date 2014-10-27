@@ -25,7 +25,7 @@ struct Ran{
 //float boxmuller();
 //float quadr();
 
-void unisphere(float *, int);
+void unisphere(double *, int);
 
 class Ellipsoid {
 public:
