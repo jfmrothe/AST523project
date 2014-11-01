@@ -7,13 +7,16 @@ import os
 import sys
 sys.path.append("oblateTransit")
 #from transitmodel import transitmodel as Model #module that call occultquad, and also hold the data
-#from lighthouse import lighthousemodel as Model #module that call occultquad, and also hold the data
-#from eggbox import eggboxmodel as Model #module that call occultquad, and also hold the data
+#from lighthouse import lighthousemodel as Model
+#from eggbox import eggboxmodel as Model
 #from toygauss import toygaussmodel as Model
 #from twingauss import twingaussmodel as Model
 #from torus2d import torusmodel as Model
-#from poly import polymodel as Model #module that call occultquad, and also hold
-from gaussianshell import gaussianshellmodel as Model #module that call occultquad, and also hold the data
+#from himmelblau import himmelblaumodel as Model
+#from rosenbrock import rosenbrockmodel as Model
+from rastrigin import rastriginmodel as Model
+#from poly import polymodel as Model
+#from gaussianshell import gaussianshellmodel as Model
 #from occultquad import occultquad
 from Point import Point
 from Ellipsoid import Ellipsoid
@@ -23,6 +26,8 @@ def main():
     model = Model('example.cfg')
     minvals,maxvals,e,Np = model.Getinitial()
     sampler = MNest(minvals,maxvals,e,Np, "uniform")
+    sampler.OutputClusters()
+    print str(0)+"\t"+str(1)+"\t"+str(sampler.getVtot())+"\n"
     #what I intended to use, for sampler does not need to know the names
     #sampler = MNest(priortypes,minvals,maxvals,guessvals) 
     #print "# running MultiNest algorithm... this may take a few minutes\n"
@@ -35,7 +40,7 @@ def main():
     logL = np.zeros(Np)*1.0
     logLmax = 0.
     logLmin = 0.
-    THRESH  = 1.0*10**-2.5
+    THRESH  = model.thresh #1.0*10**-2.5
     FullReclusterPeriod = int(np.sqrt(Np))
     SinceLastReclustering = 0
     sampler.getAlltheta(Alltheta)
@@ -107,6 +112,7 @@ def main():
             NumRecluster += 1
             #print "reclustering",nest,"..."
             sampler.FullRecluster(X_i)
+            #sampler.MergeEllipsoids(X_i)
             #print "done."
             sampler.CalcVtot()
             sampler.OutputClusters()

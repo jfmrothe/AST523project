@@ -10,21 +10,21 @@ class torusmodel():
         self.inpath_ = cfgp.File_parse(cfgfile,'inpath')
         #self.data_ = []; readcolumn(self.data_,1,self.infile_); self.data_ = np.array(self.data_)
         self.D=3
-        self.Np_=300
+        self.Np_=1000
         self.var0_=[0. for i in range(self.D)]
         self.varerr_=[1.0  for i in range(self.D)]
         self.repartition = 1.2
         self.fixparams_=[1.0,0.5]; #r,ww,
         self.neginf = -1.e7
 	self.NL_=0
-        self.thresh = 1.0E-7
+        self.thresh = 1.0*10**-2.5
         return
     
     def Getinitial(self):
         minvals = np.array(self.var0_)-np.array(self.varerr_)
         maxvals = np.array(self.var0_)+np.array(self.varerr_)
         guessvals = np.array(self.var0_)
-        eff = 0.3
+        eff = 1.0
         return [minvals,maxvals,eff,self.Np_]
 
     def Get_dist(self,r1,r2):

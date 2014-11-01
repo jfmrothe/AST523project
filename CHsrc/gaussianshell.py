@@ -10,11 +10,11 @@ class gaussianshellmodel():
         self.inpath_ = cfgp.File_parse(cfgfile,'inpath')
         #self.data_ = []; readcolumn(self.data_,1,self.infile_); self.data_ = np.array(self.data_)
         self.D=5
-        self.Np_=1000
+        self.Np_=4000
         self.var0_=[0. for i in range(self.D)]
         self.varerr_=[6.  for i in range(self.D)]
         self.repartition = 1.2
-        self.thresh = 1.0E-7
+        self.thresh = 1.0*10**-2.5
         self.fixparams_=[2.0,0.1,-3.5,0,3.5,0.0]; #r,ww,c1[0],c1[1],c2[0],c2[1], all other center coors are 0
         self.neginf = -1.e7
 	self.NL_=0
@@ -28,7 +28,7 @@ class gaussianshellmodel():
         minvals = np.array(self.var0_)-np.array(self.varerr_)
         maxvals = np.array(self.var0_)+np.array(self.varerr_)
         guessvals = np.array(self.var0_)
-        eff = 1.0
+        eff = 0.3
         return [minvals,maxvals,eff,self.Np_]
 
     def Get_dist(self,r1,r2):

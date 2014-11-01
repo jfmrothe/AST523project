@@ -10,19 +10,19 @@ class eggboxmodel():
         self.inpath_ = cfgp.File_parse(cfgfile,'inpath')
         #self.data_ = []; readcolumn(self.data_,1,self.infile_); self.data_ = np.array(self.data_)
         self.D=2
-        self.Np_=2000
+        self.Np_=1000
         self.var0_=[31.41592654/2.,31.41592654/2.]
         self.varerr_=self.var0_
         self.repartition = 1.2
         self.NL_=0
-        self.thresh = 1.0E-7
+        self.thresh = 0.5 #1.0*10**-2.5
         return
     
     def Getinitial(self):
         minvals = np.array(self.var0_)-np.array(self.varerr_)
         maxvals = np.array(self.var0_)+np.array(self.varerr_)
         guessvals = np.array(self.var0_)
-        eff = 0.2
+        eff = 1.0
         return [minvals,maxvals,eff,self.Np_]
 
 
