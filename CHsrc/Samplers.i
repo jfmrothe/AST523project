@@ -18,6 +18,7 @@ import_array();
 %apply(double * INPLACE_ARRAY2, int DIM1, int DIM2){(double *Alltheta, int nx, int ny)};
 %apply(double * INPLACE_ARRAY2, int DIM1, int DIM2){(double * posterior, int nx, int ny)};
 %apply(double * INPLACE_ARRAY1, int DIM1){(double * prob, int np)};
+%apply(double * INPLACE_ARRAY1, int DIM1){(double * logWts, int np2)};
 %apply(double * INPLACE_ARRAY1, int DIM1){(double * logL,int nL)}; 
 %apply(double * INPLACE_ARRAY1, int DIM1){(double * theta,int nt)}; 
 %apply(double * INPLACE_ARRAY1, int DIM1){(double * logzinfo,int nz)};
