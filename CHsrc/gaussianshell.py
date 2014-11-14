@@ -9,8 +9,8 @@ class gaussianshellmodel():
         self.outfile_ = cfgp.File_parse(cfgfile,'outfile')
         self.inpath_ = cfgp.File_parse(cfgfile,'inpath')
         #self.data_ = []; readcolumn(self.data_,1,self.infile_); self.data_ = np.array(self.data_)
-        self.D=5
-        self.Np_=4000
+        self.D=3
+        self.Np_=1000
         self.var0_=[0. for i in range(self.D)]
         self.varerr_=[6.  for i in range(self.D)]
         self.repartition = 1.2
@@ -54,7 +54,7 @@ class gaussianshellmodel():
                 logL[i] = np.log(L)
             #print x,y,logL[i]
         return
-    def Output(self,posterior, prob):
+    def Output(self,posterior, prob, Wts):
         fout = open(self.outfile_,mode='w')
         print "output to %s" % self.outfile_
         #logLtemp = 0. 
@@ -63,5 +63,7 @@ class gaussianshellmodel():
                 fout.write('%f ' % posterior[i*self.D+j])
             logLtemp=np.array([0])
             self.Get_L(posterior[i*self.D:(i+1)*self.D],logLtemp,1)
-            fout.write('%f %f\n' % (prob[i],logLtemp))
+            fout.write('%f %f %9.6e\n' % (prob[i],-1.0*i/self.Np_,Wts[i]))
+            # format: theta_j,i logL_i logX_i DeltaX*L_i
+
         fout.close()

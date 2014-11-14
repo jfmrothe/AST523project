@@ -37,14 +37,16 @@ class eggboxmodel():
             logL[i] = L 
             #print x,y,logL[i]
         return
-    def Output(self,posterior, prob):
+    def Output(self,posterior, prob, Wts):
         fout = open(self.outfile_,mode='w')
         #print "output to %s" % self.outfile_
         #logLtemp = 0. 
         for i in xrange(posterior.shape[0]/self.D):
             for j in xrange(int(self.D)):
                 fout.write('%f ' % posterior[i*self.D+j])
-            logLtemp=np.array([0])
-            self.Get_L(posterior[i*self.D:(i+1)*self.D],logLtemp,1)
-            fout.write('%f %f\n' % (prob[i],logLtemp))
+            fout.write('%f %f %9.6e\n' % (prob[i],-1.0*i/self.Np_,Wts[i]))
+            # format: theta_j,i logL_i logX_i DeltaX*L_i
+#            logLtemp=np.array([0.0])
+#            self.Get_L(posterior[i*self.D:(i+1)*self.D],logLtemp,1)
+#            fout.write('%f %f\n' % (prob[i],logLtemp))
         fout.close()

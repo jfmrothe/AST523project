@@ -84,7 +84,7 @@ class Samplers
         int countTotal();
         void OutputClusters();
 	void getlogZ(double *logzinfo, int nz);
-        void getPosterior(double * posterior, int nx, int ny, double * prob, int np);
+        void getPosterior(double * posterior, int nx, int ny, double * prob, int np, double * logWts, int np2);
         void EllipsoidalRescaling(double Xi);
 	void MergeEllipsoids(double Xi);
 

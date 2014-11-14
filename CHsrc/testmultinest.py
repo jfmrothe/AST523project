@@ -14,9 +14,10 @@ sys.path.append("oblateTransit")
 #from torus2d import torusmodel as Model
 #from himmelblau import himmelblaumodel as Model
 #from rosenbrock import rosenbrockmodel as Model
-from rastrigin import rastriginmodel as Model
+#from rastrigin import rastriginmodel as Model
 #from poly import polymodel as Model
 #from gaussianshell import gaussianshellmodel as Model
+from objectdetection_single import obj_singlemodel as Model
 #from occultquad import occultquad
 from Point import Point
 from Ellipsoid import Ellipsoid
@@ -60,7 +61,8 @@ def main():
             ntotal = sampler.countTotal()
             posterior = np.zeros([model.D,ntotal])
             prob = np.zeros(ntotal)
-            sampler.getPosterior(posterior,prob)
+            logWts = np.zeros(ntotal)
+            sampler.getPosterior(posterior,prob,logWts)
             print "#",posterior
             print "#",prob
         
@@ -70,7 +72,8 @@ def main():
             ntotal = sampler.countTotal()
             posterior = np.zeros([model.D,ntotal])
             prob = np.zeros(ntotal)
-            sampler.getPosterior(posterior,prob)
+            logWts = np.zeros(ntotal)
+            sampler.getPosterior(posterior,prob,logWts)
             print "#",posterior
             print "#",prob
 
@@ -98,7 +101,8 @@ def main():
             ntotal = sampler.countTotal()
             posterior = np.zeros([model.D,ntotal])
             prob = np.zeros(ntotal)
-            sampler.getPosterior(posterior,prob)
+            logWts = np.zeros(ntotal)
+            sampler.getPosterior(posterior,prob,logWts)
             print "#",posterior
             print "#",prob
 
@@ -138,14 +142,15 @@ def main():
     print "# sampling efficiency = ",1.0*ntotal/NumLeval 
     posterior = np.zeros([model.D,ntotal])
     prob = np.zeros(ntotal)
-    sampler.getPosterior(posterior,prob)
+    logWts = np.zeros(ntotal)
+    sampler.getPosterior(posterior,prob,logWts)
     print "# dimensions of posterior sampling = ",posterior.shape
     print "# number of likelihood evaluations = ",NumLeval
     #print "number of modellikelihood evaluations = ",model.NL_
     print "# number of reclusterings = ",NumRecluster
     logzinfo = np.zeros(3)
     sampler.getlogZ(logzinfo)
-    model.Output(posterior.ravel(),prob)
+    model.Output(posterior.ravel(),prob,np.exp(logWts-logzinfo[1]))
     print "# information: H=%f bits" % logzinfo[0]
     print "# global evidence: logZ = %f +/- %f" % (logzinfo[1],logzinfo[2])
     #os.system("tail -n %d multivar.tab >> temp9.txt" % model.Np_)
