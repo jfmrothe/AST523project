@@ -16,8 +16,8 @@ sys.path.append("oblateTransit")
 #from rosenbrock import rosenbrockmodel as Model
 #from rastrigin import rastriginmodel as Model
 #from poly import polymodel as Model
-#from gaussianshell import gaussianshellmodel as Model
-from objectdetection_single import obj_singlemodel as Model
+from gaussianshell import gaussianshellmodel as Model
+#from objectdetection_single import obj_singlemodel as Model
 #from occultquad import occultquad
 from Point import Point
 from Ellipsoid import Ellipsoid
@@ -133,7 +133,9 @@ def main():
 
         #if(NumRecluster> 20):
         #    break
-        Flag = THRESH < abs(X_i*logLmax)
+
+        #Flag = THRESH < abs(X_i*logLmax)
+        Flag = THRESH < abs(X_i*np.exp(logLmax-logzinfo[1]))
 
     #print 'before output'
     #output
@@ -142,7 +144,7 @@ def main():
     print "# sampling efficiency = ",1.0*ntotal/NumLeval 
     posterior = np.zeros([model.D,ntotal])
     prob = np.zeros(ntotal)
-    logWts = np.zeros(ntotal)
+    logWts = np.ones(ntotal)*-999.9
     sampler.getPosterior(posterior,prob,logWts)
     print "# dimensions of posterior sampling = ",posterior.shape
     print "# number of likelihood evaluations = ",NumLeval
